@@ -10,8 +10,11 @@ var gulp = require('gulp')
   , minifyCss = require('gulp-minify-css')
   , minifyHtml = require('gulp-minify-html')
   , rev = require('gulp-rev')
+  , sass = require('gulp-sass')
   , runSequence = require('run-sequence')
-  , server = require('gulp-server-livereload')
+  , connect = require('gulp-connect')
+  , watch = require('gulp-watch')
+  , prefix = require('gulp-autoprefixer')
   , del = require('del');
 
 
@@ -34,6 +37,13 @@ gulp.task('clean', function (cb) {
     '!'+dist+'.gitkeep',
     dist + '**/*'
   ], cb);
+});
+
+gulp.task('sass', function () {
+    gulp.src('./app/scss/*.scss')
+        .pipe(sass())
+        .pipe(prefix())
+        .pipe(gulp.dest('./app/css'));
 });
 
 
@@ -62,6 +72,10 @@ gulp.task('images', function(){
     .pipe(gulp.dest(dist));
 });
 
+gulp.task('watch', function() {
+  gulp.watch('app/scss/*.scss', ['sass']);
+});
+
 
 gulp.task('build', function(){
     log('building for ' + (production ? 'production' : 'development'));
@@ -71,17 +85,19 @@ gulp.task('build', function(){
       runSequence('clean', 'useapp', 'images');
 });
 
-gulp.task('serve', function() {
-  gulp.src('./app/')
-    .pipe(server({
-      livereload: true,
-      directoryListing: false,
-      log: 'debug',
-      open: true
-    }));
+gulp.task('livereload', function() {
+  gulp.src(['app/css/*.css', 'app/js/*.js'])
+    .pipe(watch(['app/**/*.css', 'app/**/*.js', 'app/*.html']))
+    .pipe(connect.reload());
 });
 
-gulp.task('default', function(){
+gulp.task('serve', function() {
+  connect.server({
+    livereload: true
+  })
+});
+
+gulp.task('default', ['sass', 'serve', 'livereload', 'watch'],function(){
   log('available tasks:');
   log('  gulp serve (serve content locally for development)');
   log('  gulp build (build for developement)');

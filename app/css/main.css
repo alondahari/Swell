@@ -1,0 +1,6 @@
+body {
+  /*set background image with overlay*/
+  background: -webkit-linear-gradient(rgba(79, 158, 245, 0.4), rgba(79, 158, 245, 0.4)), url("../img/footer_lodyas.png");
+  background: linear-gradient(rgba(79, 158, 245, 0.4), rgba(79, 158, 245, 0.4)), url("../img/footer_lodyas.png");
+  /*fixes background image*/
+  background-attachment: fixed; }
