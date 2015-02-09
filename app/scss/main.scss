@@ -1,9 +1,3 @@
-body{
-	/*set background image with overlay*/
-	background: linear-gradient(rgba(79, 158, 245, .4),rgba(79, 158, 245, .4)),
-	    url("../img/footer_lodyas.png");
-
-	/*fixes background image*/
-	background-attachment:fixed;
-
-}
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'cordova';
+@import 'globals';
