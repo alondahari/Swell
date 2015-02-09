@@ -1,0 +1,34 @@
+Phase 1:
+  ☐ create location dummy screen (no map)  
+  ☐ create rating dummy screen
+  ☐ make location screen fuction with local JSON file
+  ☐ Add search box
+  ☐ make rating screen function with local storage
+  ☐ create average ratings algorithms
+
+Phase 2:
+  ☐ Create dummy login (no facebook login)
+  ☐ Create dummy settings and account screens
+  ☐ Make navigation fully functional, with back buttons     
+  ☐ make login function with local JSON
+  ☐ make settings functional + password change
+  ☐ make profile page functional
+
+Phase 3:
+  ☐ Add password reset mechanism
+  ☐ Add help screen
+
+Phase 4:
+  ☐ Add geolocation functionality
+  ☐ Add facebook login
+  ☐ Add google map, responsive to user input
+  ☐ populate select fields according to map interaction
+
+Phase 5:
+  ☐ Add user comments
+  ☐ Add picture uploads
+  ☐ Add additional ratings screen ( user wave prediction, jelly fish, currents, appropriate skill level, wet suit recommendation, water polution )
+
+Future:
+  ☐ Graphic rating interaction
+  ☐ Redesign!
