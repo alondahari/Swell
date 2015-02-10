@@ -13,5 +13,8 @@
     "jquery": "latest",
     "backbone": "latest",
     "underscore": "latest"
+  },
+  "devDependencies": {
+    "requirejs-text": "~2.0.13"
   }
 }

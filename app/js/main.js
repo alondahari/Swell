@@ -22,13 +22,21 @@ require.config({
     // }
   },
   paths: {
-    jquery: '../bower_components/jquery/jquery',
-    underscore: '../bower_components/underscore/underscore',
-    backbone: '../bower_components/backbone/backbone',
+    jquery: '../../bower_components/jquery/dist/jquery',
+    underscore: '../../bower_components/underscore/underscore',
+    backbone: '../../bower_components/backbone/backbone',
     // backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage',
-    // text: '../bower_components/requirejs-text/text'
+    text: '../../bower_components/requirejs-text/text'
   }
 });
+
+require(['backbone', 'views/locationView'],
+  function(backbone, View){
+  
+  new View;
+
+
+})
 
 
 /* we dont encapsulate this in anonymous function because we will be exposing it to globals anyway. But this is an excepetion */
