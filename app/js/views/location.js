@@ -14,11 +14,11 @@ define([
 		},
 
 		render: function(){
-			$('body').append(this.template({collection: [{name: 'alon'}, {name:'mike'}]}));
+			var counties = _.unique(this.model.pluck('county_name'));
+			$('body').append(this.template({counties: counties}));
 		}
 
 
 	});
-
 	return SearchBarView;
 });

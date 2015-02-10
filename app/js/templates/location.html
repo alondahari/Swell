@@ -5,9 +5,9 @@
 <h1 class="location-header">Location</h1>
 <select class="form-control location-select">
   <option value="" disabled selected>Choose County...</option>
-  <% _.each(collection, function(model){ %>
+  <% _.each(counties, function(model){ %>
   	<option>
-  		<%= model.name %>
+  		<%= model %>
   	</option>
   <% }); %>
 </select>

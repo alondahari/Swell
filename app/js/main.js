@@ -37,7 +37,7 @@ require(['backbone', 'views/location', 'collections/spots', 'collections/countie
   // var spots = new Spots(counties.where({'county_name': 'Del Norte'}));
   // console.log(spots);
   // console.log(spots.pluck('spot_name'));
-  new View;
+  new View({ model: counties});
 
 
 })
