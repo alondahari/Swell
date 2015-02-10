@@ -30,14 +30,14 @@ require.config({
   }
 });
 
-require(['backbone', 'views/location', 'collections/spots', 'collections/counties'],
-  function(backbone, View, Spots, Counties){
+require(['backbone', 'views/location', 'collections/spots'],
+  function(backbone, View, Spots){
   
-  var counties = new Counties(JSON.parse(localStorage.surfSpots));
-  // var spots = new Spots(counties.where({'county_name': 'Del Norte'}));
+  var spots = new Spots(JSON.parse(localStorage.surfSpots));
+  // var spots = new Spots(spots.where({'county_name': 'Del Norte'}));
   // console.log(spots);
   // console.log(spots.pluck('spot_name'));
-  new View({ model: counties});
+  new View({ model: spots });
 
 
 })
