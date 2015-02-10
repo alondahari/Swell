@@ -3,4 +3,11 @@
 	<li role="navigation"><a href="">Get Rating</a></li>
 </ul>
 <h1 class="location-header">Location</h1>
-
+<select class="form-control location-select">
+  <option value="" disabled selected>Choose County...</option>
+  <% _.each(collection, function(model){ %>
+  	<option>
+  		<%= model.name %>
+  	</option>
+  <% }); %>
+</select>

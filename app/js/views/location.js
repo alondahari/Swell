@@ -10,11 +10,11 @@ define([
 		template: _.template(template),
 
 		initialize: function(){
-			this.render()
+			this.render();
 		},
 
 		render: function(){
-			$('body').append(this.template());
+			$('body').append(this.template({collection: [{name: 'alon'}, {name:'mike'}]}));
 		}
 
 

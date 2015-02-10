@@ -12,7 +12,8 @@
   "dependencies": {
     "jquery": "latest",
     "backbone": "latest",
-    "underscore": "latest"
+    "underscore": "latest",
+    "bootstrap": "~3.3.2"
   },
   "devDependencies": {
     "requirejs-text": "~2.0.13"
