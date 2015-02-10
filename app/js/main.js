@@ -30,9 +30,13 @@ require.config({
   }
 });
 
-require(['backbone', 'views/locationView'],
-  function(backbone, View){
+require(['backbone', 'views/locationView', 'collections/spots', 'collections/counties'],
+  function(backbone, View, Spots, Counties){
   
+  var counties = new Counties(JSON.parse(localStorage.surfSpots));
+  var spots = new Spots(counties.where({'county_name': 'Del Norte'}));
+  console.log(spots);
+  console.log(spots.pluck('spot_name'));
   new View;
 
 
