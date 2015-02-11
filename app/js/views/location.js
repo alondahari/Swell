@@ -13,8 +13,10 @@ define([
 
 		events: {
 			// @refactor: combine into one event handler
-			'change .country-select': 'countryChanged',
-			'change .county-select': 'countyChanged'
+			// @refactor: capitalize field categories
+			'change .country-select': 'countryChange',
+			'change .county-select': 'countyChange',
+			'change .spot-select': 'spotChange'
 		},
 
 		initialize: function(){
@@ -30,15 +32,18 @@ define([
 			this.renderField('spot');
 		},
 
+		renderField: function(field){
+			this.$el.find('.' + field + '-select')
+				.html(this.renderSelect(field, this[field]))
+				// doesn't trigger on it's own?
+				.trigger('change');
+		},
+
 		renderSelect: function(category, arr){
 			return this.templateSelects({category: category, arr: arr});
 		},
 
-		renderField: function(field){
-			this.$el.find('.' + field + '-select').html(this.renderSelect(field, this[field]));
-		},
-
-		countryChanged: function(e){
+		countryChange: function(e){
 			var country = $.trim($(e.currentTarget).find(':selected').val());
 			var county = this.model.where({country: country});
 			this.county = _.chain(county)
@@ -51,7 +56,7 @@ define([
 				this.renderField('spot');
 		},
 
-		countyChanged: function(e){
+		countyChange: function(e){
 			var county = $.trim($(e.currentTarget).find(':selected').val());
 			var spot = this.model.where({county_name: county});
 			this.spot = _.chain(spot)
@@ -61,6 +66,10 @@ define([
 				.unique().value();
 
 			this.renderField('spot');
+		},
+
+		spotChange: function(e){
+			$('.location-submit').toggleClass('disabled', !$(e.currentTarget).find(':selected').val());
 		}
 
 
