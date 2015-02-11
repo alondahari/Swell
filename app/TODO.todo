@@ -1,11 +1,12 @@
 Phase 1:
-  ☐ create location dummy screen (no map)
+  ✔ create location dummy screen (no map) @done (15-02-11 10:32)
   ☐ create rating dummy screen
   ☐ make location screen fuction with local JSON file
   ☐ Add search box
   ☐ make rating screen function with local storage
   ☐ create average ratings algorithms
   ☐ refactor @ location view
+  ☐ fix click on active tab behavior
 
 Phase 2:
   ☐ Create dummy login (no facebook login)
