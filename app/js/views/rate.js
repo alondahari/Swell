@@ -53,8 +53,7 @@ define([
 		},
 
 		initialize: function(){
-
-			this.listenTo(this.model, 'change', this.renderFields);
+			this.listenTo(this.model, 'change', this.updateRatings);
 			this.render();
 		},
 
@@ -65,7 +64,7 @@ define([
 
 		renderFields: function(){
 			this.injectObject(this.fields, this.ratings);
-			this.$el.find('.ratings').append(this.fieldTemplate({fields: this.fields}));
+			this.$el.find('.ratings').html(this.fieldTemplate({fields: this.fields}));
 		},
 
 		// inject the ratings object into the fields array for tamplating
@@ -79,7 +78,11 @@ define([
 			var target = $(e.target);
 			var field = target.data('field');
 			this.model.set(field, parseFloat(target.val()));
-			console.log(this.model.toJSON());
+		},
+
+		updateRatings: function(){
+			_.extend(this.ratings, this.model.toJSON());
+			this.renderFields();
 		}
 
 
