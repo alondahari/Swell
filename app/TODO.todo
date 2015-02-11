@@ -8,6 +8,7 @@ Phase 1:
   ☐ refactor @ location view
   ☐ fix click on active tab behavior
   ☐ location.js: pass spot_id to option fields
+  ☐ add validation?
 
 Phase 2:
   ☐ Create dummy login (no facebook login)
