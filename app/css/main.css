@@ -4841,11 +4841,10 @@ body {
   /*fixes background image*/
   background-attachment: fixed;
   font-style: 'Helvetica Neue', HelveticaNeue, Ariel, sans-serif;
-  color: white; }
+  color: white;
+  overflow-x: hidden; }
 
 .rating-nav li {
-  display: table-cell;
-  width: 1%;
   float: none;
   text-align: center; }
 
@@ -4861,3 +4860,7 @@ body {
   display: block;
   width: 60%;
   margin: auto; }
+
+.rating-nav li {
+  display: table-cell;
+  width: 1%; }

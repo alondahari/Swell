@@ -9,4 +9,7 @@ body{
 	font-style: 'Helvetica Neue', HelveticaNeue, Ariel, sans-serif;
 
 	color: white;
+
+	// don't allow horizontal scroll bar
+	overflow-x: hidden;
 }
