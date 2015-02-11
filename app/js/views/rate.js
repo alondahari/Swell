@@ -10,29 +10,30 @@ define([
 		el: $('.container'),
 
 		template: _.template(template),
+		fieldTemplate: _.template(fieldTemplate),
 
 		fields: [
 			{
 				header: 'Overall Wave Quality',
-				defaultValue: 4.2,
+				value: 4.2,
 				max: 10,
 				unit: '/ 10'
 			},
 			{
 				header: 'Wave Height',
-				defaultValue: 6.2,
+				value: 6.2,
 				max: 12,
 				unit: 'ft'
 			},
 			{
 				header: 'Wind',
-				defaultValue: 0,
+				value: 0,
 				max: 5,
 				unit: 'mph'
 			},
 			{
 				header: 'Crowd',
-				defaultValue: 200,
+				value: 200,
 				max: 200,
 				unit: 'surfers'
 			}
@@ -48,7 +49,13 @@ define([
 
 		render: function(){
 			this.$el.html(this.template({header: this.id}));
-			// this.$el.find('.ratings').html()
+			this.renderFields();
+		},
+
+		renderFields: function(){
+			_.each(this.fields, function(val){
+				this.$el.find('.ratings').append(this.fieldTemplate(val));
+			}, this);
 		}
 
 
