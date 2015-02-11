@@ -68,15 +68,12 @@ define([
 		},
 
 		spotChange: function(e){
-			var selected = $(e.currentTarget).find(':selected').val();
 			// would return more than one spot if more than one exists!!
 			// need to pass spot_id to the option fields
-			var spot_id = this.model.where({spot_name: selected});
-			if (spot_id.length) {
-				$('.button-submit')
-					.toggleClass('disabled', !selected)
-					.attr('href', '#spot/' + spot_id[0].attributes.spot_id);
-			}
+			var spotName = $(e.currentTarget).find(':selected').val();
+			$('.button-submit')
+				.toggleClass('disabled', !spotName)
+				.attr('href', '#spot/' + spotName);
 
 		}
 

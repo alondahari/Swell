@@ -3,10 +3,7 @@ define(['backbone'], function(Backbone){
 
 	return Backbone.Model.extend({
 
-		// mock having more than one country
-		defaults: {
-			country: 'California'
-		}
+		
 
 	});
 

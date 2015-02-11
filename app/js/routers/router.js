@@ -2,8 +2,9 @@ define([
 	'backbone',
 	'views/location',
 	'views/rate',
-  'collections/spots'
-  ], function(Backbone, LocationView, RateView, Spots){
+  'collections/spots',
+  'collections/ratings'
+  ], function(Backbone, LocationView, RateView, Spots, Ratings){
 	'use strict';
 
 	var Router = Backbone.Router.extend({
@@ -20,6 +21,8 @@ define([
 		},
 
 		spot: function(id){
+
+			var ratings = new Ratings();
 			new RateView();
 		}
 
