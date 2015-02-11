@@ -10,7 +10,7 @@ define([
 
 		routes:{
 			'': 'default',
-			'spot': 'spot/:id'
+			'spot/:id': 'spot'
 
 		},
 
@@ -19,7 +19,7 @@ define([
 		  new LocationView({ model: spots });
 		},
 
-		spot: function(){
+		spot: function(id){
 			new RateView();
 		}
 
