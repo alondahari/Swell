@@ -33,3 +33,7 @@ Phase 5:
 Future:
   ☐ Graphic rating interaction
   ☐ Redesign!
+
+Build:
+ ☐ templates/location.html - add disabled to go button
+ ☐ main.scss - import bootstrap and cordova, remove bootstrap.css from main.html

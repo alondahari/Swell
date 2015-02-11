@@ -11,6 +11,7 @@ var gulp = require('gulp')
   , minifyHtml = require('gulp-minify-html')
   , rev = require('gulp-rev')
   , sass = require('gulp-sass')
+  , sourcemaps = require('gulp-sourcemaps')
   , runSequence = require('run-sequence')
   , connect = require('gulp-connect')
   , watch = require('gulp-watch')
@@ -41,9 +42,11 @@ gulp.task('clean', function (cb) {
 
 gulp.task('sass', function () {
     gulp.src('./app/scss/*.scss')
-        .pipe(sass())
-        .pipe(prefix())
-        .pipe(gulp.dest('./app/css'));
+      .pipe(sourcemaps.init())
+      .pipe(sass())
+      .pipe(sourcemaps.write())
+      .pipe(prefix())
+      .pipe(gulp.dest('./app/css'));
 });
 
 

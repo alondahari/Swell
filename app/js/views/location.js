@@ -5,7 +5,7 @@ define([
 ], function(Backbone, template, selectTemplate){
 	'use strict';
 
-	var SearchBarView = Backbone.View.extend({
+	return Backbone.View.extend({
 		el: $('.container'),
 
 		template: _.template(template),
@@ -72,5 +72,5 @@ define([
 
 
 	});
-	return SearchBarView;
+
 });
