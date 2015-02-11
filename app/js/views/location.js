@@ -20,7 +20,7 @@ define([
 		},
 
 		initialize: function(){
-			this.country = _.unique(this.model.pluck('country'));
+			this.country = _.unique(this.collection.pluck('country'));
 			this.render();
 		},
 
@@ -45,7 +45,7 @@ define([
 
 		countryChange: function(e){
 			var country = $.trim($(e.currentTarget).find(':selected').val());
-			var county = this.model.where({country: country});
+			var county = this.collection.where({country: country});
 			this.county = _.chain(county)
 				.map(function(val) {
 					return val.attributes.county_name;
@@ -57,7 +57,7 @@ define([
 
 		countyChange: function(e){
 			var county = $.trim($(e.currentTarget).find(':selected').val());
-			var spot = this.model.where({county_name: county});
+			var spot = this.collection.where({county_name: county});
 			this.spot = _.chain(spot)
 				.map(function(val) {
 					return val.attributes.spot_name;

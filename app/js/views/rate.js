@@ -1,7 +1,8 @@
 define([
 	'backbone',
 	'text!templates/rate.html',
-], function(Backbone, template){
+	'text!templates/rate-field.html',
+], function(Backbone, template, fieldTemplate){
 	'use strict';
 
 	return Backbone.View.extend({
@@ -20,6 +21,8 @@ define([
 
 		render: function(){
 			this.$el.html(this.template());
+			// this.$el.find('.ratings').html()
+			console.log(this.header);
 		}
 
 
