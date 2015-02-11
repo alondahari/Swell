@@ -1,6 +1,6 @@
-<option>Choose <%= category %>...</option>
-  <% _.each(arr, function(field){ %>
-	<option value="<%= field %>" data-spotId="<%= spotId %>">
-		<%= field %>
+<option value="">Choose {{category}}...</option>
+{{#each arr}}
+	<option value="{{this}}" data-spotId="{{spotId}}">
+		{{this}}
 	</option>
-<% }); %>
+{{/each}}

@@ -22,11 +22,13 @@ require.config({
     // }
   },
   paths: {
+    handlebars: '../../bower_components/handlebars/handlebars',
     jquery: '../../bower_components/jquery/dist/jquery',
     underscore: '../../bower_components/underscore/underscore',
     backbone: '../../bower_components/backbone/backbone',
     // backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage',
-    text: '../../bower_components/requirejs-text/text'
+    text: '../../bower_components/requirejs-text/text',
+    rangeSlider: '../../bower_components/rangeslider.js/dist/rangeslider'
   }
 });
 
@@ -34,7 +36,6 @@ require([
   'backbone',
   'routers/router'
   ], function(Backbone, Router){
-
   new Router();
   Backbone.history.start();
 

@@ -1,7 +1,7 @@
 define([
 	'backbone',
 	'text!templates/rate.html',
-	'text!templates/rate-field.html',
+	'text!templates/rate-field.html'
 ], function(Backbone, template, fieldTemplate){
 	'use strict';
 
@@ -40,7 +40,7 @@ define([
 		],
 
 		events: {
-
+			'change .rating-input-range': 'updateFieldValue'
 		},
 
 		initialize: function(){
@@ -56,6 +56,11 @@ define([
 			_.each(this.fields, function(val){
 				this.$el.find('.ratings').append(this.fieldTemplate(val));
 			}, this);
+		},
+
+		updateFieldValue: function(e){
+			// this.model.
+			console.log($(e.currentTarget));
 		}
 
 

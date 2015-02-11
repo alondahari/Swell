@@ -1,15 +1,16 @@
 define([
 	'backbone',
+	'handlebars',
 	'text!templates/location.html',
 	'text!templates/location-select.html'
-], function(Backbone, template, selectTemplate){
+], function(Backbone, handlebars, template, selectTemplate){
 	'use strict';
 
 	return Backbone.View.extend({
 		el: $('.container'),
 
-		template: _.template(template),
-		templateSelects: _.template(selectTemplate),
+		template: handlebars.compile(template),
+		templateSelects: handlebars.compile(selectTemplate),
 
 		events: {
 			// @refactor: combine into one event handler
@@ -71,6 +72,7 @@ define([
 			// would return more than one spot if more than one exists!!
 			// need to pass spot_id to the option fields
 			var spotName = $(e.currentTarget).find(':selected').val();
+
 			$('.button-submit')
 				.toggleClass('disabled', !spotName)
 				.attr('href', '#spot/' + spotName);
