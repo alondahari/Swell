@@ -7,6 +7,7 @@ Phase 1:
   ☐ create average ratings algorithms
   ☐ refactor @ location view
   ☐ fix click on active tab behavior
+  ☐ location.js: pass spot_id to option fields
 
 Phase 2:
   ☐ Create dummy login (no facebook login)

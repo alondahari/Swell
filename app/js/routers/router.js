@@ -10,7 +10,7 @@ define([
 
 		routes:{
 			'': 'default',
-			'spot': 'spot'
+			'spot': 'spot/:id'
 
 		},
 

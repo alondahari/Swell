@@ -33,13 +33,14 @@ define([
 			_.each(fields, function(field){
 				this.$el.find('.' + field + '-select')
 					.html(this.renderSelect(field, this[field]))
+					// trigger change to disable button when country change 
 					// doesn't trigger on it's own?
 					.trigger('change');
 			}, this);
 		},
 
-		renderSelect: function(category, arr){
-			return this.templateSelects({category: category, arr: arr});
+		renderSelect: function(category, arr, spotId){
+			return this.templateSelects({category: category, arr: arr, spotId: spotId});
 		},
 
 		countryChange: function(e){
@@ -67,7 +68,16 @@ define([
 		},
 
 		spotChange: function(e){
-			$('.location-submit').toggleClass('disabled', !$(e.currentTarget).find(':selected').val());
+			var selected = $(e.currentTarget).find(':selected').val();
+			// would return more than one spot if more than one exists!!
+			// need to pass spot_id to the option fields
+			var spot_id = this.model.where({spot_name: selected});
+			if (spot_id.length) {
+				$('.button-submit')
+					.toggleClass('disabled', !selected)
+					.attr('href', '#spot/' + spot_id[0].attributes.spot_id);
+			}
+
 		}
 
 

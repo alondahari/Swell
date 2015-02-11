@@ -5,6 +5,10 @@
 	left: 5px;
 	top: 17px;
 	color: black;
+
+	&:hover{
+		text-decoration: none;
+	}
 }
 
 .rate-header{

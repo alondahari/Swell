@@ -1,6 +1,6 @@
-<option value="">Choose <%= category %>...</option>
-  <% _.each(arr, function(country){ %>
-	<option value="<%= country %>">
-		<%= country %>
+<option>Choose <%= category %>...</option>
+  <% _.each(arr, function(field){ %>
+	<option value="<%= field %>" data-spotId="<%= spotId %>">
+		<%= field %>
 	</option>
 <% }); %>
