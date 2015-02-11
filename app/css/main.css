@@ -4853,3 +4853,6 @@ body {
   font-weight: 100;
   font-size: 3rem;
   margin-left: 10px; }
+
+.location-select {
+  margin: 30px 0; }

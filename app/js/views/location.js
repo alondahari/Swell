@@ -48,6 +48,7 @@ define([
 				.unique().value();
 
 				this.renderField('county');
+				this.renderField('spot');
 		},
 
 		countyChanged: function(e){
