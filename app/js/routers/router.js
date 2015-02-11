@@ -21,9 +21,8 @@ define([
 		},
 
 		spot: function(id){
-			// must be a better way to do this!
 			var ratings = new Ratings();
-			new RateView({ model: ratings, id: id });
+			new RateView({ collection: ratings, id: id });
 		}
 
 	});

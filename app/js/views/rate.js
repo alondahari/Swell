@@ -47,9 +47,8 @@ define([
 		},
 
 		render: function(){
-			this.$el.html(this.template());
+			this.$el.html(this.template({header: this.id}));
 			// this.$el.find('.ratings').html()
-			console.log(this.id);
 		}
 
 
