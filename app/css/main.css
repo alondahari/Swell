@@ -4841,7 +4841,10 @@ body {
   /*fixes background image*/
   background-attachment: fixed;
   font-style: 'Helvetica Neue', HelveticaNeue, Ariel, sans-serif;
-  color: white;
+  color: white; }
+
+.container {
+  padding: 0;
   overflow-x: hidden; }
 
 .rating-nav li {

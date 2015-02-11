@@ -6,7 +6,7 @@ define([
 	'use strict';
 
 	var SearchBarView = Backbone.View.extend({
-		el: $('body'),
+		el: $('.container'),
 
 		template: _.template(template),
 		templateSelects: _.template(selectTemplate),

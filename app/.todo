@@ -5,6 +5,7 @@ Phase 1:
   ☐ Add search box
   ☐ make rating screen function with local storage
   ☐ create average ratings algorithms
+  ☐ refactor @ location view
 
 Phase 2:
   ☐ Create dummy login (no facebook login)
