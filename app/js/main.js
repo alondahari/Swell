@@ -30,8 +30,12 @@ require.config({
   }
 });
 
-require(['backbone', 'views/location', 'collections/spots'],
-  function(backbone, View, Spots){
+require([
+  'backbone',
+  'views/location',
+  'collections/spots',
+  'routers/router'
+  ], function(Backbone, View, Spots, Router){
   
   var spots = new Spots(JSON.parse(localStorage.surfSpots));
   // var spots = new Spots(spots.where({'county_name': 'Del Norte'}));
@@ -39,8 +43,10 @@ require(['backbone', 'views/location', 'collections/spots'],
   // console.log(spots.pluck('spot_name'));
   new View({ model: spots });
 
+  new Router();
+  Backbone.history.start();
 
-})
+});
 
 
 /* we dont encapsulate this in anonymous function because we will be exposing it to globals anyway. But this is an excepetion */
