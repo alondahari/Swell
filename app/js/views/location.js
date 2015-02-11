@@ -25,18 +25,17 @@ define([
 		},
 
 		render: function(){
-			// @refactor: re-render just the selects on change
 			this.$el.html(this.template());
-			this.renderField('country');
-			this.renderField('county');
-			this.renderField('spot');
+			this.renderField(['country', 'county', 'spot']);
 		},
 
-		renderField: function(field){
-			this.$el.find('.' + field + '-select')
-				.html(this.renderSelect(field, this[field]))
-				// doesn't trigger on it's own?
-				.trigger('change');
+		renderField: function(fields){
+			_.each(fields, function(field){
+				this.$el.find('.' + field + '-select')
+					.html(this.renderSelect(field, this[field]))
+					// doesn't trigger on it's own?
+					.trigger('change');
+			}, this);
 		},
 
 		renderSelect: function(category, arr){
@@ -52,8 +51,7 @@ define([
 				})
 				.unique().value();
 
-				this.renderField('county');
-				this.renderField('spot');
+				this.renderField(['county', 'spot']);
 		},
 
 		countyChange: function(e){
@@ -65,7 +63,7 @@ define([
 				})
 				.unique().value();
 
-			this.renderField('spot');
+			this.renderField(['spot']);
 		},
 
 		spotChange: function(e){
