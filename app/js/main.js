@@ -32,16 +32,8 @@ require.config({
 
 require([
   'backbone',
-  'views/location',
-  'collections/spots',
   'routers/router'
-  ], function(Backbone, View, Spots, Router){
-  
-  var spots = new Spots(JSON.parse(localStorage.surfSpots));
-  // var spots = new Spots(spots.where({'county_name': 'Del Norte'}));
-  // console.log(spots);
-  // console.log(spots.pluck('spot_name'));
-  new View({ model: spots });
+  ], function(Backbone, Router){
 
   new Router();
   Backbone.history.start();
