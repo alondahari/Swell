@@ -79,6 +79,7 @@ define([
 			var target = $(e.target);
 			var field = target.data('field');
 			this.model.set(field, parseFloat(target.val()));
+			this.model.set('time', Date.now());
 		},
 
 		updateRatings: function(){
