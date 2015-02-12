@@ -10,7 +10,7 @@ define(['backbone', 'models/rating'], function(Backbone, rating){
 		},
 
 		addRating: function(){
-			console.log(this.toJSON());
+			localStorage.ratings = JSON.stringify(this.toJSON());
 		}
 
 	});

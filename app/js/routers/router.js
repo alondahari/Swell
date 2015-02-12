@@ -23,13 +23,18 @@ define([
 		},
 
 		spot: function(id){
-			this.ratings = new Ratings(JSON.parse(localStorage.ratings));
 			this.rating = new Rating();
 			new RateView({ model: this.rating, id: id});
 		},
 
 		submitRating: function(){
-			this.ratings.add(this.rating);
+			// avoid error if url was manually entered or page reloaded
+			if (this.rating) {
+				this.ratings = new Ratings(JSON.parse(localStorage.ratings));
+				this.ratings.add(this.rating);				
+			}
+
+			this.default();
 		}
 
 	});
