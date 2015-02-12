@@ -23,6 +23,7 @@ define([
 		initialize: function(){
 			this.country = _.unique(this.collection.pluck('country'));
 			this.render();
+
 		},
 
 		render: function(){
@@ -36,6 +37,7 @@ define([
 					.html(this.renderSelect(field, this[field]))
 					// @refactor: move to template
 					.prop('disabled', !(this[field] && this[field].length) )
+					.focus()
 					// trigger change to disable button when country change 
 					// doesn't trigger on it's own?
 					.trigger('change');
