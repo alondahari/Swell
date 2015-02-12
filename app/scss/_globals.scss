@@ -16,13 +16,21 @@ body{
 	
 	// don't allow horizontal scroll bar
 	overflow-x: hidden;
+
+	// account for fixed header
+	padding-top: 100px;
 }
 
 .header{
 	font-weight: 100;
 	font-size: 3.5rem;
-	margin-left: 20px;
-	margin-top: 40px;
+	position: fixed;
+	top: 0;
+	background-color: rgba(0,0,0,.3);
+	width: 100%;
+	margin-top: 0;
+	text-align: center;
+	padding: 15px;
 }
 
 .button-submit{

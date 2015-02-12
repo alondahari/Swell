@@ -3,23 +3,12 @@
 	position: absolute;
 	margin-left: 10px;
 	left: 5px;
-	top: 17px;
-	color: black;
+	top: 22px;
+	color: white;
 
 	&:hover{
 		text-decoration: none;
 	}
-}
-
-.rate-header{
-	margin-left: 0;
-	margin-top: 0;
-	padding: 17px 0;
-	background-color: rgba(255,255,255,.2);
-	text-align: center;
-	position: relative;
-	color: black;
-	font-size: 2rem;
 }
 
 .rating-field{
