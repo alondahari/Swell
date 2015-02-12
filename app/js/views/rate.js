@@ -50,12 +50,12 @@ define([
 
 		initialize: function(){
 			this.collection.fetch();
-			console.log(this.collection);
-			_.each(this.fields, function(val){
-				this.ratings[val.id] = this.collection.getAverage(this.id, val.id);
-			},this);
 
-			this.model.set(this.ratings);
+			_.each(this.fields, function(val){
+				// reset fields
+				// get available averages
+				val.value = this.ratings[val.id] = this.collection.getAverage(this.id, val.id);
+			},this);
 
 			this.listenTo(this.model, 'change', this.updateRatings);
 			this.render();
@@ -68,12 +68,13 @@ define([
 		},
 
 		renderFields: function(){
+
 			this.$el.find('.ratings').html(this.fieldTemplate({fields: this.fields}));
 		},
 
 		injectObject: function(arr, object){
 			_.each(arr, function(val){
-				val.value = object[val.id];
+				val.value = object[val.id] || val.value || 0;
 			},this);
 		},
 
@@ -81,8 +82,9 @@ define([
 			var target = $(e.target);
 			var field = target.data('field');
 
-			this.model.set(field, parseFloat(target.val()));
-			this.model.set('time', Date.now());
+			// set the field, silent to not trigger 'change' twice
+			this.model.set(field, parseFloat(target.val()), {silent:true});
+			this.model.set({time: Date.now(), spot_name: this.id});
 		},
 
 		updateRatings: function(){
