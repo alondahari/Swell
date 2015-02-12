@@ -13,6 +13,7 @@ define([
 		template: handlebars.compile(template),
 		fieldTemplate: handlebars.compile(fieldTemplate),
 
+		// set defaults, dynamic in future
 		ratings:{
 			overall: 4,
 			waveHeight: 6,

@@ -3,7 +3,15 @@ define(['backbone', 'models/rating'], function(Backbone, rating){
 	
 	return Backbone.Collection.extend({
 		
-		model: rating
+		model: rating,
+
+		initialize: function(){
+			this.on('add', this.addRating);
+		},
+
+		addRating: function(){
+			console.log(this.toJSON());
+		}
 
 	});
 	

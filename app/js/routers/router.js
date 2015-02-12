@@ -3,15 +3,17 @@ define([
 	'views/location',
 	'views/rate',
   'collections/spots',
-  'models/rating'
-  ], function(Backbone, LocationView, RateView, Spots, Rating){
+  'models/rating',
+  'collections/ratings'
+  ], function(Backbone, LocationView, RateView, Spots, Rating, Ratings){
 	'use strict';
 
 	var Router = Backbone.Router.extend({
 
 		routes:{
 			'': 'default',
-			'spot/:id': 'spot'
+			'spot/:id': 'spot',
+			'submit-rating': 'submitRating'
 
 		},
 
@@ -21,8 +23,13 @@ define([
 		},
 
 		spot: function(id){
-			var rating = new Rating();
-			new RateView({ model: rating, id: id });
+			this.ratings = new Ratings(JSON.parse(localStorage.ratings));
+			this.rating = new Rating();
+			new RateView({ model: this.rating, id: id});
+		},
+
+		submitRating: function(){
+			this.ratings.add(this.rating);
 		}
 
 	});
