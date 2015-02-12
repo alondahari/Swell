@@ -11,10 +11,6 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 			this.on('add', this.addRating);
 		},
 
-		addRating: function(){
-			// localStorage.ratings = JSON.stringify(this.toJSON());
-		},
-
 		getAverage: function(spot_name, field){
 			var currentTime = Date.now();
 			// 43200000 - ms to 6 hours

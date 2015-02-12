@@ -35,15 +35,16 @@ define([
 		},
 
 		spot: function(id){
+			this.rating = new Rating();
 			this.ratings = new Ratings();
-			new RateView({ collection: this.ratings, id: id});
+			// console.log(this.ratings.localStorage.update);
+			new RateView({ model: this.rating, collection: this.ratings, id: id});
 		},
 
 		submitRating: function(){
 			// avoid error if url was manually entered or page reloaded
 			if (this.rating) {
-				// this.ratings = new Ratings();
-				this.ratings.add(this.rating);				
+				this.ratings.create(this.rating);
 			}
 
 			this.default();

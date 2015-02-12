@@ -50,10 +50,12 @@ define([
 
 		initialize: function(){
 			this.collection.fetch();
+			console.log(this.collection);
 			_.each(this.fields, function(val){
 				this.ratings[val.id] = this.collection.getAverage(this.id, val.id);
 			},this);
-			this.model = this.collection.create(this.ratings);
+
+			this.model.set(this.ratings);
 
 			this.listenTo(this.model, 'change', this.updateRatings);
 			this.render();
@@ -66,12 +68,10 @@ define([
 		},
 
 		renderFields: function(){
-
 			this.$el.find('.ratings').html(this.fieldTemplate({fields: this.fields}));
 		},
 
 		injectObject: function(arr, object){
-			console.log(object);
 			_.each(arr, function(val){
 				val.value = object[val.id];
 			},this);
@@ -87,7 +87,6 @@ define([
 
 		updateRatings: function(){
 			this.injectObject(this.fields, this.model.toJSON());
-			// _.extend(this.fields, this.model.toJSON());
 			this.renderFields();
 		}
 
