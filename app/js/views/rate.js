@@ -13,14 +13,6 @@ define([
 		template: handlebars.compile(template),
 		fieldTemplate: handlebars.compile(fieldTemplate),
 
-		// set defaults, dynamic in future
-		ratings:{
-			overall: 4,
-			waveHeight: 6,
-			wind: 0,
-			crowd: 200
-		},
-
 		fields: [
 			{
 				header: 'Overall Wave Quality',
@@ -49,12 +41,13 @@ define([
 			}
 		],
 
+
 		events: {
 			'change .rating-input-range': 'updateModel'
 		},
 
 		initialize: function(){
-			this.listenTo(this.model, 'change', this.updateRatings);
+			this.listenTo(this.collection, 'change', this.updateRatings);
 			this.render();
 		},
 
@@ -64,26 +57,25 @@ define([
 		},
 
 		renderFields: function(){
-			this.injectObject(this.fields, this.ratings);
-			this.$el.find('.ratings').html(this.fieldTemplate({fields: this.fields}));
-		},
+			this.collection.fetch();
 
-		// inject the ratings object into the fields array for tamplating
-		injectObject: function(arr, object){
-			_.each(arr, function(val){
-				val.value = object[val.id];
+			_.each(this.fields, function(val){
+				val.value = this.collection.getAverage(this.id, val.id);
 			},this);
+
+			this.$el.find('.ratings').html(this.fieldTemplate({fields: this.fields}));
 		},
 
 		updateModel: function(e){
 			var target = $(e.target);
 			var field = target.data('field');
+
 			this.model.set(field, parseFloat(target.val()));
 			this.model.set('time', Date.now());
 		},
 
 		updateRatings: function(){
-			_.extend(this.ratings, this.model.toJSON());
+			_.extend(this.ratings, this.collection.toJSON());
 			this.renderFields();
 		}
 
