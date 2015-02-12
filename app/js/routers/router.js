@@ -18,7 +18,8 @@ define([
 		},
 
 		default: function(){
-		  var spots = new Spots(JSON.parse(localStorage.surfSpots));
+		  var spots = new Spots();
+
 		  new LocationView({ collection: spots });
 		},
 
@@ -30,7 +31,7 @@ define([
 		submitRating: function(){
 			// avoid error if url was manually entered or page reloaded
 			if (this.rating) {
-				this.ratings = new Ratings(JSON.parse(localStorage.ratings));
+				this.ratings = new Ratings();
 				this.ratings.add(this.rating);				
 			}
 

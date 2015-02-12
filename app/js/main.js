@@ -26,7 +26,7 @@ require.config({
     jquery: '../../bower_components/jquery/dist/jquery',
     underscore: '../../bower_components/underscore/underscore',
     backbone: '../../bower_components/backbone/backbone',
-    // backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage',
+    backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage',
     text: '../../bower_components/requirejs-text/text',
     rangeSlider: '../../bower_components/rangeslider.js/dist/rangeslider'
   }
@@ -41,23 +41,23 @@ require([
 
 });
 
-
+// cordova default snippet for later reference
 /* we dont encapsulate this in anonymous function because we will be exposing it to globals anyway. But this is an excepetion */
-var app = {
-  templates: {},
-  initialize: function() {
-    /* we need to call use .bind to redefine `this` context inside app.start otherwise it will be the `global` window  */
-    document.addEventListener('deviceready', app.start.bind(this), false);
-  },
-  start: function(){
-    this.show(app.views.main);
-  },
-  show: function(view){
-    if (this.currentView){
-      this.currentView.stopListening();
-    };
+// var app = {
+//   templates: {},
+//   initialize: function() {
+//     /* we need to call use .bind to redefine `this` context inside app.start otherwise it will be the `global` window  */
+//     document.addEventListener('deviceready', app.start.bind(this), false);
+//   },
+//   start: function(){
+//     this.show(app.views.main);
+//   },
+//   show: function(view){
+//     if (this.currentView){
+//       this.currentView.stopListening();
+//     };
     
-    this.currentView = view.render();
-  }
+//     this.currentView = view.render();
+//   }
 
-};  
+// };  

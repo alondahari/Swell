@@ -3,7 +3,15 @@ define(['backbone', 'models/spot'], function(Backbone, spot){
 	
 	return Backbone.Collection.extend({
 		
-		model: spot
+		model: spot,
+
+		getSpots: function(){
+			return JSON.parse(localStorage.surfSpots);
+		},
+
+		initialize: function(){
+			this.models = this.getSpots();
+		},
 
 	});
 

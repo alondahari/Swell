@@ -14,7 +14,8 @@
     "backbone": "latest",
     "underscore": "latest",
     "bootstrap": "~3.3.2",
-    "handlebars": "~3.0.0"
+    "handlebars": "~3.0.0",
+    "backbone-localstorage": "~0.3.2"
   },
   "devDependencies": {
     "requirejs-text": "~2.0.13"
