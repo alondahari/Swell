@@ -13,6 +13,8 @@ define([
 		template: handlebars.compile(template),
 		fieldTemplate: handlebars.compile(fieldTemplate),
 
+		ratings: {},
+
 		fields: [
 			{
 				header: 'Overall Wave Quality',
@@ -47,23 +49,32 @@ define([
 		},
 
 		initialize: function(){
-			this.listenTo(this.collection, 'change', this.updateRatings);
+			this.collection.fetch();
+			_.each(this.fields, function(val){
+				this.ratings[val.id] = this.collection.getAverage(this.id, val.id);
+			},this);
+			this.model = this.collection.create(this.ratings);
+
+			this.listenTo(this.model, 'change', this.updateRatings);
 			this.render();
 		},
 
 		render: function(){
 			this.$el.html(this.template({header: this.id}));
+			this.injectObject(this.fields, this.ratings);
 			this.renderFields();
 		},
 
 		renderFields: function(){
-			this.collection.fetch();
-
-			_.each(this.fields, function(val){
-				val.value = this.collection.getAverage(this.id, val.id);
-			},this);
 
 			this.$el.find('.ratings').html(this.fieldTemplate({fields: this.fields}));
+		},
+
+		injectObject: function(arr, object){
+			console.log(object);
+			_.each(arr, function(val){
+				val.value = object[val.id];
+			},this);
 		},
 
 		updateModel: function(e){
@@ -75,7 +86,8 @@ define([
 		},
 
 		updateRatings: function(){
-			_.extend(this.ratings, this.collection.toJSON());
+			this.injectObject(this.fields, this.model.toJSON());
+			// _.extend(this.fields, this.model.toJSON());
 			this.renderFields();
 		}
 
