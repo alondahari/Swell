@@ -21,7 +21,7 @@ define([
 		},
 
 		initialize: function(){
-			console.log(this.collection);
+			// console.log(this.collection);
 			this.country = _.unique(this.collection.pluck('country'));
 			this.render();
 

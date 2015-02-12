@@ -16,17 +16,17 @@ require.config({
       ],
       exports: 'Backbone'
     },
-    // backboneLocalstorage: {
-    //   deps: ['backbone'],
-    //   exports: 'Store'
-    // }
+    localStorage: {
+      deps: ['backbone'],
+      exports: 'Store'
+    }
   },
   paths: {
     handlebars: '../../bower_components/handlebars/handlebars',
     jquery: '../../bower_components/jquery/dist/jquery',
     underscore: '../../bower_components/underscore/underscore',
     backbone: '../../bower_components/backbone/backbone',
-    backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage',
+    localStorage: '../../bower_components/backbone.localStorage/backbone.localStorage',
     text: '../../bower_components/requirejs-text/text',
     rangeSlider: '../../bower_components/rangeslider.js/dist/rangeslider'
   }
@@ -35,7 +35,7 @@ require.config({
 require([
   'backbone',
   'routers/router'
-  ], function(Backbone, Router){
+  ], function(Backbone, Router, LocalStorage){
   new Router();
   Backbone.history.start();
 
