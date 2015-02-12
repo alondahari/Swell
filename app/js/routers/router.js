@@ -1,11 +1,22 @@
 define([
 	'backbone',
+	'database',
 	'views/location',
 	'views/rate',
+	'models/spot',
   'collections/spots',
   'models/rating',
   'collections/ratings'
-  ], function(Backbone, LocationView, RateView, Spots, Rating, Ratings){
+  ], function(
+  	Backbone,
+  	Database,
+  	LocationView,
+  	RateView,
+  	Spot,
+  	Spots,
+  	Rating,
+  	Ratings
+  ){
 	'use strict';
 
 	var Router = Backbone.Router.extend({
@@ -13,13 +24,13 @@ define([
 		routes:{
 			'': 'default',
 			'spot/:id': 'spot',
-			'submit-rating': 'submitRating'
+			'submit-rating': 'submitRating',
+			'init-database': 'initDatabase'
 
 		},
 
 		default: function(){
 		  var spots = new Spots();
-
 		  new LocationView({ collection: spots });
 		},
 
@@ -36,6 +47,17 @@ define([
 			}
 
 			this.default();
+		},
+
+		initDatabase: function(){
+			var spots = new Spots();
+			spots.fetch();
+
+			_.each(Database.surfSpots, function(val){
+				// create a new model and save it to localStorage
+				spots.create(val);
+			});
+
 		}
 
 	});
