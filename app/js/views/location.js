@@ -34,6 +34,8 @@ define([
 			_.each(fields, function(field){
 				this.$el.find('.' + field + '-select')
 					.html(this.renderSelect(field, this[field]))
+					// @refactor: move to template
+					.prop('disabled', !(this[field] && this[field].length) )
 					// trigger change to disable button when country change 
 					// doesn't trigger on it's own?
 					.trigger('change');

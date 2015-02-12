@@ -3,12 +3,14 @@ Phase 1:
   ✔ create rating dummy screen @done (15-02-11 10:50)
   ✔ make location screen fuction with local JSON file @done (15-02-11 10:50)
   ☐ Add search box
-  ☐ make rating screen function with local storage
+  ✔ make rating screen function with local storage @done (15-02-11 19:42)
   ☐ create average ratings algorithms
   ☐ refactor @ location view
   ☐ fix click on active tab behavior
   ☐ location.js: pass spot_id to option fields
   ☐ add validation?
+  ☐ locations selects should open after choosing the upper one
+  ☐ locations auto populate if only one option
 
 Phase 2:
   ☐ Create dummy login (no facebook login)
