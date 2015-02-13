@@ -58,7 +58,6 @@ define([
 		 * submit ratings and return to home screen
 		 */
 		submitRating: function(){
-			console.log(this.rating);
 			// avoid error if url was manually entered or page reloaded
 			if (this.rating) {
 				this.ratings.create(this.rating);
