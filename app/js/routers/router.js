@@ -1,6 +1,9 @@
 define([
 	'backbone',
 	'database',
+	'models/user',
+	'collections/users',
+	'views/login',
 	'views/location',
 	'views/rate',
 	'models/spot',
@@ -10,6 +13,9 @@ define([
   ], function(
   	Backbone,
   	Database,
+  	User,
+  	Users,
+  	Login,
   	LocationView,
   	RateView,
   	Spot,
@@ -22,14 +28,21 @@ define([
 	var Router = Backbone.Router.extend({
 
 		routes:{
-			'': 'default',
+			'': 'login',
+			'location': 'location',
 			'spot/:id': 'spot',
 			'submit-rating': 'submitRating',
 			'init-database': 'initDatabase'
 
 		},
 
-		default: function(){
+		login: function(){
+			var user = new User();
+			var users = new Users();
+			new Login({model: user, collection: users});
+		},
+
+		location: function(){			
 		  var spots = new Spots();
 		  new LocationView({ collection: spots });
 		},
@@ -50,7 +63,7 @@ define([
 				this.ratings.create(this.rating);
 			}
 
-			this.default();
+			this.location();
 		},
 
 		/**

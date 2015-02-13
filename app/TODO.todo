@@ -9,7 +9,6 @@ Phase 1:
 Phase 2:
   ☐ Create dummy login (no facebook login)
   ☐ Create dummy settings and account screens
-  ☐ Make navigation fully functional, with back buttons     
   ☐ make login function with local JSON
   ☐ make settings functional + password change
   ☐ make profile page functional
@@ -40,6 +39,7 @@ Build:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✘ Make navigation fully functional, with back buttons      @cancelled (15-02-12 18:32) @project(Phase 2)
  ✘ fix click on active tab behavior @cancelled (15-02-12 16:53) @project(Phase 1)
  ✔ create average ratings algorithms @done (15-02-12 16:53) @project(Phase 1)
  ✔ make rating screen function with local storage @done (15-02-11 19:42) @project(Phase 1)
