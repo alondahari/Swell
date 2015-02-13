@@ -49,6 +49,11 @@ define([
 			return this.templateSelects({category: category, arr: arr, spotId: spotId});
 		},
 
+		/**
+		 * update county field when a country is selected
+		 * render spot field as well for when the country is changed after spot selected
+		 * @param  {event}
+		 */
 		countryChange: function(e){
 			var country = $.trim($(e.currentTarget).find(':selected').val());
 			var county = this.collection.where({country: country});
@@ -61,6 +66,10 @@ define([
 				this.renderField(['county', 'spot']);
 		},
 
+		/**
+		 * update spot field when a county is selected
+		 * @param  {event}
+		 */
 		countyChange: function(e){
 			var county = $.trim($(e.currentTarget).find(':selected').val());
 			var spot = this.collection.where({county_name: county});
@@ -73,6 +82,10 @@ define([
 			this.renderField(['spot']);
 		},
 
+		/**
+		 * on spot select, enable submit button and set it's href
+		 * @param  {event}
+		 */
 		spotChange: function(e){
 			// would return more than one spot if more than one exists!!
 			// need to pass spot_id to the option fields

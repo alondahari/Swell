@@ -42,6 +42,7 @@ require([
 });
 
 // cordova default snippet for later reference
+
 /* we dont encapsulate this in anonymous function because we will be exposing it to globals anyway. But this is an excepetion */
 // var app = {
 //   templates: {},

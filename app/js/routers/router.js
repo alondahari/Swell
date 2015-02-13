@@ -41,6 +41,9 @@ define([
 			new RateView({ model: this.rating, collection: this.ratings, id: id});
 		},
 
+		/**
+		 * submit ratings and return to home screen
+		 */
 		submitRating: function(){
 			// avoid error if url was manually entered or page reloaded
 			if (this.rating) {
@@ -50,6 +53,9 @@ define([
 			this.default();
 		},
 
+		/**
+		 * helper to initiate a default database into localStorage
+		 */
 		initDatabase: function(){
 			var spots = new Spots();
 			spots.fetch();
