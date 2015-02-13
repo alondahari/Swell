@@ -14,6 +14,7 @@ define([
 		fieldTemplate: handlebars.compile(fieldTemplate),
 
 		ratings: {},
+		newRating: {},
 
 		fields: [
 			{
@@ -100,8 +101,6 @@ define([
 
 		},
 
-		obj: {},
-
 		/**
 		 * update the sliders view when the model updates
 		 */
@@ -109,16 +108,16 @@ define([
 			var target = $(e.target);
 			var field = target.data('field');
 
-			this.obj = {time: Date.now(), spot_name: this.id};
+			this.newRating = {time: Date.now(), spot_name: this.id};
 			// set the field, silent to not trigger 'change' twice
-			this.obj[field] = parseFloat(target.val());
+			this.newRating[field] = parseFloat(target.val());
 
-			this.injectObject(this.fields, this.obj);
+			this.injectObject(this.fields, this.newRating);
 			this.renderFields();
 		},
 
 		submit: function(){
-			this.model.set(this.obj);
+			this.model.set(this.newRating);
 		}
 
 
