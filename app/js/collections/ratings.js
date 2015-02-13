@@ -9,18 +9,37 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 
 		initialize: function(){
 			this.on('add', this.addRating);
+			// get data from local storage
+			this.fetch();
 		},
 
+		/**
+		 * return ratings for the passed surf spot,
+		 * filtering out ratings older than 6 hours and ratings without the specified field
+		 * @param  {integer} older ratings will be filtered out
+		 * @param  {string} the name of the surf spot
+		 * @param  {string} rating field
+		 * @return {array} filtered array
+		 */
+		filterRatings: function(cutOff, spot_name, field){
+			return this.where({spot_name: spot_name})
+				.filter(function(val){
+					return (val.get('time') > cutOff && val.get(field));
+				});
+		},
+
+		/**
+		 * return the average rating for a specific field
+		 * @param  {string}
+		 * @param  {string}
+		 * @return {integer}
+		 */
 		getAverage: function(spot_name, field){
 			var currentTime = Date.now();
-			// 43200000 - ms to 6 hours
-			var cutOff = currentTime - 21600000;
-			var ratings = this.where({spot_name: spot_name});
 
-			// filter out old ratings and ratings without the required field
-			ratings = ratings.filter(function(val){
-				return (val.get('time') > cutOff && val.get(field));
-			});
+			// 21600000 is 6 hours in ms
+			var cutOff = currentTime - 21600000;
+			var ratings = this.filterRatings(cutOff, spot_name, field);
 
 			// get the addition of all the timestamps of the ratings
 			var voteAmount = _.reduce(ratings, function(memo, num){

@@ -49,16 +49,11 @@ define([
 		},
 
 		initialize: function(){
-			this.collection.fetch();
 
-			_.each(this.fields, function(val){
-				// reset fields
-				// get available averages
-				val.value = this.ratings[val.id] = this.collection.getAverage(this.id, val.id);
-			},this);
-
+			this.getAverages();
 			this.listenTo(this.model, 'change', this.updateRatings);
 			this.render();
+			
 		},
 
 		render: function(){
@@ -67,17 +62,37 @@ define([
 			this.renderFields();
 		},
 
+		/**
+		 * render the rating fields with a different template
+		 * refactor: make into a seperate view
+		 */
 		renderFields: function(){
-
 			this.$el.find('.ratings').html(this.fieldTemplate({fields: this.fields}));
 		},
 
+		/**
+		 * reset fields, get available averages
+		 */
+		getAverages: function(){
+			_.each(this.fields, function(val){
+				val.value = this.ratings[val.id] = this.collection.getAverage(this.id, val.id);
+			},this);
+		},
+
+		/**
+		 * Helper function to add an object to an array
+		 * used to insert ratings into their respective fields
+		 */
 		injectObject: function(arr, object){
 			_.each(arr, function(val){
 				val.value = object[val.id] || val.value || 0;
 			},this);
 		},
 
+		/**
+		 * update model on slider change
+		 * @param  {event}
+		 */
 		updateModel: function(e){
 			var target = $(e.target);
 			var field = target.data('field');
@@ -87,6 +102,9 @@ define([
 			this.model.set({time: Date.now(), spot_name: this.id});
 		},
 
+		/**
+		 * update the sliders view when the model updates
+		 */
 		updateRatings: function(){
 			this.injectObject(this.fields, this.model.toJSON());
 			this.renderFields();

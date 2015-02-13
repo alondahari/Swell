@@ -1,15 +1,9 @@
 Phase 1:
-  ✔ create location dummy screen (no map) @done (15-02-11 10:32)
-  ✔ create rating dummy screen @done (15-02-11 10:50)
-  ✔ make location screen fuction with local JSON file @done (15-02-11 10:50)
   ☐ Add search box
-  ✔ make rating screen function with local storage @done (15-02-11 19:42)
-  ☐ create average ratings algorithms
   ☐ refactor @ location view
-  ☐ fix click on active tab behavior
   ☐ location.js: pass spot_id to option fields
   ☐ add validation?
-  ☐ locations selects should open after choosing the upper one
+  ☐ locations selects should open after choosing the upper one?
   ☐ locations auto populate if only one option
 
 Phase 2:
@@ -42,3 +36,12 @@ Future:
 Build:
  ☐ templates/location.html - add disabled to go button
  ☐ main.scss - import bootstrap and cordova, remove bootstrap.css from main.html
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✘ fix click on active tab behavior @cancelled (15-02-12 16:53) @project(Phase 1)
+ ✔ create average ratings algorithms @done (15-02-12 16:53) @project(Phase 1)
+ ✔ make rating screen function with local storage @done (15-02-11 19:42) @project(Phase 1)
+ ✔ make location screen fuction with local JSON file @done (15-02-11 10:50) @project(Phase 1)
+ ✔ create rating dummy screen @done (15-02-11 10:50) @project(Phase 1)
+ ✔ create location dummy screen (no map) @done (15-02-11 10:32) @project(Phase 1)
