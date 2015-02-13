@@ -48,8 +48,8 @@ define([
 		},
 
 		spot: function(id){
-			this.rating = new Rating();
 			this.ratings = new Ratings();
+			this.rating = new Rating();
 			// console.log(this.ratings.localStorage.update);
 			new RateView({ model: this.rating, collection: this.ratings, id: id});
 		},
@@ -58,6 +58,7 @@ define([
 		 * submit ratings and return to home screen
 		 */
 		submitRating: function(){
+			console.log(this.rating);
 			// avoid error if url was manually entered or page reloaded
 			if (this.rating) {
 				this.ratings.create(this.rating);

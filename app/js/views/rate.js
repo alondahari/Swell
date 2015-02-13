@@ -20,45 +20,48 @@ define([
 				header: 'Overall Wave Quality',
 				max: 10,
 				unit: '/ 10',
-				id: 'overall'
-
+				id: 'overall',
+				value: 0
 			},
 			{
 				header: 'Wave Height',
 				max: 12,
 				unit: 'ft',
-				id: 'waveHeight'
+				id: 'waveHeight',
+				value: 0
 			},
 			{
 				header: 'Wind',
 				max: 5,
 				unit: 'mph',
-				id: 'wind'
+				id: 'wind',
+				value: 0
 			},
 			{
 				header: 'Crowd',
 				max: 200,
 				unit: 'surfers',
-				id: 'crowd'
+				id: 'crowd',
+				value: 0
 			}
 		],
 
 
 		events: {
-			'change .rating-input-range': 'updateModel'
+			'change .rating-input-range': 'updateRatings',
+			'click .button-submit': 'submit'
 		},
 
 		initialize: function(){
-
 			this.getAverages();
-			this.listenTo(this.model, 'change', this.updateRatings);
+			// this.listenTo(this.model, 'change', this.updateRatings);
+			this.injectObject(this.fields, this.ratings);
 			this.render();
 			
 		},
 
 		render: function(){
 			this.$el.html(this.template({header: this.id}));
-			this.injectObject(this.fields, this.ratings);
 			this.renderFields();
 		},
 
@@ -85,7 +88,7 @@ define([
 		 */
 		injectObject: function(arr, object){
 			_.each(arr, function(val){
-				val.value = object[val.id] || val.value || 0;
+				val.value = object[val.id] !== undefined ? object[val.id] : val.value || 0;
 			},this);
 		},
 
@@ -94,20 +97,28 @@ define([
 		 * @param  {event}
 		 */
 		updateModel: function(e){
-			var target = $(e.target);
-			var field = target.data('field');
 
-			// set the field, silent to not trigger 'change' twice
-			this.model.set(field, parseFloat(target.val()), {silent:true});
-			this.model.set({time: Date.now(), spot_name: this.id});
 		},
+
+		obj: {},
 
 		/**
 		 * update the sliders view when the model updates
 		 */
-		updateRatings: function(){
-			this.injectObject(this.fields, this.model.toJSON());
+		updateRatings: function(e){
+			var target = $(e.target);
+			var field = target.data('field');
+
+			this.obj = {time: Date.now(), spot_name: this.id};
+			// set the field, silent to not trigger 'change' twice
+			this.obj[field] = parseFloat(target.val());
+
+			this.injectObject(this.fields, this.obj);
 			this.renderFields();
+		},
+
+		submit: function(){
+			this.model.set(this.obj);
 		}
 
 

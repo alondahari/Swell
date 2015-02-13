@@ -8,7 +8,6 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 		localStorage: new Store('ratings'),
 
 		initialize: function(){
-			this.on('add', this.addRating);
 			// get data from local storage
 			this.fetch();
 		},
@@ -22,6 +21,7 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 		 * @return {array} filtered array
 		 */
 		filterRatings: function(cutOff, spot_name, field){
+
 			return this.where({spot_name: spot_name})
 				.filter(function(val){
 					return (val.get('time') > cutOff && val.get(field));
