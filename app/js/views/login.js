@@ -36,7 +36,7 @@ define([
 
 		validateUser: function(user, pass){
 			var creds = this.collection.where({name: user});
-			return creds[0].get('password') === pass;
+			return (creds.length && creds[0].get('password') === pass);
 		},
 
 		clearError: function(){

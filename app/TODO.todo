@@ -7,7 +7,7 @@ Phase 1:
   ☐ locations auto populate if only one option
 
 Phase 2:
-  ☐ Create dummy login (no facebook login)
+  ✔ Create dummy login (no facebook login) @done (15-02-12 20:08)
   ☐ Create dummy settings and account screens
   ☐ make login function with local JSON
   ☐ make settings functional + password change
