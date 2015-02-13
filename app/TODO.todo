@@ -5,6 +5,10 @@ Phase 1:
   ☐ add validation?
   ☐ locations selects should open after choosing the upper one?
   ☐ locations auto populate if only one option
+  ☐ bug: ratings wouldn't save on demo
+  ☐ views to each rate field and location dropdown
+  ☐ wind rating descriptions
+  ☐ refactor location view to just filter everything on render
 
 Phase 2:
   ✔ Create dummy login (no facebook login) @done (15-02-12 20:08)
