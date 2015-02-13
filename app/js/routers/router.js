@@ -50,7 +50,6 @@ define([
 		spot: function(id){
 			this.ratings = new Ratings();
 			this.rating = new Rating();
-			// console.log(this.ratings.localStorage.update);
 			new RateView({ model: this.rating, collection: this.ratings, id: id});
 		},
 
