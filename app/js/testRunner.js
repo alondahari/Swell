@@ -35,7 +35,8 @@ require.config({
 
 require([
   'backbone',
-  '../test/spec/router'
+  '/app/test/spec/router.js',
+  '/app/test/spec/collections/ratings.js'
   ],
   function(backbone, spec ){
     window.executeTests();

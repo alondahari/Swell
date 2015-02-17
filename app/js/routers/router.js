@@ -52,14 +52,6 @@ define([
 		},
 
 		/**
-		 * submit ratings and return to home screen
-		 */
-		submitRating: function(){
-
-			this.location();
-		},
-
-		/**
 		 * helper to initiate a default database into localStorage
 		 */
 		initDatabase: function(){
