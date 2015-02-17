@@ -47,8 +47,8 @@ define([
 		},
 
 		spot: function(id){
-			this.ratings = new Ratings();
-			new RateView({ collection: this.ratings, id: id});
+			var ratings = new Ratings();
+			return new RateView({ collection: ratings, id: id});
 		},
 
 		/**
