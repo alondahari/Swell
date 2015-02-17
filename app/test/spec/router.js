@@ -1,11 +1,7 @@
 define([
-  '/app/js/routers/router.js',
-  '/app/js/views/login.js',
-  '/app/js/models/user.js'
+  '/app/js/routers/router.js'
   ], function (
-    Router,
-    Login,
-    User
+    Router
   ) {
 
   describe('test suite', function() {
