@@ -55,7 +55,7 @@ define([
 
 		initialize: function(){
 			this.getAverages();
-			// this.listenTo(this.model, 'change', this.updateRatings);
+			// this.listenTo(this.collection, 'change', this.updateRatings);
 			this.injectObject(this.fields, this.ratings);
 			this.render();
 			
@@ -117,7 +117,7 @@ define([
 		},
 
 		submit: function(){
-			this.model.set(this.newRating);
+			this.collection.create(this.newRating);
 		}
 
 

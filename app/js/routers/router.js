@@ -48,18 +48,13 @@ define([
 
 		spot: function(id){
 			this.ratings = new Ratings();
-			this.rating = new Rating();
-			new RateView({ model: this.rating, collection: this.ratings, id: id});
+			new RateView({ collection: this.ratings, id: id});
 		},
 
 		/**
 		 * submit ratings and return to home screen
 		 */
 		submitRating: function(){
-			// avoid error if url was manually entered or page reloaded
-			if (this.rating) {
-				this.ratings.create(this.rating);
-			}
 
 			this.location();
 		},
