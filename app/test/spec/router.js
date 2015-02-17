@@ -1,7 +1,7 @@
 define([
-  '../../js/routers/router',
-  '../../js/views/login',
-  '../../js/models/user'
+  '/app/js/routers/router.js',
+  '/app/js/views/login.js',
+  '/app/js/models/user.js'
   ], function (
     Router,
     Login,
@@ -21,15 +21,23 @@ define([
       
     });
 
-    it('should have a login method', function() {
-      expect(router).toBeDefined();
-      expect(router.login).toBeDefined();
+    it("routes has all the right routes", function() {
+      expect(router.routes['']).toEqual('login');
+      expect(router.routes['location']).toEqual('location');
+      expect(router.routes['spot/:id']).toEqual('spot');
+      expect(router.routes['submit-rating']).toEqual('submitRating');
+      expect(router.routes['init-database']).toEqual('initDatabase');
     });
-    describe("Login method", function() {
-      it("should create a new view on the wrapper", function() {
-        expect(router.login().$el.selector).toEqual('.wrapper');
-      });
 
+    describe("Login method", function() {
+      var login;
+      it("should create a new view on the wrapper", function() {
+        login = router.login();
+        expect(login.$el.selector).toEqual('.wrapper');
+      });
+      it("should instantiate a view with a collection", function() {
+        expect(login.collection).toEqual(jasmine.any(Backbone.Collection));
+      });
     });
   });
 
