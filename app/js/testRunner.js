@@ -35,7 +35,7 @@ require.config({
 
 require([
   'backbone',
-  '../test/spec/main'
+  '../test/spec/router'
   ],
   function(backbone, spec ){
     window.executeTests();

@@ -35,8 +35,8 @@ require.config({
 require([
   'backbone',
   'routers/router'
-  ], function(Backbone, Router, LocalStorage){
-  var a = 'a';
+  ], function(Backbone, Router){
+
   new Router();
   Backbone.history.start();
 

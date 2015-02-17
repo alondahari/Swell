@@ -62,12 +62,10 @@ define([
 				return false;
 			}
 
-			this.model.set({
+			this.collection.create({
 				name: this.$el.find('input[type=email]').val(),
 				password: this.$el.find('input[type=password]').val()
 			});
-
-			this.collection.create(this.model);
 		}
 
 	});

@@ -25,7 +25,7 @@ define([
   ){
 	'use strict';
 
-	var Router = Backbone.Router.extend({
+	return Backbone.Router.extend({
 
 		routes:{
 			'': 'login',
@@ -37,9 +37,8 @@ define([
 		},
 
 		login: function(){
-			var user = new User();
 			var users = new Users();
-			new Login({model: user, collection: users});
+			return new Login({collection: users});
 		},
 
 		location: function(){			
@@ -80,7 +79,5 @@ define([
 		}
 
 	});
-
-	return Router;
 
 });
