@@ -39,6 +39,18 @@ define([
         expect(login.collection).toEqual(jasmine.any(Backbone.Collection));
       });
     });
+
+    describe("location method", function() {
+      var location;
+      it("should create a new view on the wrapper", function() {
+        location = router.location();
+        expect(location.$el.selector).toEqual('.wrapper');
+      });
+      it("should instantiate a view with a collection", function() {
+        expect(location.collection).toEqual(jasmine.any(Backbone.Collection));
+      });
+    });
+
   });
 
 });

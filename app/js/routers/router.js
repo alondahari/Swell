@@ -43,7 +43,7 @@ define([
 
 		location: function(){			
 		  var spots = new Spots();
-		  new LocationView({ collection: spots });
+		  return new LocationView({ collection: spots });
 		},
 
 		spot: function(id){
