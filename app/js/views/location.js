@@ -7,7 +7,7 @@ define([
 	'use strict';
 
 	return Backbone.View.extend({
-		el: $('.container'),
+		el: $('.wrapper'),
 
 		template: handlebars.compile(template),
 		templateSelects: handlebars.compile(selectTemplate),

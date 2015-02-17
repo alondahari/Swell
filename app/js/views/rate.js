@@ -8,7 +8,7 @@ define([
 
 	return Backbone.View.extend({
 
-		el: $('.container'),
+		el: $('.wrapper'),
 
 		template: handlebars.compile(template),
 		fieldTemplate: handlebars.compile(fieldTemplate),
