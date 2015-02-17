@@ -26,9 +26,8 @@ define([
       expect(router.login).toBeDefined();
     });
     describe("Login method", function() {
-      it("should create a new user", function() {
-        // router.login();
-        expect(router.login()).toEqual(User);
+      it("should create a new view on the wrapper", function() {
+        expect(router.login().$el.selector).toEqual('.wrapper');
       });
 
     });
