@@ -6,8 +6,13 @@ define([
 
 	describe("ratings collection", function() {
 		
-		it("should fetch on init", function() {
-			var ratings = new Ratings();
+		it("should fetch all ratings on init", function() {
+			var localStorageKeys = _.keys(localStorage);
+			var localRatings = _.filter(localStorageKeys, function(val){
+				return val.indexOf('ratings-') >= 0
+			})
+			ratings = new Ratings();
+			expect(ratings.length).toEqual(localRatings.length);
 		});
 
 
