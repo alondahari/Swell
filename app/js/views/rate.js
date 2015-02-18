@@ -22,30 +22,27 @@ define([
 				max: 10,
 				unit: '/ 10',
 				id: 'overall',
-				value: 0
 			},
 			{
 				header: 'Wave Height',
 				max: 12,
 				unit: 'ft',
 				id: 'waveHeight',
-				value: 0
 			},
 			{
 				header: 'Wind',
 				max: 5,
 				unit: 'mph',
 				id: 'wind',
-				value: 0
 			},
 			{
 				header: 'Crowd',
 				max: 200,
 				unit: 'surfers',
 				id: 'crowd',
-				value: 0
 			}
 		],
+
 
 
 		events: {
@@ -54,6 +51,11 @@ define([
 		},
 
 		initialize: function(){
+			_.each(this.fields, function(field, i){
+				this.fields[i].value = 0
+				this.fields[i].time = 'No Ratings in the last 6 hours'
+			}, this)
+
 			this.getAverages();
 			// this.listenTo(this.collection, 'change', this.updateRatings);
 			this.injectObject(this.fields, this.ratings);

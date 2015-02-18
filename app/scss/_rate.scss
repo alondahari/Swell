@@ -25,6 +25,17 @@
 	float: right;
 }
 
-.rating-input-range{
+.rating-time{
+	margin-top: 5px;
+	margin-bottom: -20px;
+
+	float: right;
+	color: rgba(184, 181, 240, 0.5);
+}
+
+
+// add vertical space before submit button
+.ratings .row:last-child{
+	margin-bottom: 20px;
 
 }
