@@ -53,9 +53,10 @@ define([
 			this.getAverages();
 			_.each(this.fields, function(field, i){
 				this.fields[i].value = 0
+				
 				this.fields[i].time = this.fields[i].time ? 
 					'Last updated ' + moment(this.fields[i].time).fromNow() :
-					'No Current Ratings'
+					'No Recent Updates'
 			}, this)
 			// this.listenTo(this.collection, 'change', this.updateRatings);
 			this.injectObject(this.fields, this.ratings);
@@ -94,14 +95,6 @@ define([
 			_.each(arr, function(val){
 				val.value = object[val.id] !== undefined ? object[val.id] : val.value || 0;
 			},this);
-		},
-
-		/**
-		 * update model on slider change
-		 * @param  {event}
-		 */
-		updateModel: function(e){
-
 		},
 
 		/**

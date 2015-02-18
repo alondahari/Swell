@@ -42,12 +42,14 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 
 			// get the addition of all the timestamps of the ratings
 			var voteAmount = _.reduce(ratings, function(memo, num){
-				return memo + num.get('time');
+				return memo + num.get('time') - cutOff;
 			}, 0);
 
 			var tallyVotes = _.reduce(ratings, function(memo, num){
 				// tally all the ratings of the passed field, multiplied by the time
-				return memo + (num.get('time') * num.get(field));
+				// subtract cutOff to add more weight to the relative time difference
+				var newVote = (num.get('time') - cutOff ) * num.get(field)
+				return memo + newVote
 			}, 0);
 
 			return Math.round(tallyVotes / voteAmount) || 0;
@@ -55,7 +57,6 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 		},
 
 		getTime: function(spot_name, field){
-			
 			var cutOff = Date.now() - 21600000;
 			var ratings = this.filterRatings(cutOff, spot_name, field)
 			if (ratings.length) {

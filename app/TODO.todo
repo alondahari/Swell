@@ -11,12 +11,17 @@ Phase 1:
   ☐ refactor location view to just filter everything on render
   ☐ add bootstrap sliders
   ☐ migarte to jade
+  ☐ fix 0 rating bug
+  ✔ fix average: calculate time from 6 hours ago @done (15-02-18 14:40)
+  ☐ test getAverage()
+  ☐ visual input for ratings with no updates
 
 Phase 2:
   ✔ Create dummy login (no facebook login) @done (15-02-12 20:08)
   ☐ Create dummy settings and account screens
   ☐ make login function with local JSON
   ☐ make settings functional + password change
+  ☐ additional settings: metric-imperial, 
   ☐ make profile page functional
 
 Phase 3:
@@ -38,6 +43,7 @@ Phase 5:
 Future:
   ☐ Graphic rating interaction
   ☐ Redesign!
+  ☐ last updated fields update in real time
 
 Build:
  ☐ templates/location.html - add disabled to go button
