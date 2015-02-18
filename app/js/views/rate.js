@@ -50,12 +50,13 @@ define([
 		},
 
 		initialize: function(){
+			this.getAverages();
 			_.each(this.fields, function(field, i){
 				this.fields[i].value = 0
-				this.fields[i].time = 'No Ratings in the last 6 hours'
+				this.fields[i].time = this.fields[i].time ? 
+					'Last updated ' + moment(this.fields[i].time).fromNow() :
+					'No Current Ratings'
 			}, this)
-			console.log(this.collection);
-			this.getAverages();
 			// this.listenTo(this.collection, 'change', this.updateRatings);
 			this.injectObject(this.fields, this.ratings);
 			this.render();
@@ -79,8 +80,9 @@ define([
 		 * reset fields, get available averages
 		 */
 		getAverages: function(){
-			_.each(this.fields, function(val){
-				val.value = this.ratings[val.id] = this.collection.getAverage(this.id, val.id);
+			_.each(this.fields, function(field, i){
+				this.ratings[field.id] = this.collection.getAverage(this.id, field.id)
+				this.fields[i].time = this.collection.getTime(this.id, field.id)
 			},this);
 		},
 

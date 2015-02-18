@@ -10,6 +10,7 @@ Phase 1:
   ☐ wind rating descriptions
   ☐ refactor location view to just filter everything on render
   ☐ add bootstrap sliders
+  ☐ migarte to jade
 
 Phase 2:
   ✔ Create dummy login (no facebook login) @done (15-02-12 20:08)

@@ -35,10 +35,9 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 		 * @return {integer}
 		 */
 		getAverage: function(spot_name, field){
-			var currentTime = Date.now();
 
 			// 21600000 is 6 hours in ms
-			var cutOff = currentTime - 21600000;
+			var cutOff = Date.now() - 21600000;
 			var ratings = this.filterRatings(cutOff, spot_name, field);
 
 			// get the addition of all the timestamps of the ratings
@@ -53,7 +52,18 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 
 			return Math.round(tallyVotes / voteAmount) || 0;
 
-		}
+		},
+
+		getTime: function(spot_name, field){
+			
+			var cutOff = Date.now() - 21600000;
+			var ratings = this.filterRatings(cutOff, spot_name, field)
+			if (ratings.length) {
+				return _.max(ratings, function(rating){
+					return rating.get('time')
+				}).get('time')
+			}
+		},
 
 	});
 	
