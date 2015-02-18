@@ -1,9 +1,10 @@
 define([
 	'backbone',
 	'handlebars',
+	'moment',
 	'text!templates/rate.html',
 	'text!templates/rate-field.html'
-], function(Backbone, handlebars, template, fieldTemplate){
+], function(Backbone, handlebars, moment, template, fieldTemplate){
 	'use strict';
 
 	return Backbone.View.extend({
@@ -43,8 +44,6 @@ define([
 			}
 		],
 
-
-
 		events: {
 			'change .rating-input-range': 'updateRatings',
 			'click .button-submit': 'submit'
@@ -55,7 +54,7 @@ define([
 				this.fields[i].value = 0
 				this.fields[i].time = 'No Ratings in the last 6 hours'
 			}, this)
-
+			console.log(this.collection);
 			this.getAverages();
 			// this.listenTo(this.collection, 'change', this.updateRatings);
 			this.injectObject(this.fields, this.ratings);

@@ -9,6 +9,7 @@ Phase 1:
   ☐ views to each rate field and location dropdown
   ☐ wind rating descriptions
   ☐ refactor location view to just filter everything on render
+  ☐ add bootstrap sliders
 
 Phase 2:
   ✔ Create dummy login (no facebook login) @done (15-02-12 20:08)

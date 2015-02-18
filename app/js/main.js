@@ -28,7 +28,7 @@ require.config({
     backbone: '../../bower_components/backbone/backbone',
     localStorage: '../../bower_components/backbone.localStorage/backbone.localStorage',
     text: '../../bower_components/requirejs-text/text',
-    rangeSlider: '../../bower_components/rangeslider.js/dist/rangeslider'
+    moment: '../../bower_components/moment/moment'
   }
 });
 
