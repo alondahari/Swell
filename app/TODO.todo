@@ -5,7 +5,7 @@ Phase 1:
   ☐ add validation?
   ☐ locations selects should open after choosing the upper one?
   ☐ locations auto populate if only one option
-  ☐ bug: ratings wouldn't save on demo
+  ✔ bug: ratings wouldn't save on demo @done (15-02-18 11:09)
   ☐ views to each rate field and location dropdown
   ☐ wind rating descriptions
   ☐ refactor location view to just filter everything on render

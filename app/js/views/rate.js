@@ -108,7 +108,8 @@ define([
 			var target = $(e.target);
 			var field = target.data('field');
 
-			this.newRating = {time: Date.now(), spot_name: this.id};
+			this.newRating.time = Date.now()
+			this.newRating.spot_name = this.id
 			// set the field, silent to not trigger 'change' twice
 			this.newRating[field] = parseFloat(target.val());
 

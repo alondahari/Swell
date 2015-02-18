@@ -8,22 +8,10 @@ define([
 
 		beforeEach(function(){
 			ratings = new Ratings()
-		})
-		
-		it("should fetch all ratings on init", function() {
-			var localStorageKeys = _.keys(localStorage)
-			var localRatings = _.filter(localStorageKeys, function(val){
-				return val.indexOf('ratings-') >= 0
-			})
-			expect(ratings.length).toEqual(localRatings.length)
-		});
-
-		it("should filter out irrelevant ratings", function() {
-			
-			var cutOff = 100,
-				field = "overall",
-				spot_name = "Ward Avenue",
-				fakeRatings = [
+			cutOff = 100
+			field = "overall"
+			spot_name = "Ward Avenue"
+			fakeRatings = [
 				// different spot - filter out
 				{
 					crowd: 51,
@@ -52,12 +40,28 @@ define([
 					time: 101
 				}
 			]
+		})
+		
+		it("should fetch all ratings on init", function() {
+			var localStorageKeys = _.keys(localStorage)
+			var localRatings = _.filter(localStorageKeys, function(val){
+				return val.indexOf('ratings-') >= 0
+			})
+			expect(ratings.length).toEqual(localRatings.length)
+		});
+
+		it("should filter out irrelevant ratings", function() {
+			
 			ratings.filterRatings.bind(fakeRatings);
 			var filtered = ratings.filterRatings(cutOff, spot_name, field)
-			
+
 			expect(filtered.length).toBe(1)
 			expect(filtered[0].get('overall')).toBe(5)
 
+		});
+
+		it("should compute average ratings", function() {
+			// might move this to back-end
 		});
 
 
