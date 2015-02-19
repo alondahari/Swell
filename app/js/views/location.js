@@ -61,11 +61,15 @@ define([
 				.prop('disabled', !(this[field] && this[field].length) )
 
 			// select a value if it's the only one and render following field
+			var selectedValue = selectField.$el.find(':selected').val()
+			var category = field.category
 			if (field.values.length === 1){
-				var category = field.category
-				var selectedValue = selectField.$el.find(':selected').val()
 				this.populateChildrenFields(category, selectedValue)
 			}
+
+			// set all selected values in fieldData in case of passive field changes
+			this.fieldData[category].selected = selectedValue
+			this.populateSubmitButton()
 		},
 
 		fieldChange: function(e){
@@ -87,7 +91,7 @@ define([
 					})
 					.unique().value()
 			} else if (category === 'county') {
-				this.fieldData.spot.values = _.chain(this.collection.where({county: selectedValue}))
+				this.fieldData.spot.values = _.chain(this.collection.where({county_name: selectedValue}))
 					.map(function(val) {
 						return val.attributes.spot_name
 					})
@@ -95,51 +99,13 @@ define([
 			}
 		},
 
-		/**
-		 * update county field when a country is selected
-		 * render spot field as well for when the country is changed after spot selected
-		 * @param  {event}
-		 */
-		countryChange: function(e){
-			var country = $.trim($(e.currentTarget).find(':selected').val())
-			var county = this.collection.where({country: country})
-			this.county = _.chain(county)
-				.map(function(val) {
-					return val.attributes.county_name
-				})
-				.unique().value()
-
-				this.renderFields()
-		},
-
-		/**
-		 * update spot field when a county is selected
-		 * @param  {event}
-		 */
-		countyChange: function(e){
-			var county = $.trim($(e.currentTarget).find(':selected').val())
-			var spot = this.collection.where({county_name: county})
-			this.spot = _.chain(spot)
-				.map(function(val) {
-					return val.attributes.spot_name
-				})
-				.unique().value()
-
-			this.renderFields()
-		},
-
-		/**
-		 * on spot select, enable submit button and set it's href
-		 * @param  {event}
-		 */
-		spotChange: function(e){
-			// would return more than one spot if more than one exists!!
-			// need to pass spot_id to the option fields
-			var spotName = $(e.currentTarget).find(':selected').val()
-
+		populateSubmitButton: function(){
+			var selectedValue = this.fieldData.spot.selected
+				// would return more than one spot if more than one exists!!
+				// need to pass spot_id to the option fields
 			$('.button-submit')
-				.toggleClass('disabled', !spotName)
-				.attr('href', '#spot/' + spotName)
+				.toggleClass('disabled', !selectedValue)
+				.attr('href', '#spot/' + selectedValue)
 
 		}
 
