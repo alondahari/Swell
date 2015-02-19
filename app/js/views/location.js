@@ -8,45 +8,81 @@ define([
 
 	return Backbone.View.extend({
 
+		fieldData: {
+			country: {
+				category: 'country',
+				title: 'Country'
+			},
+			county: {
+				category: 'county',
+				title: 'County'
+			},
+			spot: {
+				category: 'spot',
+				title: 'Surf Spot'
+			}
+		},
+
 		template: handlebars.compile(template),
 
 		events: {
 			// @refactor: combine into one event handler
 			// @refactor: capitalize field categories
-			'change .country-select': 'countryChange',
-			'change .county-select': 'countyChange',
-			'change .spot-select': 'spotChange'
+			'change .location-select': 'fieldChange'
 		},
 
 		initialize: function(){
-			this.country = _.unique(this.collection.pluck('country'))
+			this.fieldData.country.values = _.unique(this.collection.pluck('country'))
 			this.render()
 
 		},
 
 		render: function(){
 			this.$el.html(this.template())
-			this.renderFields(['country', 'county', 'spot'])
+			this.renderFields()
 			$('.wrapper').html(this.$el)
 		},
 
-		renderFields: function(fields){
+		renderFields: function(){
 			this.$el.find('.location-selects').empty()
-			_.each(fields, function(field){
-				var selectField = new Select({attributes: {category: field, arr: this[field]}})
-				this.$el.find('.location-selects')
-					.append(selectField.$el)
-					// @refactor: move to template
-					.prop('disabled', !(this[field] && this[field].length) )
-					.focus()
-					// trigger change to disable button when country change 
-					// doesn't trigger on it's own?
-					.trigger('change')
+			_.each(this.fieldData, function(field){
+				this.renderField(field)
 			}, this)
 		},
 
-		renderSelect: function(category, arr, spotId){
-			return this.templateSelects({category: category, arr: arr, spotId: spotId})
+		renderField: function(field){
+			var selectField = new Select({attributes: field})
+			this.$el.find('.location-selects')
+				.append(selectField.$el)
+				// @refactor: move to template
+				.prop('disabled', !(this[field] && this[field].length) )
+				.focus()
+				// trigger change to disable button when country change 
+				// doesn't trigger on it's own?
+				.trigger('change')
+		},
+
+		fieldChange: function(e){
+			var $target = $(e.currentTarget)
+			var category = $target.data('category')
+			var selectedValue = $target.find(':selected').val()
+			this.fieldData[category].selected = selectedValue
+
+			if (category === 'country') {
+				this.fieldData.county.values = _.chain(this.collection.where({country: selectedValue}))
+					.map(function(val) {
+						return val.attributes.county_name
+					})
+					.unique().value()
+			} else if (category === 'county') {
+				this.fieldData.spot.values = _.chain(this.collection.where({county: selectedValue}))
+					.map(function(val) {
+						return val.attributes.spot_name
+					})
+					.unique().value()
+			}
+
+			this.renderFields()
 		},
 
 		/**
@@ -63,7 +99,7 @@ define([
 				})
 				.unique().value()
 
-				this.renderFields(['country', 'county', 'spot'])
+				this.renderFields()
 		},
 
 		/**
@@ -79,7 +115,7 @@ define([
 				})
 				.unique().value()
 
-			this.renderFields(['country', 'county', 'spot'])
+			this.renderFields()
 		},
 
 		/**

@@ -1,6 +1,6 @@
-<select class="form-control location-select country-select">
-<option value="" disabled selected>Choose {{category}}...</option>
-{{#each arr}}
+<select class="form-control location-select country-select" data-category="{{category}}">
+<option value="" disabled selected>Choose {{title}}...</option>
+{{#each values}}
 	<option value="{{this}}" data-spotId="{{spotId}}">
 		{{this}}
 	</option>

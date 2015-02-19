@@ -19,7 +19,6 @@ define([
 		},
 
 		render: function(){
-			console.log(this.attributes)
 			this.$el.html(this.template(this.attributes))
 		},
 
