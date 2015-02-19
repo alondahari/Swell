@@ -3,46 +3,42 @@ define([
 	'handlebars',
 	'moment',
 	'text!templates/rate.html',
-	'text!templates/rate-field.html'
-], function(Backbone, handlebars, moment, template, fieldTemplate){
+	'views/rate-field'
+], function(Backbone, handlebars, moment, template, RateField){
 	'use strict';
 
 	return Backbone.View.extend({
 
-		el: $('.wrapper'),
-
 		template: handlebars.compile(template),
-		fieldTemplate: handlebars.compile(fieldTemplate),
 
-		ratings: {},
 		newRating: {},
 
-		fields: [
-			{
+		fields: {
+			overall: {
 				header: 'Overall Wave Quality',
 				max: 10,
 				unit: '/ 10',
-				id: 'overall',
+				fieldName: 'overall'
 			},
-			{
+			waveHeight: {
 				header: 'Wave Height',
 				max: 12,
 				unit: 'ft',
-				id: 'waveHeight',
+				fieldName: 'waveHeight'
 			},
-			{
+			wind: {
 				header: 'Wind',
 				max: 5,
 				unit: 'mph',
-				id: 'wind',
+				fieldName: 'wind'
 			},
-			{
+			crowd: {
 				header: 'Crowd',
 				max: 200,
 				unit: 'surfers',
-				id: 'crowd',
+				fieldName: 'crowd'
 			}
-		],
+		},
 
 		events: {
 			'change .rating-input-range': 'updateRatings',
@@ -52,20 +48,17 @@ define([
 		initialize: function(){
 			this.getAverages();
 			_.each(this.fields, function(field, i){
-				this.fields[i].value = 0
-				
 				this.fields[i].time = this.fields[i].time ? 
 					'Last updated ' + moment(this.fields[i].time).fromNow() :
 					'No Recent Updates'
 			}, this)
-			// this.listenTo(this.collection, 'change', this.updateRatings);
-			this.injectObject(this.fields, this.ratings);
 			this.render();
-			
 		},
 
 		render: function(){
 			this.$el.html(this.template({header: this.id}));
+			// not setting .wrapper as $el to keep all events within scope
+			$('.wrapper').html(this.el)
 			this.renderFields();
 		},
 
@@ -74,47 +67,34 @@ define([
 		 * refactor: make into a seperate view
 		 */
 		renderFields: function(){
-			this.$el.find('.ratings').html(this.fieldTemplate({fields: this.fields}));
+			this.rateFields = _.map(this.fields, this.renderField, this)
+		},
+
+		renderField: function(field){
+			var rateField = new RateField({attributes: field})
+			this.$el.find('.ratings').append(rateField.$el);
+			return rateField;
 		},
 
 		/**
 		 * reset fields, get available averages
 		 */
 		getAverages: function(){
-			_.each(this.fields, function(field, i){
-				this.ratings[field.id] = this.collection.getAverage(this.id, field.id)
-				this.fields[i].time = this.collection.getTime(this.id, field.id)
+			var fieldKeys = _.keys(this.fields)
+			_.each(fieldKeys, function(key, i){
+				this.fields[key].value = this.collection.getAverage(this.id, key)
+				this.fields[key].time = this.collection.getTime(this.id, key)
 			},this);
-		},
-
-		/**
-		 * Helper function to add an object to an array
-		 * used to insert ratings into their respective fields
-		 */
-		injectObject: function(arr, object){
-			_.each(arr, function(val){
-				val.value = object[val.id] !== undefined ? object[val.id] : val.value || 0;
-			},this);
-		},
-
-		/**
-		 * update the sliders view when the model updates
-		 */
-		updateRatings: function(e){
-			var target = $(e.target);
-			var field = target.data('field');
-
-			this.newRating.time = Date.now()
-			this.newRating.spot_name = this.id
-			// set the field, silent to not trigger 'change' twice
-			this.newRating[field] = parseFloat(target.val());
-
-			this.injectObject(this.fields, this.newRating);
-			this.renderFields();
 		},
 
 		submit: function(){
-			this.collection.create(this.newRating);
+			var newRating = {time: Date.now(), spot_name: this.id}
+			_.each(this.rateFields, function(field){
+				if (field.attributes.changed === true){
+					newRating[field.attributes.fieldName] = field.attributes.value
+				}
+			});
+			this.collection.create(newRating);
 		}
 
 

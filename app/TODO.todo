@@ -15,6 +15,7 @@ Phase 1:
   ✔ fix average: calculate time from 6 hours ago @done (15-02-18 14:40)
   ☐ test getAverage()
   ☐ visual input for ratings with no updates
+  ☐ migrate to foundation
 
 Phase 2:
   ✔ Create dummy login (no facebook login) @done (15-02-12 20:08)

@@ -28,7 +28,8 @@ require.config({
     backbone: '../../bower_components/backbone/backbone',
     localStorage: '../../bower_components/backbone.localStorage/backbone.localStorage',
     text: '../../bower_components/requirejs-text/text',
-    moment: '../../bower_components/moment/moment'
+    moment: '../../bower_components/moment/moment',
+    slider: '../../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider'
   }
 });
 
