@@ -24,7 +24,7 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 
 			return this.where({spot_name: spot_name})
 				.filter(function(val){
-					return (val.get('time') > cutOff && val.get(field));
+					return (val.get('time') > cutOff && val.toJSON().hasOwnProperty(field));
 				});
 		},
 

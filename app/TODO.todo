@@ -11,11 +11,11 @@ Phase 1:
   ☐ refactor location view to just filter everything on render
   ☐ add bootstrap sliders
   ☐ migarte to jade
-  ☐ fix 0 rating bug
+  ✔ fix 0 rating bug @done (15-02-18 20:35)
   ✔ fix average: calculate time from 6 hours ago @done (15-02-18 14:40)
   ☐ test getAverage()
   ☐ visual input for ratings with no updates
-  ☐ migrate to foundation
+  ✘ migrate to foundation @cancelled (15-02-18 20:34)
 
 Phase 2:
   ✔ Create dummy login (no facebook login) @done (15-02-12 20:08)

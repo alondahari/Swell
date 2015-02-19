@@ -18,6 +18,8 @@ define([
 
 		initialize: function(){
 			this.render()
+			// hide defauld slider tooltip
+			_.extend(this.attributes, {tooltip: 'hide'})
 			this.slider = this.$el.find('.rating-input-range').slider(this.attributes)
 		},
 
