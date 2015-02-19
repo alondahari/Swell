@@ -5,20 +5,15 @@ Phase 1:
   ☐ add validation?
   ☐ locations selects should open after choosing the upper one?
   ☐ locations auto populate if only one option
-  ✔ bug: ratings wouldn't save on demo @done (15-02-18 11:09)
   ☐ views to each rate field and location dropdown
   ☐ wind rating descriptions
   ☐ refactor location view to just filter everything on render
-  ☐ add bootstrap sliders
+  ✔ add bootstrap sliders @done (15-02-18 20:36)
   ☐ migarte to jade
-  ✔ fix 0 rating bug @done (15-02-18 20:35)
-  ✔ fix average: calculate time from 6 hours ago @done (15-02-18 14:40)
   ☐ test getAverage()
   ☐ visual input for ratings with no updates
-  ✘ migrate to foundation @cancelled (15-02-18 20:34)
 
 Phase 2:
-  ✔ Create dummy login (no facebook login) @done (15-02-12 20:08)
   ☐ Create dummy settings and account screens
   ☐ make login function with local JSON
   ☐ make settings functional + password change
@@ -52,6 +47,11 @@ Build:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ fix 0 rating bug @done (15-02-18 20:35) @project(Phase 1)
+ ✘ migrate to foundation @cancelled (15-02-18 20:34) @project(Phase 1)
+ ✔ fix average: calculate time from 6 hours ago @done (15-02-18 14:40) @project(Phase 1)
+ ✔ bug: ratings wouldn't save on demo @done (15-02-18 11:09) @project(Phase 1)
+ ✔ Create dummy login (no facebook login) @done (15-02-12 20:08) @project(Phase 2)
  ✘ Make navigation fully functional, with back buttons      @cancelled (15-02-12 18:32) @project(Phase 2)
  ✘ fix click on active tab behavior @cancelled (15-02-12 16:53) @project(Phase 1)
  ✔ create average ratings algorithms @done (15-02-12 16:53) @project(Phase 1)

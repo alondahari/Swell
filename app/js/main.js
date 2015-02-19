@@ -1,6 +1,3 @@
-/*global require*/
-'use strict';
-
 // Require.js allows us to configure shortcut alias
 require.config({
   // The shim config allows us to configure dependencies for
@@ -31,17 +28,17 @@ require.config({
     moment: '../../bower_components/moment/moment',
     slider: '../../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider'
   }
-});
+})
 
 require([
   'backbone',
   'routers/router'
   ], function(Backbone, Router){
 
-  new Router();
-  Backbone.history.start();
+  new Router()
+  Backbone.history.start()
 
-});
+})
 
 // cordova default snippet for later reference
 
@@ -50,17 +47,17 @@ require([
 //   templates: {},
 //   initialize: function() {
 //     /* we need to call use .bind to redefine `this` context inside app.start otherwise it will be the `global` window  */
-//     document.addEventListener('deviceready', app.start.bind(this), false);
+//     document.addEventListener('deviceready', app.start.bind(this), false)
 //   },
 //   start: function(){
-//     this.show(app.views.main);
+//     this.show(app.views.main)
 //   },
 //   show: function(view){
 //     if (this.currentView){
-//       this.currentView.stopListening();
-//     };
+//       this.currentView.stopListening()
+//     }
     
-//     this.currentView = view.render();
+//     this.currentView = view.render()
 //   }
 
-// };  
+// }  

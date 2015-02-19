@@ -23,7 +23,7 @@ define([
   	Rating,
   	Ratings
   ){
-	'use strict';
+	'use strict'
 
 	return Backbone.Router.extend({
 
@@ -37,34 +37,34 @@ define([
 		},
 
 		login: function(){
-			var users = new Users();
-			return new Login({collection: users});
+			var users = new Users()
+			return new Login({collection: users})
 		},
 
 		location: function(){			
-		  var spots = new Spots();
-		  return new LocationView({ collection: spots });
+		  var spots = new Spots()
+		  return new LocationView({ collection: spots })
 		},
 
 		spot: function(id){
-			var ratings = new Ratings();
-			return new RateView({ collection: ratings, id: id});
+			var ratings = new Ratings()
+			return new RateView({ collection: ratings, id: id})
 		},
 
 		/**
 		 * helper to initiate a default database into localStorage
 		 */
 		initDatabase: function(){
-			var spots = new Spots();
-			spots.fetch();
+			var spots = new Spots()
+			spots.fetch()
 
 			_.each(Database.surfSpots, function(val){
 				// create a new model and save it to localStorage
-				spots.create(val);
-			});
+				spots.create(val)
+			})
 
 		}
 
-	});
+	})
 
-});
+})

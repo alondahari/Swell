@@ -1,5 +1,5 @@
 define(['backbone'], function(Backbone){
-	'use strict';
+	'use strict'
 
 	return Backbone.Model.extend({
 
@@ -8,6 +8,6 @@ define(['backbone'], function(Backbone){
 			country: 'California'
 		}
 
-	});
+	})
 
-});
+})

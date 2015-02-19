@@ -5,7 +5,7 @@ define([
 	'text!templates/rate.html',
 	'views/rate-field'
 ], function(Backbone, handlebars, moment, template, RateField){
-	'use strict';
+	'use strict'
 
 	return Backbone.View.extend({
 
@@ -46,20 +46,20 @@ define([
 		},
 
 		initialize: function(){
-			this.getAverages();
+			this.getAverages()
 			_.each(this.fields, function(field, i){
 				this.fields[i].time = this.fields[i].time ? 
 					'Last updated ' + moment(this.fields[i].time).fromNow() :
 					'No Recent Updates'
 			}, this)
-			this.render();
+			this.render()
 		},
 
 		render: function(){
-			this.$el.html(this.template({header: this.id}));
+			this.$el.html(this.template({header: this.id}))
 			// not setting .wrapper as $el to keep all events within scope
 			$('.wrapper').html(this.el)
-			this.renderFields();
+			this.renderFields()
 		},
 
 		/**
@@ -72,8 +72,8 @@ define([
 
 		renderField: function(field){
 			var rateField = new RateField({attributes: field})
-			this.$el.find('.ratings').append(rateField.$el);
-			return rateField;
+			this.$el.find('.ratings').append(rateField.$el)
+			return rateField
 		},
 
 		/**
@@ -84,7 +84,7 @@ define([
 			_.each(fieldKeys, function(key, i){
 				this.fields[key].value = this.collection.getAverage(this.id, key)
 				this.fields[key].time = this.collection.getTime(this.id, key)
-			},this);
+			},this)
 		},
 
 		submit: function(){
@@ -93,11 +93,11 @@ define([
 				if (field.attributes.changed === true){
 					newRating[field.attributes.fieldName] = field.attributes.value
 				}
-			});
-			this.collection.create(newRating);
+			})
+			this.collection.create(newRating)
 		}
 
 
-	});
+	})
 
-});
+})

@@ -4,7 +4,7 @@ define([
 	'models/spot',
 	'database'
 	], function(Backbone, Store, spot, database){
-	'use strict';
+	'use strict'
 	
 	return Backbone.Collection.extend({
 		
@@ -13,9 +13,9 @@ define([
 		localStorage: new Store('surfSpots'),
 
 		initialize: function(){
-			this.fetch();
+			this.fetch()
 		}
 
-	});
+	})
 
-});
+})

@@ -4,7 +4,7 @@ define([
 	'slider',
 	'text!templates/rate-field.html'
 ], function(Backbone, handlebars, slider, template){
-	'use strict';
+	'use strict'
 
 	return Backbone.View.extend({
 
@@ -33,6 +33,6 @@ define([
 			this.attributes.changed = true
 		}
 
-	});
+	})
 
-});
+})

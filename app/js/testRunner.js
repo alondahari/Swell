@@ -1,6 +1,3 @@
-/*global require*/
-'use strict';
-
 // Require.js allows us to configure shortcut alias
 require.config({
   // The shim config allows us to configure dependencies for
@@ -32,7 +29,7 @@ require.config({
     moment: '../../bower_components/moment/moment',
     slider: '../../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider'
   }
-});
+})
 
 require([
   'backbone',
@@ -40,6 +37,6 @@ require([
   '/app/test/spec/collections/ratings.js'
   ],
   function(backbone, spec ){
-    window.executeTests();
+    window.executeTests()
 
-});
+})

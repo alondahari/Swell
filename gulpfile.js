@@ -1,6 +1,6 @@
 /* define cli flags */
 var argv = require('yargs').argv
-  , production = !!(argv.production);
+  , production = !!(argv.production)
 
 /* load all plugins*/
 var gulp = require('gulp')
@@ -16,12 +16,12 @@ var gulp = require('gulp')
   , connect = require('gulp-connect')
   , watch = require('gulp-watch')
   , prefix = require('gulp-autoprefixer')
-  , del = require('del');
+  , del = require('del')
 
 
 /* define some sugar syntax */
 var log = gutil.log
-  , noop = gutil.noop;
+  , noop = gutil.noop
 
 var source = 'app/'
   , dist   = 'www/'
@@ -31,14 +31,14 @@ var source = 'app/'
     js    : source + 'js/**/*.js',
     vendors: source + 'vendors/**/*.js',
     images: source + '/img/**'
-  };
+  }
 
 gulp.task('clean', function (cb) {  
   del([
     '!'+dist+'.gitkeep',
     dist + '**/*'
-  ], cb);
-});
+  ], cb)
+})
 
 gulp.task('sass', function () {
     gulp.src('./app/scss/*.scss')
@@ -46,8 +46,8 @@ gulp.task('sass', function () {
       .pipe(sass())
       .pipe(sourcemaps.write())
       .pipe(prefix())
-      .pipe(gulp.dest('./app/css'));
-});
+      .pipe(gulp.dest('./app/css'))
+})
 
 
 gulp.task('usemin', function(){
@@ -58,8 +58,8 @@ gulp.task('usemin', function(){
       js: [uglify(), rev()],
       vendors: [uglify()]
     }))
-    .pipe(gulp.dest(dist));
-});
+    .pipe(gulp.dest(dist))
+})
 
 gulp.task('useapp', function(){
   return gulp.src([
@@ -67,42 +67,42 @@ gulp.task('useapp', function(){
       paths.css, 
       paths.js, 
       paths.vendors], {base: source})
-    .pipe(gulp.dest(dist));
-});
+    .pipe(gulp.dest(dist))
+})
 
 gulp.task('images', function(){
   return gulp.src(paths.images, {base: source})
-    .pipe(gulp.dest(dist));
-});
+    .pipe(gulp.dest(dist))
+})
 
 gulp.task('watch', function() {
-  gulp.watch('app/scss/*.scss', ['sass']);
-});
+  gulp.watch('app/scss/*.scss', ['sass'])
+})
 
 
 gulp.task('build', function(){
-    log('building for ' + (production ? 'production' : 'development'));
+    log('building for ' + (production ? 'production' : 'development'))
     if (production)
-      runSequence('clean', 'usemin', 'images');
+      runSequence('clean', 'usemin', 'images')
     else
-      runSequence('clean', 'useapp', 'images');
-});
+      runSequence('clean', 'useapp', 'images')
+})
 
 gulp.task('livereload', function() {
   gulp.src(['app/css/*.css', 'app/js/*.js'])
     .pipe(watch(['app/**/*.css', 'app/**/*.js', 'app/**/*.html']))
-    .pipe(connect.reload());
-});
+    .pipe(connect.reload())
+})
 
 gulp.task('serve', function() {
   connect.server({
     livereload: true
   })
-});
+})
 
 gulp.task('default', ['sass', 'serve', 'livereload', 'watch'],function(){
-  log('available tasks:');
-  log('  gulp serve (serve content locally for development)');
-  log('  gulp build (build for developement)');
-  log('  gulp build --production (build for production)');
+  log('available tasks:')
+  log('  gulp serve (serve content locally for development)')
+  log('  gulp build (build for developement)')
+  log('  gulp build --production (build for production)')
 })

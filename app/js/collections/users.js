@@ -4,7 +4,7 @@ define([
 	'models/user',
 	'database'
 	], function(Backbone, Store, user, database){
-	'use strict';
+	'use strict'
 	
 	return Backbone.Collection.extend({
 		
@@ -13,9 +13,9 @@ define([
 		localStorage: new Store('users'),
 
 		initialize: function(){
-			this.fetch();
+			this.fetch()
 		}
 
-	});
+	})
 
-});
+})
