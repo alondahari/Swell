@@ -51,11 +51,11 @@ define([
       var spot;
       it("should create a new view on the wrapper", function() {
         spot = router.spot('spot-id');
-        expect(spot.$el.selector).toEqual('.wrapper');
+        expect(spot.id).toEqual('spot-id');
       });
       it("should instantiate a view with a collection", function() {
         expect(spot.collection).toEqual(jasmine.any(Backbone.Collection));
-        expect(spot.id).toEqual('spot-id');
+        
       });
     });
 

@@ -5,13 +5,22 @@ define([
   ) {
 
 	describe("ratings collection", function() {
-
-		beforeEach(function(){
+		
+		it("should fetch all ratings on init", function() {
 			ratings = new Ratings()
+			var localStorageKeys = _.keys(localStorage)
+			var localRatings = _.filter(localStorageKeys, function(val){
+				return val.indexOf('ratings-') >= 0
+			})
+			expect(ratings.length).toEqual(localRatings.length)
+		});
+
+		it("should filter out irrelevant ratings", function() {
 			cutOff = 100
 			field = "overall"
 			spot_name = "Ward Avenue"
-			fakeRatings = [
+			// fakeRatings = [
+			ratings = new Ratings([
 				// different spot - filter out
 				{
 					crowd: 51,
@@ -35,28 +44,16 @@ define([
 				},
 				// keep
 				{
-					overall: 5,
+					overall: 0,
 					spot_name: "Ward Avenue",
 					time: 101
 				}
-			]
-		})
-		
-		it("should fetch all ratings on init", function() {
-			var localStorageKeys = _.keys(localStorage)
-			var localRatings = _.filter(localStorageKeys, function(val){
-				return val.indexOf('ratings-') >= 0
-			})
-			expect(ratings.length).toEqual(localRatings.length)
-		});
-
-		it("should filter out irrelevant ratings", function() {
-			
-			ratings.filterRatings.bind(fakeRatings);
-			var filtered = ratings.filterRatings(cutOff, spot_name, field)
+			])
+			// why doesn't this work?			
+			var filtered = ratings.filterRatings(cutOff, spot_name, field);
 
 			expect(filtered.length).toBe(1)
-			expect(filtered[0].get('overall')).toBe(5)
+			expect(filtered[0].get('overall')).toBe(0)
 
 		});
 
