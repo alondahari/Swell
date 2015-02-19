@@ -10,11 +10,7 @@ define([
 		template: handlebars.compile(template),
 
 		events: {
-			// @refactor: combine into one event handler
-			// @refactor: capitalize field categories
-			'change .country-select': 'countryChange',
-			'change .county-select': 'countyChange',
-			'change .spot-select': 'spotChange'
+			// 'change': 'spotChange'
 		},
 
 		initialize: function(){
