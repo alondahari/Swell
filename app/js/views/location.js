@@ -1,9 +1,9 @@
 define([
 	'backbone',
-	'handlebars',
+	'jade',
 	'views/location-select',
-	'text!templates/location.html'
-], function(Backbone, handlebars, Select, template){
+	'text!templates/location.jade'
+], function(Backbone, jade, Select, template){
 	'use strict'
 
 	return Backbone.View.extend({
@@ -11,19 +11,22 @@ define([
 		fieldData: {
 			country: {
 				category: 'country',
-				title: 'Country'
+				title: 'Country',
+				values: []
 			},
 			county: {
 				category: 'county',
-				title: 'County'
+				title: 'County',
+				values: []
 			},
 			spot: {
 				category: 'spot',
-				title: 'Surf Spot'
+				title: 'Surf Spot',
+				values: []
 			}
 		},
 
-		template: handlebars.compile(template),
+		template: jade.compile(template),
 
 		events: {
 			// @refactor: combine into one event handler

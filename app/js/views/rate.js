@@ -1,15 +1,15 @@
 define([
 	'backbone',
-	'handlebars',
+	'jade',
 	'moment',
-	'text!templates/rate.html',
+	'text!templates/rate.jade',
 	'views/rate-field'
-], function(Backbone, handlebars, moment, template, RateField){
+], function(Backbone, jade, moment, template, RateField){
 	'use strict'
 
 	return Backbone.View.extend({
 
-		template: handlebars.compile(template),
+		template: jade.compile(template),
 
 		newRating: {},
 

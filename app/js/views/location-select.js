@@ -1,13 +1,13 @@
 define([
 	'backbone',
-	'handlebars',
-	'text!templates/location-select.html'
-], function(Backbone, handlebars, template){
+	'jade',
+	'text!templates/location-select.jade'
+], function(Backbone, jade, template){
 	'use strict'
 
 	return Backbone.View.extend({
 
-		template: handlebars.compile(template),
+		template: jade.compile(template),
 
 		events: {
 			// 'change': 'spotChange'
@@ -19,6 +19,7 @@ define([
 		},
 
 		render: function(){
+			console.log(this.attributes);
 			this.$el.html(this.template(this.attributes))
 		},
 

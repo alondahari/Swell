@@ -1,15 +1,15 @@
 define([
 	'backbone',
-	'handlebars',
-	'text!templates/login.html'
-], function(Backbone, handlebars, template){
+	'jade',
+	'text!templates/login.jade'
+], function(Backbone, jade, template){
 	'use strict'
 
 	return Backbone.View.extend({
 
 		el: $('.wrapper'),
 
-		template: handlebars.compile(template),
+		template: jade.compile(template),
 
 		initialize: function(){
 			this.render()

@@ -1,16 +1,16 @@
 define([
 	'backbone',
-	'handlebars',
+	'jade',
 	'slider',
-	'text!templates/rate-field.html'
-], function(Backbone, handlebars, slider, template){
+	'text!templates/rate-field.jade'
+], function(Backbone, jade, slider, template){
 	'use strict'
 
 	return Backbone.View.extend({
 
 		className: 'row',
 
-		template: handlebars.compile(template),
+		template: jade.compile(template),
 
 		events: {
 			'change': 'updateRatings'

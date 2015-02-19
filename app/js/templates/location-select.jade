@@ -1,0 +1,4 @@
+select.form-control.location-select.country-select(data-category=category)
+	option(value="", disabled, selected) Choose #{title}...
+	each value in values
+		option(value=value, data-spotId=spotId)= value
