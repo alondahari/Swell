@@ -21,6 +21,8 @@ define([
 			// hide defauld slider tooltip
 			_.extend(this.attributes, {tooltip: 'hide'})
 			this.slider = this.$el.find('.rating-input-range').slider(this.attributes)
+			// update ratings to format wind - unnecessary if splitting rate and view
+			this.updateRatings()
 		},
 
 		render: function(){
@@ -28,9 +30,26 @@ define([
 		},
 
 		updateRatings: function(){
-			this.attributes.value = this.slider.slider('getValue')
-			this.$el.find('.rating-value').text(this.attributes.value)
+
+			this.attributes.value = this.attributes.displayValue = this.slider.slider('getValue')
+			console.log(this.slider.slider('getValue'));
+			if (this.attributes.fieldName === 'wind') {
+				this.attributes.displayValue = this.formatWindValue(this.slider.slider('getValue'))
+			}
+
+			this.$el.find('.rating-value').text(this.attributes.displayValue)
 			this.attributes.changed = true
+		},
+
+		formatWindValue: function(val){
+			var values = [
+				'None (0-3 knots)',
+				'Calm (4-9 knots)',
+				'Strong (10-20 knots)',
+				'High (20-40 knots)',
+				'Stormy (40+ knots)'
+			]
+			return values[val]
 		}
 
 	})

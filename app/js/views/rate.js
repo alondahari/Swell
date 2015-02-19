@@ -28,8 +28,8 @@ define([
 			},
 			wind: {
 				header: 'Wind',
-				max: 5,
-				unit: 'mph',
+				max: 4,
+				unit: '',
 				fieldName: 'wind'
 			},
 			crowd: {
@@ -88,6 +88,7 @@ define([
 		},
 
 		submit: function(){
+			console.log(this.rateFields);
 			var newRating = {time: Date.now(), spot_name: this.id}
 			_.each(this.rateFields, function(field){
 				if (field.attributes.changed === true){

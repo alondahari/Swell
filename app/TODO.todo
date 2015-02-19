@@ -1,11 +1,11 @@
 Phase 1:
   ☐ Add search box
   ☐ refactor @ location view
-  ☐ location.js: pass spot_id to option fields
+  ✔ location.js: pass spot_id to option fields @done (15-02-19 12:26)
   ✘ add validation? @cancelled (15-02-19 12:11)
-  ☐ locations selects should open after choosing the upper one?
-  ☐ views to each rate field and location dropdown
-  ☐ wind rating descriptions
+  ✘ locations selects should open after choosing the upper one? @cancelled (15-02-19 12:27)
+  ✔ views to each rate field and location dropdown @done (15-02-19 12:27)
+  ✔ wind rating descriptions @done (15-02-19 15:03)
   ☐ refactor location view to just filter everything on render
   ☐ test getAverage()
   ☐ visual input for ratings with no updates
