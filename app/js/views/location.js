@@ -59,10 +59,13 @@ define([
 				.append(selectField.$el)
 				// @refactor: move to template
 				.prop('disabled', !(this[field] && this[field].length) )
-				.focus()
-				// trigger change to disable button when country change 
-				// doesn't trigger on it's own?
-				.trigger('change')
+
+			// select a value if it's the only one and render following field
+			if (field.values.length === 1){
+				var category = field.category
+				var selectedValue = selectField.$el.find(':selected').val()
+				this.populateChildrenFields(category, selectedValue)
+			}
 		},
 
 		fieldChange: function(e){
@@ -71,6 +74,12 @@ define([
 			var selectedValue = $target.find(':selected').val()
 			this.fieldData[category].selected = selectedValue
 
+			this.populateChildrenFields(category, selectedValue)
+
+			this.renderFields()
+		},
+
+		populateChildrenFields: function(category, selectedValue){
 			if (category === 'country') {
 				this.fieldData.county.values = _.chain(this.collection.where({country: selectedValue}))
 					.map(function(val) {
@@ -84,8 +93,6 @@ define([
 					})
 					.unique().value()
 			}
-
-			this.renderFields()
 		},
 
 		/**

@@ -90,7 +90,7 @@ gulp.task('build', function(){
 
 gulp.task('livereload', function() {
   gulp.src(['app/css/*.css', 'app/js/*.js'])
-    .pipe(watch(['app/**/*.css', 'app/**/*.js', 'app/**/*.html']))
+    .pipe(watch(['app/**/*.css', 'app/**/*.js', 'app/**/*.jade', 'app/index.html']))
     .pipe(connect.reload())
 })
 

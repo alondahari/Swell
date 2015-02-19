@@ -4,12 +4,12 @@ Phase 1:
   ☐ location.js: pass spot_id to option fields
   ☐ add validation?
   ☐ locations selects should open after choosing the upper one?
-  ☐ locations auto populate if only one option
+  ✔ locations auto populate if only one option @done (15-02-19 11:32)
   ☐ views to each rate field and location dropdown
   ☐ wind rating descriptions
   ☐ refactor location view to just filter everything on render
   ✔ add bootstrap sliders @done (15-02-18 20:36)
-  ☐ migarte to jade
+  ✔ migarte to jade @done (15-02-19 10:58)
   ☐ test getAverage()
   ☐ visual input for ratings with no updates
 

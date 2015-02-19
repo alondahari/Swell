@@ -1,4 +1,4 @@
-select.form-control.location-select.country-select(data-category=category)
-	option(value="", disabled, selected) Choose #{title}...
+select.form-control.location-select(data-category=category)
+	option(value="", disabled, selected=(values.length != 1)) Choose #{title}...
 	each value in values
-		option(value=value, data-spotId=spotId)= value
+		option(value=value, data-spotId=spotId, selected=(selected === value))= value

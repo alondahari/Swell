@@ -9,17 +9,12 @@ define([
 
 		template: jade.compile(template),
 
-		events: {
-			// 'change': 'spotChange'
-		},
-
 		initialize: function(){
 			this.render()
 
 		},
 
 		render: function(){
-			console.log(this.attributes);
 			this.$el.html(this.template(this.attributes))
 		},
 
