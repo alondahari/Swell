@@ -29,7 +29,6 @@ define([
 			wind: {
 				header: 'Wind',
 				max: 4,
-				unit: '',
 				fieldName: 'wind'
 			},
 			crowd: {
@@ -87,14 +86,28 @@ define([
 			},this)
 		},
 
+		// hacky... bad...
+		decypherWindValue: function(val){
+			var values = [
+				'None (0-3 knots)',
+				'Calm (4-9 knots)',
+				'Strong (10-20 knots)',
+				'High (20-40 knots)',
+				'Stormy (40+ knots)'
+			]
+			return _.indexOf(values, val)
+		},
+
 		submit: function(){
-			console.log(this.rateFields);
 			var newRating = {time: Date.now(), spot_name: this.id}
 			_.each(this.rateFields, function(field){
+				if (field.attributes.fieldName === 'wind') {
+					field.attributes.value = this.decypherWindValue(field.attributes.value)
+				}
 				if (field.attributes.changed === true){
 					newRating[field.attributes.fieldName] = field.attributes.value
 				}
-			})
+			},this)
 			this.collection.create(newRating)
 		}
 

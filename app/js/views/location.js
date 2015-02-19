@@ -38,6 +38,7 @@ define([
 			this.fieldData.country.values = _.unique(this.collection.pluck('country'))
 			this.render()
 
+
 		},
 
 		render: function(){
