@@ -125,27 +125,37 @@ define([
 		
 
 		searchbox: function(){
-			
-			var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-			  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-			  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-			  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-			  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-			  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-			  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-			  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-			  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-			];
+
+			var countries = [],
+					counties = [],
+					spots = []
+
+			_.each(this.collection.toJSON(), function(spot){
+				countries.push(spot.country)
+				counties.push(spot.county_name + ', ' + spot.country)
+				spots.push(spot.spot_name + ' (' + spot.county_name + ', ' + spot.country + ')')
+			})
+
+			var countries = _.unique(countries)
+			var counties = _.unique(counties)
 
 			this.$el.find('.typehead').typeahead({
-			  hint: true,
-			  highlight: true,
-			  minLength: 1
+			  highlight: true
 			},
 			{
-			  name: 'states',
+			  name: 'countries',
 			  displayKey: 'value',
-			  source: this.substringMatcher(states)
+			  source: this.substringMatcher(countries)
+			},
+			{
+			  name: 'counties',
+			  displayKey: 'value',
+			  source: this.substringMatcher(counties),
+			},
+			{
+			  name: 'spots',
+			  displayKey: 'value',
+			  source: this.substringMatcher(spots),
 			})
 		},
 
