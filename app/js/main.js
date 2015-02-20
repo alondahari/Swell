@@ -26,7 +26,8 @@ require.config({
     localStorage: '../../bower_components/backbone.localStorage/backbone.localStorage',
     text: '../../bower_components/requirejs-text/text',
     moment: '../../bower_components/moment/moment',
-    slider: '../../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider'
+    slider: '../../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider',
+    typehead: '../../bower_components/typeahead.js/dist/typeahead.bundle'
   }
 })
 
