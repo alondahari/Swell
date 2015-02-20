@@ -9,6 +9,7 @@ Phase 1:
   ✔ refactor location view to just filter everything on render @done (15-02-19 15:57)
   ☐ test getAverage()
   ☐ visual input for ratings with no updates
+  ☐ allow dyping in select boxes
 
 Phase 2:
   ☐ Create dummy settings and account screens
