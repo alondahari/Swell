@@ -3,59 +3,95 @@ var js = require('jsonfile');
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
+var home = 'http://en.wannasurf.com'
 
-var getZone = function(data){
-  var zone = data.text()
+var getSpot = function(url){
+  if (hasGPS($(this))) {
+    url = home + url
+    setTimeout(function(){
+      console.log('going to ' + url)
+      request(url, function(error, response, html){
+        var $ = cheerio.load(html);
 
-  // json.push(zone)
+        var GPS = $('.wanna-item-label-gps').parent().text()
+        console.log({
+          gps: gps,
+          url: url          
+        })
+        pushToJSON({
+          gps: gps,
+          url: url          
+        })        
+      })
+    }, 5000)
+  }
+}
 
-  url = data.attr('href')
+var getZone = function(url){
+  url = home + url
+  setTimeout(function(){
+    console.log('going to ' + url)
+    request(url, function(error, response, html){
+      var $ = cheerio.load(html);
+      $('.wanna-item').filter(function(){
+        var data = $(this);
+        if (data.text() === "Zones") {
+          data.next().find('a.wanna-tabzonespot-item-title').filter(function(){
+            getZone(link.attr('href'))
+          })
+        } else if (data.text() === "Surf Spots"){
+          data.next().find('a.wanna-tabzonespot-item-title').filter(function(){
+            getSpot(link.attr('href'))
+          })        
+        }
+        
 
-  request(url, function(error, response, html){
-    $('.wanna-item').filter(function(){
-      var data = $(this);
-
-      
-
+      })
     })
+  }, 5000)
+};
+
+var pushToJSON = function(spot){
+  js.readFile('./output.json', function(err, json){
+    json.push(spot)
+    js.writeFile('./output.json', json, function(){})
   })
+};
+
+var hasGPS = function(link){
+  var a = link.parent().next().next().children().length
+  return a
 };
 
 app.get('/scrape', function(req, res){
 
-  url = 'http://en.wannasurf.com/spot/North_America/USA/California/';
+  var url = home;
 
   request(url, function(error, response, html){
-
     var $ = cheerio.load(html);
 
-    var json = []
+    $('#wanna-continent option').filter(function(){
+      // filter out description options
+      if (!$(this).attr('value')) return false
 
-    $('.wanna-tabzonespot-item-title').filter(function(){
-      var data = $(this);
+      var url = home + $(this).attr('value')
 
-      
+      setTimeout(function(){
+        console.log('going to ' + url)
+        request(url, function(error, response, html){
+          var $ = cheerio.load(html)
 
-    })
-
-    // $('span.wanna-item-label-gps').parent('p').filter(function(){
-    //   var data = $(this);
-
-    //   var gps = data.text();
-
-    //   // var lat = gps.match(/Lat.+\\/)
-    //   // var long = gps.match(/Long.+/)[0]
-
-    //   json.gps = gps
-    // })
-    js.writeFile('./output.json', json, function(err){
-
-      console.log('File successfully written! - Check your project directory for the output.json file');
+          $('.wanna-sublink.countryWithSpot').filter(function(){
+            var url = $(this).attr('href')
+            getZone(url)
+          })
+        })
+      }, 5000)
 
     })
 
 
-    // Finally, we'll just send out a message to the browser reminding you that this app does not have a UI.
+
     res.send('Check your console!')
 
   })
