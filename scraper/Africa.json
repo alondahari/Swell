@@ -1,718 +1,1076 @@
 [
   {
-    "gps": "36.51788,7.46946",
-    "url": "/spot/Africa/Algeria/Annaba/index.html"
+    "continent": "Africa",
+    "country": "Algeria",
+    "spot": "Annaba",
+    "gps": "36.51788,7.46946"
   },
   {
-    "gps": "36.36684,2.12248",
-    "url": "/spot/Africa/Algeria/cherchell_tizirine/index.html"
+    "continent": "Africa",
+    "country": "Algeria",
+    "spot": "Cherchell tizirine",
+    "gps": "36.36684,2.12248"
   },
   {
-    "gps": "36.47209,3.1941",
-    "url": "/spot/Africa/Algeria/Decaplage/index.html"
+    "continent": "Africa",
+    "country": "Algeria",
+    "spot": "Decaplage",
+    "gps": "36.47209,3.1941"
   },
   {
-    "gps": "36.53906,8.2581",
-    "url": "/spot/Africa/Algeria/Plage_Mordjane/index.html"
+    "continent": "Africa",
+    "country": "Algeria",
+    "spot": "Plage Mordjane",
+    "gps": "36.53906,8.2581"
   },
   {
-    "gps": "-9.21599,13.912",
-    "url": "/spot/Africa/Angola/barra/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Barra",
+    "gps": "-9.21599,13.912"
   },
   {
-    "gps": "-9.1658,13.0112",
-    "url": "/spot/Africa/Angola/buraco/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Buraco",
+    "gps": "-9.1658,13.0112"
   },
   {
-    "gps": "-5.2486,12.12303",
-    "url": "/spot/Africa/Angola/cabgo/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Cabgo",
+    "gps": "-5.2486,12.12303"
   },
   {
-    "gps": "-9.40594,13.11937",
-    "url": "/spot/Africa/Angola/cabo_ledo/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Cabo ledo",
+    "gps": "-9.40594,13.11937"
   },
   {
-    "gps": "-8.49441,13.12182",
-    "url": "/spot/Africa/Angola/chicala/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Chicala",
+    "gps": "-8.49441,13.12182"
   },
   {
-    "gps": "-9.15023,13.5516",
-    "url": "/spot/Africa/Angola/miradouro/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Miradouro",
+    "gps": "-9.15023,13.5516"
   },
   {
-    "gps": "-8.517,13.9368",
-    "url": "/spot/Africa/Angola/mussulo/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Mussulo",
+    "gps": "-8.517,13.9368"
   },
   {
-    "gps": "-11.19022,13.4868",
-    "url": "/spot/Africa/Angola/quicombo/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Quicombo",
+    "gps": "-11.19022,13.4868"
   },
   {
-    "gps": "-9.6533,12.59974",
-    "url": "/spot/Africa/Angola/shipwreck/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Shipwreck",
+    "gps": "-9.6533,12.59974"
   },
   {
-    "gps": "-11.13618,13.50031",
-    "url": "/spot/Africa/Angola/sumbe/index.html"
+    "continent": "Africa",
+    "country": "Angola",
+    "spot": "Sumbe",
+    "gps": "-11.13618,13.50031"
   },
   {
-    "gps": "6.21024,2.26065",
-    "url": "/spot/Africa/Benin/la_Méduse/index.html"
+    "continent": "Africa",
+    "country": "Benin",
+    "spot": "La Méduse",
+    "gps": "6.21024,2.26065"
   },
   {
-    "gps": "6.20942,2.20331",
-    "url": "/spot/Africa/Benin/La_routes_des_pêches/index.html"
+    "continent": "Africa",
+    "country": "Benin",
+    "spot": "La routes des pêches",
+    "gps": "6.20942,2.20331"
   },
   {
-    "gps": "2.56005,9.5429",
-    "url": "/spot/Africa/Cameroon/Kribi/index.html"
+    "continent": "Africa",
+    "country": "Cameroon",
+    "spot": "Kribi",
+    "gps": "2.56005,9.5429"
   },
   {
-    "gps": "4.101,9.6172",
-    "url": "/spot/Africa/Cameroon/Lonely_Left/index.html"
+    "continent": "Africa",
+    "country": "Cameroon",
+    "spot": "Lonely Left",
+    "gps": "4.101,9.6172"
   },
   {
-    "gps": "4.0713,9.8376",
-    "url": "/spot/Africa/Cameroon/Seme_Beach__Limbe/index.html"
+    "continent": "Africa",
+    "country": "Cameroon",
+    "spot": "Seme Beach  Limbe",
+    "gps": "4.0713,9.8376"
   },
   {
-    "gps": "14.55001,-23.30368",
-    "url": "/spot/Africa/Cape_Verde/Coca_s_Beach_Praia/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Coca's Beach Praia",
+    "gps": "14.55001,-23.30368"
   },
   {
-    "gps": "14.54151,-23.3136",
-    "url": "/spot/Africa/Cape_Verde/Coragi/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Coragi",
+    "gps": "14.54151,-23.3136"
   },
   {
-    "gps": "16.55339,-25.18814",
-    "url": "/spot/Africa/Cape_Verde/curralinho/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Curralinho",
+    "gps": "16.55339,-25.18814"
   },
   {
-    "gps": "16.45127,-22.58746",
-    "url": "/spot/Africa/Cape_Verde/Palmeira_-_ilha_do_sal/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Palmeira - ilha do sal",
+    "gps": "16.45127,-22.58746"
   },
   {
-    "gps": "16.3675,-22.55955",
-    "url": "/spot/Africa/Cape_Verde/ponta_preda/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Ponta preda",
+    "gps": "16.3675,-22.55955"
   },
   {
-    "gps": "16.8514,-22.54426",
-    "url": "/spot/Africa/Cape_Verde/Praia_do_Chaves/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Praia do Chaves",
+    "gps": "16.8514,-22.54426"
   },
   {
-    "gps": "14.54957,-23.30324",
-    "url": "/spot/Africa/Cape_Verde/Praia_Negra/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Praia Negra",
+    "gps": "14.54957,-23.30324"
   },
   {
-    "gps": "16.51802,-24.52743",
-    "url": "/spot/Africa/Cape_Verde/Sandy_Beach_-_Sao_Vincente/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Sandy Beach - Sao Vincente",
+    "gps": "16.51802,-24.52743"
   },
   {
-    "gps": "15.5962,-22.53689",
-    "url": "/spot/Africa/Cape_Verde/Santa_Monica__Boa_Vista/index.html"
+    "continent": "Africa",
+    "country": "Cape Verde",
+    "spot": "Santa Monica  Boa Vista",
+    "gps": "15.5962,-22.53689"
   },
   {
-    "gps": "-4.48792,11.50596",
-    "url": "/spot/Africa/Congo/cote_sauvage/index.html"
+    "continent": "Africa",
+    "country": "Congo",
+    "spot": "Cote sauvage",
+    "gps": "-4.48792,11.50596"
   },
   {
-    "gps": "-4.464,11.49514",
-    "url": "/spot/Africa/Congo/le_piege/index.html"
+    "continent": "Africa",
+    "country": "Congo",
+    "spot": "Le piege",
+    "gps": "-4.464,11.49514"
   },
   {
-    "gps": "31.7674,29.46398",
-    "url": "/spot/Africa/Egypt/Agami/index.html"
+    "continent": "Africa",
+    "country": "Egypt",
+    "spot": "Agami",
+    "gps": "31.7674,29.46398"
   },
   {
-    "gps": "31.15718,29.58886",
-    "url": "/spot/Africa/Egypt/El_Corniche/index.html"
+    "continent": "Africa",
+    "country": "Egypt",
+    "spot": "El Corniche",
+    "gps": "31.15718,29.58886"
   },
   {
-    "gps": "31.16814,30.0522",
-    "url": "/spot/Africa/Egypt/Mandara/index.html"
+    "continent": "Africa",
+    "country": "Egypt",
+    "spot": "Mandara",
+    "gps": "31.16814,30.0522"
   },
   {
-    "gps": "25.6488,34.52932",
-    "url": "/spot/Africa/Egypt/Marsa_Alaam/index.html"
+    "continent": "Africa",
+    "country": "Egypt",
+    "spot": "Marsa Alaam",
+    "gps": "25.6488,34.52932"
   },
   {
-    "gps": "31.14943,29.58083",
-    "url": "/spot/Africa/Egypt/Ramadas/index.html"
+    "continent": "Africa",
+    "country": "Egypt",
+    "spot": "Ramadas",
+    "gps": "31.14943,29.58083"
   },
   {
-    "gps": "30.52399,29.19666",
-    "url": "/spot/Africa/Egypt/Rowad_Resort__North_coast/index.html"
+    "continent": "Africa",
+    "country": "Egypt",
+    "spot": "Rowad Resort  North coast",
+    "gps": "30.52399,29.19666"
   },
   {
-    "gps": "31.12729,29.54923",
-    "url": "/spot/Africa/Egypt/Shatby/index.html"
+    "continent": "Africa",
+    "country": "Egypt",
+    "spot": "Shatby",
+    "gps": "31.12729,29.54923"
   },
   {
-    "gps": "0.19435,9.18675",
-    "url": "/spot/Africa/Gabon/gomb/index.html"
+    "continent": "Africa",
+    "country": "Gabon",
+    "spot": "Gomb",
+    "gps": "0.19435,9.18675"
   },
   {
-    "gps": "0.26158,9.24995",
-    "url": "/spot/Africa/Gabon/guegue/index.html"
+    "continent": "Africa",
+    "country": "Gabon",
+    "spot": "Guegue",
+    "gps": "0.26158,9.24995"
   },
   {
-    "gps": "13.2498,-16.44837",
-    "url": "/spot/Africa/Gambia/Kololi_Kotu___Kombo/index.html"
+    "continent": "Africa",
+    "country": "Gambia",
+    "spot": "Kololi Kotu   Kombo",
+    "gps": "13.2498,-16.44837"
   },
   {
-    "gps": "13.869,-16.466",
-    "url": "/spot/Africa/Gambia/secret_bay_/index.html"
+    "continent": "Africa",
+    "country": "Gambia",
+    "spot": "Secret bay ",
+    "gps": "13.869,-16.466"
   },
   {
-    "gps": "13.26706,-16.43533",
-    "url": "/spot/Africa/Gambia/Senegambia_Beach/index.html"
+    "continent": "Africa",
+    "country": "Gambia",
+    "spot": "Senegambia Beach",
+    "gps": "13.26706,-16.43533"
   },
   {
-    "gps": "4.51489,-2.14748",
-    "url": "/spot/Africa/Ghana/axim/index.html"
+    "continent": "Africa",
+    "country": "Ghana",
+    "spot": "Axim",
+    "gps": "4.51489,-2.14748"
   },
   {
-    "gps": "4.48402,-1.55676",
-    "url": "/spot/Africa/Ghana/busua_beach_island/index.html"
+    "continent": "Africa",
+    "country": "Ghana",
+    "spot": "Busua beach island",
+    "gps": "4.48402,-1.55676"
   },
   {
-    "gps": "4.44703,-2.4989",
-    "url": "/spot/Africa/Ghana/Cape_Three_Points/index.html"
+    "continent": "Africa",
+    "country": "Ghana",
+    "spot": "Cape Three Points",
+    "gps": "4.44703,-2.4989"
   },
   {
-    "gps": "4.45051,-2.2741",
-    "url": "/spot/Africa/Ghana/Katakor/index.html"
+    "continent": "Africa",
+    "country": "Ghana",
+    "spot": "Katakor",
+    "gps": "4.45051,-2.2741"
   },
   {
-    "gps": "5.29855,-0.21465",
-    "url": "/spot/Africa/Ghana/krokrobite/index.html"
+    "continent": "Africa",
+    "country": "Ghana",
+    "spot": "Krokrobite",
+    "gps": "5.29855,-0.21465"
   },
   {
-    "gps": "5.31875,-0.12875",
-    "url": "/spot/Africa/Ghana/labadi_beach/index.html"
+    "continent": "Africa",
+    "country": "Ghana",
+    "spot": "Labadi beach",
+    "gps": "5.31875,-0.12875"
   },
   {
-    "gps": "5.42104,0.6347",
-    "url": "/spot/Africa/Ghana/Pram_Pram/index.html"
+    "continent": "Africa",
+    "country": "Ghana",
+    "spot": "Pram Pram",
+    "gps": "5.42104,0.6347"
   },
   {
-    "gps": "4.51046,-2.14025",
-    "url": "/spot/Africa/Ghana/Turtle_Beach/index.html"
+    "continent": "Africa",
+    "country": "Ghana",
+    "spot": "Turtle Beach",
+    "gps": "4.51046,-2.14025"
   },
   {
-    "gps": "5.7539,-3.1745",
-    "url": "/spot/Africa/Ivory_Coast/assinie/index.html"
+    "continent": "Africa",
+    "country": "Ivory Coast",
+    "spot": "Assinie",
+    "gps": "5.7539,-3.1745"
   },
   {
-    "gps": "5.9088,-3.25746",
-    "url": "/spot/Africa/Ivory_Coast/Assouinde_Beach/index.html"
+    "continent": "Africa",
+    "country": "Ivory Coast",
+    "spot": "Assouinde Beach",
+    "gps": "5.9088,-3.25746"
   },
   {
-    "gps": "4.54935,-6.8863",
-    "url": "/spot/Africa/Ivory_Coast/grand_drewin/index.html"
+    "continent": "Africa",
+    "country": "Ivory Coast",
+    "spot": "Grand drewin",
+    "gps": "4.54935,-6.8863"
   },
   {
-    "gps": "-3.11871,40.753",
-    "url": "/spot/Africa/Kenya/malindi_bay/index.html"
+    "continent": "Africa",
+    "country": "Kenya",
+    "spot": "Malindi bay",
+    "gps": "-3.11871,40.753"
   },
   {
-    "gps": "-4.21836,39.3383",
-    "url": "/spot/Africa/Kenya/mombasa_channel/index.html"
+    "continent": "Africa",
+    "country": "Kenya",
+    "spot": "Mombasa channel",
+    "gps": "-4.21836,39.3383"
   },
   {
-    "gps": "-3.21136,40.1613",
-    "url": "/spot/Africa/Kenya/Watamu_Bay/index.html"
+    "continent": "Africa",
+    "country": "Kenya",
+    "spot": "Watamu Bay",
+    "gps": "-3.21136,40.1613"
   },
   {
-    "gps": "6.13932,-10.40929",
-    "url": "/spot/Africa/Liberia/Barn_s_Beach/index.html"
+    "continent": "Africa",
+    "country": "Liberia",
+    "spot": "Barn's Beach",
+    "gps": "6.13932,-10.40929"
   },
   {
-    "gps": "6.19353,-10.48906",
-    "url": "/spot/Africa/Liberia/mumba_point/index.html"
+    "continent": "Africa",
+    "country": "Liberia",
+    "spot": "Mumba point",
+    "gps": "6.19353,-10.48906"
   },
   {
-    "gps": "6.4439,-11.23047",
-    "url": "/spot/Africa/Liberia/robertsport/index.html"
+    "continent": "Africa",
+    "country": "Liberia",
+    "spot": "Robertsport",
+    "gps": "6.4439,-11.23047"
   },
   {
-    "gps": "5.50384,-10.1615",
-    "url": "/spot/Africa/Liberia/Tico_s_Point/index.html"
+    "continent": "Africa",
+    "country": "Liberia",
+    "spot": "Tico's Point",
+    "gps": "5.50384,-10.1615"
   },
   {
-    "gps": "-18.51557,49.8981",
-    "url": "/spot/Africa/Madagascar/ambila_lamentsa/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Ambila lamentsa",
+    "gps": "-18.51557,49.8981"
   },
   {
-    "gps": "-18.51674,49.8928",
-    "url": "/spot/Africa/Madagascar/corre/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Corre",
+    "gps": "-18.51674,49.8928"
   },
   {
-    "gps": "-23.3761,43.35128",
-    "url": "/spot/Africa/Madagascar/flameballs/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Flameballs",
+    "gps": "-23.3761,43.35128"
   },
   {
-    "gps": "-23.6923,43.31551",
-    "url": "/spot/Africa/Madagascar/ifaty/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Ifaty",
+    "gps": "-23.6923,43.31551"
   },
   {
-    "gps": "-25.25486,44.56311",
-    "url": "/spot/Africa/Madagascar/lavanono/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Lavanono",
+    "gps": "-25.25486,44.56311"
   },
   {
-    "gps": "-25.2326,46.58719",
-    "url": "/spot/Africa/Madagascar/libanono/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Libanono",
+    "gps": "-25.2326,46.58719"
   },
   {
-    "gps": "-17.28733,49.28381",
-    "url": "/spot/Africa/Madagascar/Mahambo/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Mahambo",
+    "gps": "-17.28733,49.28381"
   },
   {
-    "gps": "-25.1497,47.0341",
-    "url": "/spot/Africa/Madagascar/monseigneur/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Monseigneur",
+    "gps": "-25.1497,47.0341"
   },
   {
-    "gps": "-23.30364,43.42526",
-    "url": "/spot/Africa/Madagascar/TT_s/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "TT s",
+    "gps": "-23.30364,43.42526"
   },
   {
-    "gps": "-25.3195,46.59971",
-    "url": "/spot/Africa/Madagascar/vinanibe_lake/index.html"
+    "continent": "Africa",
+    "country": "Madagascar",
+    "spot": "Vinanibe lake",
+    "gps": "-25.3195,46.59971"
   },
   {
-    "gps": "-20.0365,57.4171",
-    "url": "/spot/Africa/Mauritius/bernache/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Bernache",
+    "gps": "-20.0365,57.4171"
   },
   {
-    "gps": "-20.19103,57.22051",
-    "url": "/spot/Africa/Mauritius/black_rocks/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Black rocks",
+    "gps": "-20.19103,57.22051"
   },
   {
-    "gps": "-20.2708,57.42556",
-    "url": "/spot/Africa/Mauritius/darne/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Darne",
+    "gps": "-20.2708,57.42556"
   },
   {
-    "gps": "-20.26796,57.43389",
-    "url": "/spot/Africa/Mauritius/fausse_passe/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Fausse passe",
+    "gps": "-20.26796,57.43389"
   },
   {
-    "gps": "-20.30427,57.26961",
-    "url": "/spot/Africa/Mauritius/grand_sancho/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Grand sancho",
+    "gps": "-20.30427,57.26961"
   },
   {
-    "gps": "-20.1954,57.22651",
-    "url": "/spot/Africa/Mauritius/La_Baie/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "La Baie",
+    "gps": "-20.1954,57.22651"
   },
   {
-    "gps": "-20.26644,57.18477",
-    "url": "/spot/Africa/Mauritius/le_morne/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Le morne",
+    "gps": "-20.26644,57.18477"
   },
   {
-    "gps": "-20.24613,57.45631",
-    "url": "/spot/Africa/Mauritius/Le_Phare/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Le Phare",
+    "gps": "-20.24613,57.45631"
   },
   {
-    "gps": "-20.29777,57.22114",
-    "url": "/spot/Africa/Mauritius/Maconde/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Maconde",
+    "gps": "-20.29777,57.22114"
   },
   {
-    "gps": "-20.27148,57.18613",
-    "url": "/spot/Africa/Mauritius/one_eye/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "One eye",
+    "gps": "-20.27148,57.18613"
   },
   {
-    "gps": "-20.30201,57.26886",
-    "url": "/spot/Africa/Mauritius/petit_sancho/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Petit sancho",
+    "gps": "-20.30201,57.26886"
   },
   {
-    "gps": "-20.302,57.27219",
-    "url": "/spot/Africa/Mauritius/Rivière_des_Gallets/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Rivière des Gallets",
+    "gps": "-20.302,57.27219"
   },
   {
-    "gps": "-20.19662,57.22476",
-    "url": "/spot/Africa/Mauritius/tamarin_bay/index.html"
+    "continent": "Africa",
+    "country": "Mauritius",
+    "spot": "Tamarin bay",
+    "gps": "-20.19662,57.22476"
   },
   {
-    "gps": "-23.47366,35.31025",
-    "url": "/spot/Africa/Mozambique/barra/index.html"
+    "continent": "Africa",
+    "country": "Mozambique",
+    "spot": "Barra",
+    "gps": "-23.47366,35.31025"
   },
   {
-    "gps": "-24.4335,35.29964",
-    "url": "/spot/Africa/Mozambique/guinjata_bay/index.html"
+    "continent": "Africa",
+    "country": "Mozambique",
+    "spot": "Guinjata bay",
+    "gps": "-24.4335,35.29964"
   },
   {
-    "gps": "-24.4368,35.29911",
-    "url": "/spot/Africa/Mozambique/jangamo_beach/index.html"
+    "continent": "Africa",
+    "country": "Mozambique",
+    "spot": "Jangamo beach",
+    "gps": "-24.4368,35.29911"
   },
   {
-    "gps": "-22.55322,35.36072",
-    "url": "/spot/Africa/Mozambique/pomene/index.html"
+    "continent": "Africa",
+    "country": "Mozambique",
+    "spot": "Pomene",
+    "gps": "-22.55322,35.36072"
   },
   {
-    "gps": "-26.50625,32.53695",
-    "url": "/spot/Africa/Mozambique/ponta_do_ouro/index.html"
+    "continent": "Africa",
+    "country": "Mozambique",
+    "spot": "Ponta do ouro",
+    "gps": "-26.50625,32.53695"
   },
   {
-    "gps": "-24.31047,35.1231",
-    "url": "/spot/Africa/Mozambique/ponta_zavora/index.html"
+    "continent": "Africa",
+    "country": "Mozambique",
+    "spot": "Ponta zavora",
+    "gps": "-24.31047,35.1231"
   },
   {
-    "gps": "-23.51928,35.33171",
-    "url": "/spot/Africa/Mozambique/tofhino/index.html"
+    "continent": "Africa",
+    "country": "Mozambique",
+    "spot": "Tofhino",
+    "gps": "-23.51928,35.33171"
   },
   {
-    "gps": "-27.55843,15.40531",
-    "url": "/spot/Africa/Namibia/affenrucken_point/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Affenrucken point",
+    "gps": "-27.55843,15.40531"
   },
   {
-    "gps": "-27.44882,15.32773",
-    "url": "/spot/Africa/Namibia/angras_juntas_left/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Angras juntas left",
+    "gps": "-27.44882,15.32773"
   },
   {
-    "gps": "-21.3113,51.undefinedundefined",
-    "url": "/spot/Africa/Namibia/Unnamed/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Unnamed",
+    "gps": "-21.3113,51.undefinedundefined"
   },
   {
-    "gps": "-21.45375,13.57945",
-    "url": "/spot/Africa/Namibia/cape_cross/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Cape cross",
+    "gps": "-21.45375,13.57945"
   },
   {
-    "gps": "-22.56043,14.254",
-    "url": "/spot/Africa/Namibia/Donkey_Bay/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Donkey Bay",
+    "gps": "-22.56043,14.254"
   },
   {
-    "gps": "-25.26299,14.50469",
-    "url": "/spot/Africa/Namibia/east_hill_point/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "East hill point",
+    "gps": "-25.26299,14.50469"
   },
   {
-    "gps": "-26.56698,15.13779",
-    "url": "/spot/Africa/Namibia/elizabeth_bay/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Elizabeth bay",
+    "gps": "-26.56698,15.13779"
   },
   {
-    "gps": "-22.50701,14.32187",
-    "url": "/spot/Africa/Namibia/guns/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Guns",
+    "gps": "-22.50701,14.32187"
   },
   {
-    "gps": "-26.8092,14.56634",
-    "url": "/spot/Africa/Namibia/hottentot_bay/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Hottentot bay",
+    "gps": "-26.8092,14.56634"
   },
   {
-    "gps": "-26.18267,14.5718",
-    "url": "/spot/Africa/Namibia/Luderitz_Wedge/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Luderitz Wedge",
+    "gps": "-26.18267,14.5718"
   },
   {
-    "gps": "-18.49972,12.2323",
-    "url": "/spot/Africa/Namibia/ovahimba_point/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Ovahimba point",
+    "gps": "-18.49972,12.2323"
   },
   {
-    "gps": "-27.39796,15.3149",
-    "url": "/spot/Africa/Namibia/delarey_point/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Delarey point",
+    "gps": "-27.39796,15.3149"
   },
   {
-    "gps": "-22.5351,14.26121",
-    "url": "/spot/Africa/Namibia/pelican_point/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Pelican point",
+    "gps": "-22.5351,14.26121"
   },
   {
-    "gps": "-25.43889,14.50284",
-    "url": "/spot/Africa/Namibia/spencer_bay/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Spencer bay",
+    "gps": "-25.43889,14.50284"
   },
   {
-    "gps": "-22.38678,14.31527",
-    "url": "/spot/Africa/Namibia/vineta_point/index.html"
+    "continent": "Africa",
+    "country": "Namibia",
+    "spot": "Vineta point",
+    "gps": "-22.38678,14.31527"
   },
   {
-    "gps": "6.23668,3.23687",
-    "url": "/spot/Africa/Nigeria/Lighthouse_beach/index.html"
+    "continent": "Africa",
+    "country": "Nigeria",
+    "spot": "Lighthouse beach",
+    "gps": "6.23668,3.23687"
   },
   {
-    "gps": "6.24041,3.8277",
-    "url": "/spot/Africa/Nigeria/shipwreck/index.html"
+    "continent": "Africa",
+    "country": "Nigeria",
+    "spot": "Shipwreck",
+    "gps": "6.24041,3.8277"
   },
   {
-    "gps": "6.24128,3.23687",
-    "url": "/spot/Africa/Nigeria/tarqua_bay/index.html"
+    "continent": "Africa",
+    "country": "Nigeria",
+    "spot": "Tarqua bay",
+    "gps": "6.24128,3.23687"
   },
   {
-    "gps": "-21.222,55.13006",
-    "url": "/spot/Africa/Reunion/aigrettes_left/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Aigrettes left",
+    "gps": "-21.222,55.13006"
   },
   {
-    "gps": "-21.2068,55.13084",
-    "url": "/spot/Africa/Reunion/Aigrettes_Right/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Aigrettes Right",
+    "gps": "-21.2068,55.13084"
   },
   {
-    "gps": "-21.3209,55.13351",
-    "url": "/spot/Africa/Reunion/black_rocks_right/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Black rocks right",
+    "gps": "-21.3209,55.13351"
   },
   {
-    "gps": "-21.1701,55.13475",
-    "url": "/spot/Africa/Reunion/Boucan_left/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Boucan left",
+    "gps": "-21.1701,55.13475"
   },
   {
-    "gps": "-21.1617,55.13507",
-    "url": "/spot/Africa/Reunion/Boucan_right/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Boucan right",
+    "gps": "-21.1617,55.13507"
   },
   {
-    "gps": "-21.2332,55.43356",
-    "url": "/spot/Africa/Reunion/butor/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Butor",
+    "gps": "-21.2332,55.43356"
   },
   {
-    "gps": "-21.2925,55.13097",
-    "url": "/spot/Africa/Reunion/Cahera/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Cahera",
+    "gps": "-21.2925,55.13097"
   },
   {
-    "gps": "-21.1565,55.13561",
-    "url": "/spot/Africa/Reunion/derriere/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Derriere",
+    "gps": "-21.1565,55.13561"
   },
   {
-    "gps": "-21.15829,55.19706",
-    "url": "/spot/Africa/Reunion/etang_sale/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Etang sale",
+    "gps": "-21.15829,55.19706"
   },
   {
-    "gps": "-21.15488,55.19693",
-    "url": "/spot/Africa/Reunion/etang_sale_bridge_-_le_tournant/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Etang sale bridge - le tournant",
+    "gps": "-21.15488,55.19693"
   },
   {
-    "gps": "-21.5153,55.13386",
-    "url": "/spot/Africa/Reunion/Hermitage_left/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Hermitage left",
+    "gps": "-21.5153,55.13386"
   },
   {
-    "gps": "-21.5131,55.13341",
-    "url": "/spot/Africa/Reunion/Hermitage_right/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Hermitage right",
+    "gps": "-21.5131,55.13341"
   },
   {
-    "gps": "-21.926,55.16694",
-    "url": "/spot/Africa/Reunion/kelonia___la_ferme_corail/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Kelonia   la ferme corail",
+    "gps": "-21.926,55.16694"
   },
   {
-    "gps": "-21.9314,55.16876",
-    "url": "/spot/Africa/Reunion/Turtle_reef/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Turtle reef",
+    "gps": "-21.9314,55.16876"
   },
   {
-    "gps": "-21.20815,55.28586",
-    "url": "/spot/Africa/Reunion/le_jetty_st_pierre/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Le jetty st pierre",
+    "gps": "-21.20815,55.28586"
   },
   {
-    "gps": "-21.22417,55.35251",
-    "url": "/spot/Africa/Reunion/Manapany/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Manapany",
+    "gps": "-21.22417,55.35251"
   },
   {
-    "gps": "-21.19881,55.27181",
-    "url": "/spot/Africa/Reunion/evil_peak/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Evil peak",
+    "gps": "-21.19881,55.27181"
   },
   {
-    "gps": "-21.9908,55.17069",
-    "url": "/spot/Africa/Reunion/Saint_Leu/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "Saint Leu",
+    "gps": "-21.9908,55.17069"
   },
   {
-    "gps": "-21.6768,55.15151",
-    "url": "/spot/Africa/Reunion/3_Bassins_Left/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "3 Bassins Left",
+    "gps": "-21.6768,55.15151"
   },
   {
-    "gps": "-21.6708,55.15122",
-    "url": "/spot/Africa/Reunion/3_Bassins_Peak/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "3 Bassins Peak",
+    "gps": "-21.6708,55.15122"
   },
   {
-    "gps": "-21.6642,55.1504",
-    "url": "/spot/Africa/Reunion/3_Bassins_Reef/index.html"
+    "continent": "Africa",
+    "country": "Reunion",
+    "spot": "3 Bassins Reef",
+    "gps": "-21.6642,55.1504"
   },
   {
-    "gps": "0.11613,6.42177",
-    "url": "/spot/Africa/Sao_Tome/alfonsita/index.html"
+    "continent": "Africa",
+    "country": "Sao Tome",
+    "spot": "Alfonsita",
+    "gps": "0.11613,6.42177"
   },
   {
-    "gps": "0.17782,6.4563",
-    "url": "/spot/Africa/Sao_Tome/Gon_Point/index.html"
+    "continent": "Africa",
+    "country": "Sao Tome",
+    "spot": "Gon Point",
+    "gps": "0.17782,6.4563"
   },
   {
-    "gps": "0.2153,6.32185",
-    "url": "/spot/Africa/Sao_Tome/porto_alegre/index.html"
+    "continent": "Africa",
+    "country": "Sao Tome",
+    "spot": "Porto alegre",
+    "gps": "0.2153,6.32185"
   },
   {
-    "gps": "0.18024,6.45196",
-    "url": "/spot/Africa/Sao_Tome/Praia_Melão/index.html"
+    "continent": "Africa",
+    "country": "Sao Tome",
+    "spot": "Praia Melão",
+    "gps": "0.18024,6.45196"
   },
   {
-    "gps": "14.28319,-17.4231",
-    "url": "/spot/Africa/Senegal/baobab/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Baobab",
+    "gps": "14.28319,-17.4231"
   },
   {
-    "gps": "12.21779,-16.4424",
-    "url": "/spot/Africa/Senegal/Cap_Skiring/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Cap Skiring",
+    "gps": "12.21779,-16.4424"
   },
   {
-    "gps": "14.44436,-17.31687",
-    "url": "/spot/Africa/Senegal/club_med/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Club med",
+    "gps": "14.44436,-17.31687"
   },
   {
-    "gps": "14.43981,-17.30646",
-    "url": "/spot/Africa/Senegal/Julikai/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Julikai",
+    "gps": "14.43981,-17.30646"
   },
   {
-    "gps": "14.45019,-17.31525",
-    "url": "/spot/Africa/Senegal/la_baie_des_carpes/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "La baie des carpes",
+    "gps": "14.45019,-17.31525"
   },
   {
-    "gps": "14.45062,-17.31556",
-    "url": "/spot/Africa/Senegal/la_gauche_de_loic/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "La gauche de loic",
+    "gps": "14.45062,-17.31556"
   },
   {
-    "gps": "14.45299,-17.29795",
-    "url": "/spot/Africa/Senegal/le_virage/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Le virage",
+    "gps": "14.45299,-17.29795"
   },
   {
-    "gps": "14.46818,-17.25093",
-    "url": "/spot/Africa/Senegal/malika_sur_-_mer/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Malika sur - mer",
+    "gps": "14.46818,-17.25093"
   },
   {
-    "gps": "14.45246,-17.31035",
-    "url": "/spot/Africa/Senegal/ngor_right/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Ngor right",
+    "gps": "14.45246,-17.31035"
   },
   {
-    "gps": "14.45369,-17.30671",
-    "url": "/spot/Africa/Senegal/NGor_left/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "NGor left",
+    "gps": "14.45369,-17.30671"
   },
   {
-    "gps": "14.44432,-17.31427",
-    "url": "/spot/Africa/Senegal/no_return/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "No return",
+    "gps": "14.44432,-17.31427"
   },
   {
-    "gps": "14.42831,-17.29505",
-    "url": "/spot/Africa/Senegal/ouakam/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Ouakam",
+    "gps": "14.42831,-17.29505"
   },
   {
-    "gps": "14.43539,-17.30281",
-    "url": "/spot/Africa/Senegal/petites_mamelles/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Petites mamelles",
+    "gps": "14.43539,-17.30281"
   },
   {
-    "gps": "14.45462,-17.30904",
-    "url": "/spot/Africa/Senegal/Philipps/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Philipps",
+    "gps": "14.45462,-17.30904"
   },
   {
-    "gps": "14.35493,-17.8732",
-    "url": "/spot/Africa/Senegal/Piere_de_Lisse/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Piere de Lisse",
+    "gps": "14.35493,-17.8732"
   },
   {
-    "gps": "16.0718,-16.30674",
-    "url": "/spot/Africa/Senegal/saint_louis/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Saint louis",
+    "gps": "16.0718,-16.30674"
   },
   {
-    "gps": "14.44069,-17.30759",
-    "url": "/spot/Africa/Senegal/secret/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Secret",
+    "gps": "14.44069,-17.30759"
   },
   {
-    "gps": "14.44437,-17.31297",
-    "url": "/spot/Africa/Senegal/vivier/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Vivier",
+    "gps": "14.44437,-17.31297"
   },
   {
-    "gps": "14.45488,-17.29402",
-    "url": "/spot/Africa/Senegal/Vivier_2/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Vivier 2",
+    "gps": "14.45488,-17.29402"
   },
   {
-    "gps": "14.46157,-17.28582",
-    "url": "/spot/Africa/Senegal/Yoff_Ile_gauche/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Yoff Ile gauche",
+    "gps": "14.46157,-17.28582"
   },
   {
-    "gps": "14.45746,-17.27787",
-    "url": "/spot/Africa/Senegal/yoff_plage/index.html"
+    "continent": "Africa",
+    "country": "Senegal",
+    "spot": "Yoff plage",
+    "gps": "14.45746,-17.27787"
   },
   {
-    "gps": "8.29464,-13.17453",
-    "url": "/spot/Africa/Sierra_Leone/Aberdeen_Area_Beach/index.html"
+    "continent": "Africa",
+    "country": "Sierra Leone",
+    "spot": "Aberdeen Area Beach",
+    "gps": "8.29464,-13.17453"
   },
   {
-    "gps": "8.12565,-13.9538",
-    "url": "/spot/Africa/Sierra_Leone/Burreh_Beach/index.html"
+    "continent": "Africa",
+    "country": "Sierra Leone",
+    "spot": "Burreh Beach",
+    "gps": "8.12565,-13.9538"
   },
   {
-    "gps": "6.57814,-11.34487",
-    "url": "/spot/Africa/Sierra_Leone/Sulima/index.html"
+    "continent": "Africa",
+    "country": "Sierra Leone",
+    "spot": "Sulima",
+    "gps": "6.57814,-11.34487"
   },
   {
-    "gps": "7.38735,-13.5922",
-    "url": "/spot/Africa/Sierra_Leone/Turtle_Island/index.html"
+    "continent": "Africa",
+    "country": "Sierra Leone",
+    "spot": "Turtle Island",
+    "gps": "7.38735,-13.5922"
   },
   {
-    "gps": "10.31635,51.12966",
-    "url": "/spot/Africa/Somalia/Billsland/index.html"
+    "continent": "Africa",
+    "country": "Somalia",
+    "spot": "Billsland",
+    "gps": "10.31635,51.12966"
   },
   {
-    "gps": "-6.10576,39.32347",
-    "url": "/spot/Africa/Tanzania/Dongwe_Doughnuts/index.html"
+    "continent": "Africa",
+    "country": "Tanzania",
+    "spot": "Dongwe Doughnuts",
+    "gps": "-6.10576,39.32347"
   },
   {
-    "gps": "-6.42622,39.16827",
-    "url": "/spot/Africa/Tanzania/JAM_s_Right/index.html"
+    "continent": "Africa",
+    "country": "Tanzania",
+    "spot": "JAM's Right",
+    "gps": "-6.42622,39.16827"
   },
   {
-    "gps": "-6.29112,39.29849",
-    "url": "/spot/Africa/Tanzania/wommewek/index.html"
+    "continent": "Africa",
+    "country": "Tanzania",
+    "spot": "Wommewek",
+    "gps": "-6.29112,39.29849"
   },
   {
-    "gps": "-5.43147,39.17989",
-    "url": "/spot/Africa/Tanzania/zanzibar/index.html"
+    "continent": "Africa",
+    "country": "Tanzania",
+    "spot": "Zanzibar",
+    "gps": "-5.43147,39.17989"
   },
   {
-    "gps": "37.19032,9.52335",
-    "url": "/spot/Africa/Tunisia/banzart/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Banzart",
+    "gps": "37.19032,9.52335"
   },
   {
-    "gps": "36.51032,10.20036",
-    "url": "/spot/Africa/Tunisia/carthage_neptune/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Carthage neptune",
+    "gps": "36.51032,10.20036"
   },
   {
-    "gps": "36.22211,10.32753",
-    "url": "/spot/Africa/Tunisia/hamamet/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Hamamet",
+    "gps": "36.22211,10.32753"
   },
   {
-    "gps": "36.50045,11.7043",
-    "url": "/spot/Africa/Tunisia/kelibya/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Kelibya",
+    "gps": "36.50045,11.7043"
   },
   {
-    "gps": "36.53568,10.19629",
-    "url": "/spot/Africa/Tunisia/tunis/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Tunis",
+    "gps": "36.53568,10.19629"
   },
   {
-    "gps": "36.57965,8.45222",
-    "url": "/spot/Africa/Tunisia/La_Droite_du_Fort/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "La Droite du Fort",
+    "gps": "36.57965,8.45222"
   },
   {
-    "gps": "37.6729,10.15674",
-    "url": "/spot/Africa/Tunisia/La_Marsa/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "La Marsa",
+    "gps": "37.6729,10.15674"
   },
   {
-    "gps": "37.20736,9.51573",
-    "url": "/spot/Africa/Tunisia/Les_Grottes_Bizerte/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Les Grottes Bizerte",
+    "gps": "37.20736,9.51573"
   },
   {
-    "gps": "36.57948,8.42843",
-    "url": "/spot/Africa/Tunisia/Meloula/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Meloula",
+    "gps": "36.57948,8.42843"
   },
   {
-    "gps": "36.57594,8.45974",
-    "url": "/spot/Africa/Tunisia/tabarka_les_aiguilles/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Tabarka les aiguilles",
+    "gps": "36.57594,8.45974"
   },
   {
-    "gps": "37.1819,8.54517",
-    "url": "/spot/Africa/Tunisia/Zouira/index.html"
+    "continent": "Africa",
+    "country": "Tunisia",
+    "spot": "Zouira",
+    "gps": "37.1819,8.54517"
   },
   {
-    "gps": "23.13441,-16.7129",
-    "url": "/spot/Africa/Western_Sahara/Bing_s_Point/index.html"
+    "continent": "Africa",
+    "country": "Western Sahara",
+    "spot": "Bing's Point",
+    "gps": "23.13441,-16.7129"
   },
   {
-    "gps": "26.7625,-14.30097",
-    "url": "/spot/Africa/Western_Sahara/Cape_Boujdour/index.html"
+    "continent": "Africa",
+    "country": "Western Sahara",
+    "spot": "Cape Boujdour",
+    "gps": "26.7625,-14.30097"
   },
   {
-    "gps": "23.45975,-15.55476",
-    "url": "/spot/Africa/Western_Sahara/OumLabouir/index.html"
+    "continent": "Africa",
+    "country": "Western Sahara",
+    "spot": "OumLabouir",
+    "gps": "23.45975,-15.55476"
   },
   {
-    "gps": "24.4462,-15.35001",
-    "url": "/spot/Africa/Western_Sahara/The_Point/index.html"
+    "continent": "Africa",
+    "country": "Western Sahara",
+    "spot": "The Point",
+    "gps": "24.4462,-15.35001"
   },
   {
-    "gps": "-17.58506,25.51605",
-    "url": "/spot/Africa/Zimbabwe/Zambezi_River__Rapid_11/index.html"
+    "continent": "Africa",
+    "country": "Zimbabwe",
+    "spot": "Zambezi River  Rapid 11",
+    "gps": "-17.58506,25.51605"
   }
 ]

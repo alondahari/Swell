@@ -1,254 +1,387 @@
 [
   {
-    "gps": "29.6149,48.8319",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Kuwait/mangaf/index.html"
+    "continent": "Middle East",
+    "country": "Kuwait",
+    "spot": "Mangaf",
+    "gps": "29.6149,48.8319"
   },
   {
-    "gps": "21.30558,59.23031",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Oman/Banda_al_Saqlah/index.html"
+    "continent": "Middle East",
+    "country": "Oman",
+    "spot": "Banda al Saqlah",
+    "gps": "21.30558,59.23031"
   },
   {
-    "gps": "21.57032,59.38748",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Oman/al_ashkarah/index.html"
+    "continent": "Middle East",
+    "country": "Oman",
+    "spot": "Al ashkarah",
+    "gps": "21.57032,59.38748"
   },
   {
-    "gps": "20.16969,58.43892",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Oman/masirah_island/index.html"
+    "continent": "Middle East",
+    "country": "Oman",
+    "spot": "Masirah island",
+    "gps": "20.16969,58.43892"
   },
   {
-    "gps": "17.1388,54.5111",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Oman/Salalah/index.html"
+    "continent": "Middle East",
+    "country": "Oman",
+    "spot": "Salalah",
+    "gps": "17.1388,54.5111"
   },
   {
-    "gps": "34.14618,35.3952",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Lebanon/batroun/index.html"
+    "continent": "Middle East",
+    "country": "Lebanon",
+    "spot": "Batroun",
+    "gps": "34.14618,35.3952"
   },
   {
-    "gps": "33.39986,35.24983",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Lebanon/phil_and_did/index.html"
+    "continent": "Middle East",
+    "country": "Lebanon",
+    "spot": "Phil and did",
+    "gps": "33.39986,35.24983"
   },
   {
-    "gps": "34.18638,35.42897",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Lebanon/chekka/index.html"
+    "continent": "Middle East",
+    "country": "Lebanon",
+    "spot": "Chekka",
+    "gps": "34.18638,35.42897"
   },
   {
-    "gps": "34.6911,35.38851",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Lebanon/tam_tam/index.html"
+    "continent": "Middle East",
+    "country": "Lebanon",
+    "spot": "Tam tam",
+    "gps": "34.6911,35.38851"
   },
   {
-    "gps": "34.12751,35.38916",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Lebanon/pierre_and_friends/index.html"
+    "continent": "Middle East",
+    "country": "Lebanon",
+    "spot": "Pierre and friends",
+    "gps": "34.12751,35.38916"
   },
   {
-    "gps": "25.24308,50.45328",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Qatar/dukhan_beach/index.html"
+    "continent": "Middle East",
+    "country": "Qatar",
+    "spot": "Dukhan beach",
+    "gps": "25.24308,50.45328"
   },
   {
-    "gps": "32.11647,34.48393",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/apolonia/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Apolonia",
+    "gps": "32.11647,34.48393"
   },
   {
-    "gps": "32.50131,34.58771",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/buckdoor/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Buckdoor",
+    "gps": "32.50131,34.58771"
   },
   {
-    "gps": "32.23111,34.51708",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/bet_yanay/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Bet yanay",
+    "gps": "32.23111,34.51708"
   },
   {
-    "gps": "31.49043,34.38408",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/ashdod_-hshover/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Ashdod -hshover",
+    "gps": "31.49043,34.38408"
   },
   {
-    "gps": "32.3829,34.45347",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/dolfinraium/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Dolfinraium",
+    "gps": "32.3829,34.45347"
   },
   {
-    "gps": "32.1814,34.50442",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/argaman_s_beach/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Argaman's beach",
+    "gps": "32.1814,34.50442"
   },
   {
-    "gps": "32.28417,34.5303",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/ha-arubot/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Ha-arubot",
+    "gps": "32.28417,34.5303"
   },
   {
-    "gps": "31.47516,34.37615",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/dromi_ashdod_/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Dromi ashdod ",
+    "gps": "31.47516,34.37615"
   },
   {
-    "gps": "32.5323,34.46123",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/hilton/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Hilton",
+    "gps": "32.5323,34.46123"
   },
   {
-    "gps": "31.47909,34.3787",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/hakshtot__ashdod_/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Hakshtot  ashdod ",
+    "gps": "31.47909,34.3787"
   },
   {
-    "gps": "32.47779,34.57324",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/Kadarim__Haifa_/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Kadarim  Haifa ",
+    "gps": "32.47779,34.57324"
   },
   {
-    "gps": "31.46391,34.36997",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/igolim_ashdod/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Igolim ashdod",
+    "gps": "31.46391,34.36997"
   },
   {
-    "gps": "32.32261,34.54034",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/jeser_a_zarka/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Jeser a zarka",
+    "gps": "32.32261,34.54034"
   },
   {
-    "gps": "32.10022,34.47802",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/marina/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Marina",
+    "gps": "32.10022,34.47802"
   },
   {
-    "gps": "32.3487,34.45378",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/maravi/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Maravi",
+    "gps": "32.3487,34.45378"
   },
   {
-    "gps": "32.16402,34.50006",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/netanya_poleg_/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Netanya poleg ",
+    "gps": "32.16402,34.50006"
   },
   {
-    "gps": "32.21971,34.51432",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/neurim___youth___beach/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Neurim   youth   beach",
+    "gps": "32.21971,34.51432"
   },
   {
-    "gps": "32.48425,34.57337",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/pik/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Pik",
+    "gps": "32.48425,34.57337"
   },
   {
-    "gps": "32.4053,34.55729",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/stalbeach-haifa/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Stalbeach-haifa",
+    "gps": "32.4053,34.55729"
   },
   {
-    "gps": "32.48414,34.57288",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/te_peak/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Te peak",
+    "gps": "32.48414,34.57288"
   },
   {
-    "gps": "32.19483,34.5098",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/sironit_beach/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Sironit beach",
+    "gps": "32.19483,34.5098"
   },
   {
-    "gps": "32.48732,34.57258",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/the_reef/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "The reef",
+    "gps": "32.48732,34.57258"
   },
   {
-    "gps": "32.7364,34.46919",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/tel_baruch/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Tel baruch",
+    "gps": "32.7364,34.46919"
   },
   {
-    "gps": "31.36777,34.30261",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/ziqim_beach/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Ziqim beach",
+    "gps": "31.36777,34.30261"
   },
   {
-    "gps": "32.10835,34.48075",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Israel/zvulun_beach/index.html"
+    "continent": "Middle East",
+    "country": "Israel",
+    "spot": "Zvulun beach",
+    "gps": "32.10835,34.48075"
   },
   {
-    "gps": "12.42739,53.30287",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Yemen/qulansiyah/index.html"
+    "continent": "Middle East",
+    "country": "Yemen",
+    "spot": "Qulansiyah",
+    "gps": "12.42739,53.30287"
   },
   {
-    "gps": "38.14343,26.18638",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/alacati/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Alacati",
+    "gps": "38.14343,26.18638"
   },
   {
-    "gps": "36.556,32.56149",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Anamur/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Anamur",
+    "gps": "36.556,32.56149"
   },
   {
-    "gps": "36.3238,32.1406",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Alanya__Banana/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Alanya  Banana",
+    "gps": "36.3238,32.1406"
   },
   {
-    "gps": "36.5083,30.48523",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Antalya/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Antalya",
+    "gps": "36.5083,30.48523"
   },
   {
-    "gps": "36.46351,31.23451",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Baby_Point_Side/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Baby Point Side",
+    "gps": "36.46351,31.23451"
   },
   {
-    "gps": "36.27504,34.8695",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/castles/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Castles",
+    "gps": "36.27504,34.8695"
   },
   {
-    "gps": "36.33934,35.23362",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Karatas/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Karatas",
+    "gps": "36.33934,35.23362"
   },
   {
-    "gps": "37.51751,27.15538",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/kusadasie/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Kusadasie",
+    "gps": "37.51751,27.15538"
   },
   {
-    "gps": "36.43941,34.31387",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/embryo_point/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Embryo point",
+    "gps": "36.43941,34.31387"
   },
   {
-    "gps": "36.28202,34.10172",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/stone_tombs/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Stone tombs",
+    "gps": "36.28202,34.10172"
   },
   {
-    "gps": "37.59305,27.7933",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Oezdere_Plaj/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "spot": "Oezdere Plaj",
+    "gps": "37.59305,27.7933"
   },
   {
-    "gps": "24.57934,54.58017",
-    "url": "http://en.wannasurf.com/spot/Middle_East/UAE/Jebal_Ali_Lefts/index.html"
+    "continent": "Middle East",
+    "country": "UAE",
+    "spot": "Jebal Ali Lefts",
+    "gps": "24.57934,54.58017"
   },
   {
-    "gps": "24.5605,55.44348",
-    "url": "http://en.wannasurf.com/spot/Middle_East/UAE/Mountains_/index.html"
+    "continent": "Middle East",
+    "country": "UAE",
+    "spot": "Mountains ",
+    "gps": "24.5605,55.44348"
   },
   {
-    "gps": "25.13883,55.15597",
-    "url": "http://en.wannasurf.com/spot/Middle_East/UAE/russian_beach/index.html"
+    "continent": "Middle East",
+    "country": "UAE",
+    "spot": "Russian beach",
+    "gps": "25.13883,55.15597"
   },
   {
-    "gps": "25.8912,55.11688",
-    "url": "http://en.wannasurf.com/spot/Middle_East/UAE/jumeirah_beach/index.html"
+    "continent": "Middle East",
+    "country": "UAE",
+    "spot": "Jumeirah beach",
+    "gps": "25.8912,55.11688"
   },
   {
-    "gps": "25.9891,55.12445",
-    "url": "http://en.wannasurf.com/spot/Middle_East/UAE/surfer_s_beach/index.html"
+    "continent": "Middle East",
+    "country": "UAE",
+    "spot": "Surfer's beach",
+    "gps": "25.9891,55.12445"
   },
   {
-    "gps": "25.936,55.11914",
-    "url": "http://en.wannasurf.com/spot/Middle_East/UAE/sunset_beach/index.html"
+    "continent": "Middle East",
+    "country": "UAE",
+    "spot": "Sunset beach",
+    "gps": "25.936,55.11914"
   },
   {
-    "gps": "25.29567,56.21791",
-    "url": "http://en.wannasurf.com/spot/Middle_East/UAE/tim_s_reef/index.html"
+    "continent": "Middle East",
+    "country": "UAE",
+    "spot": "Tim's reef",
+    "gps": "25.29567,56.21791"
   },
   {
-    "gps": "25.8383,55.1134",
-    "url": "http://en.wannasurf.com/spot/Middle_East/UAE/dubai_wave_pool/index.html"
+    "continent": "Middle East",
+    "country": "UAE",
+    "spot": "Dubai wave pool",
+    "gps": "25.8383,55.1134"
   },
   {
-    "gps": "41.10508,29.37484",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Black-Sea/Aglayankaya/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "zone": "Black-Sea",
+    "spot": "Aglayankaya",
+    "gps": "41.10508,29.37484"
   },
   {
-    "gps": "41.9101,30.11782",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Black-Sea/Erba/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "zone": "Black-Sea",
+    "spot": "Erba",
+    "gps": "41.9101,30.11782"
   },
   {
-    "gps": "41.11235,30.1452",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Black-Sea/Mavi_Rife/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "zone": "Black-Sea",
+    "spot": "Mavi Rife",
+    "gps": "41.11235,30.1452"
   },
   {
-    "gps": "41.9568,30.13187",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Black-Sea/Kumcagiz/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "zone": "Black-Sea",
+    "spot": "Kumcagiz",
+    "gps": "41.9568,30.13187"
   },
   {
-    "gps": "41.951,29.37148",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Black-Sea/Merkez_Sile/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "zone": "Black-Sea",
+    "spot": "Merkez Sile",
+    "gps": "41.951,29.37148"
   },
   {
-    "gps": "41.9444,29.43709",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Black-Sea/woodyville/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "zone": "Black-Sea",
+    "spot": "Woodyville",
+    "gps": "41.9444,29.43709"
   },
   {
-    "gps": "41.8405,30.9128",
-    "url": "http://en.wannasurf.com/spot/Middle_East/Turkey/Black-Sea/Sarisu/index.html"
+    "continent": "Middle East",
+    "country": "Turkey",
+    "zone": "Black-Sea",
+    "spot": "Sarisu",
+    "gps": "41.8405,30.9128"
   }
 ]

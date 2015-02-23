@@ -3,6 +3,7 @@ var js = require('jsonfile');
 var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
+var _ = require('underscore');
 var app     = express();
 var home = 'http://en.wannasurf.com'
 var output = []
@@ -21,6 +22,68 @@ formatGPS = function (gps) {
     return gps
   }
 }
+
+var capitalize = function(str){
+  var arr = str.split('')
+  arr[0] = arr[0].toUpperCase()
+  return arr.join('')
+}
+
+var formatUrl = function(spot){
+  try {
+    var newUrl = spot.url.replace(/_s_/g, "'s ")
+    var cleanUrl = newUrl.replace(/_/g, ' ')
+    var obj
+    var arr = cleanUrl.split('/')
+    switch(arr.length) {
+      case 6:
+        obj = {
+          continent: arr[2],
+          country: arr[3],
+          spot: capitalize(arr[4]),
+          gps: spot.gps
+        }
+        break;
+      case 7:
+        obj = {
+          continent: arr[2],
+          country: arr[3],
+          zone: arr[4],
+          spot: capitalize(arr[5]),
+          gps: spot.gps
+        }
+        break;
+      case 8:
+        obj = {
+          continent: arr[2],
+          country: arr[3],
+          state: arr[4],
+          zone: arr[5],
+          spot: capitalize(arr[6]),
+          gps: spot.gps
+        }
+        break;
+      default:
+        obj = spot
+    }
+    return obj
+  } catch (err) {
+    console.log(err)
+    return url
+  }
+};
+
+formatAllUrls = function(file){
+  js.readFile('./' + file + '.json', function(err, json){
+
+    var data = json.map(formatUrl)
+
+    js.writeFile('./output.json', data, function(){
+      console.log('done!');
+    })
+  })
+}
+formatAllUrls('Middle_East')
 
 var fixJSONFile = function (spot) {
   fs.readFile('./output.json', 'utf-8' ,function(err, str){
