@@ -1,0 +1,1670 @@
+[
+  {
+    "gps": "21.25343,91.59806",
+    "url": "/spot/Asia/Bangladesh/Cox_s_Bazar/index.html"
+  },
+  {
+    "gps": "4.59627,114.55195",
+    "url": "/spot/Asia/Brunei/Berakas_Coastal_Park/index.html"
+  },
+  {
+    "gps": "4.58471,114.52416",
+    "url": "/spot/Asia/Brunei/Pantai_Tungku/index.html"
+  },
+  {
+    "gps": "5.2712,115.3424",
+    "url": "/spot/Asia/Brunei/Tanjung_Batu/index.html"
+  },
+  {
+    "gps": "16.59378,94.27184",
+    "url": "/spot/Asia/Burma/Chaungtha_Beach_Burma_-_Brother_sister_twin_pagoda_/index.html"
+  },
+  {
+    "gps": "16.51417,94.23246",
+    "url": "/spot/Asia/Burma/Ox_Carts_-_Ngwe_Saung_Beach/index.html"
+  },
+  {
+    "gps": "18.27057,94.17714",
+    "url": "/spot/Asia/Burma/Thandwe_Airport/index.html"
+  },
+  {
+    "gps": "10.29684,103.33582",
+    "url": "/spot/Asia/Cambodia/Bamboo_Island/index.html"
+  },
+  {
+    "gps": "-9.21388,125.1647",
+    "url": "/spot/Asia/East_Timor/digger/index.html"
+  },
+  {
+    "gps": "22.27674,114.25224",
+    "url": "/spot/Asia/Hong_Kong/Breaker_Reef/index.html"
+  },
+  {
+    "gps": "22.13974,113.57431",
+    "url": "/spot/Asia/Hong_Kong/cheung_sha_beach_lantau/index.html"
+  },
+  {
+    "gps": "22.24455,114.22604",
+    "url": "/spot/Asia/Hong_Kong/ham_tin/index.html"
+  },
+  {
+    "gps": "22.19943,114.17631",
+    "url": "/spot/Asia/Hong_Kong/nw_reef_-_shelter_island_sai_kung/index.html"
+  },
+  {
+    "gps": "22.14759,114.14865",
+    "url": "/spot/Asia/Hong_Kong/tai_long_wan_hk/index.html"
+  },
+  {
+    "gps": "22.13222,113.53108",
+    "url": "/spot/Asia/Hong_Kong/tai_long_wan__lantau/index.html"
+  },
+  {
+    "gps": "22.24719,114.22761",
+    "url": "/spot/Asia/Hong_Kong/tai_long_wan/index.html"
+  },
+  {
+    "gps": "-2.37024,140.44247",
+    "url": "/spot/Asia/Indonesia/Black_Sands/index.html"
+  },
+  {
+    "gps": "-2.37579,140.46857",
+    "url": "/spot/Asia/Indonesia/Holtekamp/index.html"
+  },
+  {
+    "gps": "33.53935,136.7102",
+    "url": "/spot/Asia/Japan/Odomari/index.html"
+  },
+  {
+    "gps": "4.7459,103.23872",
+    "url": "/spot/Asia/Malaysia/cherating/index.html"
+  },
+  {
+    "gps": "1.33226,104.15559",
+    "url": "/spot/Asia/Malaysia/desaru/index.html"
+  },
+  {
+    "gps": "4.20292,103.28401",
+    "url": "/spot/Asia/Malaysia/kijal/index.html"
+  },
+  {
+    "gps": "5.58606,116.0368",
+    "url": "/spot/Asia/Malaysia/Pulau_Manukan/index.html"
+  },
+  {
+    "gps": "3.4178,101.36443",
+    "url": "/spot/Asia/Malaysia/Sunway_Lagoon/index.html"
+  },
+  {
+    "gps": "2.34927,103.48373",
+    "url": "/spot/Asia/Malaysia/Tanjung_Resang/index.html"
+  },
+  {
+    "gps": "3.48749,103.22389",
+    "url": "/spot/Asia/Malaysia/teluk_cempedak/index.html"
+  },
+  {
+    "gps": "2.47242,104.13061",
+    "url": "/spot/Asia/Malaysia/Tioman_Island_west_beach/index.html"
+  },
+  {
+    "gps": "4.22515,73.39836",
+    "url": "/spot/Asia/Maldives/chickens/index.html"
+  },
+  {
+    "gps": "4.22222,73.39305",
+    "url": "/spot/Asia/Maldives/cokes/index.html"
+  },
+  {
+    "gps": "4.18768,73.35028",
+    "url": "/spot/Asia/Maldives/honkeys/index.html"
+  },
+  {
+    "gps": "4.18459,73.34606",
+    "url": "/spot/Asia/Maldives/jails/index.html"
+  },
+  {
+    "gps": "3.54257,73.28536",
+    "url": "/spot/Asia/Maldives/Kandooma_Right/index.html"
+  },
+  {
+    "gps": "4.20877,73.3707",
+    "url": "/spot/Asia/Maldives/lohis/index.html"
+  },
+  {
+    "gps": "2.2247,73.32147",
+    "url": "/spot/Asia/Maldives/maabaidhoo/index.html"
+  },
+  {
+    "gps": "4.27224,73.43034",
+    "url": "/spot/Asia/Maldives/meeru_reef/index.html"
+  },
+  {
+    "gps": "4.20614,73.36777",
+    "url": "/spot/Asia/Maldives/ninjas/index.html"
+  },
+  {
+    "gps": "4.19006,73.35417",
+    "url": "/spot/Asia/Maldives/pasta_point/index.html"
+  },
+  {
+    "gps": "4.18763,73.35106",
+    "url": "/spot/Asia/Maldives/sultans/index.html"
+  },
+  {
+    "gps": "2.11351,73.614",
+    "url": "/spot/Asia/Maldives/Thaa_s_secret/index.html"
+  },
+  {
+    "gps": "4.15126,73.32886",
+    "url": "/spot/Asia/Maldives/tombstones/index.html"
+  },
+  {
+    "gps": "2.11968,73.371",
+    "url": "/spot/Asia/Maldives/Veymandhoo/index.html"
+  },
+  {
+    "gps": "9.6573,126.9731",
+    "url": "/spot/Asia/Philippines/Jovees/index.html"
+  },
+  {
+    "gps": "38.539,128.39909",
+    "url": "/spot/Asia/South_Korea/38th_Parallel/index.html"
+  },
+  {
+    "gps": "35.9489,129.9639",
+    "url": "/spot/Asia/South_Korea/busan/index.html"
+  },
+  {
+    "gps": "37.48298,128.54588",
+    "url": "/spot/Asia/South_Korea/Gyongpo_Beach/index.html"
+  },
+  {
+    "gps": "35.941,129.9631",
+    "url": "/spot/Asia/South_Korea/hae_un_dae/index.html"
+  },
+  {
+    "gps": "33.14674,126.24771",
+    "url": "/spot/Asia/South_Korea/jeju_island_-_jungmun_beach/index.html"
+  },
+  {
+    "gps": "35.10668,129.11994",
+    "url": "/spot/Asia/South_Korea/song_jung_beach/index.html"
+  },
+  {
+    "gps": "38.35958,128.22185",
+    "url": "/spot/Asia/South_Korea/squids/index.html"
+  },
+  {
+    "gps": "6.50405,81.50369",
+    "url": "/spot/Asia/Sri_Lanka/aragum_bay/index.html"
+  },
+  {
+    "gps": "6.1888,80.14253",
+    "url": "/spot/Asia/Sri_Lanka/deveta/index.html"
+  },
+  {
+    "gps": "6.48277,81.4942",
+    "url": "/spot/Asia/Sri_Lanka/elephant_rock/index.html"
+  },
+  {
+    "gps": "6.7507,80.629",
+    "url": "/spot/Asia/Sri_Lanka/hikkaduwa/index.html"
+  },
+  {
+    "gps": "6.2059,80.48123",
+    "url": "/spot/Asia/Sri_Lanka/kingfisher/index.html"
+  },
+  {
+    "gps": "5.59271,80.19425",
+    "url": "/spot/Asia/Sri_Lanka/koggala_lefts/index.html"
+  },
+  {
+    "gps": "5.56169,80.31566",
+    "url": "/spot/Asia/Sri_Lanka/Matara_/index.html"
+  },
+  {
+    "gps": "5.57776,80.23439",
+    "url": "/spot/Asia/Sri_Lanka/midigama_left/index.html"
+  },
+  {
+    "gps": "5.57815,80.23025",
+    "url": "/spot/Asia/Sri_Lanka/midigama_right/index.html"
+  },
+  {
+    "gps": "5.5656,80.27338",
+    "url": "/spot/Asia/Sri_Lanka/mirissa/index.html"
+  },
+  {
+    "gps": "6.38815,81.46653",
+    "url": "/spot/Asia/Sri_Lanka/okanda/index.html"
+  },
+  {
+    "gps": "6.5296,81.50705",
+    "url": "/spot/Asia/Sri_Lanka/peanuts_farm/index.html"
+  },
+  {
+    "gps": "5.5769,80.23791",
+    "url": "/spot/Asia/Sri_Lanka/Plantations/index.html"
+  },
+  {
+    "gps": "6.52575,81.50798",
+    "url": "/spot/Asia/Sri_Lanka/pottuvil_point/index.html"
+  },
+  {
+    "gps": "5.5803,80.22196",
+    "url": "/spot/Asia/Sri_Lanka/the_rock/index.html"
+  },
+  {
+    "gps": "6.0386,80.1466",
+    "url": "/spot/Asia/Sri_Lanka/unawatuna/index.html"
+  },
+  {
+    "gps": "5.58386,80.25829",
+    "url": "/spot/Asia/Sri_Lanka/weligama/index.html"
+  },
+  {
+    "gps": "6.54324,81.50699",
+    "url": "/spot/Asia/Sri_Lanka/visky_point/index.html"
+  },
+  {
+    "gps": "23.2381,121.28872",
+    "url": "/spot/Asia/Taiwan/bashiendong/index.html"
+  },
+  {
+    "gps": "24.41078,121.50274",
+    "url": "/spot/Asia/Taiwan/Chingshuei/index.html"
+  },
+  {
+    "gps": "24.41725,120.5118",
+    "url": "/spot/Asia/Taiwan/chunan/index.html"
+  },
+  {
+    "gps": "24.23272,120.35043",
+    "url": "/spot/Asia/Taiwan/Da_an/index.html"
+  },
+  {
+    "gps": "24.55942,121.53185",
+    "url": "/spot/Asia/Taiwan/dashi/index.html"
+  },
+  {
+    "gps": "25.1314,121.56776",
+    "url": "/spot/Asia/Taiwan/fulong_beach/index.html"
+  },
+  {
+    "gps": "23.49541,121.35132",
+    "url": "/spot/Asia/Taiwan/gongs/index.html"
+  },
+  {
+    "gps": "21.56594,120.4474",
+    "url": "/spot/Asia/Taiwan/houbihu/index.html"
+  },
+  {
+    "gps": "21.59241,120.5075",
+    "url": "/spot/Asia/Taiwan/jia_le_shui/index.html"
+  },
+  {
+    "gps": "23.41984,121.33062",
+    "url": "/spot/Asia/Taiwan/jici_beach/index.html"
+  },
+  {
+    "gps": "25.14417,121.38067",
+    "url": "/spot/Asia/Taiwan/jin_san__golden_mountain_/index.html"
+  },
+  {
+    "gps": "23.32513,121.30599",
+    "url": "/spot/Asia/Taiwan/Mimi_s_Reef/index.html"
+  },
+  {
+    "gps": "21.57497,120.4562",
+    "url": "/spot/Asia/Taiwan/nan_wan/index.html"
+  },
+  {
+    "gps": "25.17085,121.31017",
+    "url": "/spot/Asia/Taiwan/Paisawan/index.html"
+  },
+  {
+    "gps": "25.11465,121.24839",
+    "url": "/spot/Asia/Taiwan/ShaLun/index.html"
+  },
+  {
+    "gps": "24.36609,121.51918",
+    "url": "/spot/Asia/Taiwan/The_Barracks/index.html"
+  },
+  {
+    "gps": "24.43014,121.50632",
+    "url": "/spot/Asia/Taiwan/wai-ao/index.html"
+  },
+  {
+    "gps": "24.52346,121.50539",
+    "url": "/spot/Asia/Taiwan/wu-shi_harbor/index.html"
+  },
+  {
+    "gps": "8.40459,98.14452",
+    "url": "/spot/Asia/Thailand/Bang_Niang_Rivermouth/index.html"
+  },
+  {
+    "gps": "8.443,98.13231",
+    "url": "/spot/Asia/Thailand/pakarang_point/index.html"
+  },
+  {
+    "gps": "7.50326,98.17364",
+    "url": "/spot/Asia/Thailand/karon_beach/index.html"
+  },
+  {
+    "gps": "7.49022,98.17918",
+    "url": "/spot/Asia/Thailand/kata_beach/index.html"
+  },
+  {
+    "gps": "7.48531,98.17861",
+    "url": "/spot/Asia/Thailand/kata_noi/index.html"
+  },
+  {
+    "gps": "8.3866,98.14663",
+    "url": "/spot/Asia/Thailand/khao_lak/index.html"
+  },
+  {
+    "gps": "12.34128,101.27228",
+    "url": "/spot/Asia/Thailand/ko_samet/index.html"
+  },
+  {
+    "gps": "7.38349,99.17",
+    "url": "/spot/Asia/Thailand/Koh_Lanta_-_Klon_Dao/index.html"
+  },
+  {
+    "gps": "9.40777,100.4406",
+    "url": "/spot/Asia/Thailand/kho_phan_ngan/index.html"
+  },
+  {
+    "gps": "9.43153,98.23613",
+    "url": "/spot/Asia/Thailand/Koh_Phayam/index.html"
+  },
+  {
+    "gps": "7.58082,98.16622",
+    "url": "/spot/Asia/Thailand/leam_sing/index.html"
+  },
+  {
+    "gps": "8.38504,98.1475",
+    "url": "/spot/Asia/Thailand/Nang_Thong_Beach/index.html"
+  },
+  {
+    "gps": "7.58924,98.16603",
+    "url": "/spot/Asia/Thailand/pansea_beach/index.html"
+  },
+  {
+    "gps": "7.54221,98.17753",
+    "url": "/spot/Asia/Thailand/Patong_Beach/index.html"
+  },
+  {
+    "gps": "12.35818,101.24535",
+    "url": "/spot/Asia/Thailand/Mae_ram_Phung/index.html"
+  },
+  {
+    "gps": "12.6962,109.1177",
+    "url": "/spot/Asia/Vietnam/Bai_dai_Beach__Nha_Trang/index.html"
+  },
+  {
+    "gps": "16.4233,108.14795",
+    "url": "/spot/Asia/Vietnam/da_nang/index.html"
+  },
+  {
+    "gps": "12.9711,109.12308",
+    "url": "/spot/Asia/Vietnam/Dark_Reef/index.html"
+  },
+  {
+    "gps": "16.13778,108.5371",
+    "url": "/spot/Asia/Vietnam/lang_co_beach/index.html"
+  },
+  {
+    "gps": "10.55388,108.17704",
+    "url": "/spot/Asia/Vietnam/MuiNe/index.html"
+  },
+  {
+    "gps": "16.3434,108.1486",
+    "url": "/spot/Asia/Vietnam/china_beach/index.html"
+  },
+  {
+    "gps": "16.7026,108.8022",
+    "url": "/spot/Asia/Vietnam/Nam_O/index.html"
+  },
+  {
+    "gps": "16.0107,108.16256",
+    "url": "/spot/Asia/Vietnam/Non_Nuoc/index.html"
+  },
+  {
+    "gps": "10.20253,107.5611",
+    "url": "/spot/Asia/Vietnam/vung_tau_-_back_beach/index.html"
+  },
+  {
+    "gps": "10.20107,5.163undefined",
+    "url": "/spot/Asia/Vietnam/Vung_tau_beach_clab/index.html"
+  },
+  {
+    "gps": "29.52923,122.24872",
+    "url": "/spot/Asia/China/Yellow_Sea/Dong_Sha/index.html"
+  },
+  {
+    "gps": "35.5768,120.14845",
+    "url": "/spot/Asia/China/Yellow_Sea/Gloden_beach/index.html"
+  },
+  {
+    "gps": "36.16251,120.41254",
+    "url": "/spot/Asia/China/Yellow_Sea/Gwen_s_Mouth/index.html"
+  },
+  {
+    "gps": "37.32504,122.6029",
+    "url": "/spot/Asia/China/Yellow_Sea/seal_tub_beach/index.html"
+  },
+  {
+    "gps": "26.45208,120.5689",
+    "url": "/spot/Asia/China/East_China_Sea/Funingwan/index.html"
+  },
+  {
+    "gps": "23.13563,116.41092",
+    "url": "/spot/Asia/China/East_China_Sea/Mazu_Eikon/index.html"
+  },
+  {
+    "gps": "24.53504,118.52417",
+    "url": "/spot/Asia/China/East_China_Sea/Qingshan_Wan__Fujian/index.html"
+  },
+  {
+    "gps": "18.13252,109.31064",
+    "url": "/spot/Asia/China/South_China_Sea/Dadonghai/index.html"
+  },
+  {
+    "gps": "23.40143,117.27372",
+    "url": "/spot/Asia/China/South_China_Sea/dongshan_dao/index.html"
+  },
+  {
+    "gps": "18.16052,109.43302",
+    "url": "/spot/Asia/China/South_China_Sea/Houhai/index.html"
+  },
+  {
+    "gps": "18.14109,38.783undefined",
+    "url": "/spot/Asia/China/South_China_Sea/jinzonglu/index.html"
+  },
+  {
+    "gps": "22.7376,113.3428",
+    "url": "/spot/Asia/China/South_China_Sea/Macau_HacSa_Beach/index.html"
+  },
+  {
+    "gps": "18.24419,109.57554",
+    "url": "/spot/Asia/China/South_China_Sea/ocean_bay_golf_club/index.html"
+  },
+  {
+    "gps": "8.43007,76.42393",
+    "url": "/spot/Asia/India/Kerala/Boar_rice/index.html"
+  },
+  {
+    "gps": "11.52558,75.20842",
+    "url": "/spot/Asia/India/Kerala/Kannur/index.html"
+  },
+  {
+    "gps": "8.23119,76.58701",
+    "url": "/spot/Asia/India/Kerala/kovalam/index.html"
+  },
+  {
+    "gps": "8.43911,76.4235",
+    "url": "/spot/Asia/India/Kerala/Varkala/index.html"
+  },
+  {
+    "gps": "15.4123,73.42169",
+    "url": "/spot/Asia/India/North-West/Arambol/index.html"
+  },
+  {
+    "gps": "15.15417,73.55126",
+    "url": "/spot/Asia/India/North-West/Benaulim_Beach/index.html"
+  },
+  {
+    "gps": "15.17578,73.54137",
+    "url": "/spot/Asia/India/North-West/Betalbatim_Beach_-_Taj/index.html"
+  },
+  {
+    "gps": "14.32724,74.19103",
+    "url": "/spot/Asia/India/North-West/Gokarna/index.html"
+  },
+  {
+    "gps": "0.29292,122.59526",
+    "url": "/spot/Asia/Indonesia/Sulawesi/Tomini_beach/index.html"
+  },
+  {
+    "gps": "12.37084,80.11919",
+    "url": "/spot/Asia/India/Tamil_Nadu/mahaballipuram/index.html"
+  },
+  {
+    "gps": "-9.37995,119.0286",
+    "url": "/spot/Asia/Indonesia/Savu_Sea/Pero/index.html"
+  },
+  {
+    "gps": "11.57523,79.50382",
+    "url": "/spot/Asia/India/Tamil_Nadu/Pondichery/index.html"
+  },
+  {
+    "gps": "-10.53609,122.48709",
+    "url": "/spot/Asia/Indonesia/Savu_Sea/nembrala/index.html"
+  },
+  {
+    "gps": "-9.57259,119.54081",
+    "url": "/spot/Asia/Indonesia/Savu_Sea/sumba_-_miller_s_right/index.html"
+  },
+  {
+    "gps": "-8.53446,116.44146",
+    "url": "/spot/Asia/Indonesia/Sumbawa/benete/index.html"
+  },
+  {
+    "gps": "-8.49685,118.21343",
+    "url": "/spot/Asia/Indonesia/Sumbawa/lakey_peak/index.html"
+  },
+  {
+    "gps": "-8.47079,118.21343",
+    "url": "/spot/Asia/Indonesia/Sumbawa/periscopes/index.html"
+  },
+  {
+    "gps": "-8.5175,116.45333",
+    "url": "/spot/Asia/Indonesia/Sumbawa/scar_reef/index.html"
+  },
+  {
+    "gps": "-8.56157,116.44649",
+    "url": "/spot/Asia/Indonesia/Sumbawa/super_suck/index.html"
+  },
+  {
+    "gps": "-9.0104,116.4432",
+    "url": "/spot/Asia/Indonesia/Sumbawa/Tropical_s/index.html"
+  },
+  {
+    "gps": "11.5835,79.50717",
+    "url": "/spot/Asia/India/Tamil_Nadu/near_repos_beach/index.html"
+  },
+  {
+    "gps": "-8.58316,116.43588",
+    "url": "/spot/Asia/Indonesia/Sumbawa/yo_yos/index.html"
+  },
+  {
+    "gps": "-8.52919,116.2176",
+    "url": "/spot/Asia/Indonesia/Lombok/belongas/index.html"
+  },
+  {
+    "gps": "-8.45059,115.49361",
+    "url": "/spot/Asia/Indonesia/Lombok/desert_point/index.html"
+  },
+  {
+    "gps": "-8.53013,116.27037",
+    "url": "/spot/Asia/Indonesia/Lombok/ekas/index.html"
+  },
+  {
+    "gps": "-8.22182,116.4563",
+    "url": "/spot/Asia/Indonesia/Lombok/Gili_air/index.html"
+  },
+  {
+    "gps": "-8.21608,116.2632",
+    "url": "/spot/Asia/Indonesia/Lombok/gili_trawangan/index.html"
+  },
+  {
+    "gps": "17.44888,83.21056",
+    "url": "/spot/Asia/India/North-East/Hanuman_point/index.html"
+  },
+  {
+    "gps": "-8.5462,116.2164",
+    "url": "/spot/Asia/Indonesia/Lombok/grupuk/index.html"
+  },
+  {
+    "gps": "-8.55058,116.19436",
+    "url": "/spot/Asia/Indonesia/Lombok/kuta/index.html"
+  },
+  {
+    "gps": "-8.53265,116.9642",
+    "url": "/spot/Asia/Indonesia/Lombok/mawi/index.html"
+  },
+  {
+    "gps": "-8.54643,116.17737",
+    "url": "/spot/Asia/Indonesia/Lombok/NOVOTEL/index.html"
+  },
+  {
+    "gps": "-8.46904,118.22295",
+    "url": "/spot/Asia/Indonesia/Lombok/periscope_point/index.html"
+  },
+  {
+    "gps": "-9.46886,119.22384",
+    "url": "/spot/Asia/Indonesia/Savu_Sea/nihiwatu/index.html"
+  },
+  {
+    "gps": "-8.28993,116.2095",
+    "url": "/spot/Asia/Indonesia/Lombok/Puri_s_point/index.html"
+  },
+  {
+    "gps": "-8.30176,116.2688",
+    "url": "/spot/Asia/Indonesia/Lombok/senggigi/index.html"
+  },
+  {
+    "gps": "-8.55094,116.19364",
+    "url": "/spot/Asia/Indonesia/Lombok/tanjung_aan/index.html"
+  },
+  {
+    "gps": "-8.44707,115.9019",
+    "url": "/spot/Asia/Indonesia/Bali/airports/index.html"
+  },
+  {
+    "gps": "-8.47535,115.7189",
+    "url": "/spot/Asia/Indonesia/Bali/ballangan/index.html"
+  },
+  {
+    "gps": "-8.47089,115.13899",
+    "url": "/spot/Asia/Indonesia/Bali/Bali_Tropic/index.html"
+  },
+  {
+    "gps": "-8.31457,114.59383",
+    "url": "/spot/Asia/Indonesia/Bali/balian/index.html"
+  },
+  {
+    "gps": "-8.40017,115.8317",
+    "url": "/spot/Asia/Indonesia/Bali/berawa/index.html"
+  },
+  {
+    "gps": "-8.48244,115.68",
+    "url": "/spot/Asia/Indonesia/Bali/Bingin/index.html"
+  },
+  {
+    "gps": "-8.39851,115.7575",
+    "url": "/spot/Asia/Indonesia/Bali/canngu/index.html"
+  },
+  {
+    "gps": "-8.42213,115.26452",
+    "url": "/spot/Asia/Indonesia/Bali/ceningan_point/index.html"
+  },
+  {
+    "gps": "-8.47945,115.7025",
+    "url": "/spot/Asia/Indonesia/Bali/dreamland/index.html"
+  },
+  {
+    "gps": "-8.48442,115.14094",
+    "url": "/spot/Asia/Indonesia/Bali/Ewan_s_Left/index.html"
+  },
+  {
+    "gps": "-8.51089,115.10207",
+    "url": "/spot/Asia/Indonesia/Bali/green_ball/index.html"
+  },
+  {
+    "gps": "-8.48447,115.651",
+    "url": "/spot/Asia/Indonesia/Bali/Impossibles/index.html"
+  },
+  {
+    "gps": "-8.4628,115.9455",
+    "url": "/spot/Asia/Indonesia/Bali/jimbaran_shorey/index.html"
+  },
+  {
+    "gps": "-8.35853,115.20345",
+    "url": "/spot/Asia/Indonesia/Bali/keramas/index.html"
+  },
+  {
+    "gps": "-8.38808,115.16819",
+    "url": "/spot/Asia/Indonesia/Bali/ketewel/index.html"
+  },
+  {
+    "gps": "-8.4123,115.9238",
+    "url": "/spot/Asia/Indonesia/Bali/ku_de_ta/index.html"
+  },
+  {
+    "gps": "-8.42982,115.10016",
+    "url": "/spot/Asia/Indonesia/Bali/kuta_beach/index.html"
+  },
+  {
+    "gps": "-8.43829,115.9353",
+    "url": "/spot/Asia/Indonesia/Bali/kuta_reef/index.html"
+  },
+  {
+    "gps": "-8.40556,115.26445",
+    "url": "/spot/Asia/Indonesia/Bali/laserations/index.html"
+  },
+  {
+    "gps": "-8.41709,115.9485",
+    "url": "/spot/Asia/Indonesia/Bali/legian_beach/index.html"
+  },
+  {
+    "gps": "-8.25296,114.4828",
+    "url": "/spot/Asia/Indonesia/Bali/Medewi/index.html"
+  },
+  {
+    "gps": "-8.40898,115.25977",
+    "url": "/spot/Asia/Indonesia/Bali/mushroom_beach/index.html"
+  },
+  {
+    "gps": "-8.48023,115.14239",
+    "url": "/spot/Asia/Indonesia/Bali/mushrooms/index.html"
+  },
+  {
+    "gps": "-8.49332,115.13648",
+    "url": "/spot/Asia/Indonesia/Bali/nusa_dua/index.html"
+  },
+  {
+    "gps": "-8.506,115.6417",
+    "url": "/spot/Asia/Indonesia/Bali/nyang-nyang/index.html"
+  },
+  {
+    "gps": "-8.38328,115.17426",
+    "url": "/spot/Asia/Indonesia/Bali/padang_galak/index.html"
+  },
+  {
+    "gps": "-8.48628,115.5964",
+    "url": "/spot/Asia/Indonesia/Bali/Padang-Padang/index.html"
+  },
+  {
+    "gps": "-8.39119,115.7274",
+    "url": "/spot/Asia/Indonesia/Bali/pererenan/index.html"
+  },
+  {
+    "gps": "-8.40695,115.26473",
+    "url": "/spot/Asia/Indonesia/Bali/playgrounds/index.html"
+  },
+  {
+    "gps": "-8.40195,115.15847",
+    "url": "/spot/Asia/Indonesia/Bali/sanur_grand_hyatt/index.html"
+  },
+  {
+    "gps": "-8.35564,115.20888",
+    "url": "/spot/Asia/Indonesia/Bali/Secret/index.html"
+  },
+  {
+    "gps": "-8.44458,115.14575",
+    "url": "/spot/Asia/Indonesia/Bali/serangan/index.html"
+  },
+  {
+    "gps": "-8.39942,115.26589",
+    "url": "/spot/Asia/Indonesia/Bali/shipwrecks/index.html"
+  },
+  {
+    "gps": "-8.47312,115.13955",
+    "url": "/spot/Asia/Indonesia/Bali/srilanka/index.html"
+  },
+  {
+    "gps": "-8.42244,115.15694",
+    "url": "/spot/Asia/Indonesia/Bali/tandjungs/index.html"
+  },
+  {
+    "gps": "-8.48998,115.5175",
+    "url": "/spot/Asia/Indonesia/Bali/Uluwatu/index.html"
+  },
+  {
+    "gps": "-8.42431,114.22469",
+    "url": "/spot/Asia/Indonesia/East_Java/20-20s/index.html"
+  },
+  {
+    "gps": "-8.44057,114.20384",
+    "url": "/spot/Asia/Indonesia/East_Java/grajagan/index.html"
+  },
+  {
+    "gps": "-8.13859,111.6091",
+    "url": "/spot/Asia/Indonesia/East_Java/pacitan/index.html"
+  },
+  {
+    "gps": "-8.26058,113.34806",
+    "url": "/spot/Asia/Indonesia/East_Java/Payangan/index.html"
+  },
+  {
+    "gps": "-8.23172,113.28384",
+    "url": "/spot/Asia/Indonesia/East_Java/Puger/index.html"
+  },
+  {
+    "gps": "-8.16767,111.4471",
+    "url": "/spot/Asia/Indonesia/East_Java/puncher/index.html"
+  },
+  {
+    "gps": "-8.36307,114.1574",
+    "url": "/spot/Asia/Indonesia/East_Java/Red_Island/index.html"
+  },
+  {
+    "gps": "-8.41135,114.224",
+    "url": "/spot/Asia/Indonesia/East_Java/tiger_tracks/index.html"
+  },
+  {
+    "gps": "-8.41283,114.22371",
+    "url": "/spot/Asia/Indonesia/East_Java/Tiger_Tracks_Lefts/index.html"
+  },
+  {
+    "gps": "-7.41557,108.39246",
+    "url": "/spot/Asia/Indonesia/Central_Java/pangandaran/index.html"
+  },
+  {
+    "gps": "-6.36879,105.784",
+    "url": "/spot/Asia/Indonesia/West_Java/apocalypse/index.html"
+  },
+  {
+    "gps": "-7.44895,108.30131",
+    "url": "/spot/Asia/Indonesia/West_Java/batu_karas/index.html"
+  },
+  {
+    "gps": "-6.57774,106.28771",
+    "url": "/spot/Asia/Indonesia/West_Java/cimaja/index.html"
+  },
+  {
+    "gps": "-6.11496,105.50517",
+    "url": "/spot/Asia/Indonesia/West_Java/Jambu_Beach/index.html"
+  },
+  {
+    "gps": "-6.57466,106.26133",
+    "url": "/spot/Asia/Indonesia/West_Java/karang_haji/index.html"
+  },
+  {
+    "gps": "-6.40795,105.19536",
+    "url": "/spot/Asia/Indonesia/West_Java/National_Park/index.html"
+  },
+  {
+    "gps": "-7.16668,106.22149",
+    "url": "/spot/Asia/Indonesia/West_Java/ombak_tujuh/index.html"
+  },
+  {
+    "gps": "-6.39324,105.10358",
+    "url": "/spot/Asia/Indonesia/West_Java/one_palm_point_-_panaitan_island/index.html"
+  },
+  {
+    "gps": "-6.14136,105.49502",
+    "url": "/spot/Asia/Indonesia/West_Java/pasauran/index.html"
+  },
+  {
+    "gps": "-6.13877,105.49793",
+    "url": "/spot/Asia/Indonesia/West_Java/Pasauran_Muara_/index.html"
+  },
+  {
+    "gps": "-6.59062,106.17733",
+    "url": "/spot/Asia/Indonesia/West_Java/suwarna/index.html"
+  },
+  {
+    "gps": "-6.57675,106.28341",
+    "url": "/spot/Asia/Indonesia/West_Java/sunset/index.html"
+  },
+  {
+    "gps": "-6.28672,105.39439",
+    "url": "/spot/Asia/Indonesia/West_Java/Tanjung_Lesung/index.html"
+  },
+  {
+    "gps": "-7.42813,107.4991",
+    "url": "/spot/Asia/Indonesia/West_Java/Timmy_Turner_s_New_Left/index.html"
+  },
+  {
+    "gps": "-7.20152,106.23853",
+    "url": "/spot/Asia/Indonesia/West_Java/turtles/index.html"
+  },
+  {
+    "gps": "-1.54547,99.18639",
+    "url": "/spot/Asia/Indonesia/Mentawai/4_bobs/index.html"
+  },
+  {
+    "gps": "-2.16708,99.35636",
+    "url": "/spot/Asia/Indonesia/Mentawai/aaron_s/index.html"
+  },
+  {
+    "gps": "-2.149,99.33919",
+    "url": "/spot/Asia/Indonesia/Mentawai/Ariks/index.html"
+  },
+  {
+    "gps": "-1.4887,99.1592",
+    "url": "/spot/Asia/Indonesia/Mentawai/bang_bang/index.html"
+  },
+  {
+    "gps": "-1.51125,99.14684",
+    "url": "/spot/Asia/Indonesia/Mentawai/bankvaults/index.html"
+  },
+  {
+    "gps": "-1.50399,99.9081",
+    "url": "/spot/Asia/Indonesia/Mentawai/Burger/index.html"
+  },
+  {
+    "gps": "-2.45415,99.59072",
+    "url": "/spot/Asia/Indonesia/Mentawai/Dutchies/index.html"
+  },
+  {
+    "gps": "-1.49735,99.15256",
+    "url": "/spot/Asia/Indonesia/Mentawai/e-bay/index.html"
+  },
+  {
+    "gps": "-2.49212,100.3539",
+    "url": "/spot/Asia/Indonesia/Mentawai/Green_Bush/index.html"
+  },
+  {
+    "gps": "-1.50986,99.1815",
+    "url": "/spot/Asia/Indonesia/Mentawai/hideway/index.html"
+  },
+  {
+    "gps": "-2.22538,99.51573",
+    "url": "/spot/Asia/Indonesia/Mentawai/lances_right/index.html"
+  },
+  {
+    "gps": "-2.1099,99.32827",
+    "url": "/spot/Asia/Indonesia/Mentawai/icelands/index.html"
+  },
+  {
+    "gps": "-1.53966,99.17563",
+    "url": "/spot/Asia/Indonesia/Mentawai/kanduis/index.html"
+  },
+  {
+    "gps": "-2.23032,99.50254",
+    "url": "/spot/Asia/Indonesia/Mentawai/lances_left/index.html"
+  },
+  {
+    "gps": "-2.47324,99.59514",
+    "url": "/spot/Asia/Indonesia/Mentawai/macaronis/index.html"
+  },
+  {
+    "gps": "-1.50746,99.15131",
+    "url": "/spot/Asia/Indonesia/Mentawai/nipussi/index.html"
+  },
+  {
+    "gps": "-1.49905,99.15179",
+    "url": "/spot/Asia/Indonesia/Mentawai/pitstops/index.html"
+  },
+  {
+    "gps": "-1.59118,99.34104",
+    "url": "/spot/Asia/Indonesia/Mentawai/Resorts/index.html"
+  },
+  {
+    "gps": "-1.55242,99.19165",
+    "url": "/spot/Asia/Indonesia/Mentawai/rifles/index.html"
+  },
+  {
+    "gps": "-2.1681,99.33265",
+    "url": "/spot/Asia/Indonesia/Mentawai/Rikas_rights/index.html"
+  },
+  {
+    "gps": "-2.7182,99.31117",
+    "url": "/spot/Asia/Indonesia/Mentawai/scarecrows/index.html"
+  },
+  {
+    "gps": "-2.299,34.109undefined",
+    "url": "/spot/Asia/Indonesia/Mentawai/Suicides/index.html"
+  },
+  {
+    "gps": "-2.395,99.32559",
+    "url": "/spot/Asia/Indonesia/Mentawai/telescopes/index.html"
+  },
+  {
+    "gps": "-3.3278,100.10241",
+    "url": "/spot/Asia/Indonesia/Mentawai/thunders/index.html"
+  },
+  {
+    "gps": "-5.7385,103.50762",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/banana_island/index.html"
+  },
+  {
+    "gps": "0.9229,102.33442",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/BONO/index.html"
+  },
+  {
+    "gps": "-5.2299,103.45998",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/drew_s_right/index.html"
+  },
+  {
+    "gps": "-5.1155,103.55804",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/krui_left/index.html"
+  },
+  {
+    "gps": "5.28507,95.1396",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/Lhoknga/index.html"
+  },
+  {
+    "gps": "-5.16222,103.59924",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/mandiri/index.html"
+  },
+  {
+    "gps": "-5.21001,104.1551",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/Richards_Right/index.html"
+  },
+  {
+    "gps": "-0.59614,100.21681",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/pantai_air_manis/index.html"
+  },
+  {
+    "gps": "-5.14196,103.54563",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/the_peak/index.html"
+  },
+  {
+    "gps": "-5.18289,103.59512",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/ujung_bocur/index.html"
+  },
+  {
+    "gps": "-5.18124,104.0032",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/Volcanos/index.html"
+  },
+  {
+    "gps": "-5.20945,104.1814",
+    "url": "/spot/Asia/Indonesia/Sumatra_Mainland/way_jambu/index.html"
+  },
+  {
+    "gps": "1.15583,97.13792",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/Afulu/index.html"
+  },
+  {
+    "gps": "0.52042,97.20013",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/asu/index.html"
+  },
+  {
+    "gps": "2.11804,97.17695",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/Banyaks/index.html"
+  },
+  {
+    "gps": "0.48752,97.20832",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/bawa/index.html"
+  },
+  {
+    "gps": "2.324,97.19426",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/Bay_of_Plenty/index.html"
+  },
+  {
+    "gps": "0.50837,97.21012",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/hinako_islands/index.html"
+  },
+  {
+    "gps": "2.27004,96.13374",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/Jackals/index.html"
+  },
+  {
+    "gps": "0.34333,97.43952",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/Kiddies_Corner/index.html"
+  },
+  {
+    "gps": "0.3387,97.43795",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/the_point/index.html"
+  },
+  {
+    "gps": "-0.35477,98.24798",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/No_Name/index.html"
+  },
+  {
+    "gps": "0.36048,97.52776",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/rockstar/index.html"
+  },
+  {
+    "gps": "0.36138,97.4106",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/Shark_Pit/index.html"
+  },
+  {
+    "gps": "-0.2637,98.1834",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/suicide/index.html"
+  },
+  {
+    "gps": "-0.3954,98.15417",
+    "url": "/spot/Asia/Indonesia/Sumatra_Islands/telos_island_nias/index.html"
+  },
+  {
+    "gps": "26.19893,127.44511",
+    "url": "/spot/Asia/Japan/Okinawa/5_rocks/index.html"
+  },
+  {
+    "gps": "26.2318,128.0178",
+    "url": "/spot/Asia/Japan/Okinawa/ekie_island/index.html"
+  },
+  {
+    "gps": "26.9033,127.53194",
+    "url": "/spot/Asia/Japan/Okinawa/Kudaka_Left/index.html"
+  },
+  {
+    "gps": "26.4753,127.41161",
+    "url": "/spot/Asia/Japan/Okinawa/suicide_cliffs/index.html"
+  },
+  {
+    "gps": "26.19562,127.44447",
+    "url": "/spot/Asia/Japan/Okinawa/sunabe/index.html"
+  },
+  {
+    "gps": "26.24269,127.50915",
+    "url": "/spot/Asia/Japan/Okinawa/tengan_pier/index.html"
+  },
+  {
+    "gps": "26.17679,127.54644",
+    "url": "/spot/Asia/Japan/Okinawa/white_beach/index.html"
+  },
+  {
+    "gps": "35.18088,139.31525",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/inamuragasaki/index.html"
+  },
+  {
+    "gps": "34.39484,138.5559",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/irita_hama/index.html"
+  },
+  {
+    "gps": "35.7795,139.37195",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/Jogashima/index.html"
+  },
+  {
+    "gps": "35.6377,140.623",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/Kamogawa__Chiba/index.html"
+  },
+  {
+    "gps": "35.32005,140.27674",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/katagai/index.html"
+  },
+  {
+    "gps": "35.18867,139.28114",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/kugenuma/index.html"
+  },
+  {
+    "gps": "35.1159,139.36073",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/Nagai/index.html"
+  },
+  {
+    "gps": "35.11203,140.21undefined",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/Onjuku/index.html"
+  },
+  {
+    "gps": "35.17508,139.33445",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/osaki/index.html"
+  },
+  {
+    "gps": "35.15591,139.11019",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/sakawa_rivermouth/index.html"
+  },
+  {
+    "gps": "34.5748,138.41484",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/secret_spot_5/index.html"
+  },
+  {
+    "gps": "35.18288,139.30704",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/shichirigahama/index.html"
+  },
+  {
+    "gps": "34.41373,138.58355",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/shirahama/index.html"
+  },
+  {
+    "gps": "35.19798,140.24028",
+    "url": "/spot/Asia/Japan/Kanagawa_Chiba/Taito/index.html"
+  },
+  {
+    "gps": "34.24761,139.17205",
+    "url": "/spot/Asia/Japan/Izu_Islands/awaiura/index.html"
+  },
+  {
+    "gps": "34.21357,139.16572",
+    "url": "/spot/Asia/Japan/Izu_Islands/habushiiso/index.html"
+  },
+  {
+    "gps": "34.22566,139.16598",
+    "url": "/spot/Asia/Japan/Izu_Islands/Habushiura/index.html"
+  },
+  {
+    "gps": "34.20602,139.16597",
+    "url": "/spot/Asia/Japan/Izu_Islands/secret/index.html"
+  },
+  {
+    "gps": "33.55734,136.8915",
+    "url": "/spot/Asia/Japan/Kii_Hanto/Atashika/index.html"
+  },
+  {
+    "gps": "33.39188,135.57555",
+    "url": "/spot/Asia/Japan/Kii_Hanto/GoroGoro/index.html"
+  },
+  {
+    "gps": "34.15533,135.5675",
+    "url": "/spot/Asia/Japan/Kii_Hanto/Isonoura/index.html"
+  },
+  {
+    "gps": "33.38961,135.57238",
+    "url": "/spot/Asia/Japan/Kii_Hanto/Motel_Shita/index.html"
+  },
+  {
+    "gps": "34.618,136.14039",
+    "url": "/spot/Asia/Japan/Kii_Hanto/Tyoushi_River_Mouth/index.html"
+  },
+  {
+    "gps": "33.45293,136.1515",
+    "url": "/spot/Asia/Japan/Kii_Hanto/Umigame_Koen_Mae/index.html"
+  },
+  {
+    "gps": "34.25674,136.55217",
+    "url": "/spot/Asia/Japan/Kii_Hanto/Under_the_Sunrepo_/index.html"
+  },
+  {
+    "gps": "34.36137,12.undefinedundefined",
+    "url": "/spot/Asia/Japan/Shizuoka/akabane_long_beach/index.html"
+  },
+  {
+    "gps": "34.42886,138.13045",
+    "url": "/spot/Asia/Japan/Shizuoka/Katahama/index.html"
+  },
+  {
+    "gps": "34.39221,138.55204",
+    "url": "/spot/Asia/Japan/Shizuoka/ohama_beach/index.html"
+  },
+  {
+    "gps": "34.3601,138.12319",
+    "url": "/spot/Asia/Japan/Shizuoka/omaezaki/index.html"
+  },
+  {
+    "gps": "34.43926,138.14035",
+    "url": "/spot/Asia/Japan/Shizuoka/shizunami/index.html"
+  },
+  {
+    "gps": "34.39986,138.117",
+    "url": "/spot/Asia/Japan/Shizuoka/Suzuki/index.html"
+  },
+  {
+    "gps": "34.39662,138.55945",
+    "url": "/spot/Asia/Japan/Shizuoka/tadado_beach/index.html"
+  },
+  {
+    "gps": "35.0431,139.5273",
+    "url": "/spot/Asia/Japan/Shizuoka/usami/index.html"
+  },
+  {
+    "gps": "32.58158,132.59931",
+    "url": "/spot/Asia/Japan/Shikoku/futami/index.html"
+  },
+  {
+    "gps": "32.57643,132.59674",
+    "url": "/spot/Asia/Japan/Shikoku/hirano/index.html"
+  },
+  {
+    "gps": "33.31666,134.17097",
+    "url": "/spot/Asia/Japan/Shikoku/ikumi/index.html"
+  },
+  {
+    "gps": "33.3567,134.21828",
+    "url": "/spot/Asia/Japan/Shikoku/kaifu_rivermouth/index.html"
+  },
+  {
+    "gps": "32.45665,132.48942",
+    "url": "/spot/Asia/Japan/Shikoku/Kainokawa/index.html"
+  },
+  {
+    "gps": "33.32048,133.41104",
+    "url": "/spot/Asia/Japan/Shikoku/monobegawakakou/index.html"
+  },
+  {
+    "gps": "33.27536,133.28859",
+    "url": "/spot/Asia/Japan/Shikoku/niyodogawakakou/index.html"
+  },
+  {
+    "gps": "33.22173,134.1241",
+    "url": "/spot/Asia/Japan/Shikoku/ozaki/index.html"
+  },
+  {
+    "gps": "33.19207,134.11714",
+    "url": "/spot/Asia/Japan/Shikoku/shiina/index.html"
+  },
+  {
+    "gps": "33.34001,134.1864",
+    "url": "/spot/Asia/Japan/Shikoku/shishikui/index.html"
+  },
+  {
+    "gps": "33.32954,134.19016",
+    "url": "/spot/Asia/Japan/Shikoku/takegashima/index.html"
+  },
+  {
+    "gps": "33.39566,134.24226",
+    "url": "/spot/Asia/Japan/Shikoku/uchizuma/index.html"
+  },
+  {
+    "gps": "33.26062,133.58918",
+    "url": "/spot/Asia/Japan/Shikoku/yasudawakakou/index.html"
+  },
+  {
+    "gps": "31.23583,131.4348",
+    "url": "/spot/Asia/Japan/Kyushu/Akaehama/index.html"
+  },
+  {
+    "gps": "31.48308,131.28033",
+    "url": "/spot/Asia/Japan/Kyushu/Aoshima_beach_break/index.html"
+  },
+  {
+    "gps": "31.48163,131.28676",
+    "url": "/spot/Asia/Japan/Kyushu/Aoshima_Reef/index.html"
+  },
+  {
+    "gps": "31.21624,131.19911",
+    "url": "/spot/Asia/Japan/Kyushu/Cape_Toi/index.html"
+  },
+  {
+    "gps": "31.38194,131.27548",
+    "url": "/spot/Asia/Japan/Kyushu/Chokusen/index.html"
+  },
+  {
+    "gps": "31.27301,131.11594",
+    "url": "/spot/Asia/Japan/Kyushu/Fukushimaku/index.html"
+  },
+  {
+    "gps": "31.52181,131.2744",
+    "url": "/spot/Asia/Japan/Kyushu/Golf_Parc/index.html"
+  },
+  {
+    "gps": "32.14401,131.34533",
+    "url": "/spot/Asia/Japan/Kyushu/Haka_Shita/index.html"
+  },
+  {
+    "gps": "31.55687,131.2823",
+    "url": "/spot/Asia/Japan/Kyushu/Hitotsuba/index.html"
+  },
+  {
+    "gps": "32.2994,131.30685",
+    "url": "/spot/Asia/Japan/Kyushu/Hitotsuse/index.html"
+  },
+  {
+    "gps": "31.42531,131.27628",
+    "url": "/spot/Asia/Japan/Kyushu/Ibii/index.html"
+  },
+  {
+    "gps": "32.11693,131.33373",
+    "url": "/spot/Asia/Japan/Kyushu/Ikurahama/index.html"
+  },
+  {
+    "gps": "32.24737,131.39151",
+    "url": "/spot/Asia/Japan/Kyushu/isegahama/index.html"
+  },
+  {
+    "gps": "32.1168,131.2985",
+    "url": "/spot/Asia/Japan/Kyushu/Isekagaku/index.html"
+  },
+  {
+    "gps": "32.19669,131.36532",
+    "url": "/spot/Asia/Japan/Kyushu/Ishinamigawa/index.html"
+  },
+  {
+    "gps": "32.0658,131.2966",
+    "url": "/spot/Asia/Japan/Kyushu/Ishizakigawa/index.html"
+  },
+  {
+    "gps": "31.59877,131.29408",
+    "url": "/spot/Asia/Japan/Kyushu/Ishizakihama/index.html"
+  },
+  {
+    "gps": "32.744,131.3241",
+    "url": "/spot/Asia/Japan/Kyushu/Kaguchihama/index.html"
+  },
+  {
+    "gps": "32.21603,131.37497",
+    "url": "/spot/Asia/Japan/Kyushu/kanegahama/index.html"
+  },
+  {
+    "gps": "32.1787,131.30undefined",
+    "url": "/spot/Asia/Japan/Kyushu/KDDI/index.html"
+  },
+  {
+    "gps": "31.49954,131.2718",
+    "url": "/spot/Asia/Japan/Kyushu/kizaki_beach/index.html"
+  },
+  {
+    "gps": "31.38414,131.27381",
+    "url": "/spot/Asia/Japan/Kyushu/Kobukei/index.html"
+  },
+  {
+    "gps": "31.48792,131.27564",
+    "url": "/spot/Asia/Japan/Kyushu/Kodomonokuni/index.html"
+  },
+  {
+    "gps": "31.24502,131.20568",
+    "url": "/spot/Asia/Japan/Kyushu/Koigaoura/index.html"
+  },
+  {
+    "gps": "32.14989,131.34648",
+    "url": "/spot/Asia/Japan/Kyushu/Lena/index.html"
+  },
+  {
+    "gps": "31.57313,131.28116",
+    "url": "/spot/Asia/Japan/Kyushu/miyzaki_wave_dome/index.html"
+  },
+  {
+    "gps": "31.27215,131.10745",
+    "url": "/spot/Asia/Japan/Kyushu/Nadahama/index.html"
+  },
+  {
+    "gps": "31.2733,131.10987",
+    "url": "/spot/Asia/Japan/Kyushu/Nagahama/index.html"
+  },
+  {
+    "gps": "31.24344,131.13994",
+    "url": "/spot/Asia/Japan/Kyushu/Nagatazaki/index.html"
+  },
+  {
+    "gps": "31.33244,131.22898",
+    "url": "/spot/Asia/Japan/Kyushu/Odutsu/index.html"
+  },
+  {
+    "gps": "32.23925,131.38505",
+    "url": "/spot/Asia/Japan/Kyushu/okuragahama/index.html"
+  },
+  {
+    "gps": "31.13821,130.29546",
+    "url": "/spot/Asia/Japan/Kyushu/Oniguchi/index.html"
+  },
+  {
+    "gps": "31.37426,131.27293",
+    "url": "/spot/Asia/Japan/Kyushu/Oura/index.html"
+  },
+  {
+    "gps": "31.53488,131.27811",
+    "url": "/spot/Asia/Japan/Kyushu/Oyodogawa/index.html"
+  },
+  {
+    "gps": "31.37959,131.2782",
+    "url": "/spot/Asia/Japan/Kyushu/Sentan/index.html"
+  },
+  {
+    "gps": "32.24361,131.38803",
+    "url": "/spot/Asia/Japan/Kyushu/Shiomigawakakou/index.html"
+  },
+  {
+    "gps": "31.36258,131.25154",
+    "url": "/spot/Asia/Japan/Kyushu/Shoojiun/index.html"
+  },
+  {
+    "gps": "31.53729,131.27842",
+    "url": "/spot/Asia/Japan/Kyushu/Suimon/index.html"
+  },
+  {
+    "gps": "31.44702,131.28584",
+    "url": "/spot/Asia/Japan/Kyushu/uchiumi/index.html"
+  },
+  {
+    "gps": "31.45032,131.282",
+    "url": "/spot/Asia/Japan/Kyushu/Uchiumi_reefs/index.html"
+  },
+  {
+    "gps": "31.35216,131.24599",
+    "url": "/spot/Asia/Japan/Kyushu/Umegahama_rivermouth/index.html"
+  },
+  {
+    "gps": "36.25161,136.24905",
+    "url": "/spot/Asia/Japan/West_Coast/taito/index.html"
+  },
+  {
+    "gps": "36.1513,136.7262",
+    "url": "/spot/Asia/Japan/West_Coast/Oshima/index.html"
+  },
+  {
+    "gps": "36.57237,136.45673",
+    "url": "/spot/Asia/Japan/West_Coast/Shibagaki/index.html"
+  },
+  {
+    "gps": "36.13365,136.8065",
+    "url": "/spot/Asia/Japan/West_Coast/sunset_beach/index.html"
+  },
+  {
+    "gps": "36.3214,136.31451",
+    "url": "/spot/Asia/Japan/West_Coast/Tokumitsu/index.html"
+  },
+  {
+    "gps": "35.32688,134.13136",
+    "url": "/spot/Asia/Japan/West_Coast/tottori_sakyu/index.html"
+  },
+  {
+    "gps": "34.21299,130.51417",
+    "url": "/spot/Asia/Japan/West_Coast/Tsunoshima/index.html"
+  },
+  {
+    "gps": "38.15596,141.139",
+    "url": "/spot/Asia/Japan/Tohoku/sendai_shinko/index.html"
+  },
+  {
+    "gps": "40.46464,141.24755",
+    "url": "/spot/Asia/Japan/Tohoku/veedol_beach/index.html"
+  },
+  {
+    "gps": "6.26722,116.2611",
+    "url": "/spot/Asia/Malaysia/Borneo/Kota_Belud/index.html"
+  },
+  {
+    "gps": "7.1868,116.44479",
+    "url": "/spot/Asia/Malaysia/Borneo/Kudat/index.html"
+  },
+  {
+    "gps": "6.7001,116.6423",
+    "url": "/spot/Asia/Malaysia/Borneo/Nexus/index.html"
+  },
+  {
+    "gps": "6.7013,116.5856",
+    "url": "/spot/Asia/Malaysia/Borneo/Nexus_west_end/index.html"
+  },
+  {
+    "gps": "6.12104,116.10577",
+    "url": "/spot/Asia/Malaysia/Borneo/Shabandar/index.html"
+  },
+  {
+    "gps": "5.56004,116.2798",
+    "url": "/spot/Asia/Malaysia/Borneo/Tanjung_Aru_beach_3/index.html"
+  },
+  {
+    "gps": "10.56795,125.49832",
+    "url": "/spot/Asia/Philippines/Center_Islands/Calicoan_Island/index.html"
+  },
+  {
+    "gps": "12.40591,124.22161",
+    "url": "/spot/Asia/Philippines/Center_Islands/geron/index.html"
+  },
+  {
+    "gps": "12.40752,124.21914",
+    "url": "/spot/Asia/Philippines/Center_Islands/Magasang/index.html"
+  },
+  {
+    "gps": "9.14657,126.5488",
+    "url": "/spot/Asia/Philippines/Mindanao/7_rocks/index.html"
+  },
+  {
+    "gps": "6.51163,126.20824",
+    "url": "/spot/Asia/Philippines/Mindanao/Bobon/index.html"
+  },
+  {
+    "gps": "9.34745,125.45753",
+    "url": "/spot/Asia/Philippines/Mindanao/Che_Che_s/index.html"
+  },
+  {
+    "gps": "9.14657,126.4674",
+    "url": "/spot/Asia/Philippines/Mindanao/Habag/index.html"
+  },
+  {
+    "gps": "9.23662,126.3284",
+    "url": "/spot/Asia/Philippines/Mindanao/Hewies_Ayuki__Island/index.html"
+  },
+  {
+    "gps": "9.15887,126.5405",
+    "url": "/spot/Asia/Philippines/Mindanao/Lanuza/index.html"
+  },
+  {
+    "gps": "9.4295,126.11461",
+    "url": "/spot/Asia/Philippines/Mindanao/Tandag/index.html"
+  },
+  {
+    "gps": "9.1792,126.11832",
+    "url": "/spot/Asia/Philippines/Mindanao/Tomasitos/index.html"
+  },
+  {
+    "gps": "18.21645,121.37616",
+    "url": "/spot/Asia/Philippines/Luzon/Aparri/index.html"
+  },
+  {
+    "gps": "14.8254,122.59053",
+    "url": "/spot/Asia/Philippines/Luzon/bagasbas_beach/index.html"
+  },
+  {
+    "gps": "15.45236,121.3407",
+    "url": "/spot/Asia/Philippines/Luzon/baler/index.html"
+  },
+  {
+    "gps": "15.45806,121.35966",
+    "url": "/spot/Asia/Philippines/Luzon/Cemento/index.html"
+  },
+  {
+    "gps": "15.14171,120.0657",
+    "url": "/spot/Asia/Philippines/Luzon/Chelsea_s_Point/index.html"
+  },
+  {
+    "gps": "15.0886,120.383",
+    "url": "/spot/Asia/Philippines/Luzon/crystal_beach_break/index.html"
+  },
+  {
+    "gps": "15.3611,120.332",
+    "url": "/spot/Asia/Philippines/Luzon/high_5_lahar/index.html"
+  },
+  {
+    "gps": "18.20364,120.36277",
+    "url": "/spot/Asia/Philippines/Luzon/pagudpud/index.html"
+  },
+  {
+    "gps": "14.54949,120.3669",
+    "url": "/spot/Asia/Philippines/Luzon/pundakit/index.html"
+  },
+  {
+    "gps": "13.41531,124.23856",
+    "url": "/spot/Asia/Philippines/Luzon/majestics/index.html"
+  },
+  {
+    "gps": "16.39477,120.19228",
+    "url": "/spot/Asia/Philippines/Luzon/san_juan/index.html"
+  },
+  {
+    "gps": "9.13869,126.35",
+    "url": "/spot/Asia/Philippines/Siargao_Islands/Badjang/index.html"
+  },
+  {
+    "gps": "9.48634,126.10102",
+    "url": "/spot/Asia/Philippines/Siargao_Islands/cloud_nine/index.html"
+  },
+  {
+    "gps": "9.44738,126.9982",
+    "url": "/spot/Asia/Philippines/Siargao_Islands/daku_island/index.html"
+  },
+  {
+    "gps": "9.44835,126.5936",
+    "url": "/spot/Asia/Philippines/Siargao_Islands/paradise/index.html"
+  },
+  {
+    "gps": "9.48927,126.9842",
+    "url": "/spot/Asia/Philippines/Siargao_Islands/Jacking_Horse/index.html"
+  },
+  {
+    "gps": "9.3376,125.55989",
+    "url": "/spot/Asia/Philippines/Siargao_Islands/Rainbows_Left/index.html"
+  },
+  {
+    "gps": "9.47507,126.10231",
+    "url": "/spot/Asia/Philippines/Siargao_Islands/rock_island/index.html"
+  },
+  {
+    "gps": "60.8626,29.55581",
+    "url": "/spot/Asia/Russia/Finnish_Bay/ATLANTIS/index.html"
+  },
+  {
+    "gps": "60.717,29.56503",
+    "url": "/spot/Asia/Russia/Finnish_Bay/Dunes__Sestrorezk/index.html"
+  },
+  {
+    "gps": "60.9715,29.8546",
+    "url": "/spot/Asia/Russia/Finnish_Bay/Mis_Flotskiy/index.html"
+  },
+  {
+    "gps": "43.57396,39.15821",
+    "url": "/spot/Asia/Russia/Black_Sea/Ashe/index.html"
+  },
+  {
+    "gps": "43.25087,39.5525",
+    "url": "/spot/Asia/Russia/Black_Sea/Chaika/index.html"
+  },
+  {
+    "gps": "43.3038,39.52115",
+    "url": "/spot/Asia/Russia/Black_Sea/Khosta-Rica/index.html"
+  },
+  {
+    "gps": "43.29671,39.52981",
+    "url": "/spot/Asia/Russia/Black_Sea/Cudepsta/index.html"
+  },
+  {
+    "gps": "44.53526,37.1771",
+    "url": "/spot/Asia/Russia/Black_Sea/Southern_Cape/index.html"
+  }
+]

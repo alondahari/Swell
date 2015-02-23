@@ -136,8 +136,8 @@ define([
 				spots.push(spot.spot_name + ' (' + spot.county_name + ', ' + spot.country + ')')
 			})
 
-			var countries = _.unique(countries)
-			var counties = _.unique(counties)
+			countries = _.unique(countries)
+			counties = _.unique(counties)
 
 			this.$el.find('.typehead').typeahead({
 			  highlight: true
