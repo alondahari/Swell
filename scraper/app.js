@@ -8,6 +8,7 @@ var app     = express();
 var home = 'http://en.wannasurf.com'
 var output = []
 var delay = 0
+var tally = 0
 
 formatGPS = function (gps) {
   try {
@@ -84,7 +85,7 @@ formatAllUrls = function(file){
   })
 }
 
-formatAllUrls('North_America')
+// formatAllUrls('North_America')
 
 var fixJSONFile = function (spot) {
   fs.readFile('./output.json', 'utf-8' ,function(err, str){
@@ -118,6 +119,11 @@ var hasGPS = function(link){
   return link.parent().next().next().children().length
 };
 
+var tallySpots = function(str){
+  var num = parseInt(str.split('(')[1].split(')')[0])
+  tally += num
+};
+
 var getSpot = function(url){
   var fullUrl = home + url
   delay += 1000
@@ -140,7 +146,7 @@ var getSpot = function(url){
       pushToJSON({
         gps: formatGPS(gps),
         url: url          
-      })        
+      })
     })
   }, delay)
 }
@@ -164,9 +170,14 @@ var getZone = function(url){
             getZone($(this).attr('href'))
           })
         } else if (data.text() === "Surf Spots"){
+          tallySpots(data.next().find('th').first().text())
           data.next().find('a.wanna-tabzonespot-item-title').filter(function(){
             if (hasGPS($(this))) {
               getSpot($(this).attr('href'))
+            } else {
+              pushToJSON({
+                url: $(this).attr('href')          
+              })
             }
           })        
         }
