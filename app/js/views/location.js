@@ -19,6 +19,17 @@ define([
 		return keys[index + 1]
 	}
 
+	var getNextExistingValue = function(fields, collection, category, value){
+		var records = collection.filter(function(val){
+			return val.get(category) === value
+		})
+		var nextKey = getNextKey(fields, category)
+		// if('key' in myObj)
+		if (){
+
+		}
+	}
+
 	var substringMatcher = function(strs) {
 	  return function findMatches(q, cb) {
 	    var matches = [], substrRegex
@@ -63,8 +74,6 @@ define([
 		template: jade.compile(template),
 
 		events: {
-			// @refactor: combine into one event handler
-			// @refactor: capitalize field categories
 			'change .location-select': 'fieldChange'
 		},
 
@@ -111,8 +120,8 @@ define([
 
 			var $target = $(e.currentTarget)
 			var category = $target.data('category')
-			console.log(getNextKey(this.fieldData, category));
 			var selectedValue = $target.find(':selected').val()
+			getNextExistingValue(this.fieldData, this.collection, category, selectedValue)
 			this.fieldData[category].selected = selectedValue
 
 			this.populateChildrenFields(category, selectedValue)
