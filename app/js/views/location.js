@@ -7,6 +7,39 @@ define([
 ], function(Backbone, jade, typehead, Select, template){
 	'use strict'
 
+	/**
+	 * Helper to get next key in an object
+	 * @param  {object} object object to iterate over
+	 * @param  {string} key    current key
+	 * @return {string}        next key
+	 */
+	var getNextKey = function(object, key){
+		var keys = _.keys(object)
+		var index = keys.indexOf(key)
+		return keys[index + 1]
+	}
+
+	var substringMatcher = function(strs) {
+	  return function findMatches(q, cb) {
+	    var matches = [], substrRegex
+	 
+	    // regex used to determine if a string contains the substring `q`
+	    substrRegex = new RegExp(q, 'i')
+	 
+	    // iterate through the pool of strings and for any string that
+	    // contains the substring `q`, add it to the `matches` array
+	    $.each(strs, function(i, str) {
+	      if (substrRegex.test(str)) {
+	        // the typeahead jQuery plugin expects suggestions to a
+	        // JavaScript object, refer to typeahead docs for more info
+	        matches.push({ value: str })
+	      }
+	    })
+	 
+	    cb(matches);
+	  }
+	}
+
 	return Backbone.View.extend({
 
 		fieldData: {
@@ -50,9 +83,9 @@ define([
 
 		renderFields: function(){
 			this.$el.find('.location-selects').empty()
-			_.each(this.fieldData, function(field){
-				this.renderField(field)
-			}, this)
+			// _.each(this.fieldData, function(field){
+				this.renderField(this.fieldData.country)
+			// }, this)
 		},
 
 		renderField: function(field){
@@ -75,8 +108,10 @@ define([
 		},
 
 		fieldChange: function(e){
+
 			var $target = $(e.currentTarget)
 			var category = $target.data('category')
+			console.log(getNextKey(this.fieldData, category));
 			var selectedValue = $target.find(':selected').val()
 			this.fieldData[category].selected = selectedValue
 
@@ -101,29 +136,6 @@ define([
 			}
 		},
 
-		substringMatcher: function(strs) {
-		  return function findMatches(q, cb) {
-		    var matches = [], substrRegex
-		 
-		    // regex used to determine if a string contains the substring `q`
-		    substrRegex = new RegExp(q, 'i')
-		 
-		    // iterate through the pool of strings and for any string that
-		    // contains the substring `q`, add it to the `matches` array
-		    $.each(strs, function(i, str) {
-		      if (substrRegex.test(str)) {
-		        // the typeahead jQuery plugin expects suggestions to a
-		        // JavaScript object, refer to typeahead docs for more info
-		        matches.push({ value: str })
-		      }
-		    })
-		 
-		    cb(matches);
-		  }
-		},
-
-		
-
 		searchbox: function(){
 
 			var countries = [],
@@ -145,17 +157,17 @@ define([
 			{
 			  name: 'countries',
 			  displayKey: 'value',
-			  source: this.substringMatcher(countries)
+			  source: substringMatcher(countries)
 			},
 			{
 			  name: 'counties',
 			  displayKey: 'value',
-			  source: this.substringMatcher(counties),
+			  source: substringMatcher(counties),
 			},
 			{
 			  name: 'spots',
 			  displayKey: 'value',
-			  source: this.substringMatcher(spots),
+			  source: substringMatcher(spots),
 			})
 		},
 

@@ -83,7 +83,6 @@ formatAllUrls = function(file){
     })
   })
 }
-formatAllUrls('Middle_East')
 
 var fixJSONFile = function (spot) {
   fs.readFile('./output.json', 'utf-8' ,function(err, str){
