@@ -84,6 +84,8 @@ formatAllUrls = function(file){
   })
 }
 
+formatAllUrls('North_America')
+
 var fixJSONFile = function (spot) {
   fs.readFile('./output.json', 'utf-8' ,function(err, str){
     var end = str.indexOf(']')
