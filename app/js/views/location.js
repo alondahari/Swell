@@ -102,30 +102,27 @@ define([
 			var selectField = new Select({attributes: field})
 			this.$el.find('.location-selects')
 				.append(selectField.$el)
-
-			// set all selected items in fieldData in case of passive field changes
-			this.fieldData[i].selected = selectField.$el.find(':selected').val()
 			this.updateFieldValue(i)
 			this.populateSubmitButton()
 		},
 
 		fieldChange: function(e){
 			var i = $(e.currentTarget).index('.location-select')
-			this.updateFieldValue(i)
+			this.fieldData[i].selected = this.getSelectedValue(i)
 			this.renderFields()
 		},
 
 		updateFieldValue: function(i){
 			var selectedValue = this.getSelectedValue(i)
 			this.fieldData[i].selected = selectedValue
-			this.populateChildrenFields(i, selectedValue)
+			this.populateNextField(i, selectedValue)
 		},
 
 		getSelectedValue: function(i){
 			return $('.location-select').eq(i).find(':selected').val()
 		},
 
-		populateChildrenFields: function(i, selectedValue){
+		populateNextField: function(i, selectedValue){
 			selectedValue = selectedValue || this.fieldData[i].items[0]
 			if (i === 0) {
 				this.fieldData[1].items = _.chain(this.collection.where({continent: selectedValue
@@ -134,8 +131,6 @@ define([
 					return val.attributes.region
 				})
 				.unique().value()
-
-				this.populateChildrenFields(1)
 			} else {
 				this.fieldData[2].items = _.chain(this.collection.where({region: selectedValue}))
 					.map(function(val) {
@@ -143,7 +138,6 @@ define([
 					})
 					.unique().value()
 			}
-			
 			
 		},
 
@@ -153,24 +147,25 @@ define([
 
 			if (text.match(/\(/g)) {
 				// spot
-				var parts = text.split('(')
+				var parts = text.split(' (')
 				var ending = parts.splice(parts.length - 1)
 				ending = ending[0].split(', ')
 
-				spot = parts.join('(')
-				region = ending[0]
-				continent = ending[1].split(')')[0]
+				this.fieldData[2].selected = parts.join('(')
+				this.fieldData[1].selected = ending[0]
+				this.fieldData[0].selected = ending[1].split(')')[0]
 
 			} else if (text.match(/,/g)) {
 				// region
 				var arr = text.split(', ')
-				region = arr[0]
-				continent = arr[1]
+				this.fieldData[1].selected = arr[0]
+				this.fieldData[0].selected = arr[1]
 
 			} else {
 				// continent
-				continent = text
+				this.fieldData[0].selected = text
 			}
+			this.renderFields()
 
 		},
 
@@ -199,7 +194,6 @@ define([
 				// would return more than one spot if more than one exists!!
 				// need to pass spot_id to the option fields
 			$('.button-submit')
-				// .toggleClass('disabled', !selectedValue)
 				.attr('href', '#spot/' + selectedValue)
 
 		}
