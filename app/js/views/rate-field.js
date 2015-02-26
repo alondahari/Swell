@@ -35,10 +35,10 @@ define([
 		updateRatings: function(){
 			var value = this.slider.slider('getValue')
 
-			this.attributes.value =  (this.attributes.fieldName === 'wind') ?
+			this.attributes.value = (this.attributes.fieldName === 'wind') ?
 				this.formatWindValue(value) : value
 
-			this.$el.find('.rating-value').text(this.attributes.value)
+			this.$el.find('.rating-value').text(this.attributes.value).addClass('value-changed')
 			this.attributes.changed = true
 		},
 

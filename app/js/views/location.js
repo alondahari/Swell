@@ -44,6 +44,8 @@ define([
 	        // the typeahead jQuery plugin expects suggestions to a
 	        // JavaScript object, refer to typeahead docs for more info
 	        matches.push({ value: str })
+	        // limit results for better performance
+	        if (matches.length > 10) return false
 	      }
 	    })
 	 
