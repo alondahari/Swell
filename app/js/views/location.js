@@ -104,20 +104,20 @@ define([
 
 			// set all selected items in fieldData in case of passive field changes
 			this.fieldData[field.category].selected = selectField.$el.find(':selected').val()
-			// this.updateFieldValue(field.category)
+			this.updateFieldValue(field.category)
 			this.populateSubmitButton()
 		},
 
 		fieldChange: function(e){
 			var category = $(e.currentTarget).data('category')
 			this.updateFieldValue(category)
+			this.renderFields()
 		},
 
 		updateFieldValue: function(category){
 			var selectedValue = this.getSelectedValue(category)
 			this.fieldData[category].selected = selectedValue
 			this.populateChildrenFields(category, selectedValue)
-			this.renderFields()
 		},
 
 		getSelectedValue: function(category){
@@ -125,7 +125,7 @@ define([
 		},
 
 		populateChildrenFields: function(category, selectedValue){
-			console.log(category, selectedValue);
+			selectedValue = selectedValue || this.fieldData[category].items[0]
 			if (category === 'continent') {
 				this.fieldData.region.items = _.chain(this.collection.where({continent: selectedValue
 				}))
@@ -134,7 +134,7 @@ define([
 				})
 				.unique().value()
 
-				this.populateChildrenFields('region', this.fieldData.region.items[0])
+				this.populateChildrenFields('region')
 			} else {
 				this.fieldData.spot.items = _.chain(this.collection.where({region: selectedValue}))
 					.map(function(val) {
