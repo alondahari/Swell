@@ -53,20 +53,20 @@ define([
 
 	return Backbone.View.extend({
 
-		fieldData: {
-			continent: {
+		fieldData: [
+			{
 				category: 'continent',
 				items: []
 			},
-			region: {
+			{
 				category: 'region',
 				items: []
 			},
-			spot: {
+			{
 				category: 'spot',
 				items: []
 			}
-		},
+		],
 
 		template: jade.compile(template),
 
@@ -77,7 +77,7 @@ define([
 		},
 
 		initialize: function(){
-			this.fieldData.continent.items = _.unique(this.collection.pluck('continent'))
+			this.fieldData[0].items = _.unique(this.collection.pluck('continent'))
 			this.render()
 			this.searchbox()
 
@@ -91,52 +91,52 @@ define([
 
 		renderFields: function(){
 			this.$el.find('.location-selects').empty()
-			_.each(this.fieldData, function(field){
-				this.renderField(field)
+			_.each(this.fieldData, function(field, i){
+				this.renderField(field, i)
 			}, this)
 		},
 
-		renderField: function(field){
+		renderField: function(field, i){
 
 			var selectField = new Select({attributes: field})
 			this.$el.find('.location-selects')
 				.append(selectField.$el)
 
 			// set all selected items in fieldData in case of passive field changes
-			this.fieldData[field.category].selected = selectField.$el.find(':selected').val()
-			this.updateFieldValue(field.category)
+			this.fieldData[i].selected = selectField.$el.find(':selected').val()
+			this.updateFieldValue(i)
 			this.populateSubmitButton()
 		},
 
 		fieldChange: function(e){
-			var category = $(e.currentTarget).data('category')
-			this.updateFieldValue(category)
+			var i = $(e.currentTarget).index('.location-select')
+			this.updateFieldValue(i)
 			this.renderFields()
 		},
 
-		updateFieldValue: function(category){
-			var selectedValue = this.getSelectedValue(category)
-			this.fieldData[category].selected = selectedValue
-			this.populateChildrenFields(category, selectedValue)
+		updateFieldValue: function(i){
+			var selectedValue = this.getSelectedValue(i)
+			this.fieldData[i].selected = selectedValue
+			this.populateChildrenFields(i, selectedValue)
 		},
 
-		getSelectedValue: function(category){
-			return $('.location-select[data-category=' + category).find(':selected').val()
+		getSelectedValue: function(i){
+			return $('.location-select').eq(i).find(':selected').val()
 		},
 
-		populateChildrenFields: function(category, selectedValue){
-			selectedValue = selectedValue || this.fieldData[category].items[0]
-			if (category === 'continent') {
-				this.fieldData.region.items = _.chain(this.collection.where({continent: selectedValue
+		populateChildrenFields: function(i, selectedValue){
+			selectedValue = selectedValue || this.fieldData[i].items[0]
+			if (i === 0) {
+				this.fieldData[1].items = _.chain(this.collection.where({continent: selectedValue
 				}))
 				.map(function(val) {
 					return val.attributes.region
 				})
 				.unique().value()
 
-				this.populateChildrenFields('region')
+				this.populateChildrenFields(1)
 			} else {
-				this.fieldData.spot.items = _.chain(this.collection.where({region: selectedValue}))
+				this.fieldData[2].items = _.chain(this.collection.where({region: selectedValue}))
 					.map(function(val) {
 						return val.attributes.spot
 					})
@@ -146,8 +146,31 @@ define([
 			
 		},
 
-		typeaheadChange: function(e){
-			// update location selects
+		typeaheadChange: function(){
+			var text = $('.tt-input').val(),
+				spot, region, continent
+
+			if (text.match(/\(/g)) {
+				// spot
+				var parts = text.split('(')
+				var ending = parts.splice(parts.length - 1)
+				ending = ending[0].split(', ')
+
+				spot = parts.join('(')
+				region = ending[0]
+				continent = ending[1].split(')')[0]
+
+			} else if (text.match(/,/g)) {
+				// region
+				var arr = text.split(', ')
+				region = arr[0]
+				continent = arr[1]
+
+			} else {
+				// continent
+				continent = text
+			}
+
 		},
 
 		searchbox: function(){
@@ -186,7 +209,7 @@ define([
 		},
 
 		populateSubmitButton: function(){
-			var selectedValue = this.fieldData.spot.selected
+			var selectedValue = this.fieldData[2].selected
 				// would return more than one spot if more than one exists!!
 				// need to pass spot_id to the option fields
 			$('.button-submit')
