@@ -54,19 +54,16 @@ define([
 	return Backbone.View.extend({
 
 		fieldData: {
-			country: {
-				category: 'country',
-				title: 'Country',
+			continent: {
+				category: 'continent',
 				values: []
 			},
-			county: {
-				category: 'county',
-				title: 'County',
+			region: {
+				category: 'region',
 				values: []
 			},
 			spot: {
 				category: 'spot',
-				title: 'Surf Spot',
 				values: []
 			}
 		},
@@ -80,7 +77,7 @@ define([
 		},
 
 		initialize: function(){
-			this.fieldData.country.values = _.unique(this.collection.pluck('country'))
+			this.fieldData.continent.values = _.unique(this.collection.pluck('continent'))
 			this.render()
 			this.searchbox()
 
@@ -131,16 +128,17 @@ define([
 		},
 
 		populateChildrenFields: function(category, selectedValue){
-			if (category === 'country') {
-				this.fieldData.county.values = _.chain(this.collection.where({country: selectedValue}))
+			console.log(category);
+			if (category === 'continent') {
+				this.fieldData.region.values = _.chain(this.collection.where({continent: selectedValue}))
 					.map(function(val) {
-						return val.attributes.county_name
+						return val.attributes.region
 					})
 					.unique().value()
-			} else if (category === 'county') {
-				this.fieldData.spot.values = _.chain(this.collection.where({county_name: selectedValue}))
+			} else if (category === 'region') {
+				this.fieldData.spot.values = _.chain(this.collection.where({region: selectedValue}))
 					.map(function(val) {
-						return val.attributes.spot_name
+						return val.attributes.spot
 					})
 					.unique().value()
 			}
@@ -152,31 +150,31 @@ define([
 
 		searchbox: function(){
 
-			var countries = [],
-					counties = [],
+			var continents = [],
+					regions = [],
 					spots = []
 
 			_.each(this.collection.toJSON(), function(spot){
-				countries.push(spot.country)
-				counties.push(spot.county_name + ', ' + spot.country)
-				spots.push(spot.spot_name + ' (' + spot.county_name + ', ' + spot.country + ')')
+				continents.push(spot.continent)
+				regions.push(spot.region + ', ' + spot.continent)
+				spots.push(spot.spot + ' (' + spot.region + ', ' + spot.continent + ')')
 			})
 
-			countries = _.unique(countries)
-			counties = _.unique(counties)
+			continents = _.unique(continents)
+			regions = _.unique(regions)
 
 			this.$el.find('.typehead').typeahead({
 			  highlight: true
 			},
 			{
-			  name: 'countries',
+			  name: 'continents',
 			  displayKey: 'value',
-			  source: substringMatcher(countries)
+			  source: substringMatcher(continents)
 			},
 			{
-			  name: 'counties',
+			  name: 'regions',
 			  displayKey: 'value',
-			  source: substringMatcher(counties),
+			  source: substringMatcher(regions),
 			},
 			{
 			  name: 'spots',
