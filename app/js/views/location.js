@@ -55,15 +55,15 @@ define([
 
 		fieldData: [
 			{
-				category: 'continent',
+				// continents
 				items: []
 			},
 			{
-				category: 'region',
+				// regions
 				items: []
 			},
 			{
-				category: 'spot',
+				// spots
 				items: []
 			}
 		],
@@ -77,6 +77,7 @@ define([
 		},
 
 		initialize: function(){
+			this.typeaheadArr = this.getTypeaheadArr()
 			this.fieldData[0].items = _.unique(this.collection.pluck('continent'))
 			this.render()
 			this.searchbox()
@@ -173,38 +174,23 @@ define([
 
 		},
 
-		searchbox: function(){
-
-			var continents = [],
-					regions = [],
-					spots = []
-
+		getTypeaheadArr: function(){
+			var arr = []
 			_.each(this.collection.toJSON(), function(spot){
-				continents.push(spot.continent)
-				regions.push(spot.region + ', ' + spot.continent)
-				spots.push(spot.spot + ' (' + spot.region + ', ' + spot.continent + ')')
+				arr.push(spot.continent)
+				arr.push(spot.region + ', ' + spot.continent)
+				arr.push(spot.spot + ' (' + spot.region + ', ' + spot.continent + ')')
 			})
+			return _.unique(arr)
+		},
 
-			continents = _.unique(continents)
-			regions = _.unique(regions)
+		searchbox: function(){
 
 			this.$el.find('.typehead').typeahead({
 			  highlight: true
 			},
 			{
-			  name: 'continents',
-			  displayKey: 'value',
-			  source: substringMatcher(continents)
-			},
-			{
-			  name: 'regions',
-			  displayKey: 'value',
-			  source: substringMatcher(regions),
-			},
-			{
-			  name: 'spots',
-			  displayKey: 'value',
-			  source: substringMatcher(spots),
+			  source: substringMatcher(this.typeaheadArr)
 			})
 		},
 
