@@ -160,8 +160,9 @@ define([
 			} else if (text.match(/,/g)) {
 				// region
 				var arr = text.split(', ')
-				this.fieldData[1].selected = arr[0]
-				this.fieldData[0].selected = arr[1]
+				this.fieldData[0].selected = arr[arr.length - 1]
+				arr.pop()
+				this.fieldData[1].selected = arr.join(', ')
 
 			} else {
 				// continent

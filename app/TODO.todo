@@ -2,11 +2,13 @@ Phase 1:
   ☐ test getAverage()
 
 Phase 2:
+  ☐ Integrate hoodie
   ☐ Create dummy settings and account screens
-  ☐ make login function with local JSON
+  ☐ make login function with hoodie
   ☐ make settings functional + password change
   ☐ additional settings: metric-imperial, 
   ☐ make profile page functional
+  ☐ build into cordova
 
 Phase 3:
   ☐ Add password reset mechanism
