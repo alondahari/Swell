@@ -111,7 +111,12 @@ var pushToJSON = function(spot){
       return
     }
     json.push(spot)
-    js.writeFile('./output.json', json, function(){})
+    js.writeFile('./output.json', json, function(){
+      if (json.length === tally){
+        console.log('done!');
+        process.exit()
+      }
+    })
   })
 }
 
@@ -188,6 +193,30 @@ var getZone = function(url){
   }, delay)
 };
 
+var tallyCountry = function(url){
+  var fullUrl = home + url
+  request(fullUrl, function(error, response, html){
+    if (error) {
+      console.log(error);
+      tallyCountry(url)
+      return
+    }
+    var $ = cheerio.load(html);
+    $('.wanna-item').filter(function(){
+      var data = $(this);
+      if (data.text() === "Zones") {
+        data.next().find('a.wanna-tabzonespot-item-title').filter(function(){
+          tally += $(this).parent().next().text()
+        })
+      } else if (data.text() === "Surf Spots"){
+        tallySpots(data.next().find('th').first().text())       
+      }
+      
+
+    })
+  })
+};
+
 app.get('/scrape/all', function(req, res){
 
   var url = home;
@@ -236,6 +265,7 @@ app.get('/scrape/:continent', function(req, res){
 
       $('.wanna-sublink.countryWithSpot').filter(function(){
         var url = $(this).attr('href')
+        tallyCountry(url)
         getZone(url)
       })
     })

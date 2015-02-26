@@ -25,9 +25,9 @@ define([
 		})
 		var nextKey = getNextKey(fields, category)
 		// if('key' in myObj)
-		if (){
+		// if (){
 
-		}
+		// }
 	}
 
 	var substringMatcher = function(strs) {
@@ -74,13 +74,15 @@ define([
 		template: jade.compile(template),
 
 		events: {
-			'change .location-select': 'fieldChange'
+			'change .location-select': 'fieldChange',
+			'keyup .tt-input': 'typeaheadChange',
+			'click .tt-suggestion': 'typeaheadChange'
 		},
 
 		initialize: function(){
 			this.fieldData.country.values = _.unique(this.collection.pluck('country'))
 			this.render()
-			this.searchbox()			
+			this.searchbox()
 
 		},
 
@@ -92,9 +94,9 @@ define([
 
 		renderFields: function(){
 			this.$el.find('.location-selects').empty()
-			// _.each(this.fieldData, function(field){
-				this.renderField(this.fieldData.country)
-			// }, this)
+			_.each(this.fieldData, function(field){
+				this.renderField(field)
+			}, this)
 		},
 
 		renderField: function(field){
@@ -117,7 +119,6 @@ define([
 		},
 
 		fieldChange: function(e){
-
 			var $target = $(e.currentTarget)
 			var category = $target.data('category')
 			var selectedValue = $target.find(':selected').val()
@@ -143,6 +144,10 @@ define([
 					})
 					.unique().value()
 			}
+		},
+
+		typeaheadChange: function(e){
+			// update location selects
 		},
 
 		searchbox: function(){
