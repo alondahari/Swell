@@ -56,15 +56,15 @@ define([
 		fieldData: {
 			continent: {
 				category: 'continent',
-				values: []
+				items: []
 			},
 			region: {
 				category: 'region',
-				values: []
+				items: []
 			},
 			spot: {
 				category: 'spot',
-				values: []
+				items: []
 			}
 		},
 
@@ -77,7 +77,7 @@ define([
 		},
 
 		initialize: function(){
-			this.fieldData.continent.values = _.unique(this.collection.pluck('continent'))
+			this.fieldData.continent.items = _.unique(this.collection.pluck('continent'))
 			this.render()
 			this.searchbox()
 
@@ -97,51 +97,53 @@ define([
 		},
 
 		renderField: function(field){
+
 			var selectField = new Select({attributes: field})
 			this.$el.find('.location-selects')
 				.append(selectField.$el)
-				// @refactor: move to template
-				.prop('disabled', !(this[field] && this[field].length) )
 
-			// select a value if it's the only one and render following field
-			var selectedValue = selectField.$el.find(':selected').val()
-			var category = field.category
-			if (field.values.length === 1){
-				this.populateChildrenFields(category, selectedValue)
-			}
-
-			// set all selected values in fieldData in case of passive field changes
-			this.fieldData[category].selected = selectedValue
+			// set all selected items in fieldData in case of passive field changes
+			this.fieldData[field.category].selected = selectField.$el.find(':selected').val()
+			// this.updateFieldValue(field.category)
 			this.populateSubmitButton()
 		},
 
 		fieldChange: function(e){
-			var $target = $(e.currentTarget)
-			var category = $target.data('category')
-			var selectedValue = $target.find(':selected').val()
-			getNextExistingValue(this.fieldData, this.collection, category, selectedValue)
+			var category = $(e.currentTarget).data('category')
+			this.updateFieldValue(category)
+		},
+
+		updateFieldValue: function(category){
+			var selectedValue = this.getSelectedValue(category)
 			this.fieldData[category].selected = selectedValue
-
 			this.populateChildrenFields(category, selectedValue)
-
 			this.renderFields()
 		},
 
+		getSelectedValue: function(category){
+			return $('.location-select[data-category=' + category).find(':selected').val()
+		},
+
 		populateChildrenFields: function(category, selectedValue){
-			console.log(category);
+			console.log(category, selectedValue);
 			if (category === 'continent') {
-				this.fieldData.region.values = _.chain(this.collection.where({continent: selectedValue}))
-					.map(function(val) {
-						return val.attributes.region
-					})
-					.unique().value()
-			} else if (category === 'region') {
-				this.fieldData.spot.values = _.chain(this.collection.where({region: selectedValue}))
+				this.fieldData.region.items = _.chain(this.collection.where({continent: selectedValue
+				}))
+				.map(function(val) {
+					return val.attributes.region
+				})
+				.unique().value()
+
+				this.populateChildrenFields('region', this.fieldData.region.items[0])
+			} else {
+				this.fieldData.spot.items = _.chain(this.collection.where({region: selectedValue}))
 					.map(function(val) {
 						return val.attributes.spot
 					})
 					.unique().value()
 			}
+			
+			
 		},
 
 		typeaheadChange: function(e){
@@ -188,7 +190,7 @@ define([
 				// would return more than one spot if more than one exists!!
 				// need to pass spot_id to the option fields
 			$('.button-submit')
-				.toggleClass('disabled', !selectedValue)
+				// .toggleClass('disabled', !selectedValue)
 				.attr('href', '#spot/' + selectedValue)
 
 		}
