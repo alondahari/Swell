@@ -86,8 +86,8 @@ define([
 
 		render: function(){
 			this.$el.html(this.template())
-			this.renderFields()
 			$('.wrapper').html(this.$el)
+			this.renderFields()
 		},
 
 		renderFields: function(){
@@ -103,7 +103,6 @@ define([
 			this.$el.find('.location-selects')
 				.append(selectField.$el)
 			this.updateFieldValue(i)
-			this.populateSubmitButton()
 		},
 
 		fieldChange: function(e){
@@ -138,6 +137,9 @@ define([
 					})
 					.unique().value()
 			}
+			// would return more than one spot if more than one exists!!
+			// need to pass spot_id to the option fields
+			if (i === 2) this.populateSubmitButton(selectedValue)
 			
 		},
 
@@ -189,12 +191,9 @@ define([
 			})
 		},
 
-		populateSubmitButton: function(){
-			var selectedValue = this.fieldData[2].selected
-				// would return more than one spot if more than one exists!!
-				// need to pass spot_id to the option fields
-			$('.button-submit')
-				.attr('href', '#spot/' + selectedValue)
+		populateSubmitButton: function(selectedValue){
+
+			this.$el.find('.button-submit').attr('href', '#spot/' + selectedValue)
 
 		}
 
