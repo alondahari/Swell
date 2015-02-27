@@ -175,12 +175,19 @@ define([
 		},
 
 		getTypeaheadArr: function(){
-			var arr = []
+			var arr = [],
+				continents = [],
+				regions = [],
+				spots = []
+
 			_.each(this.collection.toJSON(), function(spot){
-				arr.push(spot.continent)
-				arr.push(spot.region + ', ' + spot.continent)
-				arr.push(spot.spot + ' (' + spot.region + ', ' + spot.continent + ')')
+				continents.push(spot.continent)
+				regions.push(spot.region + ', ' + spot.continent)
+				spots.push(spot.spot + ' (' + spot.region + ', ' + spot.continent + ')')
 			})
+
+			arr = continents.concat(regions, spots)
+
 			return _.unique(arr)
 		},
 
