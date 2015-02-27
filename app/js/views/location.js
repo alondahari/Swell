@@ -80,7 +80,7 @@ define([
 
 		initialize: function(){
 			this.typeaheadArr = this.getTypeaheadArr()
-			this.fieldData[0].items = _.unique(this.collection.pluck('continent'))
+			this.fieldData[0].items = this.getSpots('continent')
 			this.render()
 			this.searchbox()
 
@@ -123,21 +123,32 @@ define([
 			return $('.location-select').eq(i).find(':selected').val()
 		},
 
+		getSpots: function(category){
+			var spots = _.unique(this.collection.pluck('continent'))
+			return _.sortBy(spots, function(spot){
+				return spot
+			})
+		},
+
 		populateNextField: function(i, selectedValue){
 			selectedValue = selectedValue || this.fieldData[i].items[0]
 			if (i === 0) {
 				this.fieldData[1].items = _.chain(this.collection.where({continent: selectedValue
 				}))
-				.map(function(val) {
-					return val.attributes.region
-				})
-				.unique().value()
+					.map(function(val) {
+						return val.attributes.region
+					})
+					.unique().sortBy(function(spot){
+						return spot
+					}).value()
 			} else {
 				this.fieldData[2].items = _.chain(this.collection.where({region: selectedValue}))
 					.map(function(val) {
 						return val.attributes.spot
 					})
-					.unique().value()
+					.unique().sortBy(function(spot){
+						return spot
+					}).value()
 			}
 			// would return more than one spot if more than one exists!!
 			// need to pass spot_id to the option fields
