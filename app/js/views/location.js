@@ -163,12 +163,12 @@ define([
 			if (text.match(/\(/g)) {
 				// spot
 				var parts = text.split(' (')
-				var ending = parts.splice(parts.length - 1)
-				ending = ending[0].split(', ')
+				var ending = parts.pop()
+				ending = ending.split(', ')
 
 				this.fieldData[2].selected = parts.join('(')
-				this.fieldData[1].selected = ending[0]
-				this.fieldData[0].selected = ending[1].split(')')[0]
+				this.fieldData[1].selected = ending.shift()
+				this.fieldData[0].selected = ending[0].split(')')[0]
 
 			} else if (text.match(/,/g)) {
 				// region
