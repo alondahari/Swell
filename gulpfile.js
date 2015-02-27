@@ -49,7 +49,6 @@ gulp.task('sass', function () {
       .pipe(gulp.dest('./app/css'))
 })
 
-
 gulp.task('usemin', function(){
   return gulp.src(paths.index)
     .pipe(usemin({

@@ -1,0 +1,6 @@
+
+heart_beat_kill_pid = 23279
+heart_beat_timeout = 11
+heart: Thu Feb 26 18:13:15 2015: Erlang has closed.
+bin/couchdb: line 343: echo: write error: Broken pipe
+heart: Thu Feb 26 18:13:15 2015: Executed "bin/couchdb -k" -> 256. Terminating.
