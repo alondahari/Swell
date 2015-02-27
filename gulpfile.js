@@ -26,11 +26,11 @@ var log = gutil.log
 var source = 'app/'
   , dist   = 'www/'
   , paths = {
-    index : source + '/index.html',
+    index : source + 'index.html',
     css   : source + 'css/**/*.css',
-    js    : source + 'js/**/*.js',
-    vendors: source + 'vendors/**/*.js',
-    images: source + '/img/**'
+    // js    : source + 'dist/main.js',
+    require: source + 'js/require.js',
+    images: source + 'img/**'
   }
 
 gulp.task('clean', function (cb) {  
@@ -54,8 +54,8 @@ gulp.task('usemin', function(){
     .pipe(usemin({
       css: [minifyCss(), rev()],
       html: [minifyHtml({empty: true})],
-      js: [uglify(), rev()],
-      vendors: [uglify()]
+      // js: [uglify(), rev()],
+      require: [uglify()]
     }))
     .pipe(gulp.dest(dist))
 })
@@ -64,8 +64,8 @@ gulp.task('useapp', function(){
   return gulp.src([
       paths.index, 
       paths.css, 
-      paths.js, 
-      paths.vendors], {base: source})
+      // paths.js, 
+      paths.require], {base: source})
     .pipe(gulp.dest(dist))
 })
 

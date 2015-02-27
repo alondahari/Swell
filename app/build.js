@@ -2,7 +2,7 @@
     mainConfigFile : "js/main.js",
     baseUrl : "js",
     name: "main",
-    out: "dist/main.js",
+    out: "../www/js/main.js",
     removeCombined: true,
     findNestedDependencies: true
 })
