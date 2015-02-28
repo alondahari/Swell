@@ -23,8 +23,8 @@ var gulp = require('gulp')
 var log = gutil.log
   , noop = gutil.noop
 
-var source = 'app/'
-  , dist   = 'www/'
+var source = 'www/'
+  , dist   = 'dist/'
   , paths = {
     index : source + 'index.html',
     css   : source + 'css/**/*.css',

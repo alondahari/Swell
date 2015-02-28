@@ -1231,3 +1231,4 @@ Apache CouchDB has started. Time to relax.
 [info] [<0.253.0>] 127.0.0.1 - - GET /?hoodieId=t6wftwa 200
 [info] [<0.345.0>] 127.0.0.1 - - DELETE /_session 200
 [info] [<0.346.0>] 127.0.0.1 - - GET /?hoodieId=t6wftwa 200
+[info] [<0.357.0>] 127.0.0.1 - - GET /?hoodieId=t6wftwa 200

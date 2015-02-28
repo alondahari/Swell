@@ -1114,3 +1114,4 @@
 [Sat, 28 Feb 2015 00:55:53 GMT] [info] [<0.253.0>] 127.0.0.1 - - GET /?hoodieId=t6wftwa 200
 [Sat, 28 Feb 2015 00:56:02 GMT] [info] [<0.345.0>] 127.0.0.1 - - DELETE /_session 200
 [Sat, 28 Feb 2015 00:56:02 GMT] [info] [<0.346.0>] 127.0.0.1 - - GET /?hoodieId=t6wftwa 200
+[Sat, 28 Feb 2015 00:56:33 GMT] [info] [<0.357.0>] 127.0.0.1 - - GET /?hoodieId=t6wftwa 200
