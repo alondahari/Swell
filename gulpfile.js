@@ -28,8 +28,10 @@ var source = 'app/'
   , paths = {
     index : source + 'index.html',
     css   : source + 'css/**/*.css',
-    // js    : source + 'dist/main.js',
+    fonts : source + 'fonts/**',
+    js    : source + 'js/**',
     require: source + 'js/require.js',
+    cordova: source + 'js/cordova.js',
     images: source + 'img/**'
   }
 
@@ -54,8 +56,7 @@ gulp.task('usemin', function(){
     .pipe(usemin({
       css: [minifyCss(), rev()],
       html: [minifyHtml({empty: true})],
-      // js: [uglify(), rev()],
-      require: [uglify()]
+      js: [uglify()]
     }))
     .pipe(gulp.dest(dist))
 })
@@ -64,8 +65,13 @@ gulp.task('useapp', function(){
   return gulp.src([
       paths.index, 
       paths.css, 
-      // paths.js, 
-      paths.require], {base: source})
+      paths.fonts, 
+      paths.js], {base: source})
+    .pipe(gulp.dest(dist))
+})
+
+gulp.task('copyRequire', function(){
+  return gulp.src(paths.require, {base: source})
     .pipe(gulp.dest(dist))
 })
 
@@ -82,7 +88,7 @@ gulp.task('watch', function() {
 gulp.task('build', function(){
     log('building for ' + (production ? 'production' : 'development'))
     if (production)
-      runSequence('clean', 'usemin', 'images')
+      runSequence('clean', 'usemin', 'copyRequire', 'images')
     else
       runSequence('clean', 'useapp', 'images')
 })

@@ -57,10 +57,9 @@ define([
 		initDatabase: function(){
 			var spots = new Spots()
 			spots.fetch()
-
-			_.each(Database.surfSpots, function(val){
-				// create a new model and save it to localStorage
-				spots.create(val)
+			var hoodie = new Hoodie()
+			hoodie.store.add('locations', Database.surfSpots).done(function(locs){
+				console.log(locs);
 			})
 
 		}
