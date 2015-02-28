@@ -1,6 +1,5 @@
 
 define([], function(){
-	'use strict'
 
 	var Database = {}
 	// mock rating to demonstrate the structure

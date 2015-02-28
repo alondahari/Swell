@@ -55,11 +55,10 @@ define([
 		 * helper to initiate a default database into localStorage
 		 */
 		initDatabase: function(){
-			var spots = new Spots()
-			spots.fetch()
+
 			var hoodie = new Hoodie()
 			hoodie.store.add('locations', Database.surfSpots).done(function(locs){
-				console.log(locs);
+				hoodie.store.findAll('locations').publish()
 			})
 
 		}
