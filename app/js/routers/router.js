@@ -57,9 +57,10 @@ define([
 		initDatabase: function(){
 
 			var hoodie = new Hoodie()
-			hoodie.store.add('locations', Database.surfSpots).done(function(locs){
-				hoodie.store.findAll('locations').publish()
-			})
+			// hoodie.store.add('locations', Database.surfSpots).done(function(locs){
+			// 	hoodie.store.findAll('locations').publish()
+			// })
+			hoodie.store.findAll('locations')
 
 		}
 
