@@ -26,5 +26,8 @@
     "express": "^4",
     "jade": "^1",
     "body-parser": "^1"
+  },
+  "dependencies": {
+    "mongoose": "^3.8.24"
   }
 }

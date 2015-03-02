@@ -8,7 +8,8 @@ define([
 	return Backbone.Collection.extend({
 		
 		model: spot,
-		localStorage: new Store('ratings'),
+		url: '/locations',
+		// localStorage: new Store('ratings'),
 
 		initialize: function(){
 			

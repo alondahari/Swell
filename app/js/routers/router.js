@@ -43,7 +43,9 @@ define([
 
 		location: function(){			
 		  var spots = new Spots()
-		  return new LocationView({ collection: spots })
+		  spots.fetch({success: function(){
+		  	new LocationView({ collection: spots })
+			}})
 		},
 
 		spot: function(id){
