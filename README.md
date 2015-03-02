@@ -1,5 +1,5 @@
-Double Over Head
-================
+Swell
+=====
 
 A real time surf waves report app.
 
