@@ -30,10 +30,10 @@ define([
 		routes:{
 			'': 'login',
 			'location': 'location',
-			'spot/:id': 'spot',
+			'spot/:id': 'rate',
+			'view-spot/:id': 'viewSpot',
 			'submit-rating': 'submitRating',
 			'init-database': 'initDatabase'
-
 		},
 
 		login: function(){
@@ -48,7 +48,12 @@ define([
 			}})
 		},
 
-		spot: function(id){
+		rate: function(id){
+			var ratings = new Ratings()
+			return new RateView({ collection: ratings, id: id})
+		},
+
+		viewSpot: function(id){
 			var ratings = new Ratings()
 			return new RateView({ collection: ratings, id: id})
 		},

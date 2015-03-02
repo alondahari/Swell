@@ -45,6 +45,7 @@ define([
 		},
 
 		initialize: function(){
+
 			this.getAverages()
 			_.each(this.fields, function(field, i){
 				this.fields[i].time = this.fields[i].time ? 
@@ -52,6 +53,7 @@ define([
 					'No Recent Updates'
 			}, this)
 			this.render()
+			this.$el.find('a.rate-nav').attr('href', '#view-spot/' + this.id)
 		},
 
 		render: function(){

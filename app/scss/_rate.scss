@@ -46,3 +46,22 @@
 .value-changed{
 	color: rgba(204, 126, 45, 1);
 }
+
+.rate-nav{
+	color: rgba(204, 126, 45, 1);
+	width: 50%;
+	height: 50px;
+	background-color: rgba(0,0,0,.4);
+	text-align: center;
+	padding-top: 11px;
+	font-size: 2rem;
+	position: fixed;
+	top: 68px;
+	right: 0;
+}
+.rate-current{
+	background-color: transparent;
+	color: white;
+	left: 0;
+}
+
