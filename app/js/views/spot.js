@@ -2,38 +2,32 @@ define([
 	'backbone',
 	'jade',
 	'moment',
-	'text!templates/rate.jade',
-	'views/rate-field'
-], function(Backbone, jade, moment, template, RateField){
+	'text!templates/view.jade',
+	'views/view-rating'
+], function(Backbone, jade, moment, template, viewRating){
 	'use strict'
 
 	return Backbone.View.extend({
 
 		template: jade.compile(template),
 
-		newRating: {},
-
 		fields: {
 			overall: {
 				header: 'Overall Wave Quality',
-				max: 10,
 				unit: '/ 10',
 				fieldName: 'overall'
 			},
 			waveHeight: {
 				header: 'Wave Height',
-				max: 12,
 				unit: 'ft',
 				fieldName: 'waveHeight'
 			},
 			wind: {
 				header: 'Wind',
-				max: 4,
 				fieldName: 'wind'
 			},
 			crowd: {
 				header: 'Crowd',
-				max: 200,
 				unit: 'surfers',
 				fieldName: 'crowd'
 			}
@@ -53,7 +47,7 @@ define([
 					'No Recent Updates'
 			}, this)
 			this.render()
-			this.$el.find('a.rate-nav').attr('href', '#view-spot/' + this.id)
+			this.$el.find('a.rate-nav').attr('href', '#spot/' + this.id)
 		},
 
 		render: function(){
@@ -72,7 +66,7 @@ define([
 		},
 
 		renderField: function(field){
-			var rateField = new RateField({attributes: field})
+			var rateField = new viewRating({attributes: field})
 			this.$el.find('.ratings').append(rateField.$el)
 			return rateField
 		},
@@ -98,19 +92,6 @@ define([
 				'Stormy (40+ knots)'
 			]
 			return _.indexOf(values, val)
-		},
-
-		submit: function(){
-			var newRating = {time: Date.now(), spot_name: this.id}
-			_.each(this.rateFields, function(field){
-				if (field.attributes.fieldName === 'wind') {
-					field.attributes.value = this.decypherWindValue(field.attributes.value)
-				}
-				if (field.attributes.changed === true){
-					newRating[field.attributes.fieldName] = field.attributes.value
-				}
-			},this)
-			this.collection.create(newRating)
 		}
 
 

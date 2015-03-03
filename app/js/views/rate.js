@@ -1,10 +1,9 @@
 define([
 	'backbone',
 	'jade',
-	'moment',
 	'text!templates/rate.jade',
 	'views/rate-field'
-], function(Backbone, jade, moment, template, RateField){
+], function(Backbone, jade, template, RateField){
 	'use strict'
 
 	return Backbone.View.extend({

@@ -29,6 +29,7 @@
 	margin-bottom: -20px;
 
 	float: right;
+	clear: both;
 	color: rgba(184, 181, 240, 0.5);
 }
 
@@ -57,11 +58,12 @@
 	font-size: 2rem;
 	position: fixed;
 	top: 68px;
-	right: 0;
 }
 .rate-current{
 	background-color: transparent;
 	color: white;
-	left: 0;
+}
+.rate-nav + .rate-nav{
+	right: 0;
 }
 
