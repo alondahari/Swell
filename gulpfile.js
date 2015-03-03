@@ -17,6 +17,7 @@ var gulp = require('gulp')
   , watch = require('gulp-watch')
   , prefix = require('gulp-autoprefixer')
   , del = require('del')
+  , nodemon = require('gulp-nodemon')
 
 
 /* define some sugar syntax */
@@ -84,6 +85,13 @@ gulp.task('watch', function() {
   gulp.watch('app/scss/*.scss', ['sass'])
 })
 
+gulp.task('nodemon', function () {
+  nodemon({ script: 'app.js', ext: 'html js jade' })
+    .on('restart', function () {
+      console.log('restarted!')
+    })
+})
+
 
 gulp.task('build', function(){
     log('building for ' + (production ? 'production' : 'development'))
@@ -105,7 +113,7 @@ gulp.task('serve', function() {
   })
 })
 
-gulp.task('default', ['sass', 'serve', 'livereload', 'watch'],function(){
+gulp.task('default', ['nodemon', 'sass', 'livereload', 'watch'],function(){
   log('available tasks:')
   log('  gulp serve (serve content locally for development)')
   log('  gulp build (build for developement)')

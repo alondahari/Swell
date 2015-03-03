@@ -1,7 +1,8 @@
 Phase 1:
   ☐ test getAverage()
   ☐ add click on rating slides
-  ☐ seperate rate from view rating
+  ✔ seperate rate from view rating @done (15-03-03 15:09)
+  ☐ save rating on change
 
 Phase 2:
   ☐ Integrate hoodie
