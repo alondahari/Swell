@@ -6,6 +6,7 @@ define([
 	'views/login',
 	'views/location',
 	'views/rate',
+	'views/spot',
 	'models/spot',
   'collections/spots',
   'models/rating',
@@ -18,6 +19,7 @@ define([
   	Login,
   	LocationView,
   	RateView,
+  	SpotView,
   	Spot,
   	Spots,
   	Rating,
@@ -55,7 +57,7 @@ define([
 
 		viewSpot: function(id){
 			var ratings = new Ratings()
-			return new RateView({ collection: ratings, id: id})
+			return new SpotView({ collection: ratings, id: id})
 		},
 
 		/**
