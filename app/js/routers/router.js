@@ -7,7 +7,6 @@ define([
 	'views/location',
 	'views/rate',
 	'views/spot',
-	'models/spot',
   'collections/spots',
   'models/rating',
   'collections/ratings'
@@ -20,7 +19,6 @@ define([
   	LocationView,
   	RateView,
   	SpotView,
-  	Spot,
   	Spots,
   	Rating,
   	Ratings
@@ -51,12 +49,13 @@ define([
 		},
 
 		rate: function(id){
-			var ratings = new Ratings()
-			return new RateView({ collection: ratings, id: id})
+			var rating = new Rating()
+			return new RateView({ model: rating, id: id})
 		},
 
 		viewSpot: function(id){
 			var ratings = new Ratings()
+			// ratings.fetch()
 			return new SpotView({ collection: ratings, id: id})
 		},
 

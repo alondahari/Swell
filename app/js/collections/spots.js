@@ -11,9 +11,9 @@ define([
 		url: '/locations',
 		// localStorage: new Store('ratings'),
 
-		initialize: function(){
+		// initialize: function(){
 			
-		}
+		// }
 
 	})
 

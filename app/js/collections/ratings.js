@@ -4,12 +4,12 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 	return Backbone.Collection.extend({
 		
 		model: rating,
+		url: '/ratings',
 
-		localStorage: new Store('ratings'),
+		// localStorage: new Store('ratings'),
 
 		initialize: function(){
-			// get data from local storage
-			this.fetch()
+			
 		},
 
 		/**

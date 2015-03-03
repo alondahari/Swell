@@ -8,16 +8,30 @@ var Spot = mongoose.model('locations', {
 	lon: Number
 })
 
+var Rating = mongoose.model('ratings', {
+	overall: Number,
+	waveHeight: Number,
+	wind: Number,
+	crowd: Number,
+	userId: Number,
+	time: Date
+})
+
 var indexController = {
 	getLocations: function(req, res) {
 		Spot.find(function(err, spots){
 			if (!err) {
-				console.log(spots);
 				res.send(spots)
 			} else {
 				console.log(err);
 			}
 		})
+	},
+
+	setRating: function(req, res) {
+		console.log(req.body);
+		// var rating = new Rating()
+		
 	}
 };
 

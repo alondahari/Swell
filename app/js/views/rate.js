@@ -18,28 +18,24 @@ define([
 				header: 'Overall Wave Quality',
 				max: 10,
 				unit: '/ 10',
-				fieldName: 'overall',
-				value: 0
+				fieldName: 'overall'
 			},
 			waveHeight: {
 				header: 'Wave Height',
 				max: 12,
 				unit: 'ft',
-				fieldName: 'waveHeight',
-				value: 0
+				fieldName: 'waveHeight'
 			},
 			wind: {
 				header: 'Wind',
 				max: 4,
-				fieldName: 'wind',
-				value: 0
+				fieldName: 'wind'
 			},
 			crowd: {
 				header: 'Crowd',
 				max: 200,
 				unit: 'surfers',
-				fieldName: 'crowd',
-				value: 0
+				fieldName: 'crowd'
 			}
 		},
 
@@ -49,6 +45,7 @@ define([
 		},
 
 		initialize: function(){
+			this.resetFields()
 			this.render()
 			this.$el.find('a.rate-nav').attr('href', '#view-spot/' + this.id)
 		},
@@ -74,6 +71,12 @@ define([
 			return rateField
 		},
 
+		resetFields: function(){
+			_.each(this.fields, function(field, i){
+				this.fields[i].value = 0
+			}, this)
+		},
+
 		// hacky... bad...
 		decypherWindValue: function(val){
 			var values = [
@@ -96,8 +99,10 @@ define([
 					newRating[field.attributes.fieldName] = field.attributes.value
 				}
 			},this)
-			this.collection.create(newRating)
-			this.remove()
+			this.model.set(newRating);
+			// console.log(this.model);
+			// this.model.save()
+			Backbone.sync('create', this.model)
 		}
 
 
