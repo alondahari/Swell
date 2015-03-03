@@ -29,7 +29,8 @@ var indexController = {
 	},
 
 	setRating: function(req, res) {
-		console.log(req.body);
+		console.log(res)
+
 		// var rating = new Rating()
 		
 	}

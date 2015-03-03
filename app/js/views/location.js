@@ -5,30 +5,6 @@ define([
 	'views/location-select',
 	'text!templates/location.jade'
 ], function(Backbone, jade, typehead, Select, template){
-	'use strict'
-
-	/**
-	 * Helper to get next key in an object
-	 * @param  {object} object object to iterate over
-	 * @param  {string} key    current key
-	 * @return {string}        next key
-	 */
-	var getNextKey = function(object, key){
-		var keys = _.keys(object)
-		var index = keys.indexOf(key)
-		return keys[index + 1]
-	}
-
-	var getNextExistingValue = function(fields, collection, category, value){
-		var records = collection.filter(function(val){
-			return val.get(category) === value
-		})
-		var nextKey = getNextKey(fields, category)
-		// if('key' in myObj)
-		// if (){
-
-		// }
-	}
 
 	var substringMatcher = function(strs) {
 	  return function findMatches(q, cb) {

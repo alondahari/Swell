@@ -98,10 +98,13 @@ define([
 					newRating[field.attributes.fieldName] = field.attributes.value
 				}
 			},this)
-			this.model.set(newRating);
-			// console.log(this.model);
-			// this.model.save()
-			Backbone.sync('create', this.model)
+
+			this.model.save(newRating, {success: function(model, data){
+				console.log(data);
+			}, error: function(model, err){
+				console.log('error:', err.responseText);
+			}})
+
 		}
 
 
