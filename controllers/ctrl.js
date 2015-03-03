@@ -1,4 +1,7 @@
 var mongoose = require('mongoose')
+var request = require('request')
+var keys = require('../models/keys.js')
+
 mongoose.connect('mongodb://localhost/swell')
 var Spot = mongoose.model('locations', {
 	continent: String,
@@ -14,7 +17,8 @@ var Rating = mongoose.model('ratings', {
 	wind: Number,
 	crowd: Number,
 	userId: Number,
-	time: Date
+	time: Date,
+	spotId: String
 })
 
 var indexController = {
@@ -29,10 +33,15 @@ var indexController = {
 	},
 
 	setRating: function(req, res) {
-		console.log(res)
-
-		// var rating = new Rating()
+		var rating = new Rating(req.body)
+		rating.save()
 		
+	},
+
+	getMaps: function(req, res){
+		request('https://maps.googleapis.com/maps/api/js?key=' + keys.googleMapsAPI, function(err, response, body){
+				res.send(body)
+		})
 	}
 };
 

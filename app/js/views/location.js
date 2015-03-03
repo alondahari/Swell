@@ -2,6 +2,7 @@ define([
 	'backbone',
 	'jade',
 	'typehead',
+	// 'googleMaps',
 	'views/location-select',
 	'text!templates/location.jade'
 ], function(Backbone, jade, typehead, Select, template){
@@ -51,7 +52,8 @@ define([
 		events: {
 			'change .location-select': 'fieldChange',
 			'keyup .tt-input': 'typeaheadChange',
-			'click .tt-suggestion': 'typeaheadChange'
+			'click .tt-suggestion': 'typeaheadChange',
+			'click .button-submit': 'goToSpot'
 		},
 
 		initialize: function(){
@@ -59,7 +61,7 @@ define([
 			this.fieldData[0].items = this.getSpots('continent')
 			this.render()
 			this.searchbox()
-
+			this.showMap()
 		},
 
 		render: function(){
@@ -126,9 +128,6 @@ define([
 						return spot
 					}).value()
 			}
-			// would return more than one spot if more than one exists!!
-			// need to pass spot_id to the option fields
-			if (i === 2) this.populateSubmitButton(selectedValue)
 			
 		},
 
@@ -179,7 +178,6 @@ define([
 		},
 
 		searchbox: function(){
-
 			this.$el.find('.typehead').typeahead({
 			  highlight: true
 			},
@@ -188,9 +186,19 @@ define([
 			})
 		},
 
-		populateSubmitButton: function(selectedValue){
+		goToSpot: function(e){
+			e.preventDefault()
+			var id = this.collection.findWhere({
+				continent: this.fieldData[0].selected,
+				region: this.fieldData[1].selected,
+				spot: this.fieldData[2].selected
+			}).get('_id')
 
-			this.$el.find('.button-submit').attr('href', '#spot/' + selectedValue)
+			location = '#spot/' + this.fieldData[2].selected + '/' + id
+
+		},
+
+		showMap: function(){
 
 		}
 

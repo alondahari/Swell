@@ -46,11 +46,11 @@ define([
 		initialize: function(){
 			this.resetFields()
 			this.render()
-			this.$el.find('a.rate-nav').attr('href', '#view-spot/' + this.id)
+			this.$el.find('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
 		},
 
 		render: function(){
-			this.$el.html(this.template({header: this.id}))
+			this.$el.html(this.template({header: this.attributes.title}))
 			// not setting .wrapper as $el to keep all events within scope
 			$('.wrapper').html(this.el)
 			this.renderFields()
@@ -89,7 +89,7 @@ define([
 		},
 
 		submit: function(){
-			var newRating = {time: Date.now(), spot_name: this.id}
+			var newRating = {time: Date.now(), spotId: this.id}
 			_.each(this.rateFields, function(field){
 				if (field.attributes.fieldName === 'wind') {
 					field.attributes.value = this.decypherWindValue(field.attributes.value)

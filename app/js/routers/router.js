@@ -30,8 +30,8 @@ define([
 		routes:{
 			'': 'login',
 			'location': 'location',
-			'spot/:id': 'rate',
-			'view-spot/:id': 'viewSpot',
+			'spot/:title/:id': 'rate',
+			'view-spot/:title/:id': 'viewSpot',
 			'submit-rating': 'submitRating',
 			'init-database': 'initDatabase'
 		},
@@ -48,15 +48,14 @@ define([
 			}})
 		},
 
-		rate: function(id){
+		rate: function(title, id){
 			var rating = new Rating()
-			return new RateView({ model: rating, id: id})
+			return new RateView({ model: rating, id: id, attributes: {title: title}})
 		},
 
-		viewSpot: function(id){
+		viewSpot: function(title, id){
 			var ratings = new Ratings()
-			// ratings.fetch()
-			return new SpotView({ collection: ratings, id: id})
+			return new SpotView({ collection: ratings, id: id, attributes: {title: title}})
 		},
 
 		/**

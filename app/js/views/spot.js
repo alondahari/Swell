@@ -39,7 +39,6 @@ define([
 		},
 
 		initialize: function(){
-
 			this.getAverages()
 			_.each(this.fields, function(field, i){
 				this.fields[i].time = this.fields[i].time ? 
@@ -47,11 +46,11 @@ define([
 					'No Recent Updates'
 			}, this)
 			this.render()
-			this.$el.find('a.rate-nav').attr('href', '#spot/' + this.id)
+			this.$el.find('a.rate-nav').attr('href', '#spot/' + this.attributes.title + '/' + this.id)
 		},
 
 		render: function(){
-			this.$el.html(this.template({header: this.id}))
+			this.$el.html(this.template({header: this.attributes.title}))
 			// not setting .wrapper as $el to keep all events within scope
 			$('.wrapper').html(this.el)
 			this.renderFields()

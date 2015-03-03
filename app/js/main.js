@@ -28,7 +28,6 @@ require.config({
     moment: '../bower_components/moment/moment',
     slider: '../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider',
     typehead: '../bower_components/typeahead.js/dist/typeahead.bundle'
-
   }
 })
 
