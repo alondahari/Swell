@@ -13,7 +13,8 @@ define([
 		template: jade.compile(template),
 
 		events: {
-			'change .rating-input-range': 'updateRatings'
+			'change .rating-input-range': 'updateRatings',
+			'click .slider': 'updateRatings'
 		},
 
 		initialize: function(){
