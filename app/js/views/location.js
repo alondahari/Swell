@@ -61,7 +61,6 @@ define([
 			this.fieldData[0].items = this.getSpots('continent')
 			this.render()
 			this.searchbox()
-			this.showMap()
 		},
 
 		render: function(){
@@ -75,6 +74,9 @@ define([
 			_.each(this.fieldData, function(field, i){
 				this.renderField(field, i)
 			}, this)
+
+			coords = this.getSpotAttrs('lat', 'lon')
+			this.showMap(coords)
 		},
 
 		renderField: function(field, i){
@@ -186,26 +188,36 @@ define([
 			})
 		},
 
-		goToSpot: function(e){
-			e.preventDefault()
-			var id = this.collection.findWhere({
+		getSpotAttrs: function(){
+			var spot = this.collection.findWhere({
 				continent: this.fieldData[0].selected,
 				region: this.fieldData[1].selected,
 				spot: this.fieldData[2].selected
-			}).get('_id')
+			})
+			return _.map(arguments, function(attr){
+				return spot.get(attr)
+			})
+		},
 
+		goToSpot: function(e){
+			e.preventDefault()
+			
+			id = this.getSpotAttrs('_id')
 			location = '#spot/' + this.fieldData[2].selected + '/' + id
 
 		},
 
-		showMap: function(){
-
-			var mapOptions = {
-				center: { lat: -34.397, lng: 150.644},
-				zoom: 8
-			};
+		showMap: function(coords){
+			console.log(typeof coords[0])
 			var map = new google.maps.Map(this.$('#map-canvas')[0],
-					mapOptions);
+				{
+					center: {
+						lat: coords[0],
+						lng: coords[1]
+					},
+					zoom: 10
+				}
+			);
 		}
 
 

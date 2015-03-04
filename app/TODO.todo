@@ -5,6 +5,7 @@ Phase 1:
   ✔ save rating on change @done (15-03-03 19:09)
   ✔ add saved feedback @done (15-03-04 11:32)
   ☐ update recent similar ratings
+  ☐ cache locations
 
 Phase 2:
   ✘ Integrate hoodie @cancelled (15-03-04 11:33)
