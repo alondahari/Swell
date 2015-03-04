@@ -8,26 +8,26 @@ define([
 ], function(Backbone, jade, typehead, Select, template){
 
 	var substringMatcher = function(strs) {
-	  return function findMatches(q, cb) {
-	    var matches = [], substrRegex
+		return function findMatches(q, cb) {
+			var matches = [], substrRegex
 	 
-	    // regex used to determine if a string contains the substring `q`
-	    substrRegex = new RegExp(q, 'i')
+			// regex used to determine if a string contains the substring `q`
+			substrRegex = new RegExp(q, 'i')
 	 
-	    // iterate through the pool of strings and for any string that
-	    // contains the substring `q`, add it to the `matches` array
-	    $.each(strs, function(i, str) {
-	      if (substrRegex.test(str)) {
-	        // the typeahead jQuery plugin expects suggestions to a
-	        // JavaScript object, refer to typeahead docs for more info
-	        matches.push({ value: str })
-	        // limit results for better performance
-	        if (matches.length > 10) return false
-	      }
-	    })
+			// iterate through the pool of strings and for any string that
+			// contains the substring `q`, add it to the `matches` array
+			$.each(strs, function(i, str) {
+				if (substrRegex.test(str)) {
+					// the typeahead jQuery plugin expects suggestions to a
+					// JavaScript object, refer to typeahead docs for more info
+					matches.push({ value: str })
+					// limit results for better performance
+					if (matches.length > 10) return false
+				}
+			})
 	 
-	    cb(matches);
-	  }
+			cb(matches);
+		}
 	}
 
 	return Backbone.View.extend({
@@ -179,10 +179,10 @@ define([
 
 		searchbox: function(){
 			this.$el.find('.typehead').typeahead({
-			  highlight: true
+				highlight: true
 			},
 			{
-			  source: substringMatcher(this.typeaheadArr)
+				source: substringMatcher(this.typeaheadArr)
 			})
 		},
 
@@ -200,6 +200,12 @@ define([
 
 		showMap: function(){
 
+			var mapOptions = {
+				center: { lat: -34.397, lng: 150.644},
+				zoom: 8
+			};
+			var map = new google.maps.Map(this.$('#map-canvas')[0],
+					mapOptions);
 		}
 
 

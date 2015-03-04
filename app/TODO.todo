@@ -3,11 +3,11 @@ Phase 1:
   ✔ add click on rating slides @done (15-03-03 19:11)
   ✔ seperate rate from view rating @done (15-03-03 15:09)
   ✔ save rating on change @done (15-03-03 19:09)
-  ☐ add saved feedback
+  ✔ add saved feedback @done (15-03-04 11:32)
   ☐ update recent similar ratings
 
 Phase 2:
-  ☐ Integrate hoodie
+  ✘ Integrate hoodie @cancelled (15-03-04 11:33)
   ☐ Create dummy settings and account screens
   ☐ make login function with hoodie
   ☐ make settings functional + password change
