@@ -46,10 +46,17 @@ define([
 
 			// timeout to avoid multiple calls to the server on slider drag
 			if (this.timeout) clearTimeout(this.timeout)
+			
+			this.$('.rating-save').text('Saving...')
+
 			this.timeout = setTimeout(function(view){
 				view.timeout = null
 				// update model and database
-				view.model.save({time: Date.now(), spotId: this.id, value: value})
+				view.model.save({time: Date.now(), spotId: view.id, value: value}, {success: function(){
+				}, error: function(model, err, options){
+					view.$('.rating-save').text('Saved!')
+					
+				}})
 			}, 1000, this);
 
 		},

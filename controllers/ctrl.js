@@ -32,7 +32,9 @@ var indexController = {
 
 	setRating: function(req, res) {
 		var rating = new Rating(req.body)
-		rating.save()
+		rating.save(function(err, model, status){
+			res.sendStatus(status)
+		})
 		
 	},
 
