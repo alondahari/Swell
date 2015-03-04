@@ -66,7 +66,10 @@ define([
 		render: function(){
 			this.$el.html(this.template())
 			$('.wrapper').html(this.$el)
+			this.showMap()
 			this.renderFields()
+
+			this.addMarkers()
 		},
 
 		renderFields: function(){
@@ -74,9 +77,8 @@ define([
 			_.each(this.fieldData, function(field, i){
 				this.renderField(field, i)
 			}, this)
-
 			coords = this.getSpotAttrs('lat', 'lon')
-			this.showMap(coords)
+			this.centerMap(coords)
 		},
 
 		renderField: function(field, i){
@@ -207,27 +209,32 @@ define([
 
 		},
 
-		showMap: function(coords){
+		showMap: function(){
 
-			var map = new google.maps.Map(this.$('#map-canvas')[0],
+			this.map = new google.maps.Map(this.$('#map-canvas')[0],
 				{
-					center: {
-						lat: coords[0],
-						lng: coords[1]
-					},
-					zoom: 10
+					zoom: 12
 				}
 			);
-			this.addMarkers(coords, map)
+		},
+
+		centerMap: function(coords){
+			this.map.setCenter({
+				lat: coords[0],
+				lng: coords[1]
+			})
 		},
 
 		addMarkers: function(coords, map){
-			var spotCoords = new google.maps.LatLng(coords[0], coords[1]);
-			var marker = new google.maps.Marker({
-				position: spotCoords,
-				map: map,
-				title:"Hello World!"
-			});
+			this.collection.each(function(model){
+				var spotCoords = new google.maps.LatLng(model.get('lat'), model.get('lon'));
+				var marker = new google.maps.Marker({
+					position: spotCoords,
+					map: this.map,
+					title: 'test'
+				});
+
+			}, this)
 		}
 
 
