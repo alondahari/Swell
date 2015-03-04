@@ -21,9 +21,8 @@ define([
 			// hide defauld slider tooltip
 			this.model.set({tooltip: 'hide'})
 			this.slider = this.$el.find('.rating-input-range').slider(this.model.toJSON())
-			// hacky... bad...
+
 			if (this.model.attributes.fieldName === 'wind') {
-				// this.model.set('value', this.formatWindValue(this.model.get('value')))
 				this.$el.find('.rating-value').text('None (0-3 knots)')
 			}
 		},
@@ -32,12 +31,25 @@ define([
 			this.$el.html(this.template(this.model.toJSON()))
 		},
 
-		updateRatings: function(e){
+		updateRatings: function(){
+
+
+			// get value from slider
 			var value = this.slider.slider('getValue')
 
-			this.model.set('value', value)
+			// format value if neede
 			var text = (this.model.get('fieldName') === 'wind') ? this.formatWindValue(value) : value
+
+			// set the value in the DOM and add class for visual change feedback
 			this.$el.find('.rating-value').text(text).addClass('value-changed')
+
+			// timeout to avoid multiple calls to the server on slider drag
+			if (this.timeout) clearTimeout(this.timeout)
+			this.timeout = setTimeout(function(view){
+				view.timeout = null
+				// update model and database
+				view.model.save({time: Date.now(), spotId: this.id, value: value})
+			}, 1000, this);
 
 		},
 

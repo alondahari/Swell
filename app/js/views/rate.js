@@ -64,22 +64,10 @@ define([
 		 */
 		renderFields: function(){
 			_.each(this.fields, function(field){
-				var rateField = new RateField({model: new Rating(field)})
+				var rateField = new RateField({model: new Rating(field), id: this.id})
 				this.$el.find('.ratings').append(rateField.$el)
 			}, this)
-		},
-
-		// // hacky... bad...
-		// decypherWindValue: function(val){
-		// 	var values = [
-		// 		'None (0-3 knots)',
-		// 		'Calm (4-9 knots)',
-		// 		'Strong (10-20 knots)',
-		// 		'High (20-40 knots)',
-		// 		'Stormy (40+ knots)'
-		// 	]
-		// 	return _.indexOf(values, val)
-		// },
+		}
 
 		// submit: function(){
 

@@ -13,6 +13,7 @@ app.get('/googleMaps', ctrl.getMaps);
 app.get('/locations', ctrl.getLocations);
 // app.get('/ratings', ctrl.getRatings);
 app.post('/ratings', ctrl.setRating);
+app.put('/ratings', ctrl.updateRating);
 
 var server = app.listen(7707, function() {
 	console.log('Express server listening on port ' + server.address().port);

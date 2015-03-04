@@ -12,13 +12,11 @@ var Spot = mongoose.model('locations', {
 })
 
 var Rating = mongoose.model('ratings', {
-	overall: Number,
-	waveHeight: Number,
-	wind: Number,
-	crowd: Number,
+	fieldName: String,
 	userId: Number,
 	time: Date,
-	spotId: String
+	spotId: String,
+	value: Number
 })
 
 var indexController = {
@@ -35,6 +33,11 @@ var indexController = {
 	setRating: function(req, res) {
 		var rating = new Rating(req.body)
 		rating.save()
+		
+	},
+
+	updateRating: function(req, res) {
+		console.log('test')
 		
 	},
 
