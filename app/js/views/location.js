@@ -208,7 +208,7 @@ define([
 		},
 
 		showMap: function(coords){
-			console.log(typeof coords[0])
+
 			var map = new google.maps.Map(this.$('#map-canvas')[0],
 				{
 					center: {
@@ -218,6 +218,16 @@ define([
 					zoom: 10
 				}
 			);
+			this.addMarkers(coords, map)
+		},
+
+		addMarkers: function(coords, map){
+			var spotCoords = new google.maps.LatLng(coords[0], coords[1]);
+			var marker = new google.maps.Marker({
+				position: spotCoords,
+				map: map,
+				title:"Hello World!"
+			});
 		}
 
 
