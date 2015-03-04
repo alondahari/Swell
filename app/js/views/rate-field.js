@@ -13,33 +13,32 @@ define([
 		template: jade.compile(template),
 
 		events: {
-			'change': 'updateRatings'
+			'change .rating-input-range': 'updateRatings'
 		},
 
 		initialize: function(){
 			this.render()
 			// hide defauld slider tooltip
-			_.extend(this.attributes, {tooltip: 'hide'})
-			this.slider = this.$el.find('.rating-input-range').slider(this.attributes)
+			this.model.set({tooltip: 'hide'})
+			this.slider = this.$el.find('.rating-input-range').slider(this.model.toJSON())
 			// hacky... bad...
-			if (this.attributes.fieldName === 'wind') {
-				this.attributes.value = this.formatWindValue(this.attributes.value)
-				this.$el.find('.rating-value').text(this.attributes.value)
+			if (this.model.attributes.fieldName === 'wind') {
+				// this.model.set('value', this.formatWindValue(this.model.get('value')))
+				this.$el.find('.rating-value').text('None (0-3 knots)')
 			}
 		},
 
 		render: function(){
-			this.$el.html(this.template(this.attributes))
+			this.$el.html(this.template(this.model.toJSON()))
 		},
 
-		updateRatings: function(){
+		updateRatings: function(e){
 			var value = this.slider.slider('getValue')
 
-			this.attributes.value = (this.attributes.fieldName === 'wind') ?
-				this.formatWindValue(value) : value
+			this.model.set('value', value)
+			var text = (this.model.get('fieldName') === 'wind') ? this.formatWindValue(value) : value
+			this.$el.find('.rating-value').text(text).addClass('value-changed')
 
-			this.$el.find('.rating-value').text(this.attributes.value).addClass('value-changed')
-			this.attributes.changed = true
 		},
 
 		formatWindValue: function(val){

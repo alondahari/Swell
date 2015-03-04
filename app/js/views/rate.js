@@ -2,8 +2,9 @@ define([
 	'backbone',
 	'jade',
 	'text!templates/rate.jade',
-	'views/rate-field'
-], function(Backbone, jade, template, RateField){
+	'views/rate-field',
+	'models/rating'
+], function(Backbone, jade, template, RateField, Rating){
 	'use strict'
 
 	return Backbone.View.extend({
@@ -42,9 +43,9 @@ define([
 			}
 		},
 
-		events: {
-			'click .button-submit': 'submit'
-		},
+		// events: {
+		// 	'click .button-submit': 'submit'
+		// },
 
 		initialize: function(){
 			this.render()
@@ -62,46 +63,43 @@ define([
 		 * render the rating fields with a different template
 		 */
 		renderFields: function(){
-			this.rateFields = _.map(this.fields, this.renderField, this)
+			_.each(this.fields, function(field){
+				var rateField = new RateField({model: new Rating(field)})
+				this.$el.find('.ratings').append(rateField.$el)
+			}, this)
 		},
 
-		renderField: function(field){
-			var rateField = new RateField({attributes: _.extend({},field)})
-			this.$el.find('.ratings').append(rateField.$el)
-			return rateField
-		},
+		// // hacky... bad...
+		// decypherWindValue: function(val){
+		// 	var values = [
+		// 		'None (0-3 knots)',
+		// 		'Calm (4-9 knots)',
+		// 		'Strong (10-20 knots)',
+		// 		'High (20-40 knots)',
+		// 		'Stormy (40+ knots)'
+		// 	]
+		// 	return _.indexOf(values, val)
+		// },
 
-		// hacky... bad...
-		decypherWindValue: function(val){
-			var values = [
-				'None (0-3 knots)',
-				'Calm (4-9 knots)',
-				'Strong (10-20 knots)',
-				'High (20-40 knots)',
-				'Stormy (40+ knots)'
-			]
-			return _.indexOf(values, val)
-		},
+		// submit: function(){
 
-		submit: function(){
+		// 	this.model.set({time: Date.now(), spotId: this.id})
+		// 	_.each(this.rateFields, function(field){
+		// 		if (field.attributes.fieldName === 'wind') {
+		// 			field.attributes.value = this.decypherWindValue(field.attributes.value)
+		// 		}
+		// 		if (field.attributes.changed === true){
+		// 			this.model.attributes[field.attributes.fieldName] = field.attributes.value
+		// 		}
+		// 	},this)
 
-			this.model.set({time: Date.now(), spotId: this.id})
-			_.each(this.rateFields, function(field){
-				if (field.attributes.fieldName === 'wind') {
-					field.attributes.value = this.decypherWindValue(field.attributes.value)
-				}
-				if (field.attributes.changed === true){
-					this.model.attributes[field.attributes.fieldName] = field.attributes.value
-				}
-			},this)
+		// 	this.model.save({success: function(model, data){
+		// 		console.log(data);
+		// 	}, error: function(model, err){
+		// 		console.log('error:', err.responseText);
+		// 	}})
 
-			this.model.save({success: function(model, data){
-				console.log(data);
-			}, error: function(model, err){
-				console.log('error:', err.responseText);
-			}})
-
-		}
+		// }
 
 
 	})

@@ -8,7 +8,6 @@ define([
 	'views/rate',
 	'views/spot',
   'collections/spots',
-  'models/rating',
   'collections/ratings'
   ], function(
   	Backbone,
@@ -20,7 +19,6 @@ define([
   	RateView,
   	SpotView,
   	Spots,
-  	Rating,
   	Ratings
   ){
 	'use strict'
@@ -49,8 +47,7 @@ define([
 		},
 
 		rate: function(title, id){
-			var rating = new Rating()
-			return new RateView({ model: rating, id: id, attributes: {title: title}})
+			return new RateView({ id: id, attributes: {title: title}})
 		},
 
 		viewSpot: function(title, id){
