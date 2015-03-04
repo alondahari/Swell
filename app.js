@@ -10,8 +10,10 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/googleMaps', ctrl.getMaps);
+
 app.get('/locations', ctrl.getLocations);
-// app.get('/ratings', ctrl.getRatings);
+
+app.get('/ratings/:id', ctrl.getRatings);
 app.post('/ratings', ctrl.setRating);
 app.put('/ratings', ctrl.updateRating);
 

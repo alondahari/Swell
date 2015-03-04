@@ -4,27 +4,23 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 	return Backbone.Collection.extend({
 		
 		model: rating,
-		url: '/ratings',
 
 		// localStorage: new Store('ratings'),
 
 		initialize: function(){
-			
 		},
 
 		/**
-		 * return ratings for the passed surf spot,
-		 * filtering out ratings older than 6 hours and ratings without the specified field
+		 * filter out ratings older than 6 hours and ratings for different field
 		 * @param  {integer} older ratings will be filtered out
 		 * @param  {string} the name of the surf spot
 		 * @param  {string} rating field
 		 * @return {array} filtered array
 		 */
-		filterRatings: function(cutOff, spot_name, field){
+		filterRatings: function(cutOff, field){
 
-			return this.where({spot_name: spot_name})
-				.filter(function(val){
-					return (val.get('time') > cutOff && val.toJSON().hasOwnProperty(field))
+			return this.filter(function(model){
+					return (model.get('time') > cutOff && model.get('fieldName') === field)
 				})
 		},
 
@@ -34,11 +30,11 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 		 * @param  {string}
 		 * @return {integer}
 		 */
-		getAverage: function(spot_name, field){
+		getAverage: function(field){
 
 			// 21600000 is 6 hours in ms
 			var cutOff = Date.now() - 21600000
-			var ratings = this.filterRatings(cutOff, spot_name, field)
+			var ratings = this.filterRatings(cutOff, field)
 
 			// get the addition of all the timestamps of the ratings
 			var voteAmount = _.reduce(ratings, function(memo, num){
@@ -46,9 +42,9 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 			}, 0)
 
 			var tallyVotes = _.reduce(ratings, function(memo, num){
-				// tally all the ratings of the passed field, multiplied by the time
+				// tally all the ratings, multiplied by the time
 				// subtract cutOff to add more weight to the relative time difference
-				var newVote = (num.get('time') - cutOff ) * num.get(field)
+				var newVote = (num.get('time') - cutOff ) * num.get('value')
 				return memo + newVote
 			}, 0)
 
@@ -56,9 +52,9 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 
 		},
 
-		getTime: function(spot_name, field){
+		getTime: function(spotId, field){
 			var cutOff = Date.now() - 21600000
-			var ratings = this.filterRatings(cutOff, spot_name, field)
+			var ratings = this.filterRatings(cutOff, spotId, field)
 			if (ratings.length) {
 				return _.max(ratings, function(rating){
 					return rating.get('time')

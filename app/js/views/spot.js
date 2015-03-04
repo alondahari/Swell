@@ -4,7 +4,7 @@ define([
 	'moment',
 	'text!templates/view.jade',
 	'views/view-rating'
-], function(Backbone, jade, moment, template, viewRating){
+], function(Backbone, jade, moment, template, ViewRating){
 	'use strict'
 
 	return Backbone.View.extend({
@@ -33,11 +33,6 @@ define([
 			}
 		},
 
-		events: {
-			'change .rating-input-range': 'updateRatings',
-			'click .button-submit': 'submit'
-		},
-
 		initialize: function(){
 			this.getAverages()
 			_.each(this.fields, function(field, i){
@@ -61,13 +56,11 @@ define([
 		 * refactor: make into a seperate view
 		 */
 		renderFields: function(){
-			this.rateFields = _.map(this.fields, this.renderField, this)
-		},
-
-		renderField: function(field){
-			var rateField = new viewRating({attributes: field})
-			this.$el.find('.ratings').append(rateField.$el)
-			return rateField
+			_.each(this.fields, function(field){
+				var rateField = new ViewRating({attributes: field})
+				this.$el.find('.ratings').append(rateField.$el)
+				
+			}, this)
 		},
 
 		/**
@@ -76,21 +69,9 @@ define([
 		getAverages: function(){
 			var fieldKeys = _.keys(this.fields)
 			_.each(fieldKeys, function(key, i){
-				this.fields[key].value = this.collection.getAverage(this.id, key)
-				this.fields[key].time = this.collection.getTime(this.id, key)
+				this.fields[key].value = this.collection.getAverage(key)
+				this.fields[key].time = this.collection.getTime(key)
 			},this)
-		},
-
-		// hacky... bad...
-		decypherWindValue: function(val){
-			var values = [
-				'None (0-3 knots)',
-				'Calm (4-9 knots)',
-				'Strong (10-20 knots)',
-				'High (20-40 knots)',
-				'Stormy (40+ knots)'
-			]
-			return _.indexOf(values, val)
 		}
 
 

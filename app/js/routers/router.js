@@ -52,7 +52,13 @@ define([
 
 		viewSpot: function(title, id){
 			var ratings = new Ratings()
-			return new SpotView({ collection: ratings, id: id, attributes: {title: title}})
+
+			// get only ratings for the right spot
+			ratings.url = '/ratings/' + id
+			
+			ratings.fetch({success: function(){
+				return new SpotView({ collection: ratings, id: id, attributes: {title: title}})
+			}})
 		},
 
 		/**

@@ -30,7 +30,7 @@
 
 	float: right;
 	clear: both;
-	color: rgba(184, 181, 240, 0.5);
+	color: $color-info-dimmed;
 }
 
 
@@ -45,11 +45,11 @@
 }
 
 .value-changed{
-	color: rgba(204, 126, 45, 1);
+	color: $color-secondary-text;
 }
 
 .rate-nav{
-	color: rgba(204, 126, 45, 1);
+	color: $color-secondary-text;
 	width: 50%;
 	height: 50px;
 	background-color: rgba(0,0,0,.4);
@@ -76,6 +76,6 @@
 	right: 12px;
 	top: 76px;
 	font-size: 1.6rem;
-	color: rgba(69, 224, 224, 0.55)
+	color: $color-save;
 }
 
