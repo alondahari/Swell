@@ -58,6 +58,10 @@
 	font-size: 2rem;
 	position: fixed;
 	top: 68px;
+	
+	&:hover{
+		text-decoration: none;
+	}
 }
 .rate-current{
 	background-color: transparent;
