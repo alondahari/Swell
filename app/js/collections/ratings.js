@@ -1,4 +1,9 @@
-define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating, Store){
+define([
+	'backbone',
+	'models/rating',
+	'localStorage',
+	'moment'
+	], function(Backbone, rating, Store, moment){
 	'use strict'
 	
 	return Backbone.Collection.extend({
@@ -52,13 +57,14 @@ define(['backbone', 'models/rating', 'localStorage'], function(Backbone, rating,
 
 		},
 
-		getTime: function(spotId, field){
+		getTime: function(field){
 			var cutOff = Date.now() - 21600000
-			var ratings = this.filterRatings(cutOff, spotId, field)
+			var ratings = this.filterRatings(cutOff, field)
 			if (ratings.length) {
-				return _.max(ratings, function(rating){
+				var mostRecent = _.max(ratings, function(rating){
 					return rating.get('time')
 				}).get('time')
+				return moment(mostRecent).fromNow()
 			}
 		},
 

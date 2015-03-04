@@ -6,4 +6,7 @@
 		| 
 		| #{unit}
 
-	p.rating-time= time
+	if time
+		p.rating-time Updated #{time}
+	else
+		p.rating-time No Recent Updates
