@@ -66,6 +66,7 @@ define([
 			_.each(fieldKeys, function(key, i){
 				this.fields[key].value = this.collection.getAverage(key)
 				this.fields[key].time = this.collection.getTime(key)
+				this.fields[key].votes = this.collection.getNumberOfVotes(key)
 			},this)
 		}
 

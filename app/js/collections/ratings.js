@@ -22,8 +22,10 @@ define([
 		 * @param  {string} rating field
 		 * @return {array} filtered array
 		 */
-		filterRatings: function(cutOff, field){
+		filterRatings: function(field){
 
+			// 21600000 is 6 hours in ms
+			var cutOff = Date.now() - 21600000
 			return this.filter(function(model){
 					return (model.get('time') > cutOff && model.get('fieldName') === field)
 				})
@@ -37,9 +39,8 @@ define([
 		 */
 		getAverage: function(field){
 
-			// 21600000 is 6 hours in ms
 			var cutOff = Date.now() - 21600000
-			var ratings = this.filterRatings(cutOff, field)
+			var ratings = this.filterRatings(field)
 
 			// get the addition of all the timestamps of the ratings
 			var voteAmount = _.reduce(ratings, function(memo, num){
@@ -58,8 +59,8 @@ define([
 		},
 
 		getTime: function(field){
-			var cutOff = Date.now() - 21600000
-			var ratings = this.filterRatings(cutOff, field)
+
+			var ratings = this.filterRatings(field)
 			if (ratings.length) {
 				var mostRecent = _.max(ratings, function(rating){
 					return rating.get('time')
@@ -67,6 +68,11 @@ define([
 				return moment(mostRecent).fromNow()
 			}
 		},
+
+		getNumberOfVotes: function(field){
+			return this.filterRatings(field).length
+
+		}
 
 	})
 	

@@ -7,6 +7,7 @@
 		| #{unit}
 
 	if time
-		p.rating-time Updated #{time}
+		p.rating-info Last Updated #{time}
+		p.rating-info #{votes} Vote#{(votes > 1 ? 's' : '')} In The Last 6 Hours
 	else
-		p.rating-time No Recent Updates
+		p.rating-info No Recent Updates
