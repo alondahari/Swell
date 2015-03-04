@@ -2,7 +2,10 @@ define(['backbone'], function(Backbone){
 	'use strict'
 
 	return Backbone.Model.extend({
-		url: '/ratings'
+		url: '/ratings',
+		defaults: {
+			value: 0
+		}
 	})
 
 })

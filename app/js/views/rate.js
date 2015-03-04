@@ -18,34 +18,26 @@ define([
 				header: 'Overall Wave Quality',
 				max: 10,
 				unit: '/ 10',
-				fieldName: 'overall',
-				value: 0
+				fieldName: 'overall'
 			},
 			waveHeight: {
 				header: 'Wave Height',
 				max: 12,
 				unit: 'ft',
-				fieldName: 'waveHeight',
-				value: 0
+				fieldName: 'waveHeight'
 			},
 			wind: {
 				header: 'Wind',
 				max: 4,
-				fieldName: 'wind',
-				value: 0
+				fieldName: 'wind'
 			},
 			crowd: {
 				header: 'Crowd',
 				max: 200,
 				unit: 'surfers',
-				fieldName: 'crowd',
-				value: 0
+				fieldName: 'crowd'
 			}
 		},
-
-		// events: {
-		// 	'click .button-submit': 'submit'
-		// },
 
 		initialize: function(){
 			this.render()
@@ -68,26 +60,6 @@ define([
 				this.$el.find('.ratings').append(rateField.$el)
 			}, this)
 		}
-
-		// submit: function(){
-
-		// 	this.model.set({time: Date.now(), spotId: this.id})
-		// 	_.each(this.rateFields, function(field){
-		// 		if (field.attributes.fieldName === 'wind') {
-		// 			field.attributes.value = this.decypherWindValue(field.attributes.value)
-		// 		}
-		// 		if (field.attributes.changed === true){
-		// 			this.model.attributes[field.attributes.fieldName] = field.attributes.value
-		// 		}
-		// 	},this)
-
-		// 	this.model.save({success: function(model, data){
-		// 		console.log(data);
-		// 	}, error: function(model, err){
-		// 		console.log('error:', err.responseText);
-		// 	}})
-
-		// }
 
 
 	})
