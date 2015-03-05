@@ -39,11 +39,16 @@ define([
 			return new Login({collection: users})
 		},
 
-		location: function(){			
+		location: function(){
 		  var spots = new Spots()
-		  spots.fetch({success: function(){
-		  	new LocationView({ collection: spots })
+		  spots.fetch({ajaxSync: true, success: function(){
+	  		new LocationView({ collection: spots })
+		  	// save to local storage
+		  	spots.each(function(spot){
+		  		spot.save()
+		  	})
 			}})
+
 		},
 
 		rate: function(title, id){
@@ -59,14 +64,6 @@ define([
 			ratings.fetch({success: function(){
 				return new SpotView({ collection: ratings, id: id, attributes: {title: title}})
 			}})
-		},
-
-		/**
-		 * helper to initiate a default database into localStorage
-		 */
-		initDatabase: function(){
-
-
 		}
 
 	})
