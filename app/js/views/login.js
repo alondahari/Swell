@@ -3,7 +3,6 @@ define([
 	'jade',
 	'text!templates/login.jade'
 ], function(Backbone, jade, template){
-	'use strict'
 
 	return Backbone.View.extend({
 

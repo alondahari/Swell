@@ -10,6 +10,7 @@ Phase 1:
   ☐ remove old ratings
   ☐ add label overlay on map
   ☐ add dualStorage
+  ☐ quetions: main.js 500k, error callback rate-field, sync to localstorage
 
 Phase 2:
   ✘ Integrate hoodie @cancelled (15-03-04 11:33)

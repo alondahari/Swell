@@ -21,7 +21,6 @@ define([
   	Spots,
   	Ratings
   ){
-	'use strict'
 
 	return Backbone.Router.extend({
 
@@ -42,10 +41,7 @@ define([
 		location: function(){
 		  var spots = new Spots()
 		  spots.fetch({ajaxSync: true, success: function(){
-	  		Backbone.sync('create', spots, {success: function(){
-	  			new LocationView({ collection: spots })
-
-	  		}})
+  			new LocationView({ collection: spots })
 		  	// save to local storage
 		  	// spots.each(function(spot){
 		  	// 	spot.save()

@@ -57,7 +57,6 @@ define([
 		},
 
 		initialize: function(){
-			console.log(this.collection)
 			this.typeaheadArr = this.getTypeaheadArr()
 			this.fieldData[0].items = this.getSpots('continent')
 			this.render()

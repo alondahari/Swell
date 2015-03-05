@@ -24,8 +24,8 @@ var gulp = require('gulp')
 var log = gutil.log
   , noop = gutil.noop
 
-var source = 'www/'
-  , dist   = 'dist/'
+var source = 'app/'
+  , dist   = 'www/'
   , paths = {
     index : source + 'index.html',
     css   : source + 'css/**/*.css',
@@ -45,9 +45,9 @@ gulp.task('clean', function (cb) {
 
 gulp.task('sass', function () {
     gulp.src('./app/scss/*.scss')
-      .pipe(sourcemaps.init())
+      // .pipe(sourcemaps.init())
       .pipe(sass())
-      .pipe(sourcemaps.write())
+      // .pipe(sourcemaps.write())
       .pipe(prefix())
       .pipe(gulp.dest('./app/css'))
 })
@@ -66,13 +66,13 @@ gulp.task('useapp', function(){
   return gulp.src([
       paths.index, 
       paths.css, 
-      paths.fonts, 
+      paths.fonts,
       paths.js], {base: source})
     .pipe(gulp.dest(dist))
 })
 
-gulp.task('copyRequire', function(){
-  return gulp.src(paths.require, {base: source})
+gulp.task('copyProd', function(){
+  return gulp.src([paths.require, paths.fonts], {base: source})
     .pipe(gulp.dest(dist))
 })
 
@@ -96,7 +96,7 @@ gulp.task('nodemon', function () {
 gulp.task('build', function(){
     log('building for ' + (production ? 'production' : 'development'))
     if (production)
-      runSequence('clean', 'usemin', 'copyRequire', 'images')
+      runSequence('clean', 'usemin', 'copyProd', 'images')
     else
       runSequence('clean', 'useapp', 'images')
 })

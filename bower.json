@@ -19,7 +19,8 @@
     "moment": "~2.9.0",
     "seiyria-bootstrap-slider": "~4.4.2",
     "typeahead.js": "~0.10.5",
-    "Backbone.dualStorage": "~1.4.0"
+    "Backbone.dualStorage": "~1.4.0",
+    "bootstrap-sass": "~3.3.3"
   },
   "devDependencies": {
     "requirejs-text": "~2.0.13"
