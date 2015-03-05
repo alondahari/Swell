@@ -232,8 +232,13 @@ define([
 					position: spotCoords,
 					map: this.map,
 					title: 'test',
+					id: model.get('_id'),
 					icon: '../../img/red-surf-marker.svg'
 				});
+
+				google.maps.event.addListener(marker, 'click', function(){
+					console.log(this.id)
+				})
 
 			}, this)
 		}
