@@ -145,15 +145,14 @@ define([
 				var ending = parts.pop()
 				ending = ending.split(', ')
 
-				this.fieldData[2].selected = parts.join('(')
-				this.fieldData[1].selected = ending.shift()
-				this.fieldData[0].selected = ending[0].split(')')[0]
+				this.fieldData[0].selected = ending.pop().split(')')[0]
+				this.fieldData[1].selected = ending.join(', ')
+				this.fieldData[2].selected = parts.join(' (')
 
 			} else if (text.match(/,/g)) {
 				// region
 				var arr = text.split(', ')
-				this.fieldData[0].selected = arr[arr.length - 1]
-				arr.pop()
+				this.fieldData[0].selected = arr.pop()
 				this.fieldData[1].selected = arr.join(', ')
 
 			} else {
@@ -213,7 +212,8 @@ define([
 
 			this.map = new google.maps.Map(this.$('#map-canvas')[0],
 				{
-					zoom: 12
+					zoom: 10,
+					mapTypeId: google.maps.MapTypeId.SATELLITE
 				}
 			);
 		},
@@ -226,7 +226,8 @@ define([
 		},
 
 		addMarkers: function(coords, map){
-			this.collection.each(function(model){
+			var view = this
+			view.collection.each(function(model){
 				var spotCoords = new google.maps.LatLng(model.get('lat'), model.get('lon'));
 				var marker = new google.maps.Marker({
 					position: spotCoords,
@@ -237,7 +238,12 @@ define([
 				});
 
 				google.maps.event.addListener(marker, 'click', function(){
-					console.log(this.id)
+					var spot = view.collection.findWhere({_id: this.id})
+					view.fieldData[0].selected = spot.get('continent')
+					view.fieldData[1].selected = spot.get('region')
+					view.fieldData[2].selected = spot.get('spot')
+
+					view.renderFields()
 				})
 
 			}, this)
