@@ -5084,9 +5084,9 @@ body {
 .rating-save {
   position: absolute;
   right: 12px;
-  top: 76px;
-  font-size: 1.6rem;
-  color: rgba(69, 224, 224, 0.55); }
+  top: 78px;
+  font-size: 1.4rem;
+  color: rgba(184, 181, 240, 0.5); }
 
 .login-field {
   margin: 40px 0; }
