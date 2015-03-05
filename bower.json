@@ -18,7 +18,8 @@
     "backbone.localStorage": "~1.1.16",
     "moment": "~2.9.0",
     "seiyria-bootstrap-slider": "~4.4.2",
-    "typeahead.js": "~0.10.5"
+    "typeahead.js": "~0.10.5",
+    "Backbone.dualStorage": "~1.4.0"
   },
   "devDependencies": {
     "requirejs-text": "~2.0.13"

@@ -42,11 +42,14 @@ define([
 		location: function(){
 		  var spots = new Spots()
 		  spots.fetch({ajaxSync: true, success: function(){
-	  		new LocationView({ collection: spots })
+	  		Backbone.sync('create', spots, {success: function(){
+	  			new LocationView({ collection: spots })
+
+	  		}})
 		  	// save to local storage
-		  	spots.each(function(spot){
-		  		spot.save()
-		  	})
+		  	// spots.each(function(spot){
+		  	// 	spot.save()
+		  	// })
 			}})
 
 		},
