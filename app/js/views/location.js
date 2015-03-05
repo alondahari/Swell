@@ -231,7 +231,8 @@ define([
 				var marker = new google.maps.Marker({
 					position: spotCoords,
 					map: this.map,
-					title: 'test'
+					title: 'test',
+					icon: '../../img/red-surf-marker.svg'
 				});
 
 			}, this)
