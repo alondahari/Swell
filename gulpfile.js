@@ -88,7 +88,8 @@ gulp.task('watch', function() {
 gulp.task('nodemon', function () {
   nodemon({ script: 'app.js', ext: 'html js jade' })
     .on('restart', function () {
-      console.log('restarted!')
+      console.log('restart!')
+      connect.reload()
     })
 })
 
@@ -104,7 +105,7 @@ gulp.task('build', function(){
 gulp.task('livereload', function() {
   gulp.src(['app/css/*.css', 'app/js/*.js'])
     .pipe(watch(['app/**/*.css', 'app/**/*.js', 'app/**/*.jade', 'app/index.html']))
-    .pipe(connect.reload())
+    .pipe()
 })
 
 gulp.task('serve', function() {
@@ -113,7 +114,7 @@ gulp.task('serve', function() {
   })
 })
 
-gulp.task('default', ['nodemon', 'sass', 'livereload', 'watch'],function(){
+gulp.task('default', ['nodemon', 'sass', 'serve', 'watch'],function(){
   log('available tasks:')
   log('  gulp serve (serve content locally for development)')
   log('  gulp build (build for developement)')

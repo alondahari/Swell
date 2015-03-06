@@ -40,12 +40,9 @@ define([
 
 		location: function(){
 		  var spots = new Spots()
-		  spots.fetch({ajaxSync: true, success: function(){
+		  spots.fetch({success: function(){
   			new LocationView({ collection: spots })
-		  	// save to local storage
-		  	// spots.each(function(spot){
-		  	// 	spot.save()
-		  	// })
+
 			}})
 
 		},

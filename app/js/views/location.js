@@ -61,6 +61,7 @@ define([
 			this.fieldData[0].items = this.getSpots('continent')
 			this.render()
 			this.searchbox()
+
 		},
 
 		render: function(){

@@ -1,16 +1,13 @@
 define([
 	'backbone',
 	'models/rating',
-	'localStorage',
 	'moment'
-	], function(Backbone, rating, Store, moment){
-	'use strict'
+	], function(Backbone, rating, moment){
 	
 	return Backbone.Collection.extend({
 		
 		model: rating,
-
-		// localStorage: new Store('ratings'),
+		url: '/locations',
 
 		initialize: function(){
 		},

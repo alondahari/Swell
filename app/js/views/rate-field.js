@@ -52,10 +52,12 @@ define([
 			this.timeout = setTimeout(function(view){
 				view.timeout = null
 				// update model and database
-				view.model.save({time: Date.now(), spotId: view.id, value: value}, {success: function(){
-				}, error: function(model, err, options){
+				view.model.save({time: Date.now(), spotId: view.id, value: value}, {success: function(model, data){
+
 					view.$('.rating-save').text('Saved!')
-					
+
+				}, error: function(model, data){
+					console.log(data)
 				}})
 			}, 1000, this);
 

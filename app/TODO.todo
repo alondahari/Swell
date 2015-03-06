@@ -4,13 +4,13 @@ Phase 1:
   ✔ seperate rate from view rating @done (15-03-03 15:09)
   ✔ save rating on change @done (15-03-03 19:09)
   ✔ add saved feedback @done (15-03-04 11:32)
-  ☐ update recent similar ratings
+  ✔ update recent similar ratings @done (15-03-05 19:16)
   ☐ cache locations
   ☐ make current marker stand out
   ☐ remove old ratings
   ☐ add label overlay on map
   ☐ add dualStorage
-  ☐ quetions: main.js 500k, error callback rate-field, sync to localstorage
+  ☐ quetions: sync to localstorage
 
 Phase 2:
   ✘ Integrate hoodie @cancelled (15-03-04 11:33)

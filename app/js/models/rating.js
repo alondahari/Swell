@@ -1,8 +1,8 @@
 define(['backbone'], function(Backbone){
-	'use strict'
 
 	return Backbone.Model.extend({
 		url: '/ratings',
+		idAttribute: "_id",
 		defaults: {
 			value: 0
 		}

@@ -42,15 +42,25 @@ var indexController = {
 	},
 
 	setRating: function(req, res) {
-		var rating = new Rating(req.body)
-		rating.save(function(err, model, status){
-			res.sendStatus(status)
+		// only makes sense once I add users
+		// 3600000 = a user can submit a new rating once an hour
+		var recent = req.body.time - 3600000
+		var query = {spotId: req.body.spotId, fieldName: req.body.fieldName, time: {$gt: recent}}
+		Rating.remove(query, function(err){
+			if (!err) {
+				var rating = new Rating(req.body)
+				rating.save(function(err, model){
+					if (!err) {
+						res.send(model)
+						
+					} else {
+						res.send('error creating record:', err)
+					}
+				})
+			} else {
+				res.send('error removing record:', err)
+			}
 		})
-		
-	},
-
-	updateRating: function(req, res) {
-		console.log('test')
 		
 	},
 

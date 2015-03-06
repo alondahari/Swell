@@ -12,10 +12,6 @@ require.config({
         'jquery'
       ],
       exports: 'Backbone'
-    },
-    localStorage: {
-      deps: ['backbone'],
-      exports: 'Store'
     }
   },
   paths: {
@@ -23,7 +19,6 @@ require.config({
     jquery: '../bower_components/jquery/dist/jquery',
     underscore: '../bower_components/underscore/underscore',
     backbone: '../bower_components/backbone/backbone',
-    localStorage: '../bower_components/backbone.localStorage/backbone.localStorage',
     text: '../bower_components/requirejs-text/text',
     moment: '../bower_components/moment/moment',
     slider: '../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider',
