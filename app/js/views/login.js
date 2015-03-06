@@ -27,6 +27,9 @@ define([
 
 		preventDefault: function(e){
 			e.preventDefault()
+			$.post('/login', function(err){
+				console.log(err)
+			})
 		},
 
 		userExists: function(user){
@@ -44,13 +47,14 @@ define([
 
 		login: function(){
 
-			var user = this.$el.find('input[type=email]').val()
-			var password = this.$el.find('input[type=password]').val()
+			// var user = this.$el.find('input[type=email]').val()
+			// var password = this.$el.find('input[type=password]').val()
 
-			if (!this.validateUser(user, password)) {
-				this.$el.find('.error-message').text('User or Password incorrect')
-				return false
-			}
+			// if (!this.validateUser(user, password)) {
+			// 	this.$el.find('.error-message').text('User or Password incorrect')
+			// 	return false
+			// }
+
 			
 		},
 

@@ -1,8 +1,12 @@
 var mongoose = require('mongoose')
 var request = require('request')
 var keys = require('../models/keys.js')
+var passport = require('passport')
+var LocalStrategy = require('passport-local').Strategy
+
 
 mongoose.connect('mongodb://localhost/swell')
+
 var Spot = mongoose.model('locations', {
 	continent: String,
 	region: String,
@@ -19,7 +23,41 @@ var Rating = mongoose.model('ratings', {
 	value: Number
 })
 
+var User = mongoose.model('users', {
+	userId: Number,
+	userName: String,
+	email: String,
+	password: String
+})
+
+passport.use(new LocalStrategy({
+		usernameField: 'email',
+		passwordField: 'password'
+	},
+	function(email, password, done) {
+		User.findOne({ email: email }, function(err, user) {
+			if (err) { return done(err); }
+			if (!user) {
+				return done(null, false, { message: 'Incorrect username.' });
+			}
+			if (!user.validPassword(password)) {
+				return done(null, false, { message: 'Incorrect password.' });
+			}
+			return done(null, user);
+		});
+	}
+));
+
 var indexController = {
+	passportLogin: function(req, res) {
+		console.log(req.body)
+		passport.authenticate('local', {
+			successRedirect: '/',
+			failureRedirect: '/login',
+			failureFlash: true
+		})
+	},
+
 	getLocations: function(req, res) {
 		Spot.find(function(err, spots){
 			if (!err) {
