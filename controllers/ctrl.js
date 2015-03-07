@@ -40,34 +40,33 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+var login = function(req, res){
+	passport.authenticate('local', function(err, user, info){
+		if (err || !user) {
+			return res.send('Wrong password or username')
+		}
+		req.logIn(user, function(err){
+			if (err) {
+				console.log(err)
+			} else {
+				res.send(user)
+			}
+		})
+	})(req, res)
+};
+
 var indexController = {
 	passportLogin: function(req, res) {
-
-		passport.authenticate('local', function(err, user, info){
-			if (err || !user) {
-				console.log(info)
-				return res.send('Wrong password or username')
-			}
-			req.logIn(user, function(err){
-				if (err) {
-					console.log(err)
-				} else {
-					res.send('success!')
-				}
-			})
-		})(req, res)
+		login(req, res)
 	},
 
 	passportSignup: function(req, res) {
-		console.log(req.body)
 		User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
 			if (err) {
 				return res.send("Sorry. That username already exists. Try again.")
 			}
 
-			passport.authenticate('local')(req, res, function () {
-					res.send('signup success')
-			});
+			login(req, res)
 		});
 	},
 
