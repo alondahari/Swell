@@ -146,22 +146,27 @@ define([
 				var ending = parts.pop()
 				ending = ending.split(', ')
 
-				this.fieldData[0].selected = ending.pop().split(')')[0]
-				this.fieldData[1].selected = ending.join(', ')
-				this.fieldData[2].selected = parts.join(' (')
+				this.setSelects(ending.pop().split(')')[0], ending.join(', '), parts.join(' ('))
+
 
 			} else if (text.match(/,/g)) {
 				// region
 				var arr = text.split(', ')
-				this.fieldData[0].selected = arr.pop()
-				this.fieldData[1].selected = arr.join(', ')
+
+				this.setSelects(arr.pop(), arr.join(', '))
 
 			} else {
-				// continent
-				this.fieldData[0].selected = text
+				// set continent to text
+				this.setSelects(text)
 			}
 			this.renderFields()
 
+		},
+
+		setSelects: function(){
+			_.each(arguments, function(val, i){
+				this.fieldData[i].selected = val
+			}, this)
 		},
 
 		getTypeaheadArr: function(){
@@ -240,9 +245,7 @@ define([
 
 				google.maps.event.addListener(marker, 'click', function(){
 					var spot = view.collection.findWhere({_id: this.id})
-					view.fieldData[0].selected = spot.get('continent')
-					view.fieldData[1].selected = spot.get('region')
-					view.fieldData[2].selected = spot.get('spot')
+					view.setSelects(spot.get('continent'), spot.get('region'), spot.get('spot'))
 
 					view.renderFields()
 				})
