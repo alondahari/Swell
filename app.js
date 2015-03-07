@@ -1,15 +1,27 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var ctrl = require('./controllers/ctrl.js')
+var cookieParser = require('cookie-parser')
+var expressSession = require('express-session')
+var passport = require('passport')
+
 
 var app = express()
 app.set('view engine', 'jade')
 app.set('views', __dirname + '/views')
-app.use(express.static(__dirname + '/app'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
+app.use(expressSession({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(express.static(__dirname + '/app'))
 
 app.post('/login', ctrl.passportLogin)
+app.post('/signup', ctrl.passportSignup)
 
 app.get('/googleMaps', ctrl.getMaps)
 

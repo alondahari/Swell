@@ -4,6 +4,7 @@ var keys = require('../models/keys.js')
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
+var passportLocalMongoose = require('passport-local-mongoose')
 
 mongoose.connect('mongodb://localhost/swell')
 
@@ -23,39 +24,51 @@ var Rating = mongoose.model('ratings', {
 	value: Number
 })
 
-var User = mongoose.model('users', {
+
+var User = new mongoose.Schema({
 	userId: Number,
-	userName: String,
-	email: String,
+	username: String,
 	password: String
 })
 
-passport.use(new LocalStrategy({
-		usernameField: 'email',
-		passwordField: 'password'
-	},
-	function(email, password, done) {
-		User.findOne({ email: email }, function(err, user) {
-			if (err) { return done(err); }
-			if (!user) {
-				return done(null, false, { message: 'Incorrect username.' });
-			}
-			if (!user.validPassword(password)) {
-				return done(null, false, { message: 'Incorrect password.' });
-			}
-			return done(null, user);
-		});
-	}
-));
+User.plugin(passportLocalMongoose)
+
+User = mongoose.model('users', User)
+
+passport.use(new LocalStrategy(User.authenticate()))
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 var indexController = {
 	passportLogin: function(req, res) {
+
+		passport.authenticate('local', function(err, user, info){
+			if (err || !user) {
+				console.log(info)
+				return res.send('Wrong password or username')
+			}
+			req.logIn(user, function(err){
+				if (err) {
+					console.log(err)
+				} else {
+					res.send('success!')
+				}
+			})
+		})(req, res)
+	},
+
+	passportSignup: function(req, res) {
 		console.log(req.body)
-		passport.authenticate('local', {
-			successRedirect: '/',
-			failureRedirect: '/login',
-			failureFlash: true
-		})
+		User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
+			if (err) {
+				return res.send("Sorry. That username already exists. Try again.")
+			}
+
+			passport.authenticate('local')(req, res, function () {
+					res.send('signup success')
+			});
+		});
 	},
 
 	getLocations: function(req, res) {

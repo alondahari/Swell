@@ -27,15 +27,6 @@ define([
 
 		preventDefault: function(e){
 			e.preventDefault()
-			var email = this.$('input[name="email"]').val()
-			var password = this.$('input[name="password"]').val()
-			var formData = {
-				email: email,
-				password: password
-			}
-			$.post('/login', formData, function(err){
-				console.log(err)
-			})
 		},
 
 		userExists: function(user){
@@ -52,28 +43,26 @@ define([
 		},
 
 		login: function(){
-
-			// var user = this.$el.find('input[type=email]').val()
-			// var password = this.$el.find('input[type=password]').val()
-
-			// if (!this.validateUser(user, password)) {
-			// 	this.$el.find('.error-message').text('User or Password incorrect')
-			// 	return false
-			// }
-
-			
+			var email = this.$('input[name="email"]').val()
+			var password = this.$('input[name="password"]').val()
+			var formData = {
+				email: email,
+				password: password
+			}
+			$.post('/login', formData, function(err, data){
+				console.log(err, data)
+			})			
 		},
 
 		signup: function(e){
-			var user = this.$el.find('input[type=email]').val()
-			if (this.userExists(user)) {
-				this.$el.find('.error-message').text('Username already exists')
-				return false
+			var username = this.$('input[name="username"]').val()
+			var password = this.$('input[name="password"]').val()
+			var formData = {
+				username: username,
+				password: password
 			}
-
-			this.collection.create({
-				name: this.$el.find('input[type=email]').val(),
-				password: this.$el.find('input[type=password]').val()
+			$.post('/signup', formData, function(err, data){
+				console.log(err, data)
 			})
 		}
 
