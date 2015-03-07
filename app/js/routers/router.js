@@ -39,11 +39,14 @@ define([
 		},
 
 		location: function(){
-		  var spots = new Spots()
-		  spots.fetch({success: function(){
-  			new LocationView({ collection: spots })
-
-			}})
+			if (this.spots) {
+  			new LocationView({ collection: this.spots })
+			} else {		
+			  this.spots = new Spots()
+			  this.spots.fetch({success: function(spots){
+	  			new LocationView({ collection: spots })
+				}})
+			}
 
 		},
 

@@ -27,7 +27,13 @@ define([
 
 		preventDefault: function(e){
 			e.preventDefault()
-			$.post('/login', function(err){
+			var email = this.$('input[name="email"]').val()
+			var password = this.$('input[name="password"]').val()
+			var formData = {
+				email: email,
+				password: password
+			}
+			$.post('/login', formData, function(err){
 				console.log(err)
 			})
 		},
