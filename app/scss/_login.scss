@@ -24,6 +24,7 @@
 .button-login, .button-signup{
 	margin-top: 20px;
 }
+
 .error-message{
 	font-size: 2rem;
 	text-align: center;
@@ -31,5 +32,9 @@
 	color: red;
 	position: relative;
 	top: -20px;
+}
 
+.logo{
+	text-align: center;
+	font-style: '../fonts/GreatVibes-Regular.otf'
 }

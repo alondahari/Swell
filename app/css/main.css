@@ -5116,5 +5116,9 @@ body {
   position: relative;
   top: -20px; }
 
+.logo {
+  text-align: center;
+  font-style: '../fonts/GreatVibes-Regular.otf'; }
+
 .slider.slider-horizontal {
   width: 100%; }
