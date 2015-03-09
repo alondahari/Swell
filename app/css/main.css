@@ -5093,7 +5093,8 @@ body {
 
 .login-field input {
   height: 50px;
-  font-size: 2rem; }
+  font-size: 2rem;
+  margin: 20px 0; }
 
 .button-login {
   float: right;
@@ -5129,7 +5130,8 @@ body {
   margin-top: -50px;
   font-size: 12rem;
   margin-bottom: -10px;
-  color: #ff9e38; }
+  color: #ff9e38;
+  text-indent: -1.4rem; }
 
 .tag-line {
   font-family: 'Source Sans Pro', sans-serif;
