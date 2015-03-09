@@ -5,14 +5,14 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
 var passportLocalMongoose = require('passport-local-mongoose')
-console.log(process.env.NODE_ENV)
+// console.log(process.env.NODE_ENV)
 
-if (process.env.NODE_ENV) {
+// if (process.env.NODE_ENV) {
 	mongoose.connect(process.env.MONGOLAB_URI)
-} else {
-	var keys = require('../models/keys.js')
-	mongoose.connect('mongodb://localhost/swell')
-}
+// } else {
+// 	var keys = require('../models/keys.js')
+// 	mongoose.connect('mongodb://localhost/swell')
+// }
 
 var Spot = mongoose.model('locations', {
 	continent: String,
