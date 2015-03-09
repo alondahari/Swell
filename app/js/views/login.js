@@ -4,6 +4,11 @@ define([
 	'text!templates/login.jade',
 ], function(Backbone, jade, template){
 
+	var validate = {
+		email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+		password: /^[\w\d!@#$%]{5,}$/
+	}
+
 	return Backbone.View.extend({
 
 		el: $('.wrapper'),
@@ -24,9 +29,14 @@ define([
 		},
 
 		submit: function(e){
-			e.preventDefault()
+
 			var username = this.$('input[name="username"]').val()
 			var password = this.$('input[name="password"]').val()
+			if (!username.match(validate.email) || !password.match(validate.password)) {
+				console.log('wrong')
+				return false
+			}
+
 			var formData = {
 				username: username,
 				password: password
@@ -37,7 +47,9 @@ define([
 				if (data._id) {
 					window.location.hash = 'location'
 				}
+				console.log(data)
 			})			
+			e.preventDefault()
 		},
 
 		userExists: function(user){
