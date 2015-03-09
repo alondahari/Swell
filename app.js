@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser')
 var expressSession = require('express-session')
 var passport = require('passport')
 
-
+console.log('dirname: ', __dirname)
 app.set('view engine', 'jade')
 app.set('views', __dirname + '/views')
 app.use(bodyParser.json())
