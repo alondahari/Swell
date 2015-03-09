@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 var request = require('request')
-var keys = require('../models/keys.js')
+// var keys = require('../models/keys.js')
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
@@ -8,7 +8,7 @@ var passportLocalMongoose = require('passport-local-mongoose')
 if (app.get('env') === 'development') {
 	mongoose.connect('mongodb://localhost/swell')
 } else {
-	mongoose.connect('mongodb://heroku_app34637698:v37jcp5adf17etcfr7oe6u9sgu@ds031647.mongolab.com:31647/heroku_app34637698')
+	mongoose.connect(process.env.MONGOLAB_URI)
 }
 
 var Spot = mongoose.model('locations', {
@@ -137,7 +137,7 @@ var indexController = {
 	},
 
 	getMaps: function(req, res){
-		request('https://maps.googleapis.com/maps/api/js?key=' + keys.googleMapsAPI, function(err, response, body){
+		request('https://maps.googleapis.com/maps/api/js?key=' + process.env.MAPS_API, function(err, response, body){
 				res.send(body)
 		})
 	}
