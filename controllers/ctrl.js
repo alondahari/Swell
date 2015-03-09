@@ -5,6 +5,7 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
 var passportLocalMongoose = require('passport-local-mongoose')
+console.log(app.get('env'))
 
 if (app.get('env') === 'development') {
 	var keys = require('../models/keys.js')
