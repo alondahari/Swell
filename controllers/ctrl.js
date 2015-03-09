@@ -40,6 +40,17 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+var validate = {
+	email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+	password: /^[\w\d!@#$%]{5,}$/
+}
+
+var validate = function(email, password){
+	if (email.match(validate.email) && password.match(validate.password)) {
+		return true
+	}
+}
+
 var login = function(req, res){
 	passport.authenticate('local', function(err, user, info){
 		if (err || !user) {
@@ -57,7 +68,10 @@ var login = function(req, res){
 
 var indexController = {
 	passportLogin: function(req, res) {
-		login(req, res)
+		if (validate(req.body.username, req.body.password)) {
+			login(req, res)
+		}
+		return res.send("Sorry. That username already exists. Try again.")
 	},
 
 	passportSignup: function(req, res) {

@@ -32,9 +32,13 @@ define([
 
 			var username = this.$('input[name="username"]').val()
 			var password = this.$('input[name="password"]').val()
-			if (!username.match(validate.email) || !password.match(validate.password)) {
-				console.log('wrong')
-				return false
+			if (!username.match(validate.email)) {
+				this.errorMessage('Invalid email address')
+				return false;
+			}
+			if (!password.match(validate.password)) {
+				this.errorMessage('Password must be at least 6 characters long, containing only letters, digits and special characters')
+				return false;
 			}
 
 			var formData = {
@@ -50,6 +54,10 @@ define([
 				console.log(data)
 			})			
 			e.preventDefault()
+		},
+
+		errorMessage: function(msg){
+			this.$el.find('.error-message').text(msg)
 		},
 
 		userExists: function(user){
