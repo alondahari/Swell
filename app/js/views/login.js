@@ -61,6 +61,7 @@ define([
 		},
 
 		validate: function(e){
+			this.clearError()
 			var field = e.target.name
 			var val = e.target.value
 			var match = val.match(validate[field])

@@ -45,7 +45,8 @@ var validate = {
 	password: /^[\w\d!@#$%]{5,}$/
 }
 
-var validate = function(field, res){
+var validate = function(field, req, res){
+	console.log(field)
 	if (!req.body[field].match(validate[field])) {
 		res.send('Invalid password or username')
 	}
@@ -68,16 +69,16 @@ var login = function(req, res){
 
 var indexController = {
 	passportLogin: function(req, res) {
-		validate(req.body.username, res)
-		validate(req.body.password, res)
+		validate('username', req, res)
+		validate('password', req, res)
 
 		login(req, res)
 	},
 
 	passportSignup: function(req, res) {
-		
-		validate(req.body.username, res)
-		validate(req.body.password, res)
+
+		validate('username', req, res)
+		validate('password', req, res)
 
 		User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
 			if (err) {
