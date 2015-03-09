@@ -219,7 +219,7 @@ define([
 			this.map = new google.maps.Map(this.$('#map-canvas')[0],
 				{
 					zoom: 10,
-					mapTypeId: google.maps.MapTypeId.SATELLITE
+					mapTypeId: google.maps.MapTypeId.HYBRID
 				}
 			);
 		},

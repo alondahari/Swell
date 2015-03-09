@@ -8,7 +8,7 @@ Phase 1:
   ✔ cache locations @done (15-03-06 18:19)
   ☐ make current marker stand out
   ☐ remove old ratings
-  ☐ add label overlay on map
+  ✔ add label overlay on map @done (15-03-09 15:26)
   ☐ add dualStorage
   ☐ quetions: sync to localstorage
 

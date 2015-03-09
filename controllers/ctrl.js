@@ -46,7 +46,6 @@ var validate = {
 }
 
 var validate = function(field, req, res){
-	console.log(field)
 	if (!req.body[field].match(validate[field])) {
 		res.send('Invalid password or username')
 	}
