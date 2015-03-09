@@ -8,11 +8,11 @@ var passportLocalMongoose = require('passport-local-mongoose')
 var mapsAPI
 
 // if (process.env.NODE_ENV) {
-	mongoose.connect(process.env.MONGOLAB_URI)
-	mapsAPI = process.env.MAPS_API
+	// mongoose.connect(process.env.MONGOLAB_URI)
+	// mapsAPI = process.env.MAPS_API
 // } else {
-	// mapsAPI = require('../models/keys.js').googleMapsAPI
-	// mongoose.connect('mongodb://localhost/swell')
+	mapsAPI = require('../models/keys.js').googleMapsAPI
+	mongoose.connect('mongodb://localhost/swell')
 // }
 
 var Spot = mongoose.model('locations', {
