@@ -1,4 +1,5 @@
 var express = require('express')
+var app = module.exports = express()
 var bodyParser = require('body-parser')
 var ctrl = require('./controllers/ctrl.js')
 var cookieParser = require('cookie-parser')
@@ -6,7 +7,6 @@ var expressSession = require('express-session')
 var passport = require('passport')
 
 
-var app = express()
 app.set('view engine', 'jade')
 app.set('views', __dirname + '/views')
 app.use(bodyParser.json())
@@ -35,4 +35,4 @@ var server = app.listen(7707, function() {
 	console.log('Express server listening on port ' + server.address().port)
 })
 
-module.exports = app
+

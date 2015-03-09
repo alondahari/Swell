@@ -5,6 +5,7 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
 var passportLocalMongoose = require('passport-local-mongoose')
+
 if (app.get('env') === 'development') {
 	var keys = require('../models/keys.js')
 	mongoose.connect('mongodb://localhost/swell')
