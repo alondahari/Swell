@@ -5,8 +5,8 @@ define([
 ], function(Backbone, jade, template){
 
 	var validate = {
-		email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
-		password: /^[\w\d!@#$%]{5,}$/
+		username: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+		password: /^[\w\d!@#$%]{6,}$/
 	}
 
 	return Backbone.View.extend({
@@ -25,17 +25,15 @@ define([
 
 		events: {
 			'click .btn': 'submit',
-			'focus input': 'clearError'
+			'focus input': 'clearError',
+			'keyup input': 'validate'
 		},
 
 		submit: function(e){
 
 			var username = this.$('input[name="username"]').val()
 			var password = this.$('input[name="password"]').val()
-			if (!username.match(validate.email)) {
-				this.errorMessage('Invalid email address')
-				return false;
-			}
+			
 			if (!password.match(validate.password)) {
 				this.errorMessage('Password must be at least 6 characters long, containing only letters, digits and special characters')
 				return false;
@@ -54,6 +52,13 @@ define([
 				console.log(data)
 			})			
 			e.preventDefault()
+		},
+
+		validate: function(e){
+			var field = e.target.name
+			var val = e.target.value
+			var match = val.match(validate[field])
+			$(e.target).parent().toggleClass('has-success', match).toggleClass('has-error', !match)
 		},
 
 		errorMessage: function(msg){
