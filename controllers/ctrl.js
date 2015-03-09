@@ -7,13 +7,15 @@ var LocalStrategy = require('passport-local').Strategy
 var passportLocalMongoose = require('passport-local-mongoose')
 var mapsAPI
 
-// if (process.env.NODE_ENV) {
-	// mongoose.connect(process.env.MONGOLAB_URI)
-	// mapsAPI = process.env.MAPS_API
-// } else {
+
+console.log('enviroment:', process.env.NODE_ENV)
+if (process.env.NODE_ENV === 'development') {
 	mapsAPI = require('../models/keys.js').googleMapsAPI
 	mongoose.connect('mongodb://localhost/swell')
-// }
+} else {
+	mongoose.connect(process.env.MONGOLAB_URI)
+	mapsAPI = process.env.MAPS_API
+}
 
 var Spot = mongoose.model('locations', {
 	continent: String,

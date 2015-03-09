@@ -1,6 +1,5 @@
 define([
 	'backbone',
-	'database',
 	'models/user',
 	'collections/users',
 	'views/login',
@@ -11,7 +10,6 @@ define([
   'collections/ratings'
   ], function(
   	Backbone,
-  	Database,
   	User,
   	Users,
   	Login,

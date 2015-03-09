@@ -1,15 +1,14 @@
 define([
 	'backbone',
 	'models/user',
-	'database'
-	], function(Backbone, user, database){
+	], function(Backbone, user){
 	
 	return Backbone.Collection.extend({
 		
 		model: user,
 
 		initialize: function(){
-			// this.fetch()
+
 		}
 
 	})

@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser')
 var expressSession = require('express-session')
 var passport = require('passport')
 
-console.log('dirname: ', __dirname)
 app.set('view engine', 'jade')
 app.set('views', __dirname + '/views')
 app.use(bodyParser.json())
@@ -18,7 +17,7 @@ app.use(expressSession({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(express.static(__dirname + '/www'))
+app.use(express.static(__dirname + '/app'))
 
 app.post('/login', ctrl.passportLogin)
 app.post('/signup', ctrl.passportSignup)

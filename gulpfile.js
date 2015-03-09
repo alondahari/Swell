@@ -86,7 +86,7 @@ gulp.task('watch', function() {
 })
 
 gulp.task('nodemon', function () {
-  nodemon({ script: 'app.js'})
+  nodemon({ script: 'app.js', env: {'NODE_ENV': 'development'}})
     .on('restart', function () {
       console.log('restart!')
     })
