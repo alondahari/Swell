@@ -1,7 +1,7 @@
 define([
 	'backbone',
 	'jade',
-	'text!templates/login.jade'
+	'text!templates/login.jade',
 ], function(Backbone, jade, template){
 
 	return Backbone.View.extend({
@@ -34,7 +34,9 @@ define([
 
 			var route = $(e.target).data('route')
 			$.post(route, formData, function(data){
-				console.log(data)
+				if (data._id) {
+					window.location.hash = 'location'
+				}
 			})			
 		},
 

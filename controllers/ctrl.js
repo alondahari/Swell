@@ -71,6 +71,7 @@ var indexController = {
 	},
 
 	getLocations: function(req, res) {
+
 		Spot.find(function(err, spots){
 			if (!err) {
 				res.send(spots)
