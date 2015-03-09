@@ -34,3 +34,5 @@ app.put('/ratings', ctrl.setRating)
 var server = app.listen(7707, function() {
 	console.log('Express server listening on port ' + server.address().port)
 })
+
+module.exports = app
