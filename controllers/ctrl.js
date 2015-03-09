@@ -5,13 +5,14 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
 var passportLocalMongoose = require('passport-local-mongoose')
-// console.log(process.env.NODE_ENV)
+var mapsAPI
 
 // if (process.env.NODE_ENV) {
 	mongoose.connect(process.env.MONGOLAB_URI)
+	mapsAPI = process.env.MAPS_API
 // } else {
-// 	var keys = require('../models/keys.js')
-// 	mongoose.connect('mongodb://localhost/swell')
+	// mapsAPI = require('../models/keys.js').googleMapsAPI
+	// mongoose.connect('mongodb://localhost/swell')
 // }
 
 var Spot = mongoose.model('locations', {
@@ -140,7 +141,7 @@ var indexController = {
 	},
 
 	getMaps: function(req, res){
-		request('https://maps.googleapis.com/maps/api/js?key=' + process.env.MAPS_API, function(err, response, body){
+		request('https://maps.googleapis.com/maps/api/js?key=' + mapsAPI, function(err, response, body){
 				res.send(body)
 		})
 	}
