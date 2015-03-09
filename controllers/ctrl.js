@@ -5,13 +5,13 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
 var passportLocalMongoose = require('passport-local-mongoose')
-console.log(app.get('env'))
+console.log(process.env.NODE_ENV)
 
-if (app.get('env') === 'development') {
+if (process.env.NODE_ENV) {
+	mongoose.connect(process.env.MONGOLAB_URI)
+} else {
 	var keys = require('../models/keys.js')
 	mongoose.connect('mongodb://localhost/swell')
-} else {
-	mongoose.connect(process.env.MONGOLAB_URI)
 }
 
 var Spot = mongoose.model('locations', {
