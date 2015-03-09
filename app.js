@@ -31,7 +31,7 @@ app.get('/ratings/:id', ctrl.getRatings)
 app.post('/ratings', ctrl.setRating)
 app.put('/ratings', ctrl.setRating)
 
-var server = app.listen(7707, function() {
+var server = app.listen(process.env.PORT || 7707, function() {
 	console.log('Express server listening on port ' + server.address().port)
 })
 

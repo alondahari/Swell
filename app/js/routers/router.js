@@ -30,7 +30,8 @@ define([
 			'spot/:title/:id': 'rate',
 			'view-spot/:title/:id': 'viewSpot',
 			'submit-rating': 'submitRating',
-			'init-database': 'initDatabase'
+			'init-database': 'initDatabase',
+			'user': 'user'
 		},
 
 		login: function(){
@@ -63,7 +64,9 @@ define([
 			ratings.fetch({success: function(){
 				return new SpotView({ collection: ratings, id: id, attributes: {title: title}})
 			}})
-		}
+		},
+
+		user: function(){}
 
 	})
 
