@@ -45,9 +45,9 @@ var validate = {
 	password: /^[\w\d!@#$%]{5,}$/
 }
 
-var validate = function(email, password){
-	if (email.match(validate.email) && password.match(validate.password)) {
-		return true
+var validate = function(field, res){
+	if (!req.body[field].match(validate[field])) {
+		res.send('Invalid password or username')
 	}
 }
 
@@ -68,17 +68,20 @@ var login = function(req, res){
 
 var indexController = {
 	passportLogin: function(req, res) {
-		if (validate(req.body.username, req.body.password)) {
-			login(req, res)
-			return
-		}
-		return res.send("something's invalid")
+		validate(req.body.username, res)
+		validate(req.body.password, res)
+
+		login(req, res)
 	},
 
 	passportSignup: function(req, res) {
+		
+		validate(req.body.username, res)
+		validate(req.body.password, res)
+
 		User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
 			if (err) {
-				return res.send("Sorry. That username already exists. Try again.")
+				return res.send("Username already exists")
 			}
 
 			login(req, res)

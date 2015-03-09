@@ -30,8 +30,7 @@ define([
 		},
 
 		submit: function(e){
-			console.log('test')
-			var errorMessage = this.$el.find('.error-message')
+			var view = this
 			var username = this.$('input[name="username"]').val()
 			var password = this.$('input[name="password"]').val()
 
@@ -54,8 +53,9 @@ define([
 			$.post(route, formData, function(data){
 				if (data._id) {
 					window.location.hash = 'location'
+				} else {
+					view.errorMessage(data)
 				}
-				errorMessage.text(data)
 			})			
 			e.preventDefault()
 		},
@@ -64,7 +64,7 @@ define([
 			var field = e.target.name
 			var val = e.target.value
 			var match = val.match(validate[field])
-			$(e.target).parent().toggleClass('has-success', match).toggleClass('has-error', !match)
+			$(e.target).parent().toggleClass('has-success', !!match).toggleClass('has-error', !match)
 		},
 
 		errorMessage: function(msg){
