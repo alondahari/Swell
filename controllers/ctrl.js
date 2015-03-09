@@ -5,8 +5,11 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
 var passportLocalMongoose = require('passport-local-mongoose')
-
-mongoose.connect('mongodb://localhost/swell')
+if (app.get('env') === 'development') {
+	mongoose.connect('mongodb://localhost/swell')
+} else {
+	mongoose.connect('mongodb://heroku_app34637698:v37jcp5adf17etcfr7oe6u9sgu@ds031647.mongolab.com:31647/heroku_app34637698')
+}
 
 var Spot = mongoose.model('locations', {
 	continent: String,
