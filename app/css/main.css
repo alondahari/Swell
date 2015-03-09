@@ -5089,7 +5089,7 @@ body {
   color: rgba(184, 181, 240, 0.5); }
 
 .login-field {
-  margin: 40px 0; }
+  margin: 20px 0; }
 
 .login-field input {
   height: 50px;
@@ -5106,15 +5106,22 @@ body {
   background-color: #9491BF; }
 
 .button-login, .button-signup {
-  margin-top: 20px; }
+  margin-top: 10px;
+  margin-bottom: 20px; }
 
 .error-message {
   font-size: 2rem;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: red;
+  color: #cc7e2d;
+  margin-top: 20px;
+  opacity: 0;
   position: relative;
-  top: -20px; }
+  -webkit-transition: opacity .2s;
+          transition: opacity .2s;
+  z-index: -1; }
+
+.error-message-show {
+  opacity: 1; }
 
 .logo {
   text-align: center;

@@ -30,12 +30,18 @@ define([
 		},
 
 		submit: function(e){
-
+			console.log('test')
+			var errorMessage = this.$el.find('.error-message')
 			var username = this.$('input[name="username"]').val()
 			var password = this.$('input[name="password"]').val()
+
+			if (!username.match(validate.username)) {
+				this.errorMessage('Please enter a valid email address')
+				return false;
+			}
 			
 			if (!password.match(validate.password)) {
-				this.errorMessage('Password must be at least 6 characters long, containing only letters, digits and special characters')
+				this.errorMessage('Password must contain at least 6 letters, digits or special characters')
 				return false;
 			}
 
@@ -49,7 +55,7 @@ define([
 				if (data._id) {
 					window.location.hash = 'location'
 				}
-				console.log(data)
+				errorMessage.text(data)
 			})			
 			e.preventDefault()
 		},
@@ -62,20 +68,11 @@ define([
 		},
 
 		errorMessage: function(msg){
-			this.$el.find('.error-message').text(msg)
-		},
-
-		userExists: function(user){
-			return _.contains(this.collection.pluck('name'), user)
-		},
-
-		validateUser: function(user, pass){
-			var creds = this.collection.where({name: user})
-			return (creds.length && creds[0].get('password') === pass)
+			this.$el.find('.error-message').text(msg).addClass('error-message-show')
 		},
 
 		clearError: function(){
-			this.$el.find('.error-message').text('')
+			this.$el.find('.error-message').removeClass('error-message-show')
 		}
 
 	})
