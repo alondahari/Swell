@@ -70,8 +70,9 @@ var indexController = {
 	passportLogin: function(req, res) {
 		if (validate(req.body.username, req.body.password)) {
 			login(req, res)
+			return
 		}
-		return res.send("Sorry. That username already exists. Try again.")
+		return res.send("something's invalid")
 	},
 
 	passportSignup: function(req, res) {

@@ -1,5 +1,6 @@
 // vars
 $color-secondary-text: rgba(204, 126, 45, 1);
+$color-logo: rgb(255, 158, 56);
 $color-save: rgba(69, 224, 224, 0.55);
 $color-info-dimmed: rgba(184, 181, 240, 0.5);
 
@@ -32,6 +33,7 @@ body{
 }
 
 .header{
+
 	font-weight: 100;
 	font-size: 3.5rem;
 	position: fixed;

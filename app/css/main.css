@@ -5118,7 +5118,17 @@ body {
 
 .logo {
   text-align: center;
-  font-style: '../fonts/GreatVibes-Regular.otf'; }
+  font-family: 'Great Vibes', cursive;
+  margin-top: -50px;
+  font-size: 12rem;
+  margin-bottom: -10px;
+  color: #ff9e38; }
+
+.tag-line {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 200; }
 
 .slider.slider-horizontal {
   width: 100%; }
