@@ -3,7 +3,7 @@ var mongoose = require('mongoose')
 var request = require('request')
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
-var db = require('./models/db.js')
+var db = require('../models/db.js')
 
 var passportLocalMongoose = require('passport-local-mongoose')
 var mapsAPI
