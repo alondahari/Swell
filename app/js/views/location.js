@@ -59,16 +59,22 @@ define([
 		},
 
 		initialize: function(){
+			// add loader here
+
+
 			this.listenTo(this.collection, 'fetched', this.render)
 
 		},
 
 		render: function(){
 
+			// remove loader here
+
+
 			this.typeaheadArr = this.getTypeaheadArr()
 			this.fieldData[0].items = this.getSpots('continent')
 			this.$el.html(this.template())
-			
+
 			this.showMap()
 			this.addMarkers()
 
