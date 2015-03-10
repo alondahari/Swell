@@ -14,6 +14,7 @@ define([
 
 		settings: [
 		{ 
+			fieldName: 'ignoreRating',
 			header: 'Ignore ratings older than',
 			value: 6,
 			unit: 'hours',
@@ -21,6 +22,7 @@ define([
 			min: 2
 		},
 		{
+			fieldName: 'measurement',
 			header: 'Measurement system',
 			value: 0,
 			max: 1

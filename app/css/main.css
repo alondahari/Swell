@@ -5148,11 +5148,17 @@ body {
   color: #cc7e2d; }
 
 .field-input {
-  font-size: 2rem; }
+  font-size: 2rem;
+  position: relative; }
 
 .button-change-password {
   margin-top: 30px;
   width: 80%; }
+
+.help-text {
+  text-align: center;
+  color: #cc7e2d;
+  margin: 15px 0 0; }
 
 .slider.slider-horizontal {
   width: 100%; }

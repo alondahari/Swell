@@ -5,9 +5,16 @@
 
 .field-input{
 	font-size: 2rem;
+	position: relative;
 }
 
 .button-change-password{
 	margin-top: 30px;
 	width: 80%;
+}
+
+.help-text{
+	text-align: center;
+	color: $color-secondary-text;
+	margin: 15px 0 0;
 }

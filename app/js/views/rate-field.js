@@ -22,10 +22,10 @@ define([
 			// hide defauld slider tooltip
 			this.model.set({tooltip: 'hide'})
 			this.slider = this.$('.rating-input-range').slider(this.model.toJSON())
+			var value = this.slider.slider('getValue')
+			var text = this.formatText(this.model.get('fieldName'), value)
 
-			if (this.model.attributes.fieldName === 'wind') {
-				this.$('.rating-value').text('None (0-3 knots)')
-			}
+				this.$('.rating-value').text(text)
 		},
 
 		render: function(){
@@ -39,7 +39,7 @@ define([
 			var value = this.slider.slider('getValue')
 
 			// format value if neede
-			var text = (this.model.get('fieldName') === 'wind') ? this.formatWindValue(value) : value
+			var text = this.formatText(this.model.get('fieldName'), value)
 
 			// set the value in the DOM and add class for visual change feedback
 			this.$('.rating-value').text(text).addClass('value-changed')
@@ -63,15 +63,26 @@ define([
 
 		},
 
-		formatWindValue: function(val){
-			var values = [
-				'None (0-3 knots)',
-				'Calm (4-9 knots)',
-				'Strong (10-20 knots)',
-				'High (20-40 knots)',
-				'Stormy (40+ knots)'
-			]
-			return values[val]
+		formatText: function(field, val){
+			console.log(field)
+			var formats = {
+				wind: [
+					'None (0-3 knots)',
+					'Calm (4-9 knots)',
+					'Strong (10-20 knots)',
+					'High (20-40 knots)',
+					'Stormy (40+ knots)'
+				],
+				measurement: [
+					'Imperial',
+					'Metric'
+				]
+				
+			}
+			return formats[field] ? formats[field][val] : val
+		},
+
+		formatMeasurements: function(val){
 		}
 
 	})
