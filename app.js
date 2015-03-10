@@ -18,9 +18,9 @@ app.use(expressSession({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(express.static(__dirname + '/app'))
+app.use(express.static(__dirname + '/www'))
 
-app.get('/seed'. ctrl.seed)
+app.get('/seed', ctrl.seed)
 
 app.post('/login', ctrl.passportLogin)
 app.post('/signup', ctrl.passportSignup)
