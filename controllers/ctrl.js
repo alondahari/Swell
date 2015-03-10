@@ -3,6 +3,7 @@ var mongoose = require('mongoose')
 var request = require('request')
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
+var db = require('./models/db.js')
 
 var passportLocalMongoose = require('passport-local-mongoose')
 var mapsAPI
@@ -75,7 +76,20 @@ var login = function(req, res){
 	})(req, res)
 };
 
+
+/**
+ * routes
+ */
+
 var indexController = {
+
+	seed: function(req, res){
+		db.forEach(function(doc){
+			var spot = new Spot(doc)
+			spot.save()
+		})
+	},
+
 	passportLogin: function(req, res) {
 		validate('username', req, res)
 		validate('password', req, res)
