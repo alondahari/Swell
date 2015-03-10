@@ -4957,8 +4957,9 @@ body {
   background: linear-gradient(rgba(79, 158, 245, 0.4), rgba(79, 158, 245, 0.4)), url("../img/footer_lodyas.png");
   /*fixes background image*/
   background-attachment: fixed;
-  font-style: 'Helvetica Neue', HelveticaNeue, Ariel, sans-serif;
-  color: white; }
+  font-weight: 300;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif; }
 
 .wrapper {
   position: absolute;
@@ -4999,9 +5000,11 @@ body {
   margin-top: 14px; }
 
 .location-select {
-  margin: 30px 0; }
+  margin: 30px 0;
+  font-weight: 400; }
 
 .searchbox {
+  font-weight: 400;
   color: black;
   text-align: center; }
 
