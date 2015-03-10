@@ -4,7 +4,6 @@ define([
 	'slider',
 	'text!templates/view-rating.jade'
 ], function(Backbone, jade, slider, template){
-	'use strict'
 
 	return Backbone.View.extend({
 

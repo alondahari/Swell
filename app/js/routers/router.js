@@ -6,6 +6,7 @@ define([
 	'views/location',
 	'views/rate',
 	'views/spot',
+	'views/user-profile',
   'collections/spots',
   'collections/ratings'
   ], function(
@@ -16,6 +17,7 @@ define([
   	LocationView,
   	RateView,
   	SpotView,
+  	userProfile,
   	Spots,
   	Ratings
   ){
@@ -64,7 +66,9 @@ define([
 			}})
 		},
 
-		user: function(){}
+		user: function(){
+			return new userProfile()
+		}
 
 	})
 

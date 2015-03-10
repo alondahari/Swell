@@ -5140,5 +5140,16 @@ body {
   font-size: 1.8rem;
   font-weight: 200; }
 
+.field {
+  margin-bottom: 0px;
+  color: #cc7e2d; }
+
+.field-input {
+  font-size: 2rem; }
+
+.button-change-password {
+  margin-top: 30px;
+  width: 80%; }
+
 .slider.slider-horizontal {
   width: 100%; }

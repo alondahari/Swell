@@ -32,6 +32,8 @@ define([
 
 	return Backbone.View.extend({
 
+		el: '.wrapper',
+
 		fieldData: [
 			{
 				// continents
@@ -66,7 +68,6 @@ define([
 
 		render: function(){
 			this.$el.html(this.template())
-			$('.wrapper').html(this.$el)
 			this.showMap()
 			this.renderFields()
 
