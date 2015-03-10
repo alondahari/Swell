@@ -59,21 +59,23 @@ define([
 		},
 
 		initialize: function(){
-			this.listenTo(this.collection, 'add', this.render)
-			this.typeaheadArr = this.getTypeaheadArr()
-			this.fieldData[0].items = this.getSpots('continent')
-			// this.render()
-			this.searchbox()
+			this.listenTo(this.collection, 'fetched', this.render)
 
 		},
 
 		render: function(){
-			console.log(this.collection)
+
+			this.typeaheadArr = this.getTypeaheadArr()
+			this.fieldData[0].items = this.getSpots('continent')
 			this.$el.html(this.template())
+			
 			this.showMap()
+			this.addMarkers()
+
+			// render fields after rendering the map to center the map on the selected field
 			this.renderFields()
 
-			this.addMarkers()
+			this.searchbox()
 		},
 
 		renderFields: function(){

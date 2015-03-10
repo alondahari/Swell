@@ -11,7 +11,9 @@ define([
 		url: '/locations',
 
 		initialize: function(){
-			this.fetch()
+			this.fetch({success: function(collection){
+				collection.trigger('fetched')
+			}})
 		}
 
 	})
