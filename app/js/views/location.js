@@ -90,7 +90,7 @@ define([
 			_.each(this.fieldData, function(field, i){
 				this.renderField(field, i)
 			}, this)
-			coords = this.getSpotAttrs('lat', 'lon')
+			coords = this.getSpotAttrs('lat', 'lng')
 			this.centerMap(coords)
 		},
 
@@ -246,7 +246,7 @@ define([
 		addMarkers: function(coords, map){
 			var view = this
 			view.collection.each(function(model){
-				var spotCoords = new google.maps.LatLng(model.get('lat'), model.get('lon'));
+				var spotCoords = new google.maps.LatLng(model.get('lat'), model.get('lng'));
 				var marker = new google.maps.Marker({
 					position: spotCoords,
 					map: this.map,

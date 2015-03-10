@@ -23,7 +23,7 @@ var Spot = mongoose.model('locations', {
 	region: String,
 	spot: String,
 	lat: Number,
-	lon: Number
+	lng: Number
 })
 
 var Rating = mongoose.model('ratings', {
