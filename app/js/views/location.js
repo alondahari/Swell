@@ -59,14 +59,16 @@ define([
 		},
 
 		initialize: function(){
+			this.listenTo(this.collection, 'add', this.render)
 			this.typeaheadArr = this.getTypeaheadArr()
 			this.fieldData[0].items = this.getSpots('continent')
-			this.render()
+			// this.render()
 			this.searchbox()
 
 		},
 
 		render: function(){
+			console.log(this.collection)
 			this.$el.html(this.template())
 			this.showMap()
 			this.renderFields()

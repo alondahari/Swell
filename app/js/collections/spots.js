@@ -8,7 +8,11 @@ define([
 		
 		model: spot,
 
-		url: '/locations'
+		url: '/locations',
+
+		initialize: function(){
+			this.fetch()
+		}
 
 	})
 

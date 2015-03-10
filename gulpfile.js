@@ -86,7 +86,10 @@ gulp.task('watch', function() {
 })
 
 gulp.task('nodemon', function () {
-  nodemon({ script: 'app.js', env: {'NODE_ENV': 'development'}})
+  nodemon({ script: 'app.js',
+      env: {'NODE_ENV': 'development'},
+      ignore: ['app/**']
+    })
     .on('restart', function () {
       console.log('restart!')
     })
@@ -113,9 +116,7 @@ gulp.task('serve', function() {
   })
 })
 
-gulp.task('default', ['nodemon', 'sass', 'livereload', 'serve', 'watch'],function(){
-  log('available tasks:')
-  log('  gulp serve (serve content locally for development)')
-  log('  gulp build (build for developement)')
-  log('  gulp build --production (build for production)')
+
+gulp.task('default', ['nodemon', 'sass','livereload', 'serve', 'watch'],function(){
+
 })

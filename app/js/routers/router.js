@@ -44,9 +44,7 @@ define([
   			new LocationView({ collection: this.spots })
 			} else {		
 			  this.spots = new Spots()
-			  this.spots.fetch({success: function(spots){
-	  			new LocationView({ collection: spots })
-				}})
+  			new LocationView({ collection: this.spots })
 			}
 
 		},
