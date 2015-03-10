@@ -12,6 +12,21 @@ define([
 
 		template: jade.compile(template),
 
+		settings: [
+		{ 
+			header: 'Ignore ratings older than',
+			value: 6,
+			unit: 'hours',
+			max: 12,
+			min: 2
+		},
+		{
+			header: 'Measurement system',
+			value: 0,
+			max: 1
+		}
+		],
+
 		initialize: function(){
 			this.render()
 
@@ -19,14 +34,10 @@ define([
 
 		render: function(){
 			this.$el.html(this.template())
-			var setting = new Setting({ 
-				header: 'Ignore ratings older than',
-				value: 6,
-				unit: 'hours',
-				max: 12,
-				min: 2
+			this.settings.forEach(function(setting){
+				var field = new Setting(setting)
+				this.$('.setting-sliders').append(new RateField({model: field}).$el)
 			})
-			this.$('.setting-sliders').append(new RateField({model: setting}).$el)
 		}
 
 

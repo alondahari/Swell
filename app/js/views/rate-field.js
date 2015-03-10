@@ -57,7 +57,7 @@ define([
 					view.$('.rating-save').text('Saved!')
 
 				}, error: function(model, data){
-					console.log(data)
+					console.log('error: ', data)
 				}})
 			}, 1000, this);
 

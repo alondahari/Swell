@@ -13,31 +13,31 @@ define([
 
 		newRating: {},
 
-		fields: {
-			overall: {
+		fields: [
+			{
 				header: 'Overall Wave Quality',
 				max: 10,
 				unit: '/ 10',
 				fieldName: 'overall'
 			},
-			waveHeight: {
+			{
 				header: 'Wave Height',
 				max: 12,
 				unit: 'ft',
 				fieldName: 'waveHeight'
 			},
-			wind: {
+			{
 				header: 'Wind',
 				max: 4,
 				fieldName: 'wind'
 			},
-			crowd: {
+			{
 				header: 'Crowd',
 				max: 200,
 				unit: 'surfers',
 				fieldName: 'crowd'
 			}
-		},
+		],
 
 		initialize: function(){
 			this.render()
