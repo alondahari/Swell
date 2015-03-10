@@ -21,10 +21,10 @@ define([
 			this.render()
 			// hide defauld slider tooltip
 			this.model.set({tooltip: 'hide'})
-			this.slider = this.$el.find('.rating-input-range').slider(this.model.toJSON())
+			this.slider = this.$('.rating-input-range').slider(this.model.toJSON())
 
 			if (this.model.attributes.fieldName === 'wind') {
-				this.$el.find('.rating-value').text('None (0-3 knots)')
+				this.$('.rating-value').text('None (0-3 knots)')
 			}
 		},
 
@@ -42,7 +42,7 @@ define([
 			var text = (this.model.get('fieldName') === 'wind') ? this.formatWindValue(value) : value
 
 			// set the value in the DOM and add class for visual change feedback
-			this.$el.find('.rating-value').text(text).addClass('value-changed')
+			this.$('.rating-value').text(text).addClass('value-changed')
 
 			// timeout to avoid multiple calls to the server on slider drag
 			if (this.timeout) clearTimeout(this.timeout)

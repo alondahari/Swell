@@ -75,7 +75,7 @@ define([
 		},
 
 		renderFields: function(){
-			this.$el.find('.location-selects').empty()
+			this.$('.location-selects').empty()
 			_.each(this.fieldData, function(field, i){
 				this.renderField(field, i)
 			}, this)
@@ -86,7 +86,7 @@ define([
 		renderField: function(field, i){
 
 			var selectField = new Select({attributes: field})
-			this.$el.find('.location-selects')
+			this.$('.location-selects')
 				.append(selectField.$el)
 			this.updateFieldValue(i)
 		},
@@ -188,7 +188,7 @@ define([
 		},
 
 		searchbox: function(){
-			this.$el.find('.typehead').typeahead({
+			this.$('.typehead').typeahead({
 				highlight: true
 			},
 			{

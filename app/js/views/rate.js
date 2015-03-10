@@ -41,7 +41,7 @@ define([
 
 		initialize: function(){
 			this.render()
-			this.$el.find('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
+			this.$('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
 		},
 
 		render: function(){
@@ -57,7 +57,7 @@ define([
 		renderFields: function(){
 			_.each(this.fields, function(field){
 				var rateField = new RateField({model: new Rating(field), id: this.id})
-				this.$el.find('.ratings').append(rateField.$el)
+				this.$('.ratings').append(rateField.$el)
 			}, this)
 		}
 

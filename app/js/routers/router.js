@@ -8,8 +8,7 @@ define([
 	'views/spot',
 	'views/user-profile',
   'collections/spots',
-  'collections/ratings',
-  'db'
+  'collections/ratings'
   ], function(
   	Backbone,
   	User,
@@ -20,8 +19,7 @@ define([
   	SpotView,
   	userProfile,
   	Spots,
-  	Ratings,
-  	db
+  	Ratings
   ){
 
 	return Backbone.Router.extend({

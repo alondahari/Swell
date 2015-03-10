@@ -15,7 +15,7 @@ define([
 			this.render()
 
 			if (this.attributes.fieldName === 'wind') {
-				this.$el.find('.rating-value').text(this.formatWindValue(this.attributes.value))
+				this.$('.rating-value').text(this.formatWindValue(this.attributes.value))
 			}
 		},
 

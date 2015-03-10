@@ -69,11 +69,11 @@ define([
 		},
 
 		errorMessage: function(msg){
-			this.$el.find('.error-message').text(msg).addClass('error-message-show')
+			this.$('.error-message').text(msg).addClass('error-message-show')
 		},
 
 		clearError: function(){
-			this.$el.find('.error-message').removeClass('error-message-show')
+			this.$('.error-message').removeClass('error-message-show')
 		}
 
 	})

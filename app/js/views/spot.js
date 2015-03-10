@@ -36,7 +36,7 @@ define([
 		initialize: function(){
 			this.getAverages()
 			this.render()
-			this.$el.find('a.rate-nav').attr('href', '#spot/' + this.attributes.title + '/' + this.id)
+			this.$('a.rate-nav').attr('href', '#spot/' + this.attributes.title + '/' + this.id)
 		},
 
 		render: function(){
@@ -53,7 +53,7 @@ define([
 		renderFields: function(){
 			_.each(this.fields, function(field){
 				var rateField = new ViewRating({attributes: field})
-				this.$el.find('.ratings').append(rateField.$el)
+				this.$('.ratings').append(rateField.$el)
 				
 			}, this)
 		},
