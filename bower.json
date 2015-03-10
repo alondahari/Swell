@@ -1,6 +1,5 @@
 {
-  "name": "CordovaApp",
-  "private": true,
+  "name": "Swell",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -10,13 +10,13 @@ define([
 		url: '/locations',
 
 		initialize: function(){
+			var collection = this
 			this.fetch({success: function(collection){
 				collection.trigger('fetched')
 			}})
 
 			navigator.geolocation.getCurrentPosition(function(pos){
-				console.log('lat:', pos.coords.latitude)
-				console.log('lng:', pos.coords.longitude)
+				collection.trigger('geo', pos)
 			})
 		}
 

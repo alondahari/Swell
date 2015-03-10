@@ -63,6 +63,7 @@ define([
 
 
 			this.listenTo(this.collection, 'fetched', this.render)
+			this.listenTo(this.collection, 'geo', this.geo)
 
 		},
 
@@ -262,6 +263,11 @@ define([
 				})
 
 			}, this)
+		},
+
+		geo: function (pos) {
+			var lat = pos.coords.latitude
+			var lng = pos.coords.longitude
 		}
 
 

@@ -8,8 +8,8 @@ var db = require('../models/db.js')
 var passportLocalMongoose = require('passport-local-mongoose')
 var mapsAPI
 
-
 console.log('enviroment:', process.env.NODE_ENV)
+
 if (process.env.NODE_ENV === 'development') {
 	mapsAPI = require('../models/keys.js').googleMapsAPI
 	mongoose.connect('mongodb://localhost/swell')
@@ -83,13 +83,6 @@ var login = function(req, res){
 
 var indexController = {
 
-	seed: function(req, res){
-		db.forEach(function(doc){
-			var spot = new Spot(doc)
-			spot.save()
-		})
-	},
-
 	passportLogin: function(req, res) {
 		validate('username', req, res)
 		validate('password', req, res)
@@ -154,6 +147,14 @@ var indexController = {
 			}
 		})
 		
+	},
+
+	seed: function(req, res){
+		db.forEach(function(doc){
+			var spot = new Spot(doc)
+			spot.save()
+		})
+		res.redirect('/')
 	},
 
 	getMaps: function(req, res){
