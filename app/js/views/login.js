@@ -5,7 +5,7 @@ define([
 ], function(Backbone, jade, template){
 
 	var validate = {
-		username: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+		email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
 		password: /^[\w\d!@#$%]{6,}$/
 	}
 
@@ -31,10 +31,10 @@ define([
 
 		submit: function(e){
 			var view = this
-			var username = this.$('input[name="username"]').val()
+			var email = this.$('input[name="email"]').val()
 			var password = this.$('input[name="password"]').val()
 
-			if (!username.match(validate.username)) {
+			if (!email.match(validate.email)) {
 				this.errorMessage('Please enter a valid email address')
 				return false;
 			}
@@ -45,14 +45,15 @@ define([
 			}
 
 			var formData = {
-				username: username,
+				email: email,
 				password: password
 			}
 
 			var route = $(e.target).data('route')
 			$.post(route, formData, function(data){
 				if (data._id) {
-					window.location.hash = 'location'
+					// window.location.hash = 'location'
+					console.log(data)
 				} else {
 					view.errorMessage(data)
 				}

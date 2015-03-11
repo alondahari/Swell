@@ -1,8 +1,6 @@
 var app = require('../app.js')
 var mongoose = require('mongoose')
 var request = require('request')
-var passport = require('passport')
-var LocalStrategy = require('passport-local').Strategy
 var db = require('../models/db.js')
 
 var passportLocalMongoose = require('passport-local-mongoose')
@@ -28,22 +26,6 @@ var Rating = mongoose.model('ratings', {
 	value: Number
 })
 
-
-var User = new mongoose.Schema({
-	userId: Number,
-	username: String,
-	password: String
-})
-
-User.plugin(passportLocalMongoose)
-
-User = mongoose.model('users', User)
-
-passport.use(new LocalStrategy(User.authenticate()))
-
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
 var validate = {
 	email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
 	password: /^[\w\d!@#$%]{5,}$/
@@ -54,21 +36,6 @@ var validate = function(field, req, res){
 		res.send('Invalid password or username')
 	}
 }
-
-var login = function(req, res){
-	passport.authenticate('local', function(err, user, info){
-		if (err || !user) {
-			return res.send('Wrong password or username')
-		}
-		req.logIn(user, function(err){
-			if (err) {
-				console.log(err)
-			} else {
-				res.send(user)
-			}
-		})
-	})(req, res)
-};
 
 
 /**
@@ -86,27 +53,6 @@ var indexController = {
 			var spot = new Spot(doc)
 			spot.save()
 		})
-	},
-
-	passportLogin: function(req, res) {
-		validate('username', req, res)
-		validate('password', req, res)
-
-		login(req, res)
-	},
-
-	passportSignup: function(req, res) {
-
-		validate('username', req, res)
-		validate('password', req, res)
-
-		User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
-			if (err) {
-				return res.send("Username already exists")
-			}
-
-			login(req, res)
-		});
 	},
 
 	getLocations: function(req, res) {

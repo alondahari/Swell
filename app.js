@@ -32,8 +32,8 @@ app.use(passport.session())
 // app.get('/seed', ctrl.seed)
 app.get('/', indexCtrl.index)
 
-app.post('/login', indexCtrl.passportLogin)
-app.post('/signup', indexCtrl.passportSignup)
+app.post('/login', authenticationCtrl.login)
+app.post('/signup', authenticationCtrl.signup)
 
 app.get('/googleMaps', indexCtrl.getMaps)
 
