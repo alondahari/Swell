@@ -4,10 +4,7 @@ define([
 	'text!templates/login.jade',
 ], function(Backbone, jade, template){
 
-	var validate = {
-		email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
-		password: /^[\w\d!@#$%]{6,}$/
-	}
+	
 
 	return Backbone.View.extend({
 
@@ -16,6 +13,9 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
+			this.listenTo(this.model, 'invalid', this.highlightError)
+			this.listenTo(this.model, 'sync', this.loginSuccess)
+			this.listenTo(this.model, 'error', this.loginError)
 			this.render()
 		},
 
@@ -30,48 +30,40 @@ define([
 		},
 
 		submit: function(e){
-			var view = this
-			var model = this.model
-			var email = this.$('input[name="email"]').val()
-			var password = this.$('input[name="password"]').val()
-
-			if (!email.match(validate.email)) {
-				this.errorMessage('Please enter a valid email address')
-				return false;
-			}
-			
-			if (!password.match(validate.password)) {
-				this.errorMessage('Password must contain at least 6 letters, digits or special characters')
-				return false;
-			}
-
-			var formData = {
-				email: email,
-				password: password
-			}
-
-			var route = $(e.target).data('route')
-			$.post(route, formData, function(data){
-				if (data.userId) {
-					console.log(model)
-					model.set(data)
-					window.location.hash = 'location'
-				} else {
-					view.errorMessage(data)
-				}
-			})			
 			e.preventDefault()
+
+			this.model.url = $(e.target).data('route')
+
+			this.model.save()
+
+		},
+
+		loginSuccess: function(model, res){
+			this.model.set(res)
+			window.location.hash = 'location'
+
+		},
+
+		loginError: function(model, res){
+			this.displayError(model, res.responseText)
 		},
 
 		validate: function(e){
-			this.clearError()
-			var field = e.target.name
-			var val = e.target.value
-			var match = val.match(validate[field])
-			$(e.target).parent().toggleClass('has-success', !!match).toggleClass('has-error', !match)
+			$(e.target).parent().addClass('has-success').removeClass('has-error')
+			var email = this.$('input[name="email"]').val()
+			var password = this.$('input[name="password"]').val()
+			this.model.set({
+				email: email,
+				password: password
+			}, {validate: true})
 		},
 
-		errorMessage: function(msg){
+		highlightError: function(model, msg){
+			$('input[name="' + msg.field + '"').parent().addClass('has-error').removeClass('has-success')
+
+		},
+
+		displayError: function(model, msg){
 			this.$('.error-message').text(msg).addClass('error-message-show')
 		},
 

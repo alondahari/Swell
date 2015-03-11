@@ -29,7 +29,7 @@ app.use(expressSession({
 app.use(passport.initialize())
 app.use(passport.session())
 
-// app.get('/seed', ctrl.seed)
+app.get('/seed', indexCtrl.seed)
 app.get('/', indexCtrl.index)
 
 app.post('/login', authenticationCtrl.login)
