@@ -8,15 +8,9 @@ var db = require('../models/db.js')
 var passportLocalMongoose = require('passport-local-mongoose')
 var mapsAPI
 
-
-console.log('enviroment:', process.env.NODE_ENV)
-if (process.env.NODE_ENV === 'development') {
-	mapsAPI = require('../models/keys.js').googleMapsAPI
-	mongoose.connect('mongodb://localhost/swell')
-} else {
-	mongoose.connect(process.env.MONGOLAB_URI)
+mapsAPI = process.env.NODE_ENV === 'development' ?
+	require('../models/keys.js').googleMapsAPI :
 	mapsAPI = process.env.MAPS_API
-}
 
 var Spot = mongoose.model('locations', {
 	continent: String,
@@ -82,6 +76,10 @@ var login = function(req, res){
  */
 
 var indexController = {
+
+	index: function(req, res){
+		res.render('index')
+	},
 
 	seed: function(req, res){
 		db.forEach(function(doc){
