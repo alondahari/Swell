@@ -89,6 +89,7 @@ define([
 
 			// remove loader here
 
+			// In render so there's a collection to work with
 			this.listenTo(this.collection, 'geo', this.getClosestSpot)
 
 			this.typeaheadArr = this.getTypeaheadArr()
