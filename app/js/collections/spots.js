@@ -14,11 +14,14 @@ define([
 			this.fetch({success: function(collection){
 				collection.trigger('fetched')
 			}})
+			this.getUserLocation()
+		},
 
+		getUserLocation: function(){
 			navigator.geolocation.getCurrentPosition(function(pos){
 				collection.trigger('geo', pos)
 			})
-		}
+		},
 
 	})
 
