@@ -30,7 +30,8 @@ require([
   'backbone',
   'routers/router'
   ], function(Backbone, Router){
-    new Router()
+    // check for loged in user
+
     Backbone.history.start()
 
 })

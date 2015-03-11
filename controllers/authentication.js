@@ -83,7 +83,6 @@ var authenticationController = {
       // information. We can customize the printed message based on
       // the error mongoose encounters
       if(err) {
-      	console.log(err)
 
         // By default, we'll show a generic message...
         var errorMessage = 'An error occured, please try again';

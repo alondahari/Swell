@@ -22,7 +22,7 @@ define([
   	Ratings
   ){
 
-	return Backbone.Router.extend({
+	var Router =  Backbone.Router.extend({
 
 		routes:{
 			'': 'login',
@@ -32,6 +32,10 @@ define([
 			'submit-rating': 'submitRating',
 			'init-database': 'initDatabase',
 			'user': 'user'
+		},
+
+		updateUser: function (user) {
+			this.user = user
 		},
 
 		login: function(){
@@ -71,4 +75,5 @@ define([
 
 	})
 
+	return new Router()
 })
