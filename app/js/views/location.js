@@ -89,8 +89,7 @@ define([
 
 			// remove loader here
 
-			// this.listenTo(this.collection, 'geo', this.getClosestSpot)
-			this.getClosestSpot()
+			this.listenTo(this.collection, 'geo', this.getClosestSpot)
 
 			this.typeaheadArr = this.getTypeaheadArr()
 			this.fieldData[0].items = this.getSpots('continent')
@@ -286,10 +285,8 @@ define([
 		},
 
 		getClosestSpot: function (pos) {
-			// var lat = pos.coords.latitude
-			// var lng = pos.coords.longitude
-			var lat = 53.968582
-			var lng = -122.800597
+			var lat = pos.coords.latitude
+			var lng = pos.coords.longitude
 
 			var spots = this.getOneOfEachRegion()
 			var closestSpot, closestDistance = Infinity

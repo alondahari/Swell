@@ -10,7 +10,6 @@ define([
 		url: '/locations',
 
 		initialize: function(){
-			var collection = this
 			this.fetch({success: function(collection){
 				collection.trigger('fetched')
 			}})
@@ -18,6 +17,7 @@ define([
 		},
 
 		getUserLocation: function(){
+			var collection = this
 			navigator.geolocation.getCurrentPosition(function(pos){
 				collection.trigger('geo', pos)
 			})

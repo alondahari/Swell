@@ -5036,7 +5036,7 @@ body {
   left: 5px;
   top: 22px;
   color: white; }
-  .button-back:hover {
+  .button-back:hover, .button-back:active {
     text-decoration: none; }
 
 .rating-field {
@@ -5074,7 +5074,7 @@ body {
   font-size: 2rem;
   position: fixed;
   top: 68px; }
-  .rate-nav:hover {
+  .rate-nav:hover, .rate-nav:active {
     text-decoration: none; }
 
 .rate-current {
