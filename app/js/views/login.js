@@ -51,9 +51,8 @@ define([
 
 			var route = $(e.target).data('route')
 			$.post(route, formData, function(data){
-				if (data._id) {
-					// window.location.hash = 'location'
-					console.log(data)
+				if (data.userId) {
+					window.location.hash = 'location'
 				} else {
 					view.errorMessage(data)
 				}

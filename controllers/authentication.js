@@ -19,7 +19,7 @@ var performLogin = function(req, res, next, user){
     if(err) return next(err);
 
     // Otherwise, send the user to the homepage.
-    return res.send(user);
+    return res.send({userId: user._id, email: user.email});
   });
 };
 
@@ -46,7 +46,7 @@ var authenticationController = {
       // which will be read and used in the "login" handler above and then redirect
       // to that handler.
       if(!user) {
-        return res.send('Error logging in. Please try again.');
+        return res.send('Wrong email or password. Please try again.');
       }
       
       // If we make it this far, the user has correctly authenticated with passport
