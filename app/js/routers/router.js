@@ -34,6 +34,9 @@ define([
 
 		login: function(){
 			this.user = new User()
+			this.user.fetch(function(model, res){
+				console.log(res)
+			})
 			return new Login({ model: this.user })
 		},
 

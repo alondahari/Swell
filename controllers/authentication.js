@@ -19,7 +19,7 @@ var performLogin = function(req, res, next, user){
     if(err) return next(err);
 
     // Otherwise, send the user to the homepage.
-    return res.send({userId: user._id, email: user.email});
+    return res.send({userId: user._id, email: user.email})
   });
 };
 
@@ -27,6 +27,13 @@ var performLogin = function(req, res, next, user){
  * Our base authentication controller object
  */
 var authenticationController = {
+
+  user: function(req, res){
+    if (req.user) {
+      return res.send({userId: req.user._id, email: req.user.email})
+    }
+    return res.send(null)
+  },
 
   // This is the post handler for any incoming login attempts.
   // Passing "next" allows us to easily handle any errors that may occur.

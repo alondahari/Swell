@@ -16,7 +16,6 @@ if (process.env.NODE_ENV === 'development') {
 } else {
 	mongoose.connect(process.env.MONGOLAB_URI)
 }
-
 app.set('view engine', 'jade')
 app.use(express.static(__dirname + '/app'))
 app.use(bodyParser.json())
@@ -32,6 +31,7 @@ app.use(passport.session())
 app.get('/seed', indexCtrl.seed)
 app.get('/', indexCtrl.index)
 
+app.get('/user', authenticationCtrl.user)
 app.post('/login', authenticationCtrl.login)
 app.post('/signup', authenticationCtrl.signup)
 
