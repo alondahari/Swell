@@ -31,7 +31,7 @@ define([
 			'view-spot/:title/:id': 'viewSpot',
 			'submit-rating': 'submitRating',
 			'init-database': 'initDatabase',
-			'user': 'user'
+			'user': 'userProfile'
 		},
 
 		updateUser: function (user) {
@@ -44,6 +44,7 @@ define([
 		},
 
 		location: function(){
+			if (!this.user) return window.location.hash = ''
 			if (this.spots) {
   			new LocationView({ collection: this.spots })
 			} else {		
@@ -54,10 +55,12 @@ define([
 		},
 
 		rate: function(title, id){
+			if (!this.user) return window.location.hash = ''
 			return new RateView({ id: id, attributes: {title: title}})
 		},
 
 		viewSpot: function(title, id){
+			if (!this.user) return window.location.hash = ''
 			var ratings = new Ratings()
 
 			// get only ratings for the right spot
@@ -68,7 +71,8 @@ define([
 			}})
 		},
 
-		user: function(){
+		userProfile: function(){
+			if (!this.user) return window.location.hash = ''
 			return new userProfile()
 
 		}
