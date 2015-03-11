@@ -22,6 +22,7 @@ Phase 2:
   ☐ make profile page functional
   ☐ build into cordova
   ☐ handle 404
+  ☐ refactor and split location.js
 
 Phase 3:
   ☐ Add password reset mechanism

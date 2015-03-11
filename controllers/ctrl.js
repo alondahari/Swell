@@ -34,7 +34,6 @@ var Rating = mongoose.model('ratings', {
 	value: Number
 })
 
-
 var User = new mongoose.Schema({
 	userId: Number,
 	username: String,
