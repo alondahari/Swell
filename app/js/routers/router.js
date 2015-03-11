@@ -1,7 +1,6 @@
 define([
 	'backbone',
 	'models/user',
-	'collections/users',
 	'views/login',
 	'views/location',
 	'views/rate',
@@ -12,7 +11,6 @@ define([
   ], function(
   	Backbone,
   	User,
-  	Users,
   	Login,
   	LocationView,
   	RateView,
@@ -34,13 +32,9 @@ define([
 			'user': 'userProfile'
 		},
 
-		updateUser: function (user) {
-			this.user = user
-		},
-
 		login: function(){
-			var users = new Users()
-			return new Login({collection: users})
+			this.user = new User()
+			return new Login({ model: this.user })
 		},
 
 		location: function(){

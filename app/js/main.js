@@ -29,9 +29,9 @@ require.config({
 require([
   'backbone',
   'routers/router'
-  ], function(Backbone, Router){
+  ], function(Backbone, router){
     // check for loged in user
-
+    
     Backbone.history.start()
 
 })

@@ -31,6 +31,7 @@ define([
 
 		submit: function(e){
 			var view = this
+			var model = this.model
 			var email = this.$('input[name="email"]').val()
 			var password = this.$('input[name="password"]').val()
 
@@ -52,6 +53,8 @@ define([
 			var route = $(e.target).data('route')
 			$.post(route, formData, function(data){
 				if (data.userId) {
+					console.log(model)
+					model.set(data)
 					window.location.hash = 'location'
 				} else {
 					view.errorMessage(data)
