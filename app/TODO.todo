@@ -3,6 +3,7 @@ Phase 1:
 
 Phase 2:
   ☐ persist rating view for user
+  ☐ add username validation
   ☐ Create dummy settings and account screens
   ☐ make login
   ☐ make settings functional + password change

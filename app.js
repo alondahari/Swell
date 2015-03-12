@@ -32,6 +32,8 @@ app.get('/seed', indexCtrl.seed)
 app.get('/', indexCtrl.index)
 
 app.get('/user', authenticationCtrl.user)
+app.post('/user', authenticationCtrl.updateUser)
+
 app.post('/login', authenticationCtrl.login)
 app.post('/signup', authenticationCtrl.signup)
 app.use('/logout', authenticationCtrl.logout)

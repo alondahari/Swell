@@ -35,6 +35,7 @@ define([
 		],
 
 		initialize: function(){
+			this.listenTo(this.model, 'sync', this.userUpdate)
 			this.render()
 
 		},
@@ -55,7 +56,15 @@ define([
 		},
 
 		save: function(e){
-			console.log(this.model)
+			var $target = $(e.target)
+			var field = $target.data('field')
+			var newValue = $target.text()
+			this.model.attributes[field] = newValue
+			this.model.save()
+		},
+
+		userUpdate: function(){
+			console.log(arguments)
 		}
 
 

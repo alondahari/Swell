@@ -35,6 +35,15 @@ var authenticationController = {
     return res.send({})
   },
 
+  updateUser: function(req, res){
+    // var user = new User(req.body);
+    // User.update({_id: req.body.userId}, {$set: {
+    //   username: req.body.username,
+    //   email: req.body.email
+    // }})
+    res.send('Saved!')
+  },
+
   // This is the post handler for any incoming login attempts.
   // Passing "next" allows us to easily handle any errors that may occur.
   login: function(req, res, next){
