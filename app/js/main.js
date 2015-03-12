@@ -29,13 +29,8 @@ require.config({
 require([
   'backbone',
   'routers/router',
-  'models/user'
-  ], function(Backbone, Router, User){
-    // check for loged in user
-    var user = new User()
-    user.fetch({success: function(model, res){
-      new Router().user = res
-      Backbone.history.start()
-    }})
+  ], function(Backbone, Router){
+    new Router()
+    Backbone.history.start()
 
 })

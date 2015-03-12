@@ -5,6 +5,7 @@ define([
 	'views/rate',
 	'views/spot',
 	'views/user-profile',
+	'models/user',
   'collections/spots',
   'collections/ratings'
   ], function(
@@ -14,6 +15,7 @@ define([
   	RateView,
   	SpotView,
   	userProfile,
+  	User,
   	Spots,
   	Ratings
   ){
@@ -21,8 +23,8 @@ define([
 	return Backbone.Router.extend({
 
 		routes:{
-			'': 'login',
-			'location': 'location',
+			'': 'location',
+			'login': 'login',
 			'spot/:title/:id': 'rate',
 			'view-spot/:title/:id': 'viewSpot',
 			'submit-rating': 'submitRating',
@@ -31,13 +33,12 @@ define([
 		},
 
 		login: function(){
+			this.user = new User()
 			new Login({ model: this.user })
 
 		},
 
 		location: function(){
-			console.log(this.user.get('userId'))
-			if (!this.user.get('userId')) return this.navigate('')
 			if (this.spots) {
 				this.spots.trigger('fetched')
 				this.spots.getUserLocation()
@@ -50,12 +51,10 @@ define([
 		},
 
 		rate: function(title, id){
-			if (!this.user) return this.navigate('')
 			return new RateView({ id: id, attributes: {title: title}})
 		},
 
 		viewSpot: function(title, id){
-			if (!this.user) return this.navigate('')
 			var ratings = new Ratings()
 
 			// get only ratings for the right spot

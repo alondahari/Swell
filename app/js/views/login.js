@@ -40,7 +40,7 @@ define([
 
 		loginSuccess: function(model, res){
 			this.model.set(res)
-			window.location.hash = 'location'
+			window.location.hash = ''
 
 		},
 
