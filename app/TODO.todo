@@ -9,6 +9,7 @@ Phase 2:
   ☐ additional settings: metric-imperial, 
   ☐ make profile page functional
   ☐ build into cordova
+  ☐ move average calculation to back-end
   ☐ refactor and split location.js
 
 Phase 3:
