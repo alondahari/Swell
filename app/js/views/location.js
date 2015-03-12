@@ -230,7 +230,7 @@ define([
 		},
 
 		getSpotAttrs: function(){
-
+			
 			var spot = this.collection.findWhere({
 				continent: this.fieldData[0].selected,
 				region: this.fieldData[1].selected,

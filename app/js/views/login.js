@@ -43,6 +43,7 @@ define([
 			if (res.userId) {			
 				this.model.set(res)
 				window.location.hash = ''
+				this.remove()
 			}
 
 		},

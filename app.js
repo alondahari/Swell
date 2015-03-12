@@ -35,8 +35,8 @@ app.get('/user', authenticationCtrl.user)
 app.post('/user', authenticationCtrl.updateUser)
 app.put('/user', authenticationCtrl.updateUser)
 
-app.post('/login', authenticationCtrl.login)
-app.post('/signup', authenticationCtrl.signup)
+app.use('/login', authenticationCtrl.login)
+app.use('/signup', authenticationCtrl.signup)
 app.use('/logout', authenticationCtrl.logout)
 
 app.get('/googleMaps', indexCtrl.getMaps)

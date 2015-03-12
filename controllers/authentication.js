@@ -30,13 +30,15 @@ var authenticationController = {
 
   user: function(req, res){
     if (req.user) {
-      return res.send({userId: req.user._id, email: req.user.email})
+      var user = req.user
+      delete user.password
+      return res.send(user)
     }
     return res.send({})
   },
 
   updateUser: function(req, res){
-    console.log('user:', req.body)
+
     var query = User.where({_id: req.body.userId})
     query.findOneAndUpdate({_id: req.body.userId}, {$set: {
       username: req.body.username,
@@ -45,10 +47,9 @@ var authenticationController = {
       if (err) {
         res.send(err)
       } else {
-        res.send({
-          userId: user._id,
-          email: user.email
-        })
+        var user = req.user
+        delete user.password
+        return res.send(user)
       }
     })
 
@@ -57,7 +58,7 @@ var authenticationController = {
   // This is the post handler for any incoming login attempts.
   // Passing "next" allows us to easily handle any errors that may occur.
   login: function(req, res, next){
-    console.log(req.body)
+
     // Passport's "authenticate" method returns a method, so we store it
     // in a variable and call it with the proper arguments afterwards.
     // We are using the "local" strategy defined (and used) in the
