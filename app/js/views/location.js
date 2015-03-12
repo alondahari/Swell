@@ -82,8 +82,6 @@ define([
 
 			this.listenTo(this.collection, 'fetched', this.render)
 
-			// check for logged in user
-
 		},
 
 		render: function(){
@@ -105,8 +103,8 @@ define([
 			this.renderFields()
 
 			this.searchbox()
-			var avatar = new Avatar({model: this.attributes.user})
-			this.$('.user').html(avatar.$el)
+
+			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
 		},
 
 		renderFields: function(){

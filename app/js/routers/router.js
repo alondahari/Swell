@@ -5,7 +5,6 @@ define([
 	'views/rate',
 	'views/spot',
 	'views/user-profile',
-	// 'models/user',
   'collections/spots',
   'collections/ratings'
   ], function(
@@ -15,7 +14,6 @@ define([
   	RateView,
   	SpotView,
   	userProfile,
-  	// User,
   	Spots,
   	Ratings
   ){
@@ -51,7 +49,7 @@ define([
 		},
 
 		rate: function(title, id){
-			return new RateView({ id: id, attributes: {title: title}})
+			return new RateView({ id: id, attributes: {title: title, user: this.user}})
 		},
 
 		viewSpot: function(title, id){
@@ -60,9 +58,11 @@ define([
 			// get only ratings for the right spot
 			ratings.url = '/ratings/' + id
 			
-			ratings.fetch({success: function(){
-				return new SpotView({ collection: ratings, id: id, attributes: {title: title}})
+			ratings.fetch({success: function(collection){
+				collection.trigger('fetched')
 			}})
+
+			return new SpotView({ collection: ratings, id: id, attributes: {title: title, user: this.user}})
 		},
 
 		userProfile: function(){

@@ -2,9 +2,10 @@ define([
 	'backbone',
 	'jade',
 	'moment',
-	'text!templates/view.jade',
-	'views/view-rating'
-], function(Backbone, jade, moment, template, ViewRating){
+	'views/avatar',
+	'views/view-rating',
+	'text!templates/view.jade'
+], function(Backbone, jade, moment, Avatar, ViewRating, template){
 	'use strict'
 
 	return Backbone.View.extend({
@@ -34,16 +35,21 @@ define([
 		},
 
 		initialize: function(){
-			this.getAverages()
-			this.render()
-			this.$('a.rate-nav').attr('href', '#spot/' + this.attributes.title + '/' + this.id)
+			this.listenTo(this.collection, 'fetched', this.render)
 		},
 
 		render: function(){
+			
+			this.getAverages()
+
 			this.$el.html(this.template({header: this.attributes.title}))
 			// not setting .wrapper as $el to keep all events within scope
 			$('.wrapper').html(this.el)
+
 			this.renderFields()
+
+			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
+			this.$('a.rate-nav').attr('href', '#spot/' + this.attributes.title + '/' + this.id)
 		},
 
 		/**

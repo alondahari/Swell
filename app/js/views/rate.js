@@ -3,8 +3,9 @@ define([
 	'jade',
 	'text!templates/rate.jade',
 	'views/rate-field',
+	'views/avatar',
 	'models/rating'
-], function(Backbone, jade, template, RateField, Rating){
+], function(Backbone, jade, template, RateField, Avatar, Rating){
 	'use strict'
 
 	return Backbone.View.extend({
@@ -40,7 +41,7 @@ define([
 		],
 
 		initialize: function(){
-			console.log(this)
+
 			this.render()
 			this.$('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
 		},
@@ -50,6 +51,7 @@ define([
 			// not setting .wrapper as $el to keep all events within scope
 			$('.wrapper').html(this.el)
 			this.renderFields()
+			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
 		},
 
 		/**
