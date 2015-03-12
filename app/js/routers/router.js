@@ -66,7 +66,7 @@ define([
 		},
 
 		userProfile: function(){
-			// console.log(this.user)
+
 			if (!this.user || !this.user.get('userId'))
 				return window.location.hash = ''
 			return new userProfile({model: this.user})

@@ -36,12 +36,22 @@ var authenticationController = {
   },
 
   updateUser: function(req, res){
-    // var user = new User(req.body);
-    // User.update({_id: req.body.userId}, {$set: {
-    //   username: req.body.username,
-    //   email: req.body.email
-    // }})
-    res.send('Saved!')
+    console.log('user:', req.body)
+    var query = User.where({_id: req.body.userId})
+    query.findOneAndUpdate({_id: req.body.userId}, {$set: {
+      username: req.body.username,
+      email: req.body.email
+    }}, function(err, user){
+      if (err) {
+        res.send(err)
+      } else {
+        res.send({
+          userId: user._id,
+          email: user.email
+        })
+      }
+    })
+
   },
 
   // This is the post handler for any incoming login attempts.

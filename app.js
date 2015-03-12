@@ -33,6 +33,7 @@ app.get('/', indexCtrl.index)
 
 app.get('/user', authenticationCtrl.user)
 app.post('/user', authenticationCtrl.updateUser)
+app.put('/user', authenticationCtrl.updateUser)
 
 app.post('/login', authenticationCtrl.login)
 app.post('/signup', authenticationCtrl.signup)
