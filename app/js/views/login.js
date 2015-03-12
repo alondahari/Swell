@@ -16,6 +16,7 @@ define([
 			this.listenTo(this.model, 'invalid', this.highlightError)
 			this.listenTo(this.model, 'sync', this.loginSuccess)
 			this.listenTo(this.model, 'error', this.loginError)
+			this.listenTo(this.model, 'all', this.log)
 			this.render()
 		},
 
@@ -39,8 +40,10 @@ define([
 		},
 
 		loginSuccess: function(model, res){
-			this.model.set(res)
-			window.location.hash = ''
+			if (res.length > 0) {			
+				this.model.set(res)
+				window.location.hash = ''
+			}
 
 		},
 
