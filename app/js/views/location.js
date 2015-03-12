@@ -257,6 +257,7 @@ define([
 		},
 
 		centerMap: function(coords){
+
 			this.map.setCenter({
 				lat: coords[0],
 				lng: coords[1]
