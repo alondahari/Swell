@@ -12,6 +12,11 @@ define([
 
 		template: jade.compile(template),
 
+		events: {
+			'keydown .field-input': 'changeField',
+			'blur .field-input': 'save'
+		},
+
 		settings: [
 		{ 
 			fieldName: 'ignoreRating',
@@ -40,6 +45,17 @@ define([
 				var field = new Setting(setting)
 				this.$('.setting-sliders').append(new RateField({model: field}).$el)
 			})
+		},
+
+		changeField: function(e){
+			if(e.which === 13){
+				e.preventDefault()
+				$(e.target).blur()
+			}
+		},
+
+		save: function(e){
+			console.log(this.model)
 		}
 
 

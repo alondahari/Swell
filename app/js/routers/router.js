@@ -31,7 +31,7 @@ define([
 		},
 
 		login: function(){
-			// this.user = new User()
+
 			new Login({ model: this.user })
 
 		},
@@ -66,8 +66,9 @@ define([
 		},
 
 		userProfile: function(){
-			if (!this.user) return this.navigate('')
-			return new userProfile()
+			if (!this.user || !this.user.get('userId'))
+				return window.location.hash = ''
+			return new userProfile({model: this.user})
 
 		}
 
