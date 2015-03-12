@@ -22,6 +22,14 @@ define([
 
 	var Router =  Backbone.Router.extend({
 
+		initialize: function(){
+			var router = this
+			this.user = new User()
+			this.user.fetch({success: function(model, res){
+				router.user.set(res)
+			}})
+		},
+
 		routes:{
 			'': 'login',
 			'location': 'location',
@@ -33,14 +41,8 @@ define([
 		},
 
 		login: function(){
-			var router = this
-			this.user = new User()
-			this.user.fetch({success: function(model, res){
-				router.user.set(res)
-				window.location.hash = 'location'
-			}, error: function(model, res){
-				new Login({ model: this.user })
-			}})
+			new Login({ model: this.user })
+
 		},
 
 		location: function(){
