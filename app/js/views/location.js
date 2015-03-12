@@ -302,7 +302,7 @@ define([
 				}
 			})
 
-			console.log(closestSpot);
+			// console.log(closestSpot);
 
 		},
 

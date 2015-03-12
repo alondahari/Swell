@@ -33,11 +33,14 @@ define([
 		},
 
 		login: function(){
+			var router = this
 			this.user = new User()
-			this.user.fetch(function(model, res){
-				console.log(res)
-			})
-			return new Login({ model: this.user })
+			this.user.fetch({success: function(model, res){
+				router.user.set(res)
+				window.location.hash = 'location'
+			}, error: function(model, res){
+				new Login({ model: this.user })
+			}})
 		},
 
 		location: function(){
