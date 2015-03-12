@@ -32,7 +32,7 @@ var authenticationController = {
     if (req.user) {
       return res.send({userId: req.user._id, email: req.user.email})
     }
-    return res.send(null)
+    return res.send({})
   },
 
   // This is the post handler for any incoming login attempts.

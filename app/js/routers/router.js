@@ -5,7 +5,7 @@ define([
 	'views/rate',
 	'views/spot',
 	'views/user-profile',
-	'models/user',
+	// 'models/user',
   'collections/spots',
   'collections/ratings'
   ], function(
@@ -15,7 +15,7 @@ define([
   	RateView,
   	SpotView,
   	userProfile,
-  	User,
+  	// User,
   	Spots,
   	Ratings
   ){
@@ -33,7 +33,7 @@ define([
 		},
 
 		login: function(){
-			this.user = new User()
+			// this.user = new User()
 			new Login({ model: this.user })
 
 		},
@@ -42,7 +42,7 @@ define([
 			if (this.spots) {
 				this.spots.trigger('fetched')
 				this.spots.getUserLocation()
-  			new LocationView({ collection: this.spots })
+  			new LocationView({ collection: this.spots, attributes: {user: this.user} })
 			} else {		
 			  this.spots = new Spots()
   			new LocationView({ collection: this.spots })

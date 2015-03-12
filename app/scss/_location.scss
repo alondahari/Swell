@@ -36,3 +36,15 @@
 	margin-bottom: 30px;
 	height: 300px;
 }
+
+.header-login{
+	position: absolute;
+	right: 20px;
+	font-family: $font-main;
+	font-size: 2rem;
+	top: 21px;
+}
+
+.header-login:hover, .header-login:active{
+	text-decoration: underline;
+}

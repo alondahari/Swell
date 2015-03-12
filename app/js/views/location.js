@@ -80,7 +80,6 @@ define([
 		initialize: function(){
 			// add loader here
 
-
 			this.listenTo(this.collection, 'fetched', this.render)
 
 		},
