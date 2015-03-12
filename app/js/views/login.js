@@ -40,7 +40,8 @@ define([
 		},
 
 		loginSuccess: function(model, res){
-			if (res.length > 0) {			
+
+			if (res.userId) {			
 				this.model.set(res)
 				window.location.hash = ''
 			}

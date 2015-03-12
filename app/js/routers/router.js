@@ -31,7 +31,6 @@ define([
 		},
 
 		login: function(){
-			console.log(this.user.toJSON())
 			new Login({ model: this.user })
 
 		},
