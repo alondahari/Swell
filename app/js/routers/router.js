@@ -45,7 +45,7 @@ define([
   			new LocationView({ collection: this.spots, attributes: {user: this.user} })
 			} else {		
 			  this.spots = new Spots()
-  			new LocationView({ collection: this.spots })
+  			new LocationView({ collection: this.spots, attributes: {user: this.user} })
 			}
 
 		},

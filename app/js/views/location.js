@@ -2,10 +2,10 @@ define([
 	'backbone',
 	'jade',
 	'typehead',
-	// 'googleMaps',
 	'views/location-select',
+	'views/avatar',
 	'text!templates/location.jade'
-], function(Backbone, jade, typehead, Select, template){
+], function(Backbone, jade, typehead, Select, Avatar, template){
 
 	var substringMatcher = function(strs) {
 		return function findMatches(q, cb) {
@@ -82,11 +82,14 @@ define([
 
 			this.listenTo(this.collection, 'fetched', this.render)
 
+			// check for logged in user
+
 		},
 
 		render: function(){
 
 			// remove loader here
+
 
 			// In render so there's a collection to work with
 			this.listenTo(this.collection, 'geo', this.getClosestSpot)
@@ -102,6 +105,8 @@ define([
 			this.renderFields()
 
 			this.searchbox()
+			var avatar = new Avatar({model: this.attributes.user})
+			this.$('.user').html(avatar.$el)
 		},
 
 		renderFields: function(){

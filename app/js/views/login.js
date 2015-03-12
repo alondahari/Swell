@@ -13,7 +13,6 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
-			console.log(this.model)
 			this.listenTo(this.model, 'invalid', this.highlightError)
 			this.listenTo(this.model, 'sync', this.loginSuccess)
 			this.listenTo(this.model, 'error', this.loginError)
