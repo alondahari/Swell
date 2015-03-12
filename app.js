@@ -34,6 +34,7 @@ app.get('/', indexCtrl.index)
 app.get('/user', authenticationCtrl.user)
 app.post('/login', authenticationCtrl.login)
 app.post('/signup', authenticationCtrl.signup)
+app.use('/logout', authenticationCtrl.logout)
 
 app.get('/googleMaps', indexCtrl.getMaps)
 
