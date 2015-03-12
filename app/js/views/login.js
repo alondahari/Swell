@@ -16,7 +16,6 @@ define([
 			this.listenTo(this.model, 'invalid', this.highlightError)
 			this.listenTo(this.model, 'sync', this.loginSuccess)
 			this.listenTo(this.model, 'error', this.loginError)
-			this.listenTo(this.model, 'all', this.log)
 			this.render()
 		},
 
@@ -25,7 +24,7 @@ define([
 		},
 
 		events: {
-			'click .btn': 'submit',
+			'click .button-submit': 'submit',
 			'focus input': 'clearError',
 			'keyup input': 'validate'
 		},
