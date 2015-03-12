@@ -5148,6 +5148,9 @@ body {
   color: #cc7e2d;
   margin: 15px 0 0; }
 
+.user-avatar {
+  border-radius: 40px; }
+
 .header {
   font-family: 'Great Vibes', cursive;
   font-size: 4rem;
@@ -5157,7 +5160,7 @@ body {
   width: 100%;
   margin-top: 0;
   text-align: center;
-  padding: 15px 0 10px;
+  padding: 20px 0 10px;
   z-index: 2; }
 
 .header-login {
@@ -5165,7 +5168,7 @@ body {
   right: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2rem;
-  top: 21px; }
+  top: 26px; }
 
 .header-login:hover, .header-login:active {
   text-decoration: underline; }
@@ -5174,7 +5177,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  margin-top: -10px; }
+  margin-top: -14px; }
 
 .slider.slider-horizontal {
   width: 100%; }
