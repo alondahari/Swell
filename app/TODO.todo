@@ -1,20 +1,7 @@
 Phase 1:
-  ☐ test getAverage()
-  ✔ add click on rating slides @done (15-03-03 19:11)
-  ✔ seperate rate from view rating @done (15-03-03 15:09)
-  ✔ save rating on change @done (15-03-03 19:09)
-  ✔ add saved feedback @done (15-03-04 11:32)
-  ✔ update recent similar ratings @done (15-03-05 19:16)
-  ✔ cache locations @done (15-03-06 18:19)
   ☐ make current marker stand out
-  ☐ remove old ratings
-  ✔ add label overlay on map @done (15-03-09 15:26)
-  ✘ add dualStorage @cancelled (15-03-09 16:52)
-  ✔ quetions: sync to localstorage @done (15-03-09 16:52)
 
 Phase 2:
-  ✘ Integrate hoodie @cancelled (15-03-04 11:33)
-  ☐ fix: duplicates in users collection
   ☐ persist rating view for user
   ☐ Create dummy settings and account screens
   ☐ make login
@@ -22,23 +9,24 @@ Phase 2:
   ☐ additional settings: metric-imperial, 
   ☐ make profile page functional
   ☐ build into cordova
-  ☐ handle 404
+  ☐ refactor and split location.js
 
 Phase 3:
   ☐ Add password reset mechanism
-  ☐ Add help screen
+  ☐ Add user comments
+  ☐ remove old ratings
 
 Phase 4:
-  ☐ Add geolocation functionality
   ☐ Add facebook login
-  ☐ Add google map, responsive to user input
-  ☐ populate select fields according to map interaction
+  ☐ handle 404
+  ☐ Add picture uploads
+  ☐ Split website and app
+  ☐ Optimize location fetch (app: fetch all, web: ajax for search, fetch and store according to user location and select choices)
 
 Phase 5:
-  ☐ Add user comments
-  ☐ Add picture uploads
   ☐ Add additional ratings screen ( user wave prediction, jelly fish, currents, appropriate skill level, wet suit recommendation, water polution )
   ☐ add fittext.js for long headers
+  ☐ Add help screen
 
 Future:
   ☐ Graphic rating interaction
@@ -51,6 +39,19 @@ Build:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✘ test getAverage() @cancelled (15-03-10 19:16) @project(Phase 1)
+ ✔ add click on rating slides @done (15-03-03 19:11) @project(Phase 1)
+ ✔ seperate rate from view rating @done (15-03-03 15:09) @project(Phase 1)
+ ✔ save rating on change @done (15-03-03 19:09) @project(Phase 1)
+ ✔ add saved feedback @done (15-03-04 11:32) @project(Phase 1)
+ ✔ update recent similar ratings @done (15-03-05 19:16) @project(Phase 1)
+ ✔ cache locations @done (15-03-06 18:19) @project(Phase 1)
+ ✔ add label overlay on map @done (15-03-09 15:26) @project(Phase 1)
+ ✘ add dualStorage @cancelled (15-03-09 16:52) @project(Phase 1)
+ ✔ quetions: sync to localstorage @done (15-03-09 16:52) @project(Phase 1)
+ ✘ Integrate hoodie @cancelled (15-03-04 11:33) @project(Phase 2)
+ ✔ Add google map, responsive to user input @done (15-03-10 19:14) @project(Phase 4)
+ ✔ populate select fields according to map interaction @done (15-03-10 19:14) @project(Phase 4)
  ✘ allow dyping in select boxes @cancelled (15-02-26 16:26) @project(Phase 1)
  ✔ visual input for ratings with no updates @done (15-02-26 16:25) @project(Phase 1)
  ✔ refactor @ location view @done (15-02-26 16:25) @project(Phase 1)

@@ -6,16 +6,16 @@ var db = require('../models/db.js')
 var passportLocalMongoose = require('passport-local-mongoose')
 var mapsAPI
 
-mapsAPI = process.env.NODE_ENV === 'development' ?
+mapsAPI = (process.env.NODE_ENV === 'development') ?
 	require('../models/keys.js').googleMapsAPI :
-	mapsAPI = process.env.MAPS_API
+	process.env.MAPS_API
 
 var Spot = mongoose.model('locations', {
 	continent: String,
 	region: String,
 	spot: String,
 	lat: Number,
-	lon: Number
+	lng: Number
 })
 
 var Rating = mongoose.model('ratings', {
@@ -53,6 +53,28 @@ var indexController = {
 			var spot = new Spot(doc)
 			spot.save()
 		})
+	},
+
+	passportLogin: function(req, res) {
+		validate('username', req, res)
+		validate('password', req, res)
+
+		login(req, res)
+	},
+
+	passportSignup: function(req, res) {
+
+		validate('username', req, res)
+		validate('password', req, res)
+
+		User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
+			if (err) {
+				return res.send("Username already exists")
+			}
+
+			login(req, res)
+		});
+
 	},
 
 	getLocations: function(req, res) {

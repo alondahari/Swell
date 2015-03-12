@@ -64,7 +64,6 @@ define([
 		},
 
 		formatText: function(field, val){
-			console.log(field)
 			var formats = {
 				wind: [
 					'None (0-3 knots)',

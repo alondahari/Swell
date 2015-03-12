@@ -28,6 +28,25 @@ define([
 	 
 			cb(matches);
 		}
+
+	}
+
+	function getMarkerDistance(lat1,lon1,lat2,lon2) {
+	  var R = 6371; // Radius of the earth in km
+	  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+	  var dLon = deg2rad(lon2-lon1); 
+	  var a = 
+	    Math.sin(dLat/2) * Math.sin(dLat/2) +
+	    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+	    Math.sin(dLon/2) * Math.sin(dLon/2)
+	    ; 
+	  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+	  var d = R * c; // Distance in km
+	  return d;
+	}
+
+	function deg2rad(deg) {
+	  return deg * (Math.PI/180)
 	}
 
 	return Backbone.View.extend({
@@ -70,6 +89,8 @@ define([
 
 			// remove loader here
 
+			// In render so there's a collection to work with
+			this.listenTo(this.collection, 'geo', this.getClosestSpot)
 
 			this.typeaheadArr = this.getTypeaheadArr()
 			this.fieldData[0].items = this.getSpots('continent')
@@ -89,7 +110,7 @@ define([
 			_.each(this.fieldData, function(field, i){
 				this.renderField(field, i)
 			}, this)
-			coords = this.getSpotAttrs('lat', 'lon')
+			coords = this.getSpotAttrs('lat', 'lng')
 			this.centerMap(coords)
 		},
 
@@ -245,7 +266,7 @@ define([
 		addMarkers: function(coords, map){
 			var view = this
 			view.collection.each(function(model){
-				var spotCoords = new google.maps.LatLng(model.get('lat'), model.get('lon'));
+				var spotCoords = new google.maps.LatLng(model.get('lat'), model.get('lng'));
 				var marker = new google.maps.Marker({
 					position: spotCoords,
 					map: this.map,
@@ -262,6 +283,39 @@ define([
 				})
 
 			}, this)
+		},
+
+		getClosestSpot: function (pos) {
+			var lat = pos.coords.latitude
+			var lng = pos.coords.longitude
+
+			var spots = this.getOneOfEachRegion()
+			var closestSpot, closestDistance = Infinity
+
+			this.collection.each( function (spot) {
+
+				var dist = getMarkerDistance(lat, lng, spot.get('lat'), spot.get('lng'))
+				if (dist < closestDistance){
+					closestDistance = dist
+					closestSpot = spot
+				}
+			})
+
+			console.log(closestSpot);
+
+		},
+
+		getOneOfEachRegion: function(){
+			var cache = []
+			var spots = []
+			this.collection.each(function (spot) {
+				if(!_.contains(cache, spot.get('region'))){
+					cache.push(spot.get('region'))
+					spots.push(spot)
+				}
+
+			})
+			return spots
 		}
 
 

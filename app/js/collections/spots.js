@@ -2,7 +2,6 @@ define([
 	'backbone',
 	'models/spot'
 	], function(Backbone, spot){
-	'use strict'
 	
 	return Backbone.Collection.extend({
 		
@@ -14,12 +13,15 @@ define([
 			this.fetch({success: function(collection){
 				collection.trigger('fetched')
 			}})
+			this.getUserLocation()
+		},
 
+		getUserLocation: function(){
+			var collection = this
 			navigator.geolocation.getCurrentPosition(function(pos){
-				console.log('lat:', pos.coords.latitude)
-				console.log('lng:', pos.coords.longitude)
+				collection.trigger('geo', pos)
 			})
-		}
+		},
 
 	})
 
