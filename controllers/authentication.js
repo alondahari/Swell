@@ -19,11 +19,8 @@ var performLogin = function(req, res, next, user){
     if(err) return next(err);
 
     // Otherwise, send the user to the homepage.
-    var resUser = {}
-    resUser = _.extend(resUser, user)
+    var resUser = user.toObject()
     delete resUser.password
-    resUser.userId = 'resUser._id'
-    console.log('user', resUser)
     return res.send(resUser)
   });
 };
@@ -35,7 +32,7 @@ var authenticationController = {
 
   user: function(req, res){
     if (req.user) {
-      var user = req.user
+      var user = req.user.toObject()
       delete user.password
       return res.send(user)
     }
@@ -52,9 +49,9 @@ var authenticationController = {
       if (err) {
         res.send(err)
       } else {
-        var user = req.user
-        delete user.password
-        return res.send(user)
+        var resUser = user.toObject()
+        delete resUser.password
+        return res.send(resUser)
       }
     })
 

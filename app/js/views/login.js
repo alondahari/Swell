@@ -20,7 +20,7 @@ define([
 		},
 
 		render: function(){
-			this.$el.html(this.template())	
+			this.$el.html(this.template())
 		},
 
 		events: {
@@ -40,7 +40,7 @@ define([
 
 		loginSuccess: function(model, res){
 
-			if (res.userId) {
+			if (res._id) {
 				this.model.set(res)
 				window.location.hash = ''
 			}
