@@ -92,12 +92,12 @@ define([
 			// In render so there's a collection to work with
 			this.listenTo(this.collection, 'geo', this.getClosestSpot)
 
-			this.typeaheadArr = this.getTypeaheadArr()
 			this.fieldData[0].items = this.getSpots('continent')
 			this.$el.html(this.template())
 
 			this.showMap()
 			this.addMarkers()
+			this.typeaheadArr = this.getTypeaheadArr()
 
 			// render fields after rendering the map to center the map on the selected field
 			this.renderFields()

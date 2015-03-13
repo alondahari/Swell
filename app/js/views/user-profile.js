@@ -60,6 +60,7 @@ define([
 			var field = $target.data('field')
 			var newValue = $target.text()
 			this.model.attributes[field] = newValue
+			this.model.url = '/user'
 			this.model.save()
 		},
 

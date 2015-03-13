@@ -75,12 +75,11 @@ define([
 		},
 
 		removeViews: function (route) {
-			console.log(route)
-			if (this.loginView && route != 'login') this.loginView.remove()
-			if (this.locationView && route != 'location') this.locationView.remove()
-			if (this.rateView && route != 'rate') this.rateView.remove()
-			if (this.spotView && route != 'spot') this.spotView.remove()
-			if (this.userView && route != 'user') this.userView.remove()
+			if (this.loginView && route != 'login') this.loginView.undelegateEvents()
+			if (this.locationView && route != 'location') this.locationView.undelegateEvents()
+			if (this.rateView && route != 'rate') this.rateView.undelegateEvents()
+			if (this.spotView && route != 'spot') this.spotView.undelegateEvents()
+			if (this.userView && route != 'user') this.userView.undelegateEvents()
 
 		}
 
