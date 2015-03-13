@@ -87,15 +87,6 @@ define([
 		render: function(){
 
 			// remove loader here
-			var cache = 0
-			var result
-			this.collection.each(function(spot){
-				if (spot.get('spot').length > cache) {
-					result = spot
-					cache = spot.get('spot').length
-				}
-			})
-			console.log(result)
 
 			// In render so there's a collection to work with
 			this.listenTo(this.collection, 'geo', this.getClosestSpot)
@@ -120,8 +111,6 @@ define([
 			_.each(this.fieldData, function(field, i){
 				this.renderField(field, i)
 			}, this)
-			coords = this.getSpotAttrs('lat', 'lng')
-			this.centerMap(coords)
 		},
 
 		renderField: function(field, i){
@@ -142,6 +131,11 @@ define([
 			var selectedValue = this.getSelectedValue(i)
 			this.fieldData[i].selected = selectedValue
 			this.populateNextField(i, selectedValue)
+			
+			if (i === 2) {
+				coords = this.getSpotAttrs('lat', 'lng')
+				this.centerMap(coords)
+			}
 		},
 
 		getSelectedValue: function(i){
