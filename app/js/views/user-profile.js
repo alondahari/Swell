@@ -76,7 +76,6 @@ define([
 			var newValue = $target.text()
 			this.feedbackMessage =  'Saving...'
 			this.model.attributes[field] = newValue
-			console.log(this.model.toJSON())
 		},
 
 		save: function(e){

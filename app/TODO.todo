@@ -4,11 +4,7 @@ Phase 1:
 Phase 2:
   ☐ persist rating view for user
   ☐ add username validation
-  ☐ Create dummy settings and account screens
-  ☐ make login
   ☐ make settings functional + password change
-  ☐ additional settings: metric-imperial, 
-  ☐ make profile page functional
   ☐ build into cordova
   ☐ move average calculation to back-end
   ☐ refactor and split location.js
@@ -42,6 +38,10 @@ Build:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Create dummy settings and account screens @done (15-03-13 14:34) @project(Phase 2)
+ ✔ make login @done (15-03-13 14:34) @project(Phase 2)
+ ✔ additional settings: metric-imperial,  @done (15-03-13 14:34) @project(Phase 2)
+ ✔ make profile page functional @done (15-03-13 14:34) @project(Phase 2)
  ✘ test getAverage() @cancelled (15-03-10 19:16) @project(Phase 1)
  ✔ add click on rating slides @done (15-03-03 19:11) @project(Phase 1)
  ✔ seperate rate from view rating @done (15-03-03 15:09) @project(Phase 1)
