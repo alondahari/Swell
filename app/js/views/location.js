@@ -193,7 +193,6 @@ define([
 				// set continent to text
 				this.setSelects(text)
 			}
-			this.renderFields()
 
 		},
 
@@ -201,6 +200,7 @@ define([
 			_.each(arguments, function(val, i){
 				this.fieldData[i].selected = val
 			}, this)
+			this.renderFields()
 		},
 
 		getTypeaheadArr: function(){
@@ -283,7 +283,6 @@ define([
 					var spot = view.collection.findWhere({_id: this.id})
 					view.setSelects(spot.get('continent'), spot.get('region'), spot.get('spot'))
 
-					view.renderFields()
 				})
 
 			}, this)
@@ -305,7 +304,11 @@ define([
 				}
 			})
 
-			// console.log(closestSpot);
+			this.setSelects(
+				closestSpot.get('continent'),
+				closestSpot.get('region'),
+				closestSpot.get('spot')
+			);
 
 		},
 

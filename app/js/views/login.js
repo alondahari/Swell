@@ -39,7 +39,7 @@ define([
 		},
 
 		loginSuccess: function(model, res){
-			console.log(res)
+
 			if (res.userId) {
 				this.model.set(res)
 				window.location.hash = ''
