@@ -2,6 +2,7 @@
 	font-family: 'Great Vibes', cursive;
 	position: fixed;
 	top: 0;
+	left: 0;
 	background-color: rgba(0,0,0,.3);
 	width: 100%;
 	text-align: center;
@@ -16,7 +17,6 @@
 	margin-top: 0;
 	font-size: 6rem;
 	white-space: nowrap;
-	overflow-x: hidden;
 	text-overflow: ellipsis;
 	height: 100%;
 }

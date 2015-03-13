@@ -4951,24 +4951,26 @@ button.close {
   .slider-handle.triangle {
     background: transparent none; }
 
-body {
+body, html {
   /*set background image with overlay*/
+  height: 100%;
+  font-weight: 300;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: url("../img/background2.jpg") no-repeat center center fixed;
+  background-size: cover; }
+
+.wrapper {
   background: -webkit-linear-gradient(rgba(79, 158, 245, 0.4), rgba(79, 158, 245, 0.4)), url("../img/footer_lodyas.png");
   background: linear-gradient(rgba(79, 158, 245, 0.4), rgba(79, 158, 245, 0.4)), url("../img/footer_lodyas.png");
   /*fixes background image*/
   background-attachment: fixed;
-  font-weight: 300;
-  color: white;
-  font-family: 'Source Sans Pro', sans-serif; }
-
-.wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   overflow-x: hidden;
-  padding-top: 168px; }
+  padding-top: 168px;
+  max-width: 700px;
+  min-height: 100%;
+  margin: auto; }
 
 .button-submit {
   display: block;
@@ -5164,6 +5166,7 @@ body {
   font-family: 'Great Vibes', cursive;
   position: fixed;
   top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   text-align: center;
@@ -5176,7 +5179,6 @@ body {
   margin-top: 0;
   font-size: 6rem;
   white-space: nowrap;
-  overflow-x: hidden;
   text-overflow: ellipsis;
   height: 100%; }
 

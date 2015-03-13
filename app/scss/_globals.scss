@@ -7,31 +7,32 @@ $font-logo: 'Great Vibes', cursive;
 $font-main: 'Source Sans Pro', sans-serif;
 
 
-body{
+body, html{
 	/*set background image with overlay*/
+	height: 100%;
+	font-weight: 300;
+	color: white;
+	font-family: $font-main;
+	background: url("../img/background2.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+.wrapper{
 	background: linear-gradient(rgba(79, 158, 245, .4),rgba(79, 158, 245, .4)),
 		url("../img/footer_lodyas.png");
 
 	/*fixes background image*/
 	background-attachment:fixed;
+	position: relative;
 
-	font-weight: 300;
-	color: white;
-	font-family: $font-main;
-}
-
-.wrapper{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	
 	// don't allow horizontal scroll bar
 	overflow-x: hidden;
 
 	// account for fixed header
 	padding-top: 168px;
+	max-width: 700px;
+	min-height: 100%;
+	margin: auto;
 }
 
 .button-submit{
