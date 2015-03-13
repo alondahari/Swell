@@ -18,14 +18,20 @@ define([
 		},
 
 		initialize: function(){
+
 			this.render()
 			// hide defauld slider tooltip
 			this.model.set({tooltip: 'hide'})
+			if (!this.attributes.user.attributes._id) {
+				this.model.set({enabled: false})
+			}
+			console.log(this.model.toJSON())
 			this.slider = this.$('.rating-input-range').slider(this.model.toJSON())
 			var value = this.slider.slider('getValue')
 			var text = this.formatText(this.model.get('fieldName'), value)
 
-				this.$('.rating-value').text(text)
+			this.$('.rating-value').text(text)
+			
 		},
 
 		render: function(){
@@ -33,7 +39,7 @@ define([
 		},
 
 		updateRatings: function(){
-
+			if (!this.attributes.user.attributes._id) return false
 
 			// get value from slider
 			var value = this.slider.slider('getValue')

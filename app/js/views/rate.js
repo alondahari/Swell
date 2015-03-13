@@ -41,7 +41,6 @@ define([
 		],
 
 		initialize: function(){
-
 			this.render()
 			this.$('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
 		},
@@ -52,6 +51,10 @@ define([
 			$('.wrapper').html(this.el)
 			this.renderFields()
 			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
+
+			if (!this.attributes.user.attributes._id){
+				this.$('.help-text').removeClass('hidden')
+			}
 		},
 
 		/**
@@ -59,7 +62,7 @@ define([
 		 */
 		renderFields: function(){
 			_.each(this.fields, function(field){
-				var rateField = new RateField({model: new Rating(field), id: this.id})
+				var rateField = new RateField({model: new Rating(field), id: this.id, attributes: {user: this.attributes.user}})
 				this.$('.ratings').append(rateField.$el)
 			}, this)
 		}

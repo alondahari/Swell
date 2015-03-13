@@ -5036,8 +5036,8 @@ body, html {
   clear: both;
   color: rgba(184, 181, 240, 0.5); }
 
-.ratings .row:last-child {
-  margin-bottom: 20px; }
+.ratings {
+  margin-top: 10px; }
 
 .value-changed {
   color: #cc7e2d; }

@@ -62,21 +62,6 @@ var indexController = {
 		login(req, res)
 	},
 
-	// passportSignup: function(req, res) {
-
-	// 	validate('username', req, res)
-	// 	validate('password', req, res)
-
-	// 	User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
-	// 		if (err) {
-	// 			return res.send("Username already exists")
-	// 		}
-
-	// 		login(req, res)
-	// 	});
-
-	// },
-
 	getLocations: function(req, res) {
 
 		Spot.find(function(err, spots){
@@ -100,8 +85,7 @@ var indexController = {
 	},
 
 	setRating: function(req, res) {
-		// only makes sense once I add users
-		// 3600000 = a user can submit a new rating once an hour
+		console.log(req.body)
 		var recent = req.body.time - 3600000
 		var query = {spotId: req.body.spotId, fieldName: req.body.fieldName, time: {$gt: recent}}
 		Rating.remove(query, function(err){
