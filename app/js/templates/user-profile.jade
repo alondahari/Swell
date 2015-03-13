@@ -7,10 +7,12 @@ h1.header User Settings
 
 	.col-xs-6
 		p.field User Name:
-		p.field-input(data-field="username", contenteditable="true") Dude
+		p.field-input(data-field="username", contenteditable="true") #{user.username}
+		p.rating-save
 
 		p.field Email:
-		p.field-input(data-field="email", contenteditable="true") climbinghobo@gmail.com
+		p.field-input(data-field="email", contenteditable="true") #{user.email}
+		p.rating-save
 
 p.help-text Click on the fields or picture above to change them
 

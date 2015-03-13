@@ -41,7 +41,7 @@ define([
 		},
 
 		render: function(){
-			this.$el.html(this.template())
+			this.$el.html(this.template({user: this.model.toJSON()}))
 			this.settings.forEach(function(setting){
 				var field = new Setting(setting)
 				this.$('.setting-sliders').append(new RateField({model: field}).$el)
