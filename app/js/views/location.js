@@ -132,7 +132,7 @@ define([
 			this.fieldData[i].selected = selectedValue
 			this.populateNextField(i, selectedValue)
 
-			if (i === 2) {
+			if (selectedValue && i === 2) {
 				coords = this.getSpotAttrs('lat', 'lng')
 				this.centerMap(coords)
 			}
