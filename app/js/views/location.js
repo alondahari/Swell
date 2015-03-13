@@ -203,7 +203,7 @@ define([
 		},
 
 		searchbox: function(){
-			console.log(this.$('.typehead'))
+
 			this.$('.typehead').typeahead({
 				highlight: true
 			},

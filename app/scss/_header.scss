@@ -1,8 +1,6 @@
 .header{
 	font-family: 'Great Vibes', cursive;
-	position: fixed;
-	top: 0;
-	left: 0;
+
 	background-color: rgba(0,0,0,.3);
 	width: 100%;
 	text-align: center;
@@ -14,7 +12,7 @@
 	padding-top: 20px;
 	padding-left: 70px;
 	padding-right: 100px;
-	margin-top: 0;
+	margin: 0;
 	font-size: 6rem;
 	white-space: nowrap;
 	text-overflow: ellipsis;

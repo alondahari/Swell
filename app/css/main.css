@@ -4967,7 +4967,6 @@ body, html {
   background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
-  padding-top: 168px;
   max-width: 700px;
   min-height: 100%;
   margin: auto; }
@@ -4996,7 +4995,8 @@ body, html {
 .searchbox {
   font-weight: 400;
   color: black;
-  text-align: center; }
+  text-align: center;
+  margin-top: 40px; }
 
 .typehead {
   padding: 20px 10px;
@@ -5044,14 +5044,14 @@ body, html {
 
 .rate-nav {
   color: #cc7e2d;
-  position: fixed;
   width: 50%;
   height: 50px;
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
   padding-top: 11px;
   font-size: 2rem;
-  top: 96px; }
+  float: left;
+  margin-bottom: 30px; }
   .rate-nav:hover, .rate-nav:active {
     text-decoration: none; }
 
@@ -5060,7 +5060,7 @@ body, html {
   color: white; }
 
 .rate-nav + .rate-nav {
-  right: 0; }
+  float: right; }
 
 .rating-save {
   position: absolute;
@@ -5164,9 +5164,6 @@ body, html {
 
 .header {
   font-family: 'Great Vibes', cursive;
-  position: fixed;
-  top: 0;
-  left: 0;
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   text-align: center;
@@ -5176,7 +5173,7 @@ body, html {
   padding-top: 20px;
   padding-left: 70px;
   padding-right: 100px;
-  margin-top: 0;
+  margin: 0;
   font-size: 6rem;
   white-space: nowrap;
   text-overflow: ellipsis;
