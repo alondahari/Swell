@@ -42,8 +42,7 @@ define([
 
 			if (res.userId) {			
 				this.model.set(res)
-				// this.remove()
-				// window.location.hash = '/'
+				window.location.hash = ''
 			}
 
 		},

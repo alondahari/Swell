@@ -20,18 +20,20 @@ define([
 
 	return Backbone.Router.extend({
 
+		initialize: function(){
+			this.listenTo(this, 'route', this.removeViews)
+		},
+
 		routes:{
 			'': 'location',
 			'login': 'login',
 			'spot/:title/:id': 'rate',
-			'view-spot/:title/:id': 'viewSpot',
-			'submit-rating': 'submitRating',
-			'init-database': 'initDatabase',
-			'user': 'userProfile'
+			'view-spot/:title/:id': 'spot',
+			'user': 'user'
 		},
 
 		login: function(){
-			new Login({ model: this.user })
+			this.loginView = new Login({ model: this.user })
 
 		},
 
@@ -39,19 +41,19 @@ define([
 			if (this.spots) {
 				this.spots.trigger('fetched')
 				this.spots.getUserLocation()
-  			new LocationView({ collection: this.spots, attributes: {user: this.user} })
+  			this.locationView = new LocationView({ collection: this.spots, attributes: {user: this.user} })
 			} else {		
 			  this.spots = new Spots()
-  			new LocationView({ collection: this.spots, attributes: {user: this.user} })
+  			this.locationView = new LocationView({ collection: this.spots, attributes: {user: this.user} })
 			}
 
 		},
 
 		rate: function(title, id){
-			return new RateView({ id: id, attributes: {title: title, user: this.user}})
+			this.rateView = new RateView({ id: id, attributes: {title: title, user: this.user}})
 		},
 
-		viewSpot: function(title, id){
+		spot: function(title, id){
 			var ratings = new Ratings()
 
 			// get only ratings for the right spot
@@ -61,14 +63,24 @@ define([
 				collection.trigger('fetched')
 			}})
 
-			return new SpotView({ collection: ratings, id: id, attributes: {title: title, user: this.user}})
+			this.spotView = new SpotView({ collection: ratings, id: id, attributes: {title: title, user: this.user}})
 		},
 
-		userProfile: function(){
+		user: function(){
 
 			if (!this.user || !this.user.get('userId'))
 				return window.location.hash = ''
-			return new userProfile({model: this.user})
+			this.userView =  new userProfile({model: this.user})
+
+		},
+
+		removeViews: function (route) {
+			console.log(route)
+			if (this.loginView && route != 'login') this.loginView.remove()
+			if (this.locationView && route != 'location') this.locationView.remove()
+			if (this.rateView && route != 'rate') this.rateView.remove()
+			if (this.spotView && route != 'spot') this.spotView.remove()
+			if (this.userView && route != 'user') this.userView.remove()
 
 		}
 
