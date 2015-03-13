@@ -3,8 +3,9 @@ define([
 	'jade',
 	'models/setting',
 	'views/rate-field',
-	'text!templates/user-profile.jade'
-], function(Backbone, jade, Setting, RateField, template){
+	'text!templates/user-profile.jade',
+	'underscore'
+], function(Backbone, jade, Setting, RateField, template, _){
 
 	return Backbone.View.extend({
 
@@ -12,8 +13,11 @@ define([
 
 		template: jade.compile(template),
 
+		feedbackMessage: '',
+
 		events: {
-			'keydown .field-input': 'changeField',
+			'keyup .field-input': 'changeField',
+			'keydown .field-input': 'preventNewLine',
 			'blur .field-input': 'save'
 		},
 
@@ -35,39 +39,75 @@ define([
 		],
 
 		initialize: function(){
-			this.listenTo(this.model, 'sync', this.userUpdate)
+
+			this.cacheUser = this.model.toJSON()
+			this.listenTo(this.model, 'sync', this.setMessage)
+			this.listenTo(this.model, 'invalid', this.setMessage)
+			this.listenTo(this.model, 'error', this.setMessage)
+
 			this.render()
 
 		},
 
-		render: function(){
-			this.$el.html(this.template({user: this.model.toJSON()}))
+		log: function(){
+			console.log(arguments)
+		},
+
+		render: function(model, err){
+
+			this.$el.html(this.template({user: this.cacheUser, feedbackMessage: this.feedbackMessage}))
+
 			this.settings.forEach(function(setting){
 				var field = new Setting(setting)
 				this.$('.setting-sliders').append(new RateField({model: field}).$el)
 			})
 		},
 
-		changeField: function(e){
+		preventNewLine: function(e){
 			if(e.which === 13){
 				e.preventDefault()
 				$(e.target).blur()
 			}
 		},
 
-		save: function(e){
+		changeField: function(e){
 			var $target = $(e.target)
 			var field = $target.data('field')
 			var newValue = $target.text()
-			$target.next().text('Saving...')
+			this.feedbackMessage =  'Saving...'
 			this.model.attributes[field] = newValue
+			console.log(this.model.toJSON())
+		},
+
+		save: function(e){
+
+			if (_.isEqual(this.cacheUser, this.model.toJSON())) return false
+				
 			this.model.url = '/user'
 			this.model.save()
 		},
 
-		userUpdate: function(){
-			console.log(arguments)
+		userUpdate: function(model, err){
+			
+			this.$('.saving').text( text ).removeClass('saving')
+
+		},
+
+		setMessage: function(model, err){
+
+			if (err.msg || err.responseText) {
+				this.model.set(this.cacheUser)
+				this.feedbackMessage = err.msg || err.responseText
+			}
+			if (!_.isEqual(this.cacheUser, this.model.toJSON())) {
+
+				this.cacheUser = this.model.toJSON()
+				this.feedbackMessage = 'New Settings Saved!'
+			}
+
+			this.render()
 		}
+
 
 
 	})

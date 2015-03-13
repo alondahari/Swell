@@ -1,4 +1,8 @@
 .field{
+	clear: both;
+}
+
+.field p:first-child{
 	margin-bottom: 0px;
 	color: $color-secondary-text;
 }
@@ -15,8 +19,9 @@
 
 .help-text{
 	text-align: center;
+	font-size: 1.8rem;
 	color: $color-secondary-text;
-	margin: 15px 0 0;
+	margin: 25px 0 0;
 }
 
 .user-avatar{
@@ -32,4 +37,13 @@
 .setting-sliders{
 	margin-top: 30px;
 	margin-bottom: -10px;
+}
+
+.settings-save{
+	font-size: 2rem;
+	text-align: center;
+	color: $color-info-dimmed;
+	margin-top: 5px;
+	margin-bottom: -30px;
+	height: 28px;
 }

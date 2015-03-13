@@ -47,7 +47,13 @@ var authenticationController = {
       email: req.body.email
     }}, function(err, user){
       if (err) {
-        res.send(err)
+        var errorMessage = 'An error occured, try again';
+
+        if(err.code === 11000){
+          errorMessage = 'This user already exists.';
+        }
+
+        return res.send(errorMessage);
       } else {
         var resUser = user.toObject()
         delete resUser.password
@@ -112,7 +118,7 @@ var authenticationController = {
       // information. We can customize the printed message based on
       // the error mongoose encounters
       if(err) {
-        console.log(err)
+
         // By default, we'll show a generic message...
         var errorMessage = 'An error occured, please try again';
 

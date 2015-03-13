@@ -131,7 +131,7 @@ define([
 			var selectedValue = this.getSelectedValue(i)
 			this.fieldData[i].selected = selectedValue
 			this.populateNextField(i, selectedValue)
-			
+
 			if (i === 2) {
 				coords = this.getSpotAttrs('lat', 'lng')
 				this.centerMap(coords)
@@ -203,6 +203,7 @@ define([
 		},
 
 		searchbox: function(){
+			console.log(this.$('.typehead'))
 			this.$('.typehead').typeahead({
 				highlight: true
 			},

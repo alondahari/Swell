@@ -5120,6 +5120,9 @@ body {
   font-weight: 200; }
 
 .field {
+  clear: both; }
+
+.field p:first-child {
   margin-bottom: 0px;
   color: #cc7e2d; }
 
@@ -5133,8 +5136,9 @@ body {
 
 .help-text {
   text-align: center;
+  font-size: 1.8rem;
   color: #cc7e2d;
-  margin: 15px 0 0; }
+  margin: 25px 0 0; }
 
 .user-avatar {
   border-radius: 40px; }
@@ -5147,6 +5151,14 @@ body {
 .setting-sliders {
   margin-top: 30px;
   margin-bottom: -10px; }
+
+.settings-save {
+  font-size: 2rem;
+  text-align: center;
+  color: rgba(184, 181, 240, 0.5);
+  margin-top: 5px;
+  margin-bottom: -30px;
+  height: 28px; }
 
 .header {
   font-family: 'Great Vibes', cursive;
@@ -5173,7 +5185,7 @@ body {
   right: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2rem;
-  top: 40px; }
+  top: 35px; }
 
 .header-login:hover, .header-login:active {
   text-decoration: underline; }
@@ -5182,7 +5194,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  margin-top: -16px; }
+  margin-top: -13px; }
 
 .button-back {
   font-size: 3rem;
