@@ -40,9 +40,9 @@ var authenticationController = {
   },
 
   updateUser: function(req, res){
-    console.log(req.body)
-    var query = User.where({_id: req.body.userId})
-    query.findOneAndUpdate({_id: req.body.userId}, {$set: {
+
+    var query = User.where({_id: req.body._id})
+    query.findOneAndUpdate({$set: {
       username: req.body.username,
       email: req.body.email
     }}, function(err, user){

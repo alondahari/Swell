@@ -1,6 +1,8 @@
 .header
 	h1 User Settings
 	a.glyphicon.glyphicon-menu-left.button-back(href="#")
+		
+p.rating-save
 
 .row
 	img.user-avatar.col-xs-4.col-xs-offset-1(src='../img/default-avatar.jpg')
@@ -8,11 +10,9 @@
 	.col-xs-6
 		p.field User Name:
 		p.field-input(data-field="username", contenteditable="true") #{user.username}
-		p.rating-save
 
 		p.field Email:
 		p.field-input(data-field="email", contenteditable="true") #{user.email}
-		p.rating-save
 
 p.help-text Click on the fields or picture above to change them
 
