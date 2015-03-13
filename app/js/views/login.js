@@ -39,8 +39,8 @@ define([
 		},
 
 		loginSuccess: function(model, res){
-
-			if (res.userId) {			
+			console.log(res)
+			if (res.userId) {
 				this.model.set(res)
 				window.location.hash = ''
 			}
@@ -62,6 +62,7 @@ define([
 		},
 
 		highlightError: function(model, msg){
+			console.log(model)
 			$('input[name="' + msg.field + '"').parent().addClass('has-error').removeClass('has-success')
 
 		},

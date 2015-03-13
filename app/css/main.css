@@ -5151,6 +5151,11 @@ body {
 .user-avatar {
   border-radius: 40px; }
 
+.setting-save {
+  color: rgba(184, 181, 240, 0.5);
+  font-size: 1.7rem;
+  float: right; }
+
 .header {
   font-family: 'Great Vibes', cursive;
   font-size: 4rem;

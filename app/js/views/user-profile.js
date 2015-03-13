@@ -59,6 +59,7 @@ define([
 			var $target = $(e.target)
 			var field = $target.data('field')
 			var newValue = $target.text()
+			$target.next().text('Saving...')
 			this.model.attributes[field] = newValue
 			this.model.url = '/user'
 			this.model.save()

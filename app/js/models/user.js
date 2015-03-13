@@ -11,6 +11,7 @@ define(['backbone'], function(Backbone){
 		},
 
 		validate: function(attrs){
+			console.log(attrs)
 			if (attrs.email && !attrs.email.match(this.regex.email)) {
 				return {field: 'email', msg: 'Please enter a valid email address'}
 			}

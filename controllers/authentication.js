@@ -1,6 +1,6 @@
 var passport = require('passport');
 var User = require('../models/user');
-
+var _ = require('underscore')
 
 /**
  * A utility function (since we'll use it a couple times)
@@ -19,7 +19,12 @@ var performLogin = function(req, res, next, user){
     if(err) return next(err);
 
     // Otherwise, send the user to the homepage.
-    return res.send({userId: user._id, email: user.email})
+    var resUser = {}
+    resUser = _.extend(resUser, user)
+    delete resUser.password
+    resUser.userId = 'resUser._id'
+    console.log('user', resUser)
+    return res.send(resUser)
   });
 };
 

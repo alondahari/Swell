@@ -36,6 +36,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^1.0.0",
     "request": "^2.53.0",
-    "require": "^2.4.17"
+    "require": "^2.4.17",
+    "underscore": "^1.8.2"
   }
 }
