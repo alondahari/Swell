@@ -30,9 +30,29 @@ var authenticationController = {
 
   user: function(req, res){
     if (req.user) {
-      return res.send({userId: req.user._id, email: req.user.email})
+      var user = req.user
+      delete user.password
+      return res.send(user)
     }
-    return res.send(null)
+    return res.send({})
+  },
+
+  updateUser: function(req, res){
+
+    var query = User.where({_id: req.body.userId})
+    query.findOneAndUpdate({_id: req.body.userId}, {$set: {
+      username: req.body.username,
+      email: req.body.email
+    }}, function(err, user){
+      if (err) {
+        res.send(err)
+      } else {
+        var user = req.user
+        delete user.password
+        return res.send(user)
+      }
+    })
+
   },
 
   // This is the post handler for any incoming login attempts.

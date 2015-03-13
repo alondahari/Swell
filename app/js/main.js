@@ -34,7 +34,8 @@ require([
     // check for loged in user
     var user = new User()
     user.fetch({success: function(model, res){
-      new Router().user = res
+      var router = new Router()
+      router.user = user.set(res)
       Backbone.history.start()
     }})
 

@@ -2,10 +2,10 @@ define([
 	'backbone',
 	'jade',
 	'typehead',
-	// 'googleMaps',
 	'views/location-select',
+	'views/avatar',
 	'text!templates/location.jade'
-], function(Backbone, jade, typehead, Select, template){
+], function(Backbone, jade, typehead, Select, Avatar, template){
 
 	var substringMatcher = function(strs) {
 		return function findMatches(q, cb) {
@@ -80,7 +80,6 @@ define([
 		initialize: function(){
 			// add loader here
 
-
 			this.listenTo(this.collection, 'fetched', this.render)
 
 		},
@@ -88,6 +87,7 @@ define([
 		render: function(){
 
 			// remove loader here
+
 
 			// In render so there's a collection to work with
 			this.listenTo(this.collection, 'geo', this.getClosestSpot)
@@ -103,6 +103,8 @@ define([
 			this.renderFields()
 
 			this.searchbox()
+
+			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
 		},
 
 		renderFields: function(){
@@ -228,6 +230,7 @@ define([
 		},
 
 		getSpotAttrs: function(){
+
 			var spot = this.collection.findWhere({
 				continent: this.fieldData[0].selected,
 				region: this.fieldData[1].selected,
@@ -240,7 +243,7 @@ define([
 
 		goToSpot: function(e){
 			e.preventDefault()
-			
+
 			id = this.getSpotAttrs('_id')
 			location = '#spot/' + this.fieldData[2].selected + '/' + id
 

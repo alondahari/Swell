@@ -24,7 +24,7 @@ define([
 		},
 
 		events: {
-			'click .btn': 'submit',
+			'click .button-submit': 'submit',
 			'focus input': 'clearError',
 			'keyup input': 'validate'
 		},
@@ -39,8 +39,12 @@ define([
 		},
 
 		loginSuccess: function(model, res){
-			this.model.set(res)
-			window.location.hash = 'location'
+
+			if (res.userId) {			
+				this.model.set(res)
+				// this.remove()
+				// window.location.hash = '/'
+			}
 
 		},
 

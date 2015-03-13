@@ -1,9 +1,8 @@
 define([
 	'backbone',
 	'jade',
-	'slider',
 	'text!templates/view-rating.jade'
-], function(Backbone, jade, slider, template){
+], function(Backbone, jade, template){
 
 	return Backbone.View.extend({
 
@@ -12,6 +11,7 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
+
 			this.render()
 
 			if (this.attributes.fieldName === 'wind') {

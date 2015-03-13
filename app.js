@@ -32,8 +32,11 @@ app.get('/seed', indexCtrl.seed)
 app.get('/', indexCtrl.index)
 
 app.get('/user', authenticationCtrl.user)
-app.post('/login', authenticationCtrl.login)
-app.post('/signup', authenticationCtrl.signup)
+app.post('/user', authenticationCtrl.updateUser)
+app.put('/user', authenticationCtrl.updateUser)
+
+app.use('/login', authenticationCtrl.login)
+app.use('/signup', authenticationCtrl.signup)
 app.use('/logout', authenticationCtrl.logout)
 
 app.get('/googleMaps', indexCtrl.getMaps)

@@ -21,8 +21,8 @@ define([
 	return Backbone.Router.extend({
 
 		routes:{
-			'': 'login',
-			'location': 'location',
+			'': 'location',
+			'login': 'login',
 			'spot/:title/:id': 'rate',
 			'view-spot/:title/:id': 'viewSpot',
 			'submit-rating': 'submitRating',
@@ -36,39 +36,39 @@ define([
 		},
 
 		location: function(){
-			console.log(this.user.get('userId'))
-			if (!this.user.get('userId')) return this.navigate('')
 			if (this.spots) {
 				this.spots.trigger('fetched')
 				this.spots.getUserLocation()
-  			new LocationView({ collection: this.spots })
+  			new LocationView({ collection: this.spots, attributes: {user: this.user} })
 			} else {		
 			  this.spots = new Spots()
-  			new LocationView({ collection: this.spots })
+  			new LocationView({ collection: this.spots, attributes: {user: this.user} })
 			}
 
 		},
 
 		rate: function(title, id){
-			if (!this.user) return this.navigate('')
-			return new RateView({ id: id, attributes: {title: title}})
+			return new RateView({ id: id, attributes: {title: title, user: this.user}})
 		},
 
 		viewSpot: function(title, id){
-			if (!this.user) return this.navigate('')
 			var ratings = new Ratings()
 
 			// get only ratings for the right spot
 			ratings.url = '/ratings/' + id
 			
-			ratings.fetch({success: function(){
-				return new SpotView({ collection: ratings, id: id, attributes: {title: title}})
+			ratings.fetch({success: function(collection){
+				collection.trigger('fetched')
 			}})
+
+			return new SpotView({ collection: ratings, id: id, attributes: {title: title, user: this.user}})
 		},
 
 		userProfile: function(){
-			if (!this.user) return this.navigate('')
-			return new userProfile()
+
+			if (!this.user || !this.user.get('userId'))
+				return window.location.hash = ''
+			return new userProfile({model: this.user})
 
 		}
 

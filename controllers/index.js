@@ -62,20 +62,20 @@ var indexController = {
 		login(req, res)
 	},
 
-	passportSignup: function(req, res) {
+	// passportSignup: function(req, res) {
 
-		validate('username', req, res)
-		validate('password', req, res)
+	// 	validate('username', req, res)
+	// 	validate('password', req, res)
 
-		User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
-			if (err) {
-				return res.send("Username already exists")
-			}
+	// 	User.register(new User({ username : req.body.username }), req.body.password, function(err, account) {
+	// 		if (err) {
+	// 			return res.send("Username already exists")
+	// 		}
 
-			login(req, res)
-		});
+	// 		login(req, res)
+	// 	});
 
-	},
+	// },
 
 	getLocations: function(req, res) {
 

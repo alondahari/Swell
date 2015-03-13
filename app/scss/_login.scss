@@ -45,7 +45,7 @@
 
 .logo{
 	text-align: center;
-	font-family: 'Great Vibes', cursive;
+	font-family: $font-logo;
 	margin-top: -50px;
 	font-size: 12rem;
 	margin-bottom: -20px;
@@ -54,7 +54,7 @@
 }
 
 .tag-line{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: $font-main;
 	text-align: center;
 	font-size: 1.8rem;
 	font-weight: 200;
