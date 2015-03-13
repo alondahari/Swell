@@ -4968,7 +4968,7 @@ body {
   right: 0;
   bottom: 0;
   overflow-x: hidden;
-  padding-top: 120px; }
+  padding-top: 168px; }
 
 .button-submit {
   display: block;
@@ -5018,19 +5018,7 @@ body {
   margin-bottom: 30px;
   height: 300px; }
 
-.button-back {
-  font-size: 2.5rem;
-  position: absolute;
-  left: 5px;
-  top: 22px;
-  color: white; }
-  .button-back:hover, .button-back:active {
-    text-decoration: none; }
-
-.rating-field {
-  margin-top: 10px; }
-
-.slider {
+.rating-field, .slider {
   margin-bottom: 20px; }
 
 .rating-header, .rating-display {
@@ -5054,14 +5042,14 @@ body {
 
 .rate-nav {
   color: #cc7e2d;
+  position: fixed;
   width: 50%;
   height: 50px;
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
   padding-top: 11px;
   font-size: 2rem;
-  position: fixed;
-  top: 68px; }
+  top: 96px; }
   .rate-nav:hover, .rate-nav:active {
     text-decoration: none; }
 
@@ -5156,24 +5144,36 @@ body {
   font-size: 1.7rem;
   float: right; }
 
+.setting-sliders {
+  margin-top: 30px;
+  margin-bottom: -10px; }
+
 .header {
   font-family: 'Great Vibes', cursive;
-  font-size: 4rem;
   position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
-  margin-top: 0;
   text-align: center;
-  padding: 20px 0 10px;
   z-index: 2; }
+
+.header h1 {
+  padding-top: 20px;
+  padding-left: 70px;
+  padding-right: 100px;
+  margin-top: 0;
+  font-size: 6rem;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  height: 100%; }
 
 .header-login {
   position: absolute;
   right: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2rem;
-  top: 26px; }
+  top: 40px; }
 
 .header-login:hover, .header-login:active {
   text-decoration: underline; }
@@ -5182,7 +5182,16 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  margin-top: -14px; }
+  margin-top: -16px; }
+
+.button-back {
+  font-size: 3rem;
+  position: absolute;
+  left: 15px;
+  top: 30px;
+  color: white; }
+  .button-back:hover, .button-back:active {
+    text-decoration: none; }
 
 .slider.slider-horizontal {
   width: 100%; }

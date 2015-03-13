@@ -87,7 +87,15 @@ define([
 		render: function(){
 
 			// remove loader here
-
+			var cache = 0
+			var result
+			this.collection.each(function(spot){
+				if (spot.get('spot').length > cache) {
+					result = spot
+					cache = spot.get('spot').length
+				}
+			})
+			console.log(result)
 
 			// In render so there's a collection to work with
 			this.listenTo(this.collection, 'geo', this.getClosestSpot)
@@ -171,28 +179,17 @@ define([
 		},
 
 		typeaheadChange: function(){
-			var text = $('.tt-input').val(),
-				spot, region, continent
+			var text = $('.tt-input').val()
 
-			if (text.match(/\(/g)) {
-				// spot
-				var parts = text.split(' (')
-				var ending = parts.pop()
-				ending = ending.split(', ')
+				// parding the spot
+				var parts = text.split(' ('),
+					ending = parts.pop().split(', '),
+					continent = ending.pop().split(')')[0],
+					region = ending.join(', '),
+					spot = parts.join(' (')
 
-				this.setSelects(ending.pop().split(')')[0], ending.join(', '), parts.join(' ('))
+				this.setSelects(continent, region, spot)
 
-
-			} else if (text.match(/,/g)) {
-				// region
-				var arr = text.split(', ')
-
-				this.setSelects(arr.pop(), arr.join(', '))
-
-			} else {
-				// set continent to text
-				this.setSelects(text)
-			}
 
 		},
 
@@ -204,20 +201,11 @@ define([
 		},
 
 		getTypeaheadArr: function(){
-			var arr = [],
-				continents = [],
-				regions = [],
-				spots = []
 
-			_.each(this.collection.toJSON(), function(spot){
-				continents.push(spot.continent)
-				regions.push(spot.region + ', ' + spot.continent)
-				spots.push(spot.spot + ' (' + spot.region + ', ' + spot.continent + ')')
+			return _.map(this.collection.toJSON(), function(spot){
+				return spot.spot + ' (' + spot.region + ', ' + spot.continent + ')'
 			})
 
-			arr = continents.concat(regions, spots)
-
-			return _.unique(arr)
 		},
 
 		searchbox: function(){

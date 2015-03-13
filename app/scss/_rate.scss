@@ -1,20 +1,6 @@
-.button-back{
-	font-size: 2.5rem;
-	position: absolute;
-	left: 5px;
-	top: 22px;
-	color: white;
 
-	&:hover, &:active{
-		text-decoration: none;
-	}
-}
 
-.rating-field{
-	margin-top: 10px;
-}
-
-.slider{
+.rating-field, .slider{
 	margin-bottom: 20px;
 }
 
@@ -43,9 +29,6 @@
 
 }
 
-.slider.slider-horizontal{
-	// shame
-}
 
 .value-changed{
 	color: $color-secondary-text;
@@ -53,14 +36,14 @@
 
 .rate-nav{
 	color: $color-secondary-text;
+	position: fixed;
 	width: 50%;
 	height: 50px;
 	background-color: rgba(0,0,0,.4);
 	text-align: center;
 	padding-top: 11px;
 	font-size: 2rem;
-	position: fixed;
-	top: 68px;
+	top: 96px;
 	
 	&:hover, &:active{
 		text-decoration: none;
@@ -81,4 +64,3 @@
 	font-size: 1.8rem;
 	color: $color-info-dimmed;
 }
-
