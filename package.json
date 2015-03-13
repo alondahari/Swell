@@ -1,9 +1,7 @@
 {
-  "name": "CordovaApp",
-  "version": "1.0.0",
-  "description": "Cordova app description",
-  "homepage": "http://craftti.com.br",
-  "author": "Eric Chaves <eric@craftti.com.br>",
+  "name": "Swell",
+  "version": "0.1.0",
+  "author": "Alon Dahari <climbinghobo@gmail.com>",
   "devDependencies": {
     "amd-optimize": "^0.4.3",
     "del": "^0.1.3",

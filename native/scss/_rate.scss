@@ -1,0 +1,66 @@
+
+
+.rating-field, .slider{
+	margin-bottom: 20px;
+}
+
+.rating-header, .rating-display{
+	font-size: 2rem;
+	float: left;
+}
+
+.rating-display{
+	float: right;
+}
+
+.rating-info{
+	// margin-top: 5px;
+	margin-bottom: 0px;
+
+	float: right;
+	clear: both;
+	color: $color-info-dimmed;
+}
+
+
+// add vertical space before submit button
+.ratings .row:last-child{
+	margin-bottom: 20px;
+
+}
+
+
+.value-changed{
+	color: $color-secondary-text;
+}
+
+.rate-nav{
+	color: $color-secondary-text;
+	position: fixed;
+	width: 50%;
+	height: 50px;
+	background-color: rgba(0,0,0,.4);
+	text-align: center;
+	padding-top: 11px;
+	font-size: 2rem;
+	top: 96px;
+	
+	&:hover, &:active{
+		text-decoration: none;
+	}
+}
+.rate-current{
+	background-color: transparent;
+	color: white;
+}
+.rate-nav + .rate-nav{
+	right: 0;
+}
+
+.rating-save{
+	position: absolute;
+	right: 12px;
+	top: 76px;
+	font-size: 1.8rem;
+	color: $color-info-dimmed;
+}
