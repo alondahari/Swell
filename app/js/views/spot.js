@@ -1,12 +1,11 @@
 define([
 	'backbone',
 	'jade',
-	'moment',
 	'views/avatar',
 	'views/view-rating',
 	'models/rating',
 	'text!templates/view.jade'
-], function(Backbone, jade, moment, Avatar, ViewRating, Rating, template){
+], function(Backbone, jade, Avatar, ViewRating, Rating, template){
 	'use strict'
 
 	return Backbone.View.extend({

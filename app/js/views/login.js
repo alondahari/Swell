@@ -8,7 +8,7 @@ define([
 
 	return Backbone.View.extend({
 
-		el: $('.wrapper'),
+		el: '.wrapper',
 
 		template: jade.compile(template),
 

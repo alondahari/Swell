@@ -40,6 +40,8 @@ define([
 			}
 		],
 
+		el: '.wrapper',
+
 		initialize: function(){
 			this.render()
 			this.$('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
@@ -47,8 +49,7 @@ define([
 
 		render: function(){
 			this.$el.html(this.template({header: this.attributes.title}))
-			// not setting .wrapper as $el to keep all events within scope
-			$('.wrapper').html(this.el)
+
 			this.renderFields()
 			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
 
