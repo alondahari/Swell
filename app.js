@@ -43,7 +43,7 @@ app.get('/googleMaps', indexCtrl.getMaps)
 
 app.get('/locations', indexCtrl.getLocations)
 
-app.get('/rating/:id', ratingsCtrl.getRatings)
+app.get('/rating/:fieldName/:id', ratingsCtrl.getRatings)
 app.post('/rating', ratingsCtrl.setRating)
 app.put('/rating', ratingsCtrl.setRating)
 

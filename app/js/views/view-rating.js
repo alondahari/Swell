@@ -11,19 +11,21 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
-			console.log(this.model)
-			this.model.fetch({success: function () {
-				console.log(arguments)
+			var view = this
+			this.model.fetch({success: function (model, res) {
+				console.log(res)
+				_.extend(view.attributes, res)
+				view.render()
+				if (view.attributes.fieldName === 'wind') {
+					view.$('.rating-value').text(view.formatWindValue(view.attributes.average))
+				}
 			}})
 
-			this.render()
 
-			if (this.attributes.fieldName === 'wind') {
-				this.$('.rating-value').text(this.formatWindValue(this.attributes.value))
-			}
 		},
 
 		render: function(){
+			console.log(this)
 			this.$el.html(this.template(this.attributes))
 		},
 

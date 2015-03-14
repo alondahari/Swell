@@ -58,10 +58,8 @@ define([
 		renderFields: function(){
 
 			_.each(this.fields, function(field){
-				console.log(this.id)
-				var url = 'rating/' + this.id
 				var rating = new Rating()
-				rating.url = url
+				rating.url = 'rating/' + field.fieldName + '/' + this.id
 				var rateField = new ViewRating({model: rating, attributes: field})
 				this.$('.ratings').append(rateField.$el)
 				
