@@ -23,6 +23,7 @@ var Rating = mongoose.model('ratings', {
 	userId: Number,
 	time: Number,
 	spotId: String,
+	userId: String,
 	value: Number
 })
 
@@ -86,8 +87,8 @@ var indexController = {
 
 	setRating: function(req, res) {
 		console.log(req.body)
-		var recent = req.body.time - 3600000
-		var query = {spotId: req.body.spotId, fieldName: req.body.fieldName, time: {$gt: recent}}
+
+		var query = {spotId: req.body.spotId, fieldName: req.body.fieldName, userId: req.body.userId}
 		Rating.remove(query, function(err){
 			if (!err) {
 				var rating = new Rating(req.body)
