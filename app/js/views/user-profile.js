@@ -7,11 +7,6 @@ define([
 	'underscore'
 ], function(Backbone, jade, Setting, RateField, template, _){
 
-	function hasGetUserMedia() {
-	  return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
-	            navigator.mozGetUserMedia || navigator.msGetUserMedia);
-	}
-
 
 	return Backbone.View.extend({
 
@@ -45,10 +40,19 @@ define([
 		],
 
 		initialize: function(){
-			if (hasGetUserMedia()) {
-			  console.log('good to go!')
+			navigator.getUserMedia  = navigator.getUserMedia ||
+																navigator.webkitGetUserMedia ||
+																navigator.mozGetUserMedia ||
+																navigator.msGetUserMedia;
+
+			// var video = document.querySelector('video');
+
+			if (navigator.getUserMedia) {
+				navigator.getUserMedia({audio: true, video: true}, function(stream) {
+					video.src = window.URL.createObjectURL(stream);
+				}, errorCallback);
 			} else {
-			  console.log('getUserMedia() is not supported in your browser');
+				video.src = 'somevideo.webm'; // fallback.
 			}
 
 			this.cacheUser = this.model.toJSON()
