@@ -41,10 +41,8 @@ define([
 		initialize: function(){
 
 			this.cacheUser = this.model.toJSON()
-			this.listenTo(this.model, 'sync', this.setMessage)
-			this.listenTo(this.model, 'invalid', this.setMessage)
-			this.listenTo(this.model, 'error', this.setMessage)
-
+			this.listenTo(this.model, 'sync invalid error', this.setMessage)
+			
 			this.render()
 
 		},

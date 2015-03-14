@@ -96,7 +96,6 @@ module.exports = {
 	},
 
 	setRating: function(req, res) {
-		console.log(req.body)
 
 		var query = {spotId: req.body.spotId, fieldName: req.body.fieldName, userId: req.body.userId}
 		Rating.remove(query, function(err){

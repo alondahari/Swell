@@ -38,7 +38,10 @@ define([
 		},
 
 		updateRatings: function(){
-			if (!this.attributes.user.attributes._id) return false
+			if (!this.attributes.user.attributes._id){
+				this.pleaseLogin()
+				return false
+			} 
 
 			// get value from slider
 			var value = this.slider.slider('getValue')
@@ -91,7 +94,13 @@ define([
 			return formats[field] ? formats[field][val] : val
 		},
 
-		formatMeasurements: function(val){
+		pleaseLogin: function () {
+			var $text = this.$('.help-text')
+			console.log($text)
+			$text.addClass('pulse')
+			// window.setTimeout(function () {
+			// 	$text.removeClass('pulse')
+			// }, 1000)
 		}
 
 	})
