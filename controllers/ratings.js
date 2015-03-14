@@ -83,7 +83,7 @@ module.exports = {
 	getNumberOfVotes: function(field){
 		return this.filterRatings(field).length
 
-	}
+	},
 
 	setRating: function(req, res) {
 		console.log(req.body)

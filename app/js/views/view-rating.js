@@ -11,7 +11,7 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
-
+			console.log(this.model)
 			this.model.fetch({success: function () {
 				console.log(arguments)
 			}})

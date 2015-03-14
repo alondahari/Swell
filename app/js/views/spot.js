@@ -4,7 +4,7 @@ define([
 	'moment',
 	'views/avatar',
 	'views/view-rating',
-	'models/rating'
+	'models/rating',
 	'text!templates/view.jade'
 ], function(Backbone, jade, moment, Avatar, ViewRating, Rating, template){
 	'use strict'
@@ -56,9 +56,12 @@ define([
 		 * refactor: make into a seperate view
 		 */
 		renderFields: function(){
+
 			_.each(this.fields, function(field){
+				console.log(this.id)
 				var url = 'rating/' + this.id
-				var rating = new Rating({url: url})
+				var rating = new Rating()
+				rating.url = url
 				var rateField = new ViewRating({model: rating, attributes: field})
 				this.$('.ratings').append(rateField.$el)
 				
