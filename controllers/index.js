@@ -1,9 +1,7 @@
-var app = require('../app.js')
 var mongoose = require('mongoose')
 var request = require('request')
 var db = require('../models/db.js')
 
-var passportLocalMongoose = require('passport-local-mongoose')
 var mapsAPI
 
 mapsAPI = (process.env.NODE_ENV === 'development') ?
@@ -16,15 +14,6 @@ var Spot = mongoose.model('locations', {
 	spot: String,
 	lat: Number,
 	lng: Number
-})
-
-var Rating = mongoose.model('ratings', {
-	fieldName: String,
-	userId: Number,
-	time: Number,
-	spotId: String,
-	userId: String,
-	value: Number
 })
 
 var validate = {
@@ -43,7 +32,7 @@ var validate = function(field, req, res){
  * routes
  */
 
-var indexController = {
+module.exports = {
 
 	index: function(req, res){
 		res.render('index')
@@ -54,13 +43,6 @@ var indexController = {
 			var spot = new Spot(doc)
 			spot.save()
 		})
-	},
-
-	passportLogin: function(req, res) {
-		validate('username', req, res)
-		validate('password', req, res)
-
-		login(req, res)
 	},
 
 	getLocations: function(req, res) {
@@ -74,44 +56,9 @@ var indexController = {
 		})
 	},
 
-	getRatings: function(req, res) {
-
-		Rating.find({spotId: req.params.id}, function(err, ratings){
-			if (!err) {
-				res.send(ratings)
-			} else {
-				console.log(err);
-			}
-		})
-	},
-
-	setRating: function(req, res) {
-		console.log(req.body)
-
-		var query = {spotId: req.body.spotId, fieldName: req.body.fieldName, userId: req.body.userId}
-		Rating.remove(query, function(err){
-			if (!err) {
-				var rating = new Rating(req.body)
-				rating.save(function(err, model){
-					if (!err) {
-						res.send(model)
-						
-					} else {
-						res.send('error creating record:', err)
-					}
-				})
-			} else {
-				res.send('error removing record:', err)
-			}
-		})
-		
-	},
-
 	getMaps: function(req, res){
 		request('https://maps.googleapis.com/maps/api/js?key=' + mapsAPI, function(err, response, body){
 				res.send(body)
 		})
 	}
 };
-
-module.exports = indexController;

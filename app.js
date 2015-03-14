@@ -7,6 +7,7 @@ var passport = require('passport')
 var mongoose = require('mongoose')
 
 var indexCtrl = require('./controllers/index')
+var ratingsCtrl = require('./controllers/ratings')
 var authenticationCtrl = require('./controllers/authentication')
 var passportConfig = require('./config/passport')
 
@@ -42,9 +43,9 @@ app.get('/googleMaps', indexCtrl.getMaps)
 
 app.get('/locations', indexCtrl.getLocations)
 
-app.get('/ratings/:id', indexCtrl.getRatings)
-app.post('/ratings', indexCtrl.setRating)
-app.put('/ratings', indexCtrl.setRating)
+app.get('/rating/:id', ratingsCtrl.getRatings)
+app.post('/rating', ratingsCtrl.setRating)
+app.put('/rating', ratingsCtrl.setRating)
 
 
 // We can prevent unauthorized access to any route handler defined after this

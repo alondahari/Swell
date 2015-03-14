@@ -3,11 +3,13 @@ Phase 1:
 
 Phase 2:
   ☐ persist rating view for user
+  ☐ set wrapper to $el
   ✔ add username validation @done (15-03-13 19:19)
   ☐ make settings functional + password change
   ☐ build into cordova
   ☐ move average calculation to back-end
   ☐ refactor and split location.js
+  ☐ Add picture uploads
 
 Phase 3:
   ☐ Add password reset mechanism
@@ -18,8 +20,7 @@ Phase 3:
 Phase 4:
   ☐ Add facebook login
   ☐ handle 404
-  ☐ Add picture uploads
-  ☐ Split website and app
+  ✔ Split website and app @done (15-03-13 19:28)
   ☐ Optimize location fetch (app: fetch all, web: ajax for search, fetch and store according to user location and select choices)
 
 Phase 5:

@@ -12,6 +12,10 @@ define([
 
 		initialize: function(){
 
+			this.model.fetch({success: function () {
+				console.log(arguments)
+			}})
+
 			this.render()
 
 			if (this.attributes.fieldName === 'wind') {

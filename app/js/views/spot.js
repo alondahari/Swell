@@ -4,8 +4,9 @@ define([
 	'moment',
 	'views/avatar',
 	'views/view-rating',
+	'models/rating'
 	'text!templates/view.jade'
-], function(Backbone, jade, moment, Avatar, ViewRating, template){
+], function(Backbone, jade, moment, Avatar, ViewRating, Rating, template){
 	'use strict'
 
 	return Backbone.View.extend({
@@ -35,12 +36,10 @@ define([
 		},
 
 		initialize: function(){
-			this.listenTo(this.collection, 'fetched', this.render)
+			this.render()
 		},
 
 		render: function(){
-			
-			this.getAverages()
 
 			this.$el.html(this.template({header: this.attributes.title}))
 			// not setting .wrapper as $el to keep all events within scope
@@ -58,7 +57,9 @@ define([
 		 */
 		renderFields: function(){
 			_.each(this.fields, function(field){
-				var rateField = new ViewRating({attributes: field})
+				var url = 'rating/' + this.id
+				var rating = new Rating({url: url})
+				var rateField = new ViewRating({model: rating, attributes: field})
 				this.$('.ratings').append(rateField.$el)
 				
 			}, this)
