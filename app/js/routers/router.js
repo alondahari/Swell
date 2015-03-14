@@ -68,6 +68,7 @@ define([
 
 		user: function(){
 
+				console.log(this.user)
 			if (!this.user || !this.user.get('_id'))
 				return window.location.hash = ''
 			this.userView =  new userProfile({model: this.user})

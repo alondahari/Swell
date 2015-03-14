@@ -49,17 +49,13 @@ define([
 
 		},
 
-		log: function(){
-			console.log(arguments)
-		},
-
 		render: function(model, err){
-
+			var user = this.model
 			this.$el.html(this.template({user: this.cacheUser, feedbackMessage: this.feedbackMessage}))
 
 			this.settings.forEach(function(setting){
 				var field = new Setting(setting)
-				this.$('.setting-sliders').append(new RateField({model: field}).$el)
+				this.$('.setting-sliders').append(new RateField({model: field, attributes: {user: user}}).$el)
 			})
 		},
 
@@ -75,7 +71,11 @@ define([
 			var field = $target.data('field')
 			var newValue = $target.text()
 			this.feedbackMessage =  'Saving...'
-			this.model.attributes[field] = newValue
+			if (newValue !== 'Dude') {
+				this.model.attributes[field] = newValue
+			};
+
+
 		},
 
 		save: function(e){

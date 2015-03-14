@@ -8,21 +8,18 @@ $font-main: 'Source Sans Pro', sans-serif;
 
 
 body, html{
-	/*set background image with overlay*/
 	height: 100%;
+
 	font-weight: 300;
 	color: white;
 	font-family: $font-main;
 	background: url("../img/background2.jpg") no-repeat center center fixed;
 	background-size: cover;
+	z-index: -2;
+
 }
 
 .wrapper{
-	background: linear-gradient(rgba(79, 158, 245, .4),rgba(79, 158, 245, .4)),
-		url("../img/footer_lodyas.png");
-
-	/*fixes background image*/
-	background-attachment:fixed;
 	position: relative;
 
 	// don't allow horizontal scroll bar
@@ -31,12 +28,34 @@ body, html{
 	max-width: 700px;
 	min-height: 100%;
 	margin: auto;
+	display: block;
+}
+
+.wrapper::before{
+	/*set background image with overlay*/
+	content: '';
+	background: linear-gradient(rgba(79, 158, 245, .2),rgba(79, 158, 245, .5)),
+		url("../img/footer_lodyas.png");
+
+	/*fixes background image*/
+	// background-attachment:fixed;
+	opacity: 0.9;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	max-width: 700px;
+	margin: auto;
+
 }
 
 .button-submit{
 	display: block;
 	width: 60%;
 	margin: auto;
+	position: relative;
+	z-index: 1;
 }
 
 .or-break{

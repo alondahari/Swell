@@ -4952,29 +4952,43 @@ button.close {
     background: transparent none; }
 
 body, html {
-  /*set background image with overlay*/
   height: 100%;
   font-weight: 300;
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
   background: url("../img/background2.jpg") no-repeat center center fixed;
-  background-size: cover; }
+  background-size: cover;
+  z-index: -2; }
 
 .wrapper {
-  background: -webkit-linear-gradient(rgba(79, 158, 245, 0.4), rgba(79, 158, 245, 0.4)), url("../img/footer_lodyas.png");
-  background: linear-gradient(rgba(79, 158, 245, 0.4), rgba(79, 158, 245, 0.4)), url("../img/footer_lodyas.png");
-  /*fixes background image*/
-  background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
   max-width: 700px;
   min-height: 100%;
+  margin: auto;
+  display: block; }
+
+.wrapper::before {
+  /*set background image with overlay*/
+  content: '';
+  background: -webkit-linear-gradient(rgba(79, 158, 245, 0.2), rgba(79, 158, 245, 0.5)), url("../img/footer_lodyas.png");
+  background: linear-gradient(rgba(79, 158, 245, 0.2), rgba(79, 158, 245, 0.5)), url("../img/footer_lodyas.png");
+  /*fixes background image*/
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  max-width: 700px;
   margin: auto; }
 
 .button-submit {
   display: block;
   width: 60%;
-  margin: auto; }
+  margin: auto;
+  position: relative;
+  z-index: 1; }
 
 .or-break {
   border-color: black;
@@ -5067,7 +5081,8 @@ body, html {
   right: 12px;
   top: 76px;
   font-size: 1.8rem;
-  color: rgba(184, 181, 240, 0.5); }
+  color: rgba(184, 181, 240, 0.5);
+  z-index: 2; }
 
 .login-field {
   margin: 20px 0; }
@@ -5121,6 +5136,9 @@ body, html {
   font-size: 1.8rem;
   font-weight: 200; }
 
+.user-details {
+  margin-top: 40px; }
+
 .field {
   clear: both; }
 
@@ -5164,10 +5182,10 @@ body, html {
 
 .header {
   font-family: 'Great Vibes', cursive;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   text-align: center;
-  z-index: 2; }
+  position: relative; }
 
 .header h1 {
   padding-top: 20px;
@@ -5206,3 +5224,7 @@ body, html {
 
 .slider.slider-horizontal {
   width: 100%; }
+
+.btn, .rate-nav, .help-text, .error-message, .logo, .tag-line, .settings-save {
+  position: relative;
+  z-index: 2; }

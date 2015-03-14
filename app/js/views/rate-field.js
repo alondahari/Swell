@@ -4,7 +4,6 @@ define([
 	'slider',
 	'text!templates/rate-field.jade'
 ], function(Backbone, jade, slider, template){
-	'use strict'
 
 	return Backbone.View.extend({
 
@@ -25,7 +24,7 @@ define([
 			if (!this.attributes.user.attributes._id) {
 				this.model.set({enabled: false})
 			}
-			console.log(this.model.toJSON())
+
 			this.slider = this.$('.rating-input-range').slider(this.model.toJSON())
 			var value = this.slider.slider('getValue')
 			var text = this.formatText(this.model.get('fieldName'), value)
