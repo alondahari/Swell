@@ -7,6 +7,12 @@ define([
 	'underscore'
 ], function(Backbone, jade, Setting, RateField, template, _){
 
+	function hasGetUserMedia() {
+	  return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
+	            navigator.mozGetUserMedia || navigator.msGetUserMedia);
+	}
+
+
 	return Backbone.View.extend({
 
 		el: '.wrapper',
@@ -39,6 +45,11 @@ define([
 		],
 
 		initialize: function(){
+			if (hasGetUserMedia()) {
+			  console.log('good to go!')
+			} else {
+			  console.log('getUserMedia() is not supported in your browser');
+			}
 
 			this.cacheUser = this.model.toJSON()
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)

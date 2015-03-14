@@ -73,7 +73,6 @@ define([
 
 		pleaseLoginPulse: function () {
 			var $text = this.$('.help-text')
-			console.log($text)
 			$text.addClass('pulse')
 			$text.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 				$text.removeClass('pulse')

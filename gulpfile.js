@@ -29,7 +29,7 @@ var source, dist, paths = {}
 
 gulp.task('setPath', function () {
 
-  source = native ? 'native/' : prod ? 'prod/' : 'app/'
+  source = prod ? 'www/' : 'app/'
   dist   = 'www/'
   paths = {
     index : source + 'index.html',
@@ -71,7 +71,9 @@ gulp.task('usemin', function(){
 })
 
 gulp.task('copyProd', function(){
-  return gulp.src([paths.require, paths.fonts], {base: source})
+  var sources = [paths.require, paths.fonts]
+  if (native) sources.push('native/index.html')
+  return gulp.src(sources)
     .pipe(gulp.dest(dist))
 })
 
@@ -85,7 +87,7 @@ gulp.task('watch', function() {
 })
 
 gulp.task('nodemon', function () {
-  nodemon({ script: prod ? 'app.js' : native ? 'app-native.js' : 'app-dev.js',
+  nodemon({ script: prod ? 'app.js' : 'app-dev.js',
       env: {'NODE_ENV': 'development'},
       ignore: [source + '**']
     })
