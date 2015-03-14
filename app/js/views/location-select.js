@@ -3,7 +3,6 @@ define([
 	'jade',
 	'text!templates/location-select.jade'
 ], function(Backbone, jade, template){
-	'use strict'
 
 	return Backbone.View.extend({
 

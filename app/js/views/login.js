@@ -34,7 +34,7 @@ define([
 		submit: function(e){
 			e.preventDefault()
 
-			this.model.url = $(e.target).data('route')
+			this.model.url = backendPath + $(e.target).data('route')
 
 			this.model.save()
 
