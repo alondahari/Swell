@@ -2,8 +2,9 @@ define([
 	'backbone',
 	'jade',
 	'slider',
+	'pubsub',
 	'text!templates/rate-field.jade'
-], function(Backbone, jade, slider, template){
+], function(Backbone, jade, slider, pubsub, template){
 
 	return Backbone.View.extend({
 
@@ -39,7 +40,7 @@ define([
 
 		updateRatings: function(){
 			if (!this.attributes.user.attributes._id){
-				this.pleaseLogin()
+				pubsub.trigger('pleaseLoginPulse')
 				return false
 			} 
 
@@ -92,15 +93,6 @@ define([
 				
 			}
 			return formats[field] ? formats[field][val] : val
-		},
-
-		pleaseLogin: function () {
-			var $text = this.$('.help-text')
-			console.log($text)
-			$text.addClass('pulse')
-			// window.setTimeout(function () {
-			// 	$text.removeClass('pulse')
-			// }, 1000)
 		}
 
 	})

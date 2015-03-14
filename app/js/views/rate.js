@@ -1,11 +1,12 @@
 define([
 	'backbone',
 	'jade',
+	'pubsub',
 	'text!templates/rate.jade',
 	'views/rate-field',
 	'views/avatar',
 	'models/rating'
-], function(Backbone, jade, template, RateField, Avatar, Rating){
+], function(Backbone, jade, pubsub, template, RateField, Avatar, Rating){
 	'use strict'
 
 	return Backbone.View.extend({
@@ -43,6 +44,7 @@ define([
 		el: '.wrapper',
 
 		initialize: function(){
+			pubsub.bind('pleaseLoginPulse', this.pleaseLoginPulse, this)
 			this.render()
 			this.$('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
 		},
@@ -66,6 +68,15 @@ define([
 				var rateField = new RateField({model: new Rating(field), id: this.id, attributes: {user: this.attributes.user}})
 				this.$('.ratings').append(rateField.$el)
 			}, this)
+		},
+
+		pleaseLoginPulse: function () {
+			var $text = this.$('.help-text')
+			console.log($text)
+			$text.addClass('pulse')
+			$text.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				$text.removeClass('pulse')
+			});
 		}
 
 
