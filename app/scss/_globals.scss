@@ -34,7 +34,7 @@ body, html{
 .wrapper::before{
 	/*set background image with overlay*/
 	content: '';
-	background: linear-gradient(rgba(79, 158, 245, .2),rgba(79, 158, 245, .5)),
+	background: linear-gradient(rgba(79, 158, 245, .2),rgba(79, 158, 245, .6)),
 		url("../img/footer_lodyas.png");
 
 	/*fixes background image*/
