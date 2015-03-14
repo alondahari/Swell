@@ -5034,8 +5034,8 @@ body, html {
   margin-bottom: 30px;
   height: 300px; }
 
-.rating-field, .slider {
-  margin-bottom: 20px; }
+.slider {
+  margin-bottom: 40px; }
 
 .rating-header, .rating-display {
   font-size: 2rem;
@@ -5083,6 +5083,9 @@ body, html {
   font-size: 1.8rem;
   color: rgba(184, 181, 240, 0.5);
   z-index: 2; }
+
+.rating-seperator {
+  border-color: rgba(200, 200, 200, 0.2); }
 
 .login-field {
   margin: 20px 0; }

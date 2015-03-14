@@ -3,7 +3,7 @@ Phase 1:
 
 Phase 2:
   ☐ persist rating view for user
-  ☐ add username validation
+  ✔ add username validation @done (15-03-13 19:19)
   ☐ make settings functional + password change
   ☐ build into cordova
   ☐ move average calculation to back-end

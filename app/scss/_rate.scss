@@ -1,7 +1,6 @@
 
-
-.rating-field, .slider{
-	margin-bottom: 20px;
+.slider{
+	margin-bottom: 40px;
 }
 
 .rating-header, .rating-display{
@@ -65,3 +64,8 @@
 	color: $color-info-dimmed;
 	z-index: 2;
 }
+
+.rating-seperator{
+	border-color: rgba(200,200,200,.2);
+}
+
