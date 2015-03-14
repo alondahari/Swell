@@ -1,6 +1,7 @@
 /* define cli flags */
 var argv = require('yargs').argv
-  , production = !!(argv.production)
+  , native = !!(argv.native)
+  , prod = !!(argv.prod)
 
 /* load all plugins*/
 var gulp = require('gulp')
@@ -24,17 +25,24 @@ var gulp = require('gulp')
 var log = gutil.log
   , noop = gutil.noop
 
-var source = 'native/'
-  , dist   = 'www/'
-  , paths = {
+var source, dist, paths = {}
+
+gulp.task('setPath', function () {
+
+  source = native ? 'native/' : prod ? 'prod/' : 'app/'
+  dist   = 'www/'
+  paths = {
     index : source + 'index.html',
     css   : source + 'css/**/*.css',
     fonts : source + 'fonts/**',
     js    : source + 'js/**',
     require: source + 'js/require.js',
     cordova: source + 'js/cordova.js',
-    images: source + 'img/**'
+    images: source + 'img/**',
+    scss: source + 'scss/*.scss',
+    jade: source + 'js/templates/*.jade'
   }
+})
 
 gulp.task('clean', function (cb) {  
   del([
@@ -44,12 +52,12 @@ gulp.task('clean', function (cb) {
 })
 
 gulp.task('sass', function () {
-    gulp.src('./app/scss/*.scss')
+    gulp.src(paths.scss)
       // .pipe(sourcemaps.init())
       .pipe(sass())
       // .pipe(sourcemaps.write())
       .pipe(prefix())
-      .pipe(gulp.dest('./app/css'))
+      .pipe(gulp.dest(source + '/css'))
 })
 
 gulp.task('usemin', function(){
@@ -59,15 +67,6 @@ gulp.task('usemin', function(){
       html: [minifyHtml({empty: true})],
       js: [uglify()]
     }))
-    .pipe(gulp.dest(dist))
-})
-
-gulp.task('useapp', function(){
-  return gulp.src([
-      paths.index, 
-      paths.css, 
-      paths.fonts,
-      paths.js], {base: source})
     .pipe(gulp.dest(dist))
 })
 
@@ -82,13 +81,13 @@ gulp.task('images', function(){
 })
 
 gulp.task('watch', function() {
-  gulp.watch('app/scss/*.scss', ['sass'])
+  gulp.watch(paths.scss, ['sass'])
 })
 
 gulp.task('nodemon', function () {
-  nodemon({ script: 'app.js',
+  nodemon({ script: prod ? 'app.js' : native ? 'app-native.js' : 'app-dev.js',
       env: {'NODE_ENV': 'development'},
-      ignore: ['app/**']
+      ignore: [source + '**']
     })
     .on('restart', function () {
       console.log('restart!')
@@ -97,16 +96,12 @@ gulp.task('nodemon', function () {
 
 
 gulp.task('build', function(){
-    log('building for ' + (production ? 'production' : 'development'))
-    if (production)
-      runSequence('clean', 'usemin', 'copyProd', 'images')
-    else
-      runSequence('clean', 'useapp', 'images')
+  runSequence('setPath', 'clean', 'usemin', 'copyProd', 'images')
 })
 
 gulp.task('livereload', function() {
-  gulp.src(['app/css/*.css', 'app/js/*.js'])
-    .pipe(watch(['app/**/*.css', 'app/**/*.js', 'app/**/*.jade', 'app/index.html']))
+  gulp.src([paths.css, paths.js])
+    .pipe(watch([paths.css, paths.js, paths.jade, paths.index]))
     .pipe(connect.reload())
 })
 
@@ -117,6 +112,6 @@ gulp.task('serve', function() {
 })
 
 
-gulp.task('default', ['nodemon', 'sass','livereload', 'serve', 'watch'],function(){
+gulp.task('default', ['setPath', 'nodemon', 'sass','livereload', 'serve', 'watch'],function(){
 
 })

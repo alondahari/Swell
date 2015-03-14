@@ -32,8 +32,6 @@ require([
   'models/user'
   ], function(Backbone, Router, User){
 
-    window.backendPath = ''
-
     // check for loged in user
     var user = new User()
     user.fetch({success: function(model, res){

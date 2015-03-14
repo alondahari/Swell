@@ -82,7 +82,7 @@ define([
 
 			if (_.isEqual(this.cacheUser, this.model.toJSON())) return false
 				
-			this.model.url = '/user'
+			this.model.url = backendPath + '/user'
 			this.model.save()
 		},
 

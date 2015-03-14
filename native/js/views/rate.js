@@ -7,7 +7,6 @@ define([
 	'views/avatar',
 	'models/rating'
 ], function(Backbone, jade, pubsub, template, RateField, Avatar, Rating){
-	'use strict'
 
 	return Backbone.View.extend({
 

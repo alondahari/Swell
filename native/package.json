@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A surfing app!",
   "author": "Alon Dahari <climbinghobo@gmail.com>",
+
   "dependencies": {
     "jade": "^1.9.2"
   }

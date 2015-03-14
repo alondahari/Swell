@@ -6,7 +6,6 @@ define([
 	'models/rating',
 	'text!templates/view.jade'
 ], function(Backbone, jade, Avatar, ViewRating, Rating, template){
-	'use strict'
 
 	return Backbone.View.extend({
 
@@ -59,7 +58,7 @@ define([
 
 			_.each(this.fields, function(field){
 				var rating = new Rating()
-				rating.url = 'rating/' + field.fieldName + '/' + this.id
+				rating.url = backendPath + '/rating/' + field.fieldName + '/' + this.id
 				var rateField = new ViewRating({model: rating, attributes: field})
 				this.$('.ratings').append(rateField.$el)
 				

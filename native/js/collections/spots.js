@@ -7,7 +7,7 @@ define([
 		
 		model: spot,
 
-		url: '/locations',
+		url: backendPath + '/locations',
 
 		initialize: function(){
 			this.fetch({success: function(collection){
