@@ -71,3 +71,55 @@ body, html{
 	font-size: 2rem;
 	margin-top: 14px;
 }
+
+$inactive: #aaa;
+$active: tomato;
+$speed: 1.2s;
+$size: 50px;
+$unit: $size / 16;
+
+%spinner {  
+  display: block;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  border: $unit solid $inactive;
+  animation: spinner $speed linear infinite;
+}
+@keyframes spinner {
+  0% { transform: translate(-50%, -50%) rotate(0); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+%spinner-double-section {
+  @extend %spinner;
+  
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    border: $unit solid transparent;
+    border-top-color: $active;
+  }
+  &:after {
+    border-top-color: transparent;
+    border-bottom-color: $active;
+  }
+}
+
+.loading-spinner{
+  @extend %spinner-double-section;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  
+  &:before,
+  &:after {
+    top: ($unit*-3);
+    left: ($unit*-3);
+    width: ($size + $unit*4);
+    height: ($size + $unit*4);
+  }
+}

@@ -48,6 +48,8 @@ define([
 		},
 
 		render: function(model, err){
+			$('.loading-spinner').hide()
+
 			var user = this.model
 			this.$el.html(this.template({user: this.cacheUser, feedbackMessage: this.feedbackMessage}))
 

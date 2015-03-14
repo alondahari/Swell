@@ -11,9 +11,9 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
+
 			var view = this
 			this.model.fetch({success: function (model, res) {
-				console.log(res)
 				_.extend(view.attributes, res)
 				view.render()
 				if (view.attributes.fieldName === 'wind') {
@@ -25,7 +25,7 @@ define([
 		},
 
 		render: function(){
-			console.log(this)
+			$('.loading-spinner').hide()
 			this.$el.html(this.template(this.attributes))
 		},
 

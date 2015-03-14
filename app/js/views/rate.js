@@ -50,6 +50,8 @@ define([
 		},
 
 		render: function(){
+			
+			$('.loading-spinner').hide()
 			this.$el.html(this.template({header: this.attributes.title}))
 
 			this.renderFields()

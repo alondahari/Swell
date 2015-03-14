@@ -65,12 +65,14 @@ define([
 		},
 
 		removeViews: function (route) {
+			if (!$('.wrapper').html()) {
+				$('.loading-spinner').show()
+			}
 			if (this.loginView && route != 'login') this.loginView.undelegateEvents()
 			if (this.locationView && route != 'location') this.locationView.undelegateEvents()
 			if (this.rateView && route != 'rate') this.rateView.undelegateEvents()
 			if (this.spotView && route != 'spot') this.spotView.undelegateEvents()
 			if (this.userView && route != 'user') this.userView.undelegateEvents()
-
 		}
 
 	})

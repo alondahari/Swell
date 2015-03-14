@@ -7744,6 +7744,54 @@ body, html {
   font-size: 2rem;
   margin-top: 14px; }
 
+.loading-spinner {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3.125px solid #aaa;
+  -webkit-animation: spinner 1.2s linear infinite;
+          animation: spinner 1.2s linear infinite; }
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0); }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg); } }
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0); }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg); } }
+
+.loading-spinner:before, .loading-spinner:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  border: 3.125px solid transparent;
+  border-top-color: tomato; }
+.loading-spinner:after {
+  border-top-color: transparent;
+  border-bottom-color: tomato; }
+
+.loading-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%; }
+  .loading-spinner:before, .loading-spinner:after {
+    top: -9.375px;
+    left: -9.375px;
+    width: 62.5px;
+    height: 62.5px; }
+
 .location-select {
   margin: 30px 0;
   font-weight: 400; }
