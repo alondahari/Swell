@@ -1,6 +1,6 @@
 ({
-    mainConfigFile : "app/js/main.js",
-    baseUrl : "app/js",
+    mainConfigFile : "native/js/main.js",
+    baseUrl : "native/js",
     name: "main",
     out: "www/js/main.js",
     removeCombined: true,

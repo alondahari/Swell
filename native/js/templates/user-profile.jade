@@ -3,13 +3,13 @@
 	a.glyphicon.glyphicon-menu-left.button-back(href="#")
 
 
-.row
+.row.user-details
 	img.user-avatar.col-xs-4.col-xs-offset-1(src='../img/default-avatar.jpg')
 
 	.col-xs-6
 		.field
 			p User Name:
-			p.field-input(data-field="username", contenteditable="true") #{user.username}
+			p.field-input(data-field="username", contenteditable="true")= user.username || "Dude"
 		
 		.field
 			p.field Email:

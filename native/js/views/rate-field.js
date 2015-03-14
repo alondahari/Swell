@@ -2,9 +2,9 @@ define([
 	'backbone',
 	'jade',
 	'slider',
+	'pubsub',
 	'text!templates/rate-field.jade'
-], function(Backbone, jade, slider, template){
-	'use strict'
+], function(Backbone, jade, slider, pubsub, template){
 
 	return Backbone.View.extend({
 
@@ -18,14 +18,20 @@ define([
 		},
 
 		initialize: function(){
+
 			this.render()
 			// hide defauld slider tooltip
 			this.model.set({tooltip: 'hide'})
+			if (!this.attributes.user.attributes._id) {
+				this.model.set({enabled: false})
+			}
+
 			this.slider = this.$('.rating-input-range').slider(this.model.toJSON())
 			var value = this.slider.slider('getValue')
 			var text = this.formatText(this.model.get('fieldName'), value)
 
-				this.$('.rating-value').text(text)
+			this.$('.rating-value').text(text)
+			
 		},
 
 		render: function(){
@@ -33,7 +39,10 @@ define([
 		},
 
 		updateRatings: function(){
-
+			if (!this.attributes.user.attributes._id){
+				pubsub.trigger('pleaseLoginPulse')
+				return false
+			} 
 
 			// get value from slider
 			var value = this.slider.slider('getValue')
@@ -52,7 +61,12 @@ define([
 			this.timeout = setTimeout(function(view){
 				view.timeout = null
 				// update model and database
-				view.model.save({time: Date.now(), spotId: view.id, value: value}, {success: function(model, data){
+				view.model.save({
+					time: Date.now(),
+					spotId: view.id,
+					userId: view.attributes.user.attributes._id,
+					value: value
+				}, {success: function(model, data){
 
 					view.$('.rating-save').text('Saved!')
 
@@ -79,9 +93,6 @@ define([
 				
 			}
 			return formats[field] ? formats[field][val] : val
-		},
-
-		formatMeasurements: function(val){
 		}
 
 	})

@@ -9,7 +9,7 @@ define([
 
 	return Backbone.View.extend({
 
-		el: $('.wrapper'),
+		el: '.wrapper',
 
 		template: jade.compile(template),
 
@@ -41,25 +41,21 @@ define([
 		initialize: function(){
 
 			this.cacheUser = this.model.toJSON()
-			this.listenTo(this.model, 'sync', this.setMessage)
-			this.listenTo(this.model, 'invalid', this.setMessage)
-			this.listenTo(this.model, 'error', this.setMessage)
-
+			this.listenTo(this.model, 'sync invalid error', this.setMessage)
+			
 			this.render()
 
 		},
 
-		log: function(){
-			console.log(arguments)
-		},
-
 		render: function(model, err){
+			$('.loading-spinner').hide()
 
+			var user = this.model
 			this.$el.html(this.template({user: this.cacheUser, feedbackMessage: this.feedbackMessage}))
 
 			this.settings.forEach(function(setting){
 				var field = new Setting(setting)
-				this.$('.setting-sliders').append(new RateField({model: field}).$el)
+				this.$('.setting-sliders').append(new RateField({model: field, attributes: {user: user}}).$el)
 			})
 		},
 
@@ -75,7 +71,11 @@ define([
 			var field = $target.data('field')
 			var newValue = $target.text()
 			this.feedbackMessage =  'Saving...'
-			this.model.attributes[field] = newValue
+			if (newValue !== 'Dude') {
+				this.model.attributes[field] = newValue
+			};
+
+
 		},
 
 		save: function(e){

@@ -1,7 +1,6 @@
 
-
-.rating-field, .slider{
-	margin-bottom: 20px;
+.slider{
+	margin-bottom: 40px;
 }
 
 .rating-header, .rating-display{
@@ -23,9 +22,9 @@
 }
 
 
-// add vertical space before submit button
-.ratings .row:last-child{
-	margin-bottom: 20px;
+
+.ratings{
+	margin-top: 10px;
 
 }
 
@@ -36,25 +35,25 @@
 
 .rate-nav{
 	color: $color-secondary-text;
-	position: fixed;
 	width: 50%;
 	height: 50px;
-	background-color: rgba(0,0,0,.4);
+	background-color: rgba(10,10,10,.4);
 	text-align: center;
 	padding-top: 11px;
 	font-size: 2rem;
-	top: 96px;
-	
+	float: left;
+	margin-bottom: 30px;
 	&:hover, &:active{
 		text-decoration: none;
 	}
+
 }
 .rate-current{
 	background-color: transparent;
 	color: white;
 }
 .rate-nav + .rate-nav{
-	right: 0;
+	float: right;
 }
 
 .rating-save{
@@ -63,4 +62,12 @@
 	top: 76px;
 	font-size: 1.8rem;
 	color: $color-info-dimmed;
+	z-index: 2;
 }
+
+.rating-seperator{
+	border-color: rgba(200,200,200,.2);
+}
+
+
+

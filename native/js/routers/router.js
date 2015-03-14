@@ -6,7 +6,6 @@ define([
 	'views/spot',
 	'views/user-profile',
   'collections/spots',
-  'collections/ratings'
   ], function(
   	Backbone,
   	Login,
@@ -14,8 +13,7 @@ define([
   	RateView,
   	SpotView,
   	userProfile,
-  	Spots,
-  	Ratings
+  	Spots
   ){
 
 	return Backbone.Router.extend({
@@ -54,16 +52,8 @@ define([
 		},
 
 		spot: function(title, id){
-			var ratings = new Ratings()
 
-			// get only ratings for the right spot
-			ratings.url = '/ratings/' + id
-			
-			ratings.fetch({success: function(collection){
-				collection.trigger('fetched')
-			}})
-
-			this.spotView = new SpotView({ collection: ratings, id: id, attributes: {title: title, user: this.user}})
+			this.spotView = new SpotView({ id: id, attributes: {title: title, user: this.user}})
 		},
 
 		user: function(){
@@ -75,12 +65,14 @@ define([
 		},
 
 		removeViews: function (route) {
+			if (!$('.wrapper').html()) {
+				$('.loading-spinner').show()
+			}
 			if (this.loginView && route != 'login') this.loginView.undelegateEvents()
 			if (this.locationView && route != 'location') this.locationView.undelegateEvents()
 			if (this.rateView && route != 'rate') this.rateView.undelegateEvents()
 			if (this.spotView && route != 'spot') this.spotView.undelegateEvents()
 			if (this.userView && route != 'user') this.userView.undelegateEvents()
-
 		}
 
 	})

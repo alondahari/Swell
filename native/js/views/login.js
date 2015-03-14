@@ -8,11 +8,12 @@ define([
 
 	return Backbone.View.extend({
 
-		el: $('.wrapper'),
+		el: '.wrapper',
 
 		template: jade.compile(template),
 
 		initialize: function(){
+			
 			this.listenTo(this.model, 'invalid', this.highlightError)
 			this.listenTo(this.model, 'sync', this.loginSuccess)
 			this.listenTo(this.model, 'error', this.loginError)
@@ -20,6 +21,7 @@ define([
 		},
 
 		render: function(){
+			$('.loading-spinner').hide()
 			this.$el.html(this.template())
 		},
 
@@ -68,6 +70,12 @@ define([
 		},
 
 		displayError: function(model, msg){
+			var $text = this.$('.form-control')
+			$text.addClass('shake')
+			$text.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				$text.removeClass('shake')
+			});
+
 			this.$('.error-message').text(msg).addClass('error-message-show')
 		},
 

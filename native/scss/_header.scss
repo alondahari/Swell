@@ -1,24 +1,21 @@
 .header{
 	font-family: 'Great Vibes', cursive;
-	position: fixed;
-	top: 0;
-	background-color: rgba(0,0,0,.3);
+
+	background-color: rgba(0,0,0,.4);
 	width: 100%;
 	text-align: center;
-	z-index: 2;
+	position: relative;
 
 }
 
 .header h1{
-	padding-top: 20px;
-	padding-left: 70px;
-	padding-right: 100px;
-	margin-top: 0;
-	font-size: 6rem;
+	padding: 20px 100px 10px 70px;
+	margin: 0;
+	font-size: 4rem;
 	white-space: nowrap;
-	overflow-x: hidden;
 	text-overflow: ellipsis;
 	height: 100%;
+	overflow: hidden;
 }
 
 .header-login{
@@ -26,7 +23,7 @@
 	right: 20px;
 	font-family: $font-main;
 	font-size: 2rem;
-	top: 35px;
+	top: 23px;
 }
 
 .header-login:hover, .header-login:active{
@@ -37,17 +34,51 @@
 	width: 50px;
 	height: 50px;
 	border-radius: 10px;
-	margin-top: -13px;
+	margin-top: -12px;
 }
 
 .button-back{
 	font-size: 3rem;
 	position: absolute;
 	left: 15px;
-	top: 30px;
+	top: 22px;
 	color: white;
 
 	&:hover, &:active{
 		text-decoration: none;
+	}
+}
+
+@media (max-width: 450px) {
+	.header h1{
+		font-size: 3rem;
+	}
+
+	.header-login {
+		top: 17px;
+	}
+
+	.button-back{
+		top: 15px;
+	}
+
+	.avatar{
+		margin-top: -10px;
+	}
+}
+
+@media (max-width: 350px) {
+	.header h1{
+		font-size: 2.5rem;
+	}
+
+	.header-login {
+		font-size: 1.8rem;
+	}
+
+	.avatar{
+		margin-top: -8px;
+		width: 40px;
+		height: 40px;
 	}
 }

@@ -79,14 +79,19 @@ define([
 
 		initialize: function(){
 			// add loader here
-
-			this.listenTo(this.collection, 'fetched', this.render)
+			
+			// fix for typehead loading too soon
+			var view = this
+			$(function () {
+				view.listenTo(view.collection, 'fetched', view.render)
+			})
 
 		},
 
 		render: function(){
 
 			// remove loader here
+			$('.loading-spinner').hide()
 
 			// In render so there's a collection to work with
 			this.listenTo(this.collection, 'geo', this.getClosestSpot)
@@ -203,7 +208,7 @@ define([
 		},
 
 		searchbox: function(){
-			console.log(this.$('.typehead'))
+
 			this.$('.typehead').typeahead({
 				highlight: true
 			},

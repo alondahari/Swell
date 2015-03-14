@@ -1,11 +1,12 @@
 define([
 	'backbone',
 	'jade',
+	'pubsub',
 	'text!templates/rate.jade',
 	'views/rate-field',
 	'views/avatar',
 	'models/rating'
-], function(Backbone, jade, template, RateField, Avatar, Rating){
+], function(Backbone, jade, pubsub, template, RateField, Avatar, Rating){
 	'use strict'
 
 	return Backbone.View.extend({
@@ -40,18 +41,25 @@ define([
 			}
 		],
 
-		initialize: function(){
+		el: '.wrapper',
 
+		initialize: function(){
+			pubsub.bind('pleaseLoginPulse', this.pleaseLoginPulse, this)
 			this.render()
 			this.$('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
 		},
 
 		render: function(){
+			
+			$('.loading-spinner').hide()
 			this.$el.html(this.template({header: this.attributes.title}))
-			// not setting .wrapper as $el to keep all events within scope
-			$('.wrapper').html(this.el)
+
 			this.renderFields()
 			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
+
+			if (!this.attributes.user.attributes._id){
+				this.$('.help-text').removeClass('hidden')
+			}
 		},
 
 		/**
@@ -59,9 +67,18 @@ define([
 		 */
 		renderFields: function(){
 			_.each(this.fields, function(field){
-				var rateField = new RateField({model: new Rating(field), id: this.id})
+				var rateField = new RateField({model: new Rating(field), id: this.id, attributes: {user: this.attributes.user}})
 				this.$('.ratings').append(rateField.$el)
 			}, this)
+		},
+
+		pleaseLoginPulse: function () {
+			var $text = this.$('.help-text')
+			console.log($text)
+			$text.addClass('pulse')
+			$text.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				$text.removeClass('pulse')
+			});
 		}
 
 

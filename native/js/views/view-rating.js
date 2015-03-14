@@ -12,14 +12,20 @@ define([
 
 		initialize: function(){
 
-			this.render()
+			var view = this
+			this.model.fetch({success: function (model, res) {
+				_.extend(view.attributes, res)
+				view.render()
+				if (view.attributes.fieldName === 'wind') {
+					view.$('.rating-value').text(view.formatWindValue(view.attributes.average))
+				}
+			}})
 
-			if (this.attributes.fieldName === 'wind') {
-				this.$('.rating-value').text(this.formatWindValue(this.attributes.value))
-			}
+
 		},
 
 		render: function(){
+			$('.loading-spinner').hide()
 			this.$el.html(this.template(this.attributes))
 		},
 

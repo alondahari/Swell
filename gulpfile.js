@@ -24,7 +24,7 @@ var gulp = require('gulp')
 var log = gutil.log
   , noop = gutil.noop
 
-var source = 'app/'
+var source = 'native/'
   , dist   = 'www/'
   , paths = {
     index : source + 'index.html',
