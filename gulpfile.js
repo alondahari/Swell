@@ -64,15 +64,17 @@ gulp.task('usemin', function(){
   return gulp.src(paths.index)
     .pipe(usemin({
       css: [minifyCss(), rev()],
-      html: [minifyHtml({empty: true})],
-      js: [uglify()]
+      html: [minifyHtml({empty: true})]
     }))
     .pipe(gulp.dest(dist))
 })
 
 gulp.task('copyProd', function(){
+  if (native) {
+    gulp.src('native/index.html')
+      .pipe(gulp.dest(dist))
+  }
   var sources = [paths.require, paths.fonts]
-  if (native) sources.push('native/index.html')
   return gulp.src(sources, {base: source})
     .pipe(gulp.dest(dist))
 })
