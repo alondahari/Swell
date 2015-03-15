@@ -5,8 +5,10 @@ define([
 	'text!templates/rate.jade',
 	'views/rate-field',
 	'views/avatar',
-	'models/rating'
-], function(Backbone, jade, pubsub, template, RateField, Avatar, Rating){
+	'views/user-comment',
+	'models/rating',
+	'models/user-comment'
+], function(Backbone, jade, pubsub, template, RateField, Avatar, CommentView, Rating, UserComment){
 
 	return Backbone.View.extend({
 
@@ -59,6 +61,8 @@ define([
 			if (!this.attributes.user.attributes._id){
 				this.$('.help-text').removeClass('hidden')
 			}
+
+			this.renderUserComment()
 		},
 
 		/**
@@ -69,6 +73,10 @@ define([
 				var rateField = new RateField({model: new Rating(field), id: this.id, attributes: {user: this.attributes.user}})
 				this.$('.ratings').append(rateField.$el)
 			}, this)
+		},
+
+		renderUserComment: function(){
+			this.$('.comment').html(new CommentView({ model: UserComment}).$el)
 		},
 
 		pleaseLoginPulse: function () {
