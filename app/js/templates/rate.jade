@@ -2,9 +2,16 @@
 	.user
 	a.glyphicon.glyphicon-menu-left.button-back(href="#")
 	h1 #{header}
-p.rate-nav.rate-current Rate Wave
-a.rate-nav(href="#view-spot") View Ratings
 
-p.help-text.hidden.animated Please login to rate a Wave
+.view
+	p.rate-nav.rate-current Rate Wave
+	a.rate-nav(href="#view-spot") View Ratings
 
-.ratings
+	p.help-text.hidden.animated Please login to rate a Wave
+
+	.ratings
+
+	.col-xs-offset-1
+		p.user-comment-label Add Comment
+	.col-xs-10.col-xs-offset-1
+		textarea.user-comment

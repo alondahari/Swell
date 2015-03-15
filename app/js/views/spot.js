@@ -38,7 +38,7 @@ define([
 		},
 
 		render: function(){
-			console.log($('.loading-spinner'))
+
 			$('.loading-spinner').hide()
 			this.$el.html(this.template({header: this.attributes.title}))
 			// not setting .wrapper as $el to keep all events within scope
