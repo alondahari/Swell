@@ -7,7 +7,8 @@ var Rating = mongoose.model('ratings', {
 	time: Number,
 	spotId: String,
 	userId: String,
-	value: Number
+	value: Number,
+	comment: String
 })
 
 /**
@@ -116,7 +117,17 @@ module.exports = {
 	},
 
 	addComment: function(req, res){
+		req.body.fieldName = 'comment'
 		console.log(req.body)
+		var comment = new Rating(req.body)
+		comment.save(function (err, model) {
+			if (!err) {
+				res.send(model)
+			} else {
+				res.send('An error occured, try again.')
+				console.log(err)
+			}
+		})
 	},
 
 	updateComment: function(req, res){

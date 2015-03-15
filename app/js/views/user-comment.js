@@ -42,12 +42,16 @@ define([
 
 		saveComment: function(e){
 			var comment = $(e.target).val()
+			if (!comment) return
+				
 			this.model.save({
 				time: Date.now(),
 				spotId: this.id,
 				userId: this.attributes.user.attributes._id,
 				comment: comment
 			}, {success: function(model, data){
+
+				console.log(data)
 
 				this.$('.rating-save').text('Saved!')
 
