@@ -14,7 +14,6 @@ var gulp = require('gulp')
   , sass = require('gulp-sass')
   , sourcemaps = require('gulp-sourcemaps')
   , runSequence = require('run-sequence')
-  , connect = require('gulp-connect')
   , watch = require('gulp-watch')
   , prefix = require('gulp-autoprefixer')
   , del = require('del')
@@ -74,7 +73,7 @@ gulp.task('usemin', function(){
 gulp.task('copyProd', function(){
   var sources = [paths.require, paths.fonts]
   if (native) sources.push('native/index.html')
-  return gulp.src(sources)
+  return gulp.src(sources, {base: source})
     .pipe(gulp.dest(dist))
 })
 
@@ -105,18 +104,6 @@ gulp.task('nodemon', function () {
 
 gulp.task('build', function(){
   runSequence('setPath', 'clean', 'usemin', 'copyProd', 'images')
-})
-
-gulp.task('livereload', function() {
-  gulp.src([paths.css, paths.js])
-    .pipe(watch([paths.css, paths.js, paths.jade, paths.index]))
-    .pipe(connect.reload())
-})
-
-gulp.task('serve', function() {
-  connect.server({
-    livereload: true
-  })
 })
 
 

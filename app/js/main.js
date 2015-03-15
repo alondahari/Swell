@@ -31,13 +31,16 @@ require([
   'routers/router',
   'models/user'
   ], function(Backbone, Router, User){
+    console.log('app started')
+    document.addEventListener('deviceready', function () {
+        
+      // check for loged in user
+      var user = new User()
+      user.fetch({success: function(model, res){
+        var router = new Router()
+        router.user = user.set(res)
+        Backbone.history.start()
+      }})
 
-    // check for loged in user
-    var user = new User()
-    user.fetch({success: function(model, res){
-      var router = new Router()
-      router.user = user.set(res)
-      Backbone.history.start()
-    }})
-
+    }, false);
 })
