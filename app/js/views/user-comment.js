@@ -1,15 +1,16 @@
 define([
 	'backbone',
 	'jade',
-	'text!templates/user-comment.jade',
-	'models/user-comment'
-], function(Backbone, jade, template, UserComment){
+	'pubsub',
+	'text!templates/user-comment.jade'
+], function(Backbone, jade, pubsub, template){
 
 	return Backbone.View.extend({
 
 		template: jade.compile(template),
 
 		events: {
+			'click': 'isLoggedIn',
 			'keydown': 'commentChange',
 			'blur .user-comment': 'saveComment'
 		},
@@ -19,8 +20,10 @@ define([
 		},
 
 		render: function(){
-			
 			this.$el.html(this.template())
+			if (!this.attributes.user.attributes._id){
+				this.$('.user-comment').attr('disabled', true)
+			} 
 		},
 
 		commentChange: function(e){
@@ -30,8 +33,27 @@ define([
 			}
 		},
 
-		saveComment: function(){
-			console.log('test')	
+		isLoggedIn: function(){
+			if (!this.attributes.user.attributes._id){
+				pubsub.trigger('pleaseLoginPulse')
+				return false
+			}
+		},
+
+		saveComment: function(e){
+			var comment = $(e.target).val()
+			this.model.save({
+				time: Date.now(),
+				spotId: this.id,
+				userId: this.attributes.user.attributes._id,
+				comment: comment
+			}, {success: function(model, data){
+
+				this.$('.rating-save').text('Saved!')
+
+			}, error: function(model, data){
+				console.log('error: ', data)
+			}})
 		}
 
 

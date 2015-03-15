@@ -113,5 +113,13 @@ module.exports = {
 			}
 		})
 		
+	},
+
+	addComment: function(req, res){
+		console.log(req.body)
+	},
+
+	updateComment: function(req, res){
+		
 	}
-};
+}

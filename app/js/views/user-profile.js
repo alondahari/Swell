@@ -89,7 +89,7 @@ define([
 			this.feedbackMessage =  'Saving...'
 			if (newValue !== 'Dude') {
 				this.model.attributes[field] = newValue
-			};
+			}
 
 
 		},

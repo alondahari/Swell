@@ -76,7 +76,7 @@ define([
 		},
 
 		renderUserComment: function(){
-			this.$('.comment').html(new CommentView({ model: UserComment}).$el)
+			this.$('.comment').html(new CommentView({ model: new UserComment(), id: this.id, attributes: {user: this.attributes.user}}).$el)
 		},
 
 		pleaseLoginPulse: function () {

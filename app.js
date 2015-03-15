@@ -49,6 +49,9 @@ app.get('/rating/:fieldName/:id', ratingsCtrl.getRatings)
 app.post('/rating', ratingsCtrl.setRating)
 app.put('/rating', ratingsCtrl.setRating)
 
+app.post('/comments', ratingsCtrl.addComment)
+app.put('/comments', ratingsCtrl.updateComment)
+
 
 var server = app.listen(process.env.PORT || 7878, function() {
 	console.log('Express server listening on port ' + server.address().port)
