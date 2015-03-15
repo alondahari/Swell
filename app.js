@@ -14,11 +14,13 @@ var passportConfig = require('./config/passport')
 console.log('enviroment:', process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'development') {
 	mongoose.connect('mongodb://localhost/swell')
+	app.use(express.static(__dirname + '/app'))
 } else {
 	mongoose.connect(process.env.MONGOLAB_URI)
+	app.use(express.static(__dirname + '/www'))
 }
-app.set('view engine', 'jade')
-app.use(express.static(__dirname + '/www'))
+
+// app.set('view engine', 'jade')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(expressSession({

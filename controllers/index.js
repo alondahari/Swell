@@ -59,6 +59,7 @@ module.exports = {
 	getMaps: function(req, res){
 		request('https://maps.googleapis.com/maps/api/js?key=' + mapsAPI, function(err, response, body){
 				res.send(body)
+
 		})
 	}
 };
