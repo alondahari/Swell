@@ -29,7 +29,7 @@ var source, dist, paths = {}
 
 gulp.task('setPath', function () {
 
-  source = prod ? 'www/' : 'app-dev/'
+  source = prod ? 'www/' : 'zapp/'
   dist   = 'www/'
   paths = {
     index : source + 'index.html',
