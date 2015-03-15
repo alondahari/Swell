@@ -1,6 +1,19 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
+
+
+var validate = {
+  email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+  password: /^[\w\d!@#$%]{5,}$/
+}
+
+var validateEmail = function(val){
+  if (!req.body[field].match(validate[field])) {
+    res.send('Invalid password or username')
+  }
+}
+
 /**
  * Create a schema (blueprint) for all users in the database.
  * If you want to collect additional info, add the fields here.

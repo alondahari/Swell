@@ -16,17 +16,6 @@ var Spot = mongoose.model('locations', {
 	lng: Number
 })
 
-var validate = {
-	email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
-	password: /^[\w\d!@#$%]{5,}$/
-}
-
-var validate = function(field, req, res){
-	if (!req.body[field].match(validate[field])) {
-		res.send('Invalid password or username')
-	}
-}
-
 
 /**
  * routes
