@@ -1,6 +1,6 @@
 ({
-    mainConfigFile : "app-dev/js/main.js",
-    baseUrl : "app-dev/js",
+    mainConfigFile : "zapp/js/main.js",
+    baseUrl : "zapp/js",
     name: "main",
     out: "www/js/main.js",
     removeCombined: true,
