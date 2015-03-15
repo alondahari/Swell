@@ -118,7 +118,7 @@ module.exports = {
 
 	addComment: function(req, res){
 		req.body.fieldName = 'comment'
-		console.log(req.body)
+
 		var comment = new Rating(req.body)
 		comment.save(function (err, model) {
 			if (!err) {
@@ -128,9 +128,5 @@ module.exports = {
 				console.log(err)
 			}
 		})
-	},
-
-	updateComment: function(req, res){
-		
 	}
 }

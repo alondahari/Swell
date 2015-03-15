@@ -42,8 +42,9 @@ define([
 
 		saveComment: function(e){
 			var comment = $(e.target).val()
+			var feedback = this.$('.comment-save')
 			if (!comment) return
-				
+			feedback.text('Saving...')
 			this.model.save({
 				time: Date.now(),
 				spotId: this.id,
@@ -51,11 +52,10 @@ define([
 				comment: comment
 			}, {success: function(model, data){
 
-				console.log(data)
-
-				this.$('.rating-save').text('Saved!')
+				feedback.text('Saved!')
 
 			}, error: function(model, data){
+				feedback.text('Error. Try again.')
 				console.log('error: ', data)
 			}})
 		}

@@ -7867,8 +7867,12 @@ body, html {
   right: 12px;
   top: 76px;
   font-size: 1.8rem;
-  color: rgba(184, 181, 240, 0.5);
-  z-index: 2; }
+  color: rgba(184, 181, 240, 0.5); }
+
+.comment-save {
+  float: right;
+  font-size: 1.8rem;
+  color: rgba(184, 181, 240, 0.5); }
 
 .rating-seperator {
   border-color: rgba(200, 200, 200, 0.2); }
@@ -7888,7 +7892,8 @@ body, html {
   display: none; }
 
 .user-comment-label {
-  font-size: 1.8rem; }
+  font-size: 1.8rem;
+  float: left; }
 
 .login-field {
   margin: 20px 0; }

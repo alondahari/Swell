@@ -50,7 +50,7 @@ app.post('/rating', ratingsCtrl.setRating)
 app.put('/rating', ratingsCtrl.setRating)
 
 app.post('/comments', ratingsCtrl.addComment)
-app.put('/comments', ratingsCtrl.updateComment)
+app.put('/comments', ratingsCtrl.addComment)
 
 
 var server = app.listen(process.env.PORT || 7878, function() {
