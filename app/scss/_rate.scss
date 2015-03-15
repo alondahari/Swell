@@ -65,10 +65,17 @@
 .user-comment{
 	color: black;
 	width: 100%;
-	height: 100px;
+	height: 50px;
 	border-radius: 10px;
+	margin-bottom: 30px;
+
+}
+
+// do cross browser
+.user-comment::-webkit-scrollbar { 
+	display: none; 
 }
 
 .user-comment-label{
-	
+	font-size: 1.8rem;
 }

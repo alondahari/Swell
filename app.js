@@ -48,10 +48,7 @@ app.post('/rating', ratingsCtrl.setRating)
 app.put('/rating', ratingsCtrl.setRating)
 
 
-// We can prevent unauthorized access to any route handler defined after this
-
-
-var server = app.listen(process.env.PORT || 7707, function() {
+var server = app.listen(process.env.PORT || 7878, function() {
 	console.log('Express server listening on port ' + server.address().port)
 })
 
