@@ -4,7 +4,6 @@ var moment = require('moment')
 
 var Rating = mongoose.model('ratings', {
 	fieldName: String,
-	userId: Number,
 	time: Number,
 	spotId: String,
 	userId: String,

@@ -26,7 +26,7 @@ define([
 				}
 			})
 	 
-			cb(matches);
+			cb(matches)
 		}
 
 	}

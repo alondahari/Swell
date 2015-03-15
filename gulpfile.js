@@ -19,6 +19,7 @@ var gulp = require('gulp')
   , prefix = require('gulp-autoprefixer')
   , del = require('del')
   , nodemon = require('gulp-nodemon')
+  , livereload = require('gulp-livereload')
 
 
 /* define some sugar syntax */
@@ -83,7 +84,13 @@ gulp.task('images', function(){
 })
 
 gulp.task('watch', function() {
+
+  livereload.listen()
+
+  gulp.watch([paths.js, paths.css, paths.index, paths.jade])
+    .on('change', livereload.changed)
   gulp.watch(paths.scss, ['sass'])
+
 })
 
 gulp.task('nodemon', function () {
@@ -113,6 +120,6 @@ gulp.task('serve', function() {
 })
 
 
-gulp.task('default', ['setPath', 'nodemon', 'sass','livereload', 'serve', 'watch'],function(){
+gulp.task('default', ['setPath', 'nodemon', 'sass', 'watch'],function(){
 
 })
