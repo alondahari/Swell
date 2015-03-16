@@ -74,9 +74,8 @@ define([
 			var comments = new UserComments()
 			comments.url = '/comments/' + this.id
 			comments.fetch({success: function (model, res) {
-				console.log(res)
 				_.each(res, function (comment) {
-					view.$('.comments').append(new CommentView({ model: comment }))
+					view.$('.comments').append(new CommentView({ model: comment }).$el)
 				})
 			}})
 		},

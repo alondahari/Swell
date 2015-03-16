@@ -90,3 +90,35 @@
 	font-size: 1.8rem;
 	float: left;
 }
+
+.comment-row{
+	margin-top: 20px;
+	color: $color-info-dimmed;
+}
+
+.comment-box{
+	background-color: white;
+	height: 50px;
+
+	border-radius: 5px;
+	margin-left: -20px;
+	color: black;
+	padding: 5px;
+
+}
+
+.avatar-comment{
+	width: 30px;
+	height: 30px;
+	border-radius: 10px;
+}
+
+.comment-user{
+	margin: 5px -15px;
+	float: left;
+}
+
+.comment-time{
+	float: right;
+	margin-top: 5px;
+}

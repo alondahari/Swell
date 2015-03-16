@@ -1,7 +1,7 @@
 define([
 	'backbone',
 	'jade',
-	'text!templates/user-comment.jade'
+	'text!templates/user-comment-get.jade'
 ], function(Backbone, jade, template){
 
 	return Backbone.View.extend({
@@ -10,14 +10,11 @@ define([
 
 		initialize: function(){
 			console.log(this.model)
-
+			this.render()
 		},
 
 		render: function(){
-			this.$el.html(this.template())
-			if (!this.attributes.user.attributes._id){
-				this.$('.user-comment').attr('disabled', true)
-			} 
+			this.$el.html(this.template({data: this.model}))
 		}
 
 

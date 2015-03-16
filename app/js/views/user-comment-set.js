@@ -2,7 +2,7 @@ define([
 	'backbone',
 	'jade',
 	'pubsub',
-	'text!templates/user-comment.jade'
+	'text!templates/user-comment-set.jade'
 ], function(Backbone, jade, pubsub, template){
 
 	return Backbone.View.extend({
