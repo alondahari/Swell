@@ -1,0 +1,41 @@
+
+@media (max-width: 450px) {
+	.header h1{
+		font-size: 3rem;
+	}
+
+	.header-login {
+		top: 17px;
+	}
+
+	.button-back{
+		top: 15px;
+	}
+
+	.avatar{
+		margin-top: -10px;
+	}
+
+	.view{
+		margin-top: 63px;
+	}
+}
+
+@media (max-width: 350px) {
+	.header h1{
+		font-size: 2.5rem;
+	}
+
+	.header-login {
+		font-size: 1.8rem;
+	}
+
+	.avatar{
+		margin-top: -8px;
+		width: 40px;
+		height: 40px;
+	}
+	.view{
+		margin-top: 57px;
+	}
+}
