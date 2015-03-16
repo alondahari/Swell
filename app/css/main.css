@@ -7785,7 +7785,8 @@ body, html {
 .loading-spinner {
   position: absolute;
   left: 50%;
-  top: 50%; }
+  top: 50%;
+  z-index: 4; }
   .loading-spinner:before, .loading-spinner:after {
     top: -9.375px;
     left: -9.375px;

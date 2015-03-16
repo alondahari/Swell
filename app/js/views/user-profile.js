@@ -20,7 +20,7 @@ define([
 			'keyup .field-input': 'changeField',
 			'keydown .field-input': 'preventNewLine',
 			'blur .field-input': 'save',
-			'click .user-avatar': 'changeAvatar',
+			'click .avatar-has-camera': 'changeAvatar',
 			'change #file-upload': 'fileUpload',
 			'click .screen': 'pictureCaptureHide',
 			'click .btn': 'pictureCaptureHide'
@@ -44,6 +44,9 @@ define([
 		],
 
 		initialize: function(){
+			if (navigator.getUserMedia) {
+				this.model.set('camera', true)
+			}
 
 			this.cacheUser = this.model.toJSON()
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)
@@ -56,6 +59,7 @@ define([
 			$('.loading-spinner').hide()
 
 			var user = this.model
+
 			this.$el.html(this.template({user: this.cacheUser, feedbackMessage: this.feedbackMessage}))
 
 			this.settings.forEach(function(setting){
@@ -140,12 +144,6 @@ define([
 		changeAvatar: function () {
 
 			this.$('.screen').removeClass('hidden')
-			if (navigator.getUserMedia) {
-				
-			} else {
-					
-				this.$('.button-take-photo').addClass('hidden')
-			}
 			this.$('.image-capture-options').addClass('image-capture-show')
 		}
 

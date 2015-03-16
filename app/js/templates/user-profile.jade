@@ -5,7 +5,13 @@
 .view
 	.row.user-details
 		.col-xs-4.col-xs-offset-1
-			img.user-avatar(src=user.avatar || '../img/default-avatar.jpg')
+			if user.camera
+				img.user-avatar.avatar-has-camera(src=user.avatar || '../img/default-avatar.jpg')
+			else
+				input.hidden(id="file-upload", type="file", accept="image/*", capture="camera")
+				label.user-avatar(for="file-upload")
+					img.user-avatar(src=user.avatar || '../img/default-avatar.jpg')
+
 
 		.col-xs-6
 			.field
