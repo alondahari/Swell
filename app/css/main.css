@@ -7910,7 +7910,7 @@ body, html {
   color: rgba(184, 181, 240, 0.5); }
 
 .comment-box {
-  background-color: white;
+  background-color: rgba(221, 164, 73, 0.8);
   height: 50px;
   border-radius: 5px;
   margin-left: -20px;
@@ -7922,7 +7922,7 @@ body, html {
 
 .avatar-comment {
   width: 30px;
-  height: 30px;
+  max-height: 30px;
   border-radius: 10px; }
 
 .comment-user {

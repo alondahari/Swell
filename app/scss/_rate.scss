@@ -97,7 +97,7 @@
 }
 
 .comment-box{
-	background-color: white;
+	background-color: rgba(221, 164, 73, .8);
 	height: 50px;
 
 	border-radius: 5px;
@@ -113,7 +113,7 @@
 
 .avatar-comment{
 	width: 30px;
-	height: 30px;
+	max-height: 30px;
 	border-radius: 10px;
 }
 

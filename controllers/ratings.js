@@ -129,7 +129,8 @@ module.exports = {
 							comments.push({
 								comment: comment.comment,
 								time: moment(comment.time).fromNow(),
-								user: user.username
+								user: user.username,
+								avatar: user.avatar
 							})
 
 							// if we pushed all the comments into the array - send
