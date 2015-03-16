@@ -29,8 +29,8 @@ var source, dist, paths = {}
 
 gulp.task('setPath', function () {
 
-  source = prod ? 'www/' : 'native/'
-  dist   = 'www/'
+  source = prod ? 'awww/' : 'native/'
+  dist   = 'awww/'
   paths = {
     index : source + 'index.html',
     css   : source + 'css/**/*.css',

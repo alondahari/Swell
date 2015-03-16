@@ -1,3 +1,10 @@
+define([
+  'backbone',
+  'jade',
+  'text!templates/avatar.jade'
+], function(Backbone, jade, template){
+
+
 return [
   {
     "continent": "Europe",
@@ -15099,3 +15106,5 @@ return [
     "lng": 100.572
   }
 ]
+
+})
