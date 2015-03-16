@@ -40,7 +40,7 @@ var authenticationController = {
   },
 
   updateUser: function(req, res){
-    console.log(req.body)
+
     var set = { username: req.body.username, email: req.body.email}
     var avatar = req.body.avatar 
     if (avatar) {_.extend(set, {avatar: avatar})}

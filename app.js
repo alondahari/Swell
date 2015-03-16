@@ -20,9 +20,9 @@ if (process.env.NODE_ENV === 'development') {
 	app.use(express.static(__dirname + '/www'))
 }
 
-// app.set('view engine', 'jade')
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
+
+app.use(bodyParser.json({limit: '16mb'}))
+
 app.use(expressSession({
     secret: 'e02590862ef7d41a533c5ad3d8ce67621a0a23beb3b825f5a55c974786b1f9fb',
     resave: false,
