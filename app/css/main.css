@@ -8015,7 +8015,8 @@ body, html {
   margin: 25px 0 0; }
 
 .user-avatar {
-  border-radius: 40px; }
+  border-radius: 40px;
+  width: 100%; }
 
 .setting-save {
   color: rgba(184, 181, 240, 0.5);

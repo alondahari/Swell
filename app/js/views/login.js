@@ -44,6 +44,8 @@ define([
 
 			if (res._id) {
 				this.model.set(res)
+				this.model.unset('password')
+
 				window.location.hash = ''
 			}
 

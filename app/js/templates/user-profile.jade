@@ -4,7 +4,10 @@
 
 .view
 	.row.user-details
-		img.user-avatar.col-xs-4.col-xs-offset-1(src='../img/default-avatar.jpg')
+		.col-xs-4.col-xs-offset-1
+			input.hidden(id="file-upload", type="file", accept="image/*", capture="camera")
+			label(for="file-upload")
+				img.user-avatar(src='../img/default-avatar.jpg')
 
 		.col-xs-6
 			.field
@@ -23,3 +26,8 @@
 	button.btn.btn-primary.btn-lg.button-change-password.center-block Change Password
 
 	a(href="logout").btn.btn-primary.btn-lg.button-change-password.center-block Log Out
+
+	//- .image-capture-options
+	//- 	button Take Photo
+	//- 	button Choose Existing
+	//- 	button Cancel

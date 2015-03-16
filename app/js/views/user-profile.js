@@ -19,7 +19,9 @@ define([
 		events: {
 			'keyup .field-input': 'changeField',
 			'keydown .field-input': 'preventNewLine',
-			'blur .field-input': 'save'
+			'blur .field-input': 'save',
+			'click .user-avatar': 'changeAvatar',
+			'change #file-upload': 'fileUpload'
 		},
 
 		settings: [
@@ -40,21 +42,6 @@ define([
 		],
 
 		initialize: function(){
-			var video = this.$el.append('<video autoplay>')
-			navigator.getUserMedia  = navigator.getUserMedia ||
-																navigator.webkitGetUserMedia ||
-																navigator.mozGetUserMedia ||
-																navigator.msGetUserMedia;
-
-			if (navigator.getUserMedia) {
-				navigator.getUserMedia({video: true}, function(stream) {
-					video.src = window.URL.createObjectURL(stream);
-				}, function (err) {
-					console.log('error:', err)
-				});
-			} else {
-				video.src = 'somevideo.webm'; // fallback.
-			}
 
 			this.cacheUser = this.model.toJSON()
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)
@@ -121,6 +108,44 @@ define([
 			}
 
 			this.render()
+		},
+
+		fileUpload: function(e){
+			var view = this
+			var file = e.target.files[0]
+			fr = new FileReader()
+			fr.onload = function (e) {
+
+				var URI = e.currentTarget.result
+				view.model.attributes.avatar = URI
+				view.model.url = backendPath + '/user'
+				view.model.save()
+			}
+			fr.readAsDataURL(file)
+		},
+
+		changeAvatar: function () {
+			// var video = this.$el.append('<video autoplay>')
+			// navigator.getUserMedia  = navigator.getUserMedia ||
+			// 													navigator.webkitGetUserMedia ||
+			// 													navigator.mozGetUserMedia ||
+			// 													navigator.msGetUserMedia;
+
+			// if (navigator.getUserMedia) {
+			// 	navigator.getUserMedia({video: true}, function(stream) {
+			// 		video.src = window.URL.createObjectURL(stream);
+			// 	}, function (err) {
+			// 		console.log('error:', err)
+			// 	});
+			// } else {
+			// 	video.src = 'somevideo.webm'; // fallback.
+			// }
+
+			if (navigator.getUserMedia) {
+				console.log('yes')
+			} else {
+				console.log('no')
+			}
 		}
 
 
