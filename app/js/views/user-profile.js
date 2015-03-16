@@ -44,8 +44,8 @@ define([
 		],
 
 		initialize: function(){
-			if (navigator.getUserMedia) {
-				console.log('camera!')
+			if (navigator.getUserMedia || navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia || navigator.msGetUserMedia) {
 				this.model.set('camera', true)
 			}
 
