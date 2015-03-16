@@ -62,7 +62,7 @@ define([
 
 			_.each(this.fields, function(field){
 				var rating = new Rating()
-				rating.url = backendPath + '/rating/' + field.fieldName + '/' + this.id
+				rating.url = '/rating/' + field.fieldName + '/' + this.id
 				var rateField = new ViewRating({model: rating, attributes: field})
 				this.$('.ratings').append(rateField.$el)
 				

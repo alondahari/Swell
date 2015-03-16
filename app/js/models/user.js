@@ -2,7 +2,7 @@ define(['backbone'], function(Backbone){
 
 	return Backbone.Model.extend({
 
-		url: backendPath + '/user',
+		url: '/user',
 		idAttribute: "_id",
 
 		regex: {

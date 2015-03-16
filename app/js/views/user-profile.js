@@ -45,6 +45,7 @@ define([
 
 		initialize: function(){
 			if (navigator.getUserMedia) {
+				console.log('camera!')
 				this.model.set('camera', true)
 			}
 
@@ -91,7 +92,7 @@ define([
 
 			if (_.isEqual(this.cacheUser, this.model.toJSON())) return false
 				
-			this.model.url = backendPath + '/user'
+			this.model.url = '/user'
 			this.model.save()
 		},
 
