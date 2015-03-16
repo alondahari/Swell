@@ -135,7 +135,6 @@ define([
 		pictureCaptureHide: function(){
 			this.$('.image-capture-options').removeClass('image-capture-show')
 			this.$('.screen').addClass('hidden')
-			this.$('.button-take-photo').removeClass('hidden')
 		},
 
 		changeAvatar: function () {
