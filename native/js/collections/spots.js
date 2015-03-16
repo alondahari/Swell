@@ -10,9 +10,7 @@ define([
 		url: backendPath + '/locations',
 
 		initialize: function(){
-			this.fetch({success: function(collection){
-				collection.trigger('fetched')
-			}})
+
 			this.getUserLocation()
 		},
 

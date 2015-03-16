@@ -6,6 +6,7 @@ define([
 	'views/spot',
 	'views/user-profile',
   'collections/spots',
+  'db/locations'
   ], function(
   	Backbone,
   	Login,
@@ -13,7 +14,8 @@ define([
   	RateView,
   	SpotView,
   	userProfile,
-  	Spots
+  	Spots,
+  	locations
   ){
 
 	return Backbone.Router.extend({
@@ -35,15 +37,9 @@ define([
 
 		},
 
-		location: function(){
-			if (this.spots) {
-				this.spots.trigger('fetched')
-				this.spots.getUserLocation()
-  			this.locationView = new LocationView({ collection: this.spots, attributes: {user: this.user} })
-			} else {		
-			  this.spots = new Spots()
-  			this.locationView = new LocationView({ collection: this.spots, attributes: {user: this.user} })
-			}
+		location: function(){		
+			  var spots = new Spots(locations)
+  			this.locationView = new LocationView({ collection: spots, attributes: {user: this.user} })
 
 		},
 

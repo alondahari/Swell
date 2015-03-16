@@ -81,10 +81,7 @@ define([
 			// add loader here
 			
 			// fix for typehead loading too soon
-			var view = this
-			$(function () {
-				view.listenTo(view.collection, 'fetched', view.render)
-			})
+			this.render()
 
 		},
 
@@ -264,7 +261,7 @@ define([
 					map: this.map,
 					title: 'test',
 					id: model.get('_id'),
-					icon: '../../img/red-surf-marker.svg'
+					icon: '../img/red-surf-marker.svg'
 				});
 
 				google.maps.event.addListener(marker, 'click', function(){
