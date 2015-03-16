@@ -7917,6 +7917,9 @@ body, html {
   color: black;
   padding: 5px; }
 
+.avatar-comment-container {
+  min-width: 60px; }
+
 .avatar-comment {
   width: 30px;
   height: 30px;
