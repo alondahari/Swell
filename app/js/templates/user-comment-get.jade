@@ -4,5 +4,10 @@
 	.col-xs-7.no-padding
 		.comment-box
 			p= data.comment
-		p.comment-user= data.user
-		p.comment-time= data.time
+		p.comment-user
+			span.glyphicon.glyphicon-user.comment-icon
+			| #{data.user}
+
+		p.comment-time
+			span.glyphicon.glyphicon-time.comment-icon
+			| #{data.time}
