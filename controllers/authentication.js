@@ -41,11 +41,12 @@ var authenticationController = {
 
   updateUser: function(req, res){
     console.log(req.body)
+    var set = { username: req.body.username, email: req.body.email}
+    var avatar = req.body.avatar 
+    if (avatar) {_.extend(set, {avatar: avatar})}
+
     var query = User.where({_id: req.body._id})
-    query.findOneAndUpdate({$set: {
-      username: req.body.username,
-      email: req.body.email
-    }}, function(err, user){
+    query.findOneAndUpdate({$set: set}, function(err, user){
       if (err) {
         var errorMessage = 'An error occured, try again';
 
