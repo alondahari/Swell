@@ -1,0 +1,95 @@
+.user-details{
+	margin-top: 40px;
+}
+
+.field{
+	clear: both;
+}
+
+.field p:first-child{
+	margin-bottom: 0px;
+	color: $color-secondary-text;
+}
+
+.field-input{
+	font-size: 2rem;
+	position: relative;
+}
+
+.button-change-password{
+	margin-top: 30px;
+	width: 80%;
+}
+
+.help-text{
+	text-align: center;
+	font-size: 1.8rem;
+	color: $color-secondary-text;
+}
+
+.push-down{
+	margin: 25px 0 0;
+	
+}
+
+.user-avatar{
+	border-radius: 40px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.setting-save{
+	color: $color-info-dimmed;
+	font-size: 1.7rem;
+	float: right;
+}
+
+.setting-sliders{
+	margin-top: 30px;
+	margin-bottom: -10px;
+}
+
+.settings-save{
+	font-size: 2rem;
+	text-align: center;
+	color: $color-info-dimmed;
+	margin-top: 5px;
+	margin-bottom: -30px;
+	height: 28px;
+}
+
+.screen{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.image-capture-options{
+	background-color: rgba(0,0,0,0.2);
+
+	position: fixed;
+	max-width: 700px;
+	margin: auto;
+	bottom: 0;
+	width: 100%;
+	transform: translateY(200px);
+	transition: transform .2s;
+}
+
+.image-capture-show{
+	transform: translateY(0);
+}
+
+.image-capture-options .btn{
+	width: 100%;
+
+}
+
+.image-capture-options .image-capture-cancel{
+	margin: 15px 0 10px;
+	color: black;
+	font-weight: bold;
+}

@@ -1,0 +1,53 @@
+
+.location-select{
+	margin: 30px 0;
+	font-weight: 400;
+}
+
+.searchbox{
+	font-weight: 400;
+	color: black;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.twitter-typeahead{
+	width: 100%;
+}
+
+.tt-dropdown-menu{
+	background-color: #fff;
+	width: 100%;
+	margin-top: 10px;
+	border-radius: 10px;
+	border: 1px solid #999;
+	text-align: left;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#map-canvas{
+	margin-top: 30px;
+	height: 300px;
+}
+
+.typehead.tt-input {
+
+	background-image: url('../img/icon-search.png');
+	background-position: 10px center;
+	background-repeat: no-repeat;
+	border: 1px solid #ccc;
+	
+	border-radius: 4px;
+	
+	text-indent: 20px;
+
+	transition: all 0.2s;
+	
+}
+
+.typehead.tt-input:focus {
+
+	background-position: -20px center;
+	text-indent: 0px;
+}

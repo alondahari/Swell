@@ -1,0 +1,23 @@
+.header
+	h1 Swell
+	.user
+
+.view
+	.row
+		.col-xs-10.col-xs-offset-1.searchbox
+			input.typehead.form-control(type='text', placeholder="Search for a Surf Spot", rel="search")
+		.col-xs-4.col-xs-offset-1
+			hr.or-break
+		.col-xs-2.or-text
+			span or
+		.col-xs-4
+			hr.or-break
+
+	.row
+		.col-xs-10.col-xs-offset-1.location-selects
+
+	button(role="button").btn.btn-primary.btn-lg.button-submit See Surf Spot
+
+	.row
+		.col-xs-10.col-xs-offset-1
+			#map-canvas
