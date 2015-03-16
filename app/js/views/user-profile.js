@@ -115,15 +115,21 @@ define([
 		fileUpload: function(e){
 			var view = this
 			var file = e.target.files[0]
+			var size = (file.size/1024/1024).toFixed(4)
+
 			fr = new FileReader()
 			fr.onload = function (e) {
-
 				var URI = e.currentTarget.result
 				view.model.attributes.avatar = URI
 				view.model.url = backendPath + '/user'
 				view.model.save()
 			}
-			fr.readAsDataURL(file)
+			
+			if (size < 16) {
+				fr.readAsDataURL(file)
+			} else {
+				this.feedbackMessage = 'Image must be smaller than 16MB'
+			}
 		},
 
 		pictureCaptureHide: function(){
