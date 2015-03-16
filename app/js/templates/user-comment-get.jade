@@ -6,7 +6,7 @@
 			p= data.comment
 		p.comment-user
 			span.glyphicon.glyphicon-user.comment-icon
-			| #{data.user}
+			| #{data.user || "Dude"}
 
 		p.comment-time
 			span.glyphicon.glyphicon-time.comment-icon
