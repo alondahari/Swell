@@ -13,15 +13,15 @@ define(['backbone'], function(Backbone){
 
 		validate: function(attrs){
 
-			if (attrs.email && !attrs.email.match(this.regex.email)) {
+			if (attrs.hasOwnProperty('email') && !attrs.email.match(this.regex.email)) {
 				return {field: 'email', msg: 'Please enter a valid email address'}
 			}
 			
-			if (attrs.password && !attrs.password.match(this.regex.password)) {
+			if (attrs.hasOwnProperty('password') && !attrs.password.match(this.regex.password)) {
 				return {field: 'password', msg: 'Password must contain at least 6 letters, digits or special characters'}
 			}
 
-			if (attrs.username && !attrs.username.match(this.regex.username)) {
+			if (attrs.hasOwnProperty('username') && !attrs.username.match(this.regex.username)) {
 				return {field: 'username', msg: 'Invalid User Name'}
 			}
 		}
