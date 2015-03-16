@@ -72,7 +72,7 @@ define([
 		renderComments: function(){
 			var view = this
 			var comments = new UserComments()
-			comments.url = '/comments/' + this.id
+			comments.url = backendPath + '/comments/' + this.id
 			comments.fetch({success: function (model, res) {
 				_.each(res, function (comment) {
 					view.$('.comments').append(new CommentView({ model: comment }).$el)
