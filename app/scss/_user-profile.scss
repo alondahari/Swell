@@ -57,3 +57,39 @@
 	margin-bottom: -30px;
 	height: 28px;
 }
+
+.screen{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.6);
+}
+
+.image-capture-options{
+	background-color: rgba(0,0,0,0.2);
+
+	position: fixed;
+	max-width: 700px;
+	margin: auto;
+	bottom: 0;
+	width: 100%;
+	transform: translateY(200px);
+	transition: transform .2s;
+}
+
+.image-capture-show{
+	transform: translateY(0);
+}
+
+.image-capture-options .btn{
+	width: 100%;
+
+}
+
+.image-capture-options .image-capture-cancel{
+	margin: 15px 0 10px;
+	color: black;
+	font-weight: bold;
+}

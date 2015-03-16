@@ -21,9 +21,21 @@
 	color: $color-info-dimmed;
 }
 
+.ratings{
+	margin-top: 200px;
+}
+
 
 .value-changed{
 	color: $color-secondary-text;
+}
+
+.rate-nav-container{
+	position: fixed;
+	top: 74px;
+	width: 100%;
+	max-width: 700px;
+	z-index: 4;
 }
 
 .rate-nav{
@@ -36,6 +48,8 @@
 	font-size: 2rem;
 	float: left;
 	margin-bottom: 30px;
+	// position: absolute;
+	top: 0;
 	&:hover, &:active{
 		text-decoration: none;
 	}
@@ -97,12 +111,12 @@
 }
 
 .comment-box{
-	background-color: rgba(221, 164, 73, .8);
+	background-color: rgba(0,0,0,0.5);
 	height: 50px;
 
 	border-radius: 5px;
 	margin-left: -20px;
-	color: black;
+	color: white;
 	padding: 5px;
 
 }

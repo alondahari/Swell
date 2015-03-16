@@ -21,7 +21,9 @@ define([
 			'keydown .field-input': 'preventNewLine',
 			'blur .field-input': 'save',
 			'click .user-avatar': 'changeAvatar',
-			'change #file-upload': 'fileUpload'
+			'change #file-upload': 'fileUpload',
+			'click .screen': 'pictureCaptureHide',
+			'click .btn': 'pictureCaptureHide'
 		},
 
 		settings: [
@@ -124,22 +126,14 @@ define([
 			fr.readAsDataURL(file)
 		},
 
-		changeAvatar: function () {
-			// var video = this.$el.append('<video autoplay>')
-			// navigator.getUserMedia  = navigator.getUserMedia ||
-			// 													navigator.webkitGetUserMedia ||
-			// 													navigator.mozGetUserMedia ||
-			// 													navigator.msGetUserMedia;
+		pictureCaptureHide: function(){
+			this.$('.image-capture-options').removeClass('image-capture-show')
+			this.$('.screen').addClass('hidden')
+		},
 
-			// if (navigator.getUserMedia) {
-			// 	navigator.getUserMedia({video: true}, function(stream) {
-			// 		video.src = window.URL.createObjectURL(stream);
-			// 	}, function (err) {
-			// 		console.log('error:', err)
-			// 	});
-			// } else {
-			// 	video.src = 'somevideo.webm'; // fallback.
-			// }
+		changeAvatar: function () {
+			this.$('.image-capture-options').addClass('image-capture-show')
+			this.$('.screen').removeClass('hidden')
 
 			if (navigator.getUserMedia) {
 				console.log('yes')
