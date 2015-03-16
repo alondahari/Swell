@@ -209,7 +209,7 @@ define([
 
 		searchbox: function(){
 
-			this.$('.typehead').typeahead({
+			this.$('.typehead.form-control').typeahead({
 				highlight: true
 			},
 			{
