@@ -3,9 +3,11 @@ define([
 	'jade',
 	'views/avatar',
 	'views/view-rating',
+	'views/user-comment-get',
 	'models/rating',
-	'text!templates/view.jade'
-], function(Backbone, jade, Avatar, ViewRating, Rating, template){
+	'text!templates/view.jade',
+	'collections/user-comments'
+], function(Backbone, jade, Avatar, ViewRating, CommentView, Rating, template, UserComments){
 
 	return Backbone.View.extend({
 
@@ -48,6 +50,8 @@ define([
 
 			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
 			this.$('a.rate-nav').attr('href', '#spot/' + this.attributes.title + '/' + this.id)
+
+			this.renderComments()
 		},
 
 		/**
@@ -63,6 +67,18 @@ define([
 				this.$('.ratings').append(rateField.$el)
 				
 			}, this)
+		},
+
+		renderComments: function(){
+			var view = this
+			var comments = new UserComments()
+			comments.url = '/comments/' + this.id
+			comments.fetch({success: function (model, res) {
+				console.log(res)
+				_.each(res, function (comment) {
+					view.$('.comments').append(new CommentView({ model: comment }))
+				})
+			}})
 		},
 
 		/**

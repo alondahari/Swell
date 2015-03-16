@@ -1,5 +1,5 @@
-var passport = require('passport');
-var User = require('../models/user');
+var passport = require('passport')
+var User = require('../models/user')
 var _ = require('underscore')
 
 /**

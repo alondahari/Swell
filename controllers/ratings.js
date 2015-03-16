@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
 var _ = require('underscore')
 var moment = require('moment')
+var User = require('../models/user')
 
 var Rating = mongoose.model('ratings', {
 	fieldName: String,
@@ -116,6 +117,38 @@ module.exports = {
 		
 	},
 
+	getComments: function(req, res){
+		var comments = []
+		Rating.find({fieldName: 'comment', spotId: req.params.id}, function (err, data) {
+			if (!err) {
+				data.forEach( function (comment, i) {
+					User.findOne({ _id: comment.userId }, function (err, user) {
+						if (!err) {
+
+							comments.push({
+								comment: comment.comment,
+								time: moment(comment.time).fromNow(),
+								user: user.username
+							})
+
+							// if we pushed all the comments into the array
+							if (i === data.length - 1) {
+								res.send(comments)
+							}
+						} else {
+							console.log('Error:', err)
+							res.send('Error:', err)
+						}
+					})					
+				})
+
+			} else {
+				console.log('Error:', err)
+				res.send('Error:', err)
+			}
+		})
+	},
+
 	addComment: function(req, res){
 		req.body.fieldName = 'comment'
 
@@ -128,5 +161,21 @@ module.exports = {
 				console.log(err)
 			}
 		})
+	},
+
+	updateComment: function(req, res){
+		console.log(req.body)
+		Rating.findOneAndUpdate(
+			{_id: req.body._id},
+			{$set: {comment: req.body.comment}},
+			function (err, model) {
+				if (!err) {
+					res.send(model)
+				} else {
+					res.send('An error occured, try again.')
+					console.log(err)
+				}
+			}
+		)
 	}
 }

@@ -5,7 +5,7 @@ define([
 	'text!templates/rate.jade',
 	'views/rate-field',
 	'views/avatar',
-	'views/user-comment',
+	'views/user-comment-set',
 	'models/rating',
 	'models/user-comment'
 ], function(Backbone, jade, pubsub, template, RateField, Avatar, CommentView, Rating, UserComment){

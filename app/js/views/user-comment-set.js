@@ -53,7 +53,6 @@ define([
 			}, {success: function(model, data){
 
 				feedback.text('Saved!')
-
 			}, error: function(model, data){
 				feedback.text('Error. Try again.')
 				console.log('error: ', data)
