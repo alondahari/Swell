@@ -8016,7 +8016,8 @@ body, html {
 
 .user-avatar {
   border-radius: 40px;
-  width: 100%; }
+  width: 100%;
+  cursor: pointer; }
 
 .setting-save {
   color: rgba(184, 181, 240, 0.5);

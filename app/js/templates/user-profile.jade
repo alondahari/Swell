@@ -7,7 +7,7 @@
 		.col-xs-4.col-xs-offset-1
 			input.hidden(id="file-upload", type="file", accept="image/*", capture="camera")
 			label(for="file-upload")
-				img.user-avatar(src=user.avatar)
+				img.user-avatar(src=user.avatar || '../img/default-avatar.jpg')
 
 		.col-xs-6
 			.field
