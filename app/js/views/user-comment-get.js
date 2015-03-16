@@ -9,7 +9,6 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
-			console.log(this.model)
 			this.render()
 		},
 
