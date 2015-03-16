@@ -11,11 +11,6 @@
 	margin-top: 40px;
 }
 
-.typehead{
-	padding: 20px 10px;
-	text-align: left;
-}
-
 .twitter-typeahead{
 	width: 100%;
 }
@@ -35,4 +30,27 @@
 	margin-top: 30px;
 	// margin-bottom: 30px;
 	height: 300px;
+}
+
+.typehead {
+	padding: 20px 10px;
+	text-align: left;
+	background-image: url('../img/icon-search.png');
+	background-position: 10px center;
+	background-repeat: no-repeat;
+	border: 1px solid #ccc;
+	
+	border-radius: 4px;
+	
+	padding: 10px 5px;
+	text-indent: 25px;
+
+	transition: all 0.2s;
+	
+}
+
+.typehead:focus {
+	/* Picked a random icon from Google */
+	background-position: -20px center;
+	text-indent: 5px;
 }
