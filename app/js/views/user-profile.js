@@ -129,17 +129,19 @@ define([
 		pictureCaptureHide: function(){
 			this.$('.image-capture-options').removeClass('image-capture-show')
 			this.$('.screen').addClass('hidden')
+			this.$('.button-take-photo').removeClass('hidden')
 		},
 
 		changeAvatar: function () {
-			this.$('.image-capture-options').addClass('image-capture-show')
-			this.$('.screen').removeClass('hidden')
 
+			this.$('.screen').removeClass('hidden')
 			if (navigator.getUserMedia) {
-				console.log('yes')
+				
 			} else {
-				console.log('no')
+					
+				this.$('.button-take-photo').addClass('hidden')
 			}
+			this.$('.image-capture-options').addClass('image-capture-show')
 		}
 
 
