@@ -127,6 +127,7 @@ define([
 
 		setMessage: function(model, err){
 			this.pictureCaptureHide()
+			$('.loading-spinner').hide()
 			if (err.msg || err.responseText) {
 				this.model.set(this.cacheUser)
 				this.$('.settings-save').text(err.msg || err.responseText)
@@ -158,6 +159,7 @@ define([
 			if (size < 16) {
 				fr.readAsDataURL(file)
 				this.$('.settings-save').text('Saving...')
+				$('.loading-spinner').show()
 			} else {
 				this.$('.settings-save').text('Image must be smaller than 16MB')
 				
@@ -177,7 +179,7 @@ define([
 				$('video').attr('src', window.URL.createObjectURL(stream))
 			}, function (err) {
 				view.$('.settings-save').text('Error: Camera not found')
-				// view.pictureCaptureHide()
+				view.pictureCaptureHide()
 			})
 		},
 
@@ -196,18 +198,19 @@ define([
 			var context = canvas.getContext('2d')
 			if (video.paused || video.ended) {
 				this.$('.settings-save').text('Error, camera stream ended')
-				// this.pictureCaptureHide()
-				// return false
+				this.pictureCaptureHide()
+				return false
 			}
 			context.drawImage(video,0,0,width,height)
 			this.avatarURI = canvas.toDataURL('image/png')
-			console.log(this.$('.capture'))
+
 			this.$('.capture').addClass('hidden')
 			this.$('.approve-photo').removeClass('hidden')
 			
 		},
 
 		savePhotoCapture: function(){
+			$('.loading-spinner').show()
 			this.model.attributes.avatar = this.avatarURI
 			this.model.url = '/user'
 			this.model.save()
