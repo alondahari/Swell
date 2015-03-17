@@ -45,16 +45,7 @@ define([
 		],
 
 		initialize: function(){
-
-			navigator.getUserMedia = 
-				navigator.getUserMedia ||
-				navigator.webkitGetUserMedia ||
-				navigator.mozGetUserMedia ||
-				navigator.msGetUserMedia
-
-			if (navigator.getUserMedia) {
-				this.model.set('camera', true)
-			}
+			this.model.set('camera', this.hasCamera())
 
 			this.cacheUser = this.model.toJSON()
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)
@@ -77,6 +68,23 @@ define([
 			this.settings.forEach(function(setting){
 				var field = new Setting(setting)
 				this.$('.setting-sliders').append(new RateField({model: field, attributes: {user: user}}).$el)
+			})
+		},
+
+		hasCamera: function(){
+			navigator.getUserMedia = 
+				navigator.getUserMedia ||
+				navigator.webkitGetUserMedia ||
+				navigator.mozGetUserMedia ||
+				navigator.msGetUserMedia
+
+			var cameraExists
+
+			MediaStreamTrack.getSources(function(mediaArr) {
+				cameraExists = mediaArr.some( function (media) {
+					return media.kind === 'video'
+				})
+				return cameraExists && navigator.getUserMedia
 			})
 		},
 
