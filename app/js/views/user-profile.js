@@ -24,7 +24,7 @@ define([
 			'change #file-upload': 'fileUpload',
 			'click .button-take-photo': 'showVideoModal',
 			'click .screen': 'pictureCaptureHide',
-			'click .btn': 'pictureCaptureHide',
+			'click .image-capture-cancel': 'pictureCaptureHide',
 			'click .capture': 'capturePhoto'
 		},
 
@@ -48,7 +48,7 @@ define([
 		initialize: function(){
 			
 			this.hasCamera()
-			this.cacheUser = this.model.toJSON()
+			
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)
 			
 
@@ -78,13 +78,15 @@ define([
 				navigator.mozGetUserMedia ||
 				navigator.msGetUserMedia
 
-			var cameraExists, view = this
+			var view = this
 
 			MediaStreamTrack.getSources(function(mediaArr) {
-				cameraExists = mediaArr.some( function (media) {
+				var cameraExists = mediaArr.some( function (media) {
 					return media.kind === 'video'
 				})
-				view.model.set('camera', cameraExists && navigator.getUserMedia)
+
+				view.model.set('camera', cameraExists && !!navigator.getUserMedia)
+				view.cacheUser = view.model.toJSON()
 				view.render()
 			})
 		},
@@ -160,6 +162,8 @@ define([
 		},
 
 		showVideoModal: function(){
+			this.$('.image-capture-options').removeClass('image-capture-show')
+			this.$('.screen').removeClass('hidden')
 			$('.video-modal').removeClass('hidden')
 			navigator.getUserMedia({video: true}, function () {
 				$('video').attr('src', window.URL.createObjectURL(stream))
@@ -183,6 +187,7 @@ define([
 		},
 
 		pictureCaptureHide: function(){
+			$('.video-modal').addClass('hidden')
 			this.$('.image-capture-options').removeClass('image-capture-show')
 			this.$('.screen').addClass('hidden')
 		},
