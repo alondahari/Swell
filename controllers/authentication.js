@@ -40,20 +40,21 @@ var authenticationController = {
   },
 
   updateUser: function(req, res){
-
-    var set = { username: req.body.username, email: req.body.email}
-    var avatar = req.body.avatar 
-    if (avatar) {_.extend(set, {avatar: avatar})}
+    var set = {email: req.body.email}
+    var username = req.body.username
+    var avatar = req.body.avatar
+    if (username) {
+      _.extend(set, {username: username})
+    }
+    if (avatar) {
+      _.extend(set, {avatar: avatar})
+    }
 
     var query = User.where({_id: req.body._id})
     query.findOneAndUpdate({$set: set}, function(err, user){
       if (err) {
         var errorMessage = 'An error occured, try again';
-
-        if(err.code === 11000){
-          errorMessage = 'This user already exists.';
-        }
-
+        console.log(err)
         return res.send(errorMessage);
       } else {
         var resUser = user.toObject()
@@ -100,7 +101,7 @@ var authenticationController = {
   // If none are found, the user is successfully added to the DB, it is safe to
   // assume that they are ready to log in, so we do that as well.
   signup: function(req, res, next){
-
+    console.log(req.body)
     // Create a new instance of the User model with the data passed to this
     // handler. By using "param," we can safely assume that this route will
     // work regardless of how the data is sent (post, get).
@@ -119,6 +120,7 @@ var authenticationController = {
       // information. We can customize the printed message based on
       // the error mongoose encounters
       if(err) {
+        console.log(err)
 
         // By default, we'll show a generic message...
         var errorMessage = 'An error occured, please try again';

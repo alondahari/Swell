@@ -15,6 +15,7 @@ define([
 		initialize: function(){
 			
 			this.listenTo(this.model, 'invalid', this.highlightError)
+			this.listenTo(this.model, 'valid', this.setValid)
 			this.listenTo(this.model, 'sync', this.loginSuccess)
 			this.listenTo(this.model, 'error', this.loginError)
 			this.render()
@@ -33,7 +34,10 @@ define([
 
 		submit: function(e){
 			e.preventDefault()
-
+			if (this.invalidMessage) {
+				this.displayError(null, this.invalidMessage)
+				return false;
+			}
 			this.model.url = $(e.target).data('route')
 
 			this.model.save()
@@ -66,9 +70,12 @@ define([
 		},
 
 		highlightError: function(model, msg){
-			console.log(model)
 			$('input[name="' + msg.field + '"').parent().addClass('has-error').removeClass('has-success')
+			this.invalidMessage = msg.msg
+		},
 
+		setValid: function(){
+			this.invalidMessage = null
 		},
 
 		displayError: function(model, msg){

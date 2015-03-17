@@ -150,6 +150,7 @@ define([
 
 			fr = new FileReader()
 			fr.onload = function (e) {
+				
 				var URI = e.currentTarget.result
 				view.model.attributes.avatar = URI
 				view.model.url = '/user'
@@ -214,9 +215,7 @@ define([
 
 		savePhotoCapture: function(){
 			$('.loading-spinner').show()
-			console.log(this.avatarURI)
 			this.model.attributes.avatar = this.avatarURI
-			console.log(this.model)
 			this.model.url = '/user'
 			this.model.save()
 		},
