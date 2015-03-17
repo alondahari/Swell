@@ -86,7 +86,7 @@ define([
 				var cameraExists = mediaArr.some( function (media) {
 					return media.kind === 'video'
 				})
-				cameraExists = true
+
 				view.model.set('camera', cameraExists && !!navigator.getUserMedia)
 				view.cacheUser = view.model.toJSON()
 				view.render()
@@ -178,6 +178,7 @@ define([
 			navigator.getUserMedia({video: true}, function (stream) {
 				$('video').attr('src', window.URL.createObjectURL(stream))
 			}, function (err) {
+				console.log(err)
 				view.$('.settings-save').text('Error: Camera not found')
 				view.pictureCaptureHide()
 			})
