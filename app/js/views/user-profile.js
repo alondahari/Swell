@@ -22,6 +22,7 @@ define([
 			'blur .field-input': 'save',
 			'click .avatar-has-camera': 'changeAvatar',
 			'change #file-upload': 'fileUpload',
+			'click .button-take-photo': 'takePhoto',
 			'click .screen': 'pictureCaptureHide',
 			'click .btn': 'pictureCaptureHide'
 		},
@@ -44,8 +45,14 @@ define([
 		],
 
 		initialize: function(){
-			if (navigator.getUserMedia || navigator.webkitGetUserMedia ||
-            navigator.mozGetUserMedia || navigator.msGetUserMedia) {
+
+			navigator.getUserMedia = 
+				navigator.getUserMedia ||
+				navigator.webkitGetUserMedia ||
+				navigator.mozGetUserMedia ||
+				navigator.msGetUserMedia
+
+			if (navigator.getUserMedia) {
 				this.model.set('camera', true)
 			}
 
@@ -53,16 +60,20 @@ define([
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)
 			
 			this.render()
+			this.renderSliders()
 
 		},
 
 		render: function(model, err){
 			$('.loading-spinner').hide()
 
-			var user = this.model
-
 			this.$el.html(this.template({user: this.cacheUser, feedbackMessage: this.feedbackMessage}))
 
+		},
+
+		renderSliders: function(){
+			var user = this.model
+			
 			this.settings.forEach(function(setting){
 				var field = new Setting(setting)
 				this.$('.setting-sliders').append(new RateField({model: field, attributes: {user: user}}).$el)
@@ -72,6 +83,7 @@ define([
 		preventNewLine: function(e){
 			if(e.which === 13){
 				e.preventDefault()
+				this.$('.settings-save').text('Saving...')
 				$(e.target).blur()
 			}
 		},
@@ -80,11 +92,9 @@ define([
 			var $target = $(e.target)
 			var field = $target.data('field')
 			var newValue = $target.text()
-			this.feedbackMessage =  'Saving...'
 			if (newValue !== 'Dude') {
 				this.model.attributes[field] = newValue
 			}
-
 
 		},
 
@@ -103,18 +113,19 @@ define([
 		},
 
 		setMessage: function(model, err){
-
 			if (err.msg || err.responseText) {
 				this.model.set(this.cacheUser)
-				this.feedbackMessage = err.msg || err.responseText
+				this.$('.settings-save').text(err.msg || err.responseText)
 			}
 			if (!_.isEqual(this.cacheUser, this.model.toJSON())) {
 
+				if (model.get('avatar')) {
+					this.$('img.user-avatar').attr('src', model.get('avatar'))
+				}
 				this.cacheUser = this.model.toJSON()
-				this.feedbackMessage = 'New Settings Saved!'
+				this.$('.settings-save').text('New Settings Saved!')
 			}
 
-			this.render()
 		},
 
 		fileUpload: function(e){
@@ -126,15 +137,21 @@ define([
 			fr.onload = function (e) {
 				var URI = e.currentTarget.result
 				view.model.attributes.avatar = URI
-				view.model.url = backendPath + '/user'
+				view.model.url = '/user'
 				view.model.save()
 			}
 			
 			if (size < 16) {
 				fr.readAsDataURL(file)
+				this.$('.settings-save').text('Saving...')
 			} else {
-				this.feedbackMessage = 'Image must be smaller than 16MB'
+				this.$('.settings-save').text('Image must be smaller than 16MB')
+				
 			}
+		},
+
+		takePhoto: function(){
+			
 		},
 
 		pictureCaptureHide: function(){
