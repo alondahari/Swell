@@ -165,7 +165,7 @@ define([
 			this.$('.image-capture-options').removeClass('image-capture-show')
 			this.$('.screen').removeClass('hidden')
 			$('.video-modal').removeClass('hidden')
-			navigator.getUserMedia({video: true}, function () {
+			navigator.getUserMedia({video: true}, function (stream) {
 				$('video').attr('src', window.URL.createObjectURL(stream))
 			}, function (err) {
 				console.log(err)
