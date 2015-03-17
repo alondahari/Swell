@@ -45,7 +45,7 @@ define([
 		},
 
 		loginSuccess: function(model, res){
-			console.log(res)
+
 			if (res._id) {
 				this.model.set(res)
 				this.model.unset('password')

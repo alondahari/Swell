@@ -78,8 +78,7 @@ define([
 		},
 
 		initialize: function(){
-			// add loader here
-			console.log('init')
+
 			this.listenTo(this.collection, 'fetched', this.render)
 
 		},
