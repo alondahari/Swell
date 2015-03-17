@@ -25,6 +25,8 @@ define([
 			'click .button-take-photo': 'showVideoModal',
 			'click .screen': 'pictureCaptureHide',
 			'click .image-capture-cancel': 'pictureCaptureHide',
+			'click .image-capture-repeat': 'showVideoModal',
+			'click .image-capture-save': 'savePhotoCapture',
 			'click .capture': 'capturePhoto'
 		},
 
@@ -124,6 +126,7 @@ define([
 		},
 
 		setMessage: function(model, err){
+			this.pictureCaptureHide()
 			if (err.msg || err.responseText) {
 				this.model.set(this.cacheUser)
 				this.$('.settings-save').text(err.msg || err.responseText)
@@ -162,21 +165,25 @@ define([
 		},
 
 		showVideoModal: function(){
-			$('video').removeClass('hidden')
-			$('canvas').addClass('hidden')
+			var view = this
+			this.$('.capture').removeClass('hidden')
+			this.$('.approve-photo').addClass('hidden')
+			this.$('video').removeClass('hidden')
+			this.$('canvas').addClass('hidden')
 			this.$('.image-capture-options').removeClass('image-capture-show')
 			this.$('.screen').removeClass('hidden')
 			$('.video-modal').removeClass('hidden')
 			navigator.getUserMedia({video: true}, function (stream) {
 				$('video').attr('src', window.URL.createObjectURL(stream))
 			}, function (err) {
-				console.log(err)
+				view.$('.settings-save').text('Error: Camera not found')
+				// view.pictureCaptureHide()
 			})
 		},
 
 		capturePhoto: function(){
-			var $canvas = $('canvas')
-			var $video = $('video')
+			var $canvas = this.$('canvas')
+			var $video = this.$('video')
 			var width = $video.width()
 			var height = $video.height()
 			$canvas.removeClass('hidden')
@@ -188,13 +195,20 @@ define([
 
 			var context = canvas.getContext('2d')
 			if (video.paused || video.ended) {
-				console.log('Error, camera stream ended')
-				return false
+				this.$('.settings-save').text('Error, camera stream ended')
+				// this.pictureCaptureHide()
+				// return false
 			}
 			context.drawImage(video,0,0,width,height)
-			var URI = canvas.toDataURL('image/png')
-			console.log(URI)
-			this.model.attributes.avatar = URI
+			this.avatarURI = canvas.toDataURL('image/png')
+			console.log(this.$('.capture'))
+			this.$('.capture').addClass('hidden')
+			this.$('.approve-photo').removeClass('hidden')
+			
+		},
+
+		savePhotoCapture: function(){
+			this.model.attributes.avatar = this.avatarURI
 			this.model.url = '/user'
 			this.model.save()
 		},
