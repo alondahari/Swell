@@ -5,6 +5,8 @@
 	.col-xs-8.col-sm-7.no-padding.col-comment-box
 		.comment-box
 			p= data.comment
+			if data.delButton
+				span.glyphicon.glyphicon-remove-sign.del-button
 		p.comment-user
 			span.glyphicon.glyphicon-user.comment-icon
 			| #{data.user || "Dude"}

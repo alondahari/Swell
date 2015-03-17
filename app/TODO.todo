@@ -20,6 +20,7 @@ Phase 4:
   ☐ handle 404
   ☐ Optimize location fetch (app: fetch all, web: ajax for search, fetch and store according to user location and select choices)
   ☐ add uncss
+  ☐ don't pass avatar around all the time
 
 Phase 5:
   ☐ Add additional ratings screen ( user wave prediction, jelly fish, currents, appropriate skill level, wet suit recommendation, water polution )

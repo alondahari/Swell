@@ -124,12 +124,13 @@ module.exports = {
 				data.forEach( function (comment, i) {
 					User.findOne({ _id: comment.userId }, function (err, user) {
 						if (!err) {
-
 							comments.push({
+								commentId: comment.id,
 								comment: comment.comment,
 								time: moment(comment.time).fromNow(),
 								user: user.username,
-								avatar: user.avatar
+								avatar: user.avatar,
+								userId: user.id
 							})
 
 							// if we pushed all the comments into the array - send
@@ -165,7 +166,7 @@ module.exports = {
 	},
 
 	updateComment: function(req, res){
-		console.log(req.body)
+
 		Rating.findOneAndUpdate(
 			{_id: req.body._id},
 			{$set: {comment: req.body.comment}},
@@ -178,5 +179,12 @@ module.exports = {
 				}
 			}
 		)
+	},
+
+	deleteComment: function (req, res) {
+		console.log(req.params.id)
+		Rating.findOneAndRemove({_id: req.params.id}, function (err, data) {
+			res.send(data)
+		})
 	}
 }

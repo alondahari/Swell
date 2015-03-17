@@ -70,11 +70,16 @@ define([
 		},
 
 		renderComments: function(){
+
 			var view = this
 			var comments = new UserComments()
 			comments.url = '/comments/' + this.id
 			comments.fetch({success: function (model, res) {
 				_.each(res, function (comment) {
+					if (view.attributes.user.attributes._id === comment.userId) {
+						comment.delButton = true
+					}
+
 					view.$('.comments').append(new CommentView({ model: comment }).$el)
 				})
 			}})

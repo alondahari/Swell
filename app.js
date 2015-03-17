@@ -52,6 +52,7 @@ app.put('/rating', ratingsCtrl.setRating)
 app.get('/comments/:id', ratingsCtrl.getComments)
 app.post('/comments', ratingsCtrl.addComment)
 app.put('/comments', ratingsCtrl.updateComment)
+app.get('/delete-comment/:id', ratingsCtrl.deleteComment)
 
 
 var server = app.listen(process.env.PORT || 7878, function() {
