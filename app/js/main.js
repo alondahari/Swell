@@ -12,6 +12,9 @@ require.config({
         'jquery'
       ],
       exports: 'Backbone'
+    },
+    typeahead: {
+      deps: ['jquery']
     }
   },
   paths: {
@@ -22,7 +25,7 @@ require.config({
     text: '../bower_components/requirejs-text/text',
     moment: '../bower_components/moment/moment',
     slider: '../bower_components/seiyria-bootstrap-slider/js/bootstrap-slider',
-    typehead: '../bower_components/typeahead.js/dist/typeahead.bundle'
+    typeahead: '../bower_components/typeahead.js/dist/typeahead.bundle'
   }
 })
 

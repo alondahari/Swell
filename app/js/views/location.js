@@ -1,7 +1,7 @@
 define([
 	'backbone',
 	'jade',
-	'typehead',
+	'typeahead',
 	'views/location-select',
 	'views/avatar',
 	'text!templates/location.jade'
