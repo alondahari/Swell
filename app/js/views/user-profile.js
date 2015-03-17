@@ -177,9 +177,10 @@ define([
 			$('.video-modal').removeClass('hidden')
 			navigator.getUserMedia({video: true}, function (stream) {
 				$('video').attr('src', window.URL.createObjectURL(stream))
+				view.stream = stream
 			}, function (err) {
 				console.log(err)
-				view.$('.settings-save').text('Error: Camera not found')
+				view.$('.settings-save').text('Please allow access to your camera')
 				view.pictureCaptureHide()
 			})
 		},
@@ -207,12 +208,15 @@ define([
 
 			this.$('.capture').addClass('hidden')
 			this.$('.approve-photo').removeClass('hidden')
+			this.stream.stop()
 			
 		},
 
 		savePhotoCapture: function(){
 			$('.loading-spinner').show()
+			console.log(this.avatarURI)
 			this.model.attributes.avatar = this.avatarURI
+			console.log(this.model)
 			this.model.url = '/user'
 			this.model.save()
 		},

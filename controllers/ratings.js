@@ -120,7 +120,6 @@ module.exports = {
 	getComments: function(req, res){
 		var comments = []
 		Rating.find({fieldName: 'comment', spotId: req.params.id}, {}, {sort: {time: -1}},function (err, data) {
-			console.log(data)
 			if (!err) {
 				data.forEach( function (comment, i) {
 					User.findOne({ _id: comment.userId }, function (err, user) {
