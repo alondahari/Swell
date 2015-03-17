@@ -55,7 +55,7 @@ define([
 			}
 
 			this.render()
-			this.$('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
+			this.$('a.rate-nav').attr('href', '#view-spot/' + encodeURIComponent(this.attributes.title) + '/' + this.id)
 		},
 
 		render: function(){

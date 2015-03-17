@@ -49,7 +49,7 @@ define([
 			this.renderFields()
 
 			this.$('.user').html(new Avatar({model: this.attributes.user}).$el)
-			this.$('a.rate-nav').attr('href', '#spot/' + this.attributes.title + '/' + this.id)
+			this.$('a.rate-nav').attr('href', '#spot/' + encodeURIComponent(this.attributes.title) + '/' + this.id)
 
 			this.renderComments()
 		},

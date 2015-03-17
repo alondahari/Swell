@@ -228,7 +228,7 @@ define([
 			e.preventDefault()
 
 			id = this.getSpotAttrs('_id')
-			window.location.hash = 'spot/' + this.fieldData[2].selected + '/' + id
+			window.location.hash = 'spot/' + encodeURIComponent(this.fieldData[2].selected) + '/' + id
 
 		},
 
