@@ -25,7 +25,6 @@ define([
 
 			// change to DELETE request
 			$.get('/delete-comment/' + this.model.commentId, function () {
-				console.log(arguments)
 				view.remove()
 			})
 		}

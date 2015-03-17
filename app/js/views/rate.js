@@ -14,7 +14,8 @@ define([
 
 		template: jade.compile(template),
 
-		newRating: {},
+		// only arrays get persisted?
+		currentLocation: [],
 
 		fields: [
 			{
@@ -45,7 +46,14 @@ define([
 		el: '.wrapper',
 
 		initialize: function(){
+
 			pubsub.bind('pleaseLoginPulse', this.pleaseLoginPulse, this)
+			pubsub.bind('ratingChanged', this.persistRating, this)
+
+			if (this.currentLocation[0] != this.id) {
+				this.resetFieldValues()
+			}
+
 			this.render()
 			this.$('a.rate-nav').attr('href', '#view-spot/' + this.attributes.title + '/' + this.id)
 		},
@@ -80,11 +88,28 @@ define([
 		},
 
 		pleaseLoginPulse: function () {
+
 			var $text = this.$('.help-text')
 			$text.addClass('pulse')
 			$text.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 				$text.removeClass('pulse')
 			});
+		},
+
+		persistRating: function(rating){
+			this.currentLocation[0] = this.id
+			_.each(this.fields, function (field, i) {
+
+				if (field.fieldName === rating.field) {
+					this.fields[i].value = rating.value
+				}
+			}, this)
+		},
+
+		resetFieldValues: function () {
+			_.each(this.fields, function (field, i) {
+				delete this.fields[i].value
+			}, this)
 		}
 
 

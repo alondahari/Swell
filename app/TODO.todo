@@ -2,7 +2,7 @@ Phase 1:
   ☐ make current marker stand out
 
 Phase 2:
-  ☐ persist rating view for user
+  ✔ persist rating view for user @done (15-03-17 17:36)
   ✔ add user comments @done (15-03-17 15:15)
   ☐ responsive image loading
   ☐ make settings functional + password change

@@ -48,6 +48,8 @@ define([
 			// get value from slider
 			var value = this.slider.slider('getValue')
 
+			pubsub.trigger('ratingChanged', {value: value, field: this.model.get('fieldName')})
+
 			// format value if neede
 			var text = this.formatText(this.model.get('fieldName'), value)
 
