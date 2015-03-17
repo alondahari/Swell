@@ -22,9 +22,10 @@ define([
 			'blur .field-input': 'save',
 			'click .avatar-has-camera': 'changeAvatar',
 			'change #file-upload': 'fileUpload',
-			'click .button-take-photo': 'takePhoto',
+			'click .button-take-photo': 'showVideoModal',
 			'click .screen': 'pictureCaptureHide',
-			'click .btn': 'pictureCaptureHide'
+			'click .btn': 'pictureCaptureHide',
+			'click .capture': 'capturePhoto'
 		},
 
 		settings: [
@@ -158,13 +159,27 @@ define([
 			}
 		},
 
-		takePhoto: function(){
+		showVideoModal: function(){
 			$('.video-modal').removeClass('hidden')
 			navigator.getUserMedia({video: true}, function () {
 				$('video').attr('src', window.URL.createObjectURL(stream))
 			}, function (err) {
 				console.log(err)
 			})
+		},
+
+		capturePhoto: function(){
+			var canvas = $('canvas')[0]
+			var context = canvas.getContext('2d')
+			var video = $('video')[0]
+			if (video.paused || video.ended) {
+				console.log('Error, camera stream ended')
+				return false
+			}
+			context.drawImage(video,0,0,'300px','300px')
+			var URI = canvas.toDataURL('image/png')
+			this.model.url = '/user'
+			this.model.save()
 		},
 
 		pictureCaptureHide: function(){
