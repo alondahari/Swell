@@ -37,9 +37,9 @@ define([
 
 		location: function(){
 			if (this.spots) {
-				this.spots.trigger('fetched')
 				this.spots.getUserLocation()
   			this.locationView = new LocationView({ collection: this.spots, attributes: {user: this.user} })
+				this.spots.trigger('fetched')
 			} else {		
 			  this.spots = new Spots()
   			this.locationView = new LocationView({ collection: this.spots, attributes: {user: this.user} })

@@ -79,12 +79,8 @@ define([
 
 		initialize: function(){
 			// add loader here
-			
-			// fix for typehead loading too soon
-			var view = this
-			$(function () {
-				view.listenTo(view.collection, 'fetched', view.render)
-			})
+			console.log('init')
+			this.listenTo(this.collection, 'fetched', this.render)
 
 		},
 
