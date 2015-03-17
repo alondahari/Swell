@@ -22,6 +22,7 @@ define([
 			this.render()
 			// hide defauld slider tooltip
 			this.model.set({tooltip: 'hide'})
+
 			if (!this.attributes.user.attributes._id) {
 				this.model.set({enabled: false})
 			}

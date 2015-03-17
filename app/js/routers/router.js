@@ -57,7 +57,7 @@ define([
 		},
 
 		user: function(){
-			console.log(this.user)
+
 			if (!this.user || !this.user.get('_id'))
 				return window.location.hash = ''
 			this.userView =  new userProfile({model: this.user})
@@ -68,11 +68,16 @@ define([
 			if (!$('.wrapper').html()) {
 				$('.loading-spinner').show()
 			}
-			if (this.loginView && route != 'login') this.loginView.undelegateEvents()
-			if (this.locationView && route != 'location') this.locationView.undelegateEvents()
-			if (this.rateView && route != 'rate') this.rateView.undelegateEvents()
-			if (this.spotView && route != 'spot') this.spotView.undelegateEvents()
-			if (this.userView && route != 'user') this.userView.undelegateEvents()
+			if (this.loginView && route != 'login') this.detachEvents(this.loginView)
+			if (this.locationView && route != 'location') this.detachEvents(this.locationView)
+			if (this.rateView && route != 'rate') this.detachEvents(this.rateView)
+			if (this.spotView && route != 'spot') this.detachEvents(this.spotView)
+			if (this.userView && route != 'user') this.detachEvents(this.userView)
+		},
+
+		detachEvents: function(view){
+			view.undelegateEvents()
+			view.stopListening()
 		}
 
 	})

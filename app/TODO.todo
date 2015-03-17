@@ -3,11 +3,11 @@ Phase 1:
 
 Phase 2:
   ☐ persist rating view for user
-  ☐ add user comments
+  ✔ add user comments @done (15-03-17 15:15)
   ☐ responsive image loading
   ☐ make settings functional + password change
   ☐ build into cordova
-  ☐ Add picture uploads
+  ✔ Add picture uploads @done (15-03-17 15:16)
 
 Phase 3:
   ☐ Add password reset mechanism
