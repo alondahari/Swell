@@ -8071,6 +8071,28 @@ body, html {
   color: black;
   font-weight: bold; }
 
+.video-modal {
+  width: 350px;
+  height: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 5;
+  background-color: white;
+  border-radius: 10px; }
+
+video {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 25px; }
+
+canvas {
+  margin-bottom: 30px; }
+
 .header {
   font-family: 'Great Vibes', cursive;
   background-color: rgba(0, 0, 0, 0.4);

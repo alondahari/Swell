@@ -159,7 +159,12 @@ define([
 		},
 
 		takePhoto: function(){
-			
+			$('.video-modal').removeClass('hidden')
+			navigator.getUserMedia({video: true}, function () {
+				$('video').attr('src', window.URL.createObjectURL(stream))
+			}, function (err) {
+				console.log(err)
+			})
 		},
 
 		pictureCaptureHide: function(){
