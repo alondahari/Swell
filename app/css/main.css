@@ -8072,8 +8072,7 @@ body, html {
   font-weight: bold; }
 
 .video-modal {
-  width: 350px;
-  height: 400px;
+  padding: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -8085,10 +8084,8 @@ body, html {
   border-radius: 10px; }
 
 video {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  left: 25px; }
+  max-width: 600px;
+  position: absolute; }
 
 canvas {
   margin-bottom: 30px; }

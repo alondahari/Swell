@@ -95,8 +95,7 @@
 }
 
 .video-modal{
-	width: 350px;
-	height: 400px;
+	padding: 10px;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -107,10 +106,9 @@
 }
 
 video{
+	max-width: 600px;
 	position: absolute;
-	width: 300px;
-	height: 300px;
-	left: 25px;
+
 }
 canvas{
 	margin-bottom: 30px;

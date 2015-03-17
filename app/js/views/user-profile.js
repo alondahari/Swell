@@ -84,7 +84,7 @@ define([
 				var cameraExists = mediaArr.some( function (media) {
 					return media.kind === 'video'
 				})
-
+				cameraExists = true
 				view.model.set('camera', cameraExists && !!navigator.getUserMedia)
 				view.cacheUser = view.model.toJSON()
 				view.render()
@@ -175,18 +175,18 @@ define([
 
 		capturePhoto: function(){
 			$('video').hide()
-			var canvas = $('canvas')[0]
-			console.log(canvas)
-			var context = canvas.getContext('2d')
-			console.log(context)
+			var canvas = $('canvas')
 			var video = $('video')[0]
-			console.log(video)
+			canvas.attr('width', canvas.width())
+			canvas.attr('height', canvas.height())
+
+			var context = canvas[0].getContext('2d')
 			if (video.paused || video.ended) {
 				console.log('Error, camera stream ended')
 				return false
 			}
 			context.drawImage(video,0,0,300,300)
-			var URI = canvas.toDataURL('image/png')
+			var URI = canvas[0].toDataURL('image/png')
 			console.log(URI)
 			this.model.attributes.avatar = URI
 			this.model.url = '/user'
