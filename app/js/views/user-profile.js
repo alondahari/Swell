@@ -175,20 +175,24 @@ define([
 		},
 
 		capturePhoto: function(){
-			var canvas = $('canvas')
-			var video = $('video')
-			canvas.removeClass('hidden')
-			canvas.attr('width', video.width())
-			canvas.attr('height', video.height())
-			video.addClass('hidden')
+			var $canvas = $('canvas')
+			var $video = $('video')
+			var width = $video.width()
+			var height = $video.height()
+			$canvas.removeClass('hidden')
+			$canvas.attr('width', width)
+			$canvas.attr('height', height)
+			$video.addClass('hidden')
+			var canvas = $canvas[0]
+			var video = $video[0]
 
-			var context = canvas[0].getContext('2d')
-			if (video[0].paused || video[0].ended) {
+			var context = canvas.getContext('2d')
+			if (video.paused || video.ended) {
 				console.log('Error, camera stream ended')
 				return false
 			}
-			context.drawImage(video[0],0,0,300,300)
-			var URI = canvas[0].toDataURL('image/png')
+			context.drawImage(video,0,0,width,height)
+			var URI = canvas.toDataURL('image/png')
 			console.log(URI)
 			this.model.attributes.avatar = URI
 			this.model.url = '/user'
