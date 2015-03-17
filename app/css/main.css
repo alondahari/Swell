@@ -8084,11 +8084,10 @@ body, html {
   border-radius: 10px; }
 
 video {
-  max-width: 600px;
-  position: absolute; }
+  max-width: 600px; }
 
-canvas {
-  margin-bottom: 30px; }
+.capture {
+  margin-top: 10px; }
 
 .header {
   font-family: 'Great Vibes', cursive;

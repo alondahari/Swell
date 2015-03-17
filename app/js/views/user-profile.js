@@ -162,7 +162,8 @@ define([
 		},
 
 		showVideoModal: function(){
-			$('video').show()
+			$('video').removeClass('hidden')
+			$('canvas').addClass('hidden')
 			this.$('.image-capture-options').removeClass('image-capture-show')
 			this.$('.screen').removeClass('hidden')
 			$('.video-modal').removeClass('hidden')
@@ -174,18 +175,19 @@ define([
 		},
 
 		capturePhoto: function(){
-			$('video').hide()
 			var canvas = $('canvas')
-			var video = $('video')[0]
-			canvas.attr('width', canvas.width())
-			canvas.attr('height', canvas.height())
+			var video = $('video')
+			canvas.removeClass('hidden')
+			canvas.attr('width', video.width())
+			canvas.attr('height', video.height())
+			video.addClass('hidden')
 
 			var context = canvas[0].getContext('2d')
-			if (video.paused || video.ended) {
+			if (video[0].paused || video[0].ended) {
 				console.log('Error, camera stream ended')
 				return false
 			}
-			context.drawImage(video,0,0,300,300)
+			context.drawImage(video[0],0,0,300,300)
 			var URI = canvas[0].toDataURL('image/png')
 			console.log(URI)
 			this.model.attributes.avatar = URI
