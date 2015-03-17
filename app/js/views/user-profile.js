@@ -46,13 +46,11 @@ define([
 		],
 
 		initialize: function(){
-			this.model.set('camera', this.hasCamera())
-
+			
+			this.hasCamera()
 			this.cacheUser = this.model.toJSON()
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)
 			
-			this.render()
-			this.renderSliders()
 
 		},
 
@@ -60,6 +58,7 @@ define([
 			$('.loading-spinner').hide()
 
 			this.$el.html(this.template({user: this.cacheUser, feedbackMessage: this.feedbackMessage}))
+			this.renderSliders()
 
 		},
 
@@ -79,13 +78,14 @@ define([
 				navigator.mozGetUserMedia ||
 				navigator.msGetUserMedia
 
-			var cameraExists
+			var cameraExists, view = this
 
 			MediaStreamTrack.getSources(function(mediaArr) {
 				cameraExists = mediaArr.some( function (media) {
 					return media.kind === 'video'
 				})
-				return cameraExists && navigator.getUserMedia
+				view.model.set('camera', cameraExists && navigator.getUserMedia)
+				view.render()
 			})
 		},
 
