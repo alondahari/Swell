@@ -52,7 +52,7 @@ define([
 			this.hasCamera()
 			
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)
-			
+			this.cacheUser = this.model.toJSON()
 
 		},
 
@@ -119,18 +119,14 @@ define([
 			this.model.save()
 		},
 
-		userUpdate: function(model, err){
-			
-			this.$('.saving').text( text ).removeClass('saving')
-
-		},
-
 		setMessage: function(model, err){
 			this.pictureCaptureHide()
 			$('.loading-spinner').hide()
 			if (err.msg || err.responseText) {
 				this.model.set(this.cacheUser)
-				this.$('.settings-save').text(err.msg || err.responseText)
+				this.feedbackMessage = err.msg || err.responseText
+				this.render()
+				return false;
 			}
 			if (!_.isEqual(this.cacheUser, this.model.toJSON())) {
 
@@ -138,7 +134,8 @@ define([
 					this.$('img.user-avatar').attr('src', model.get('avatar'))
 				}
 				this.cacheUser = this.model.toJSON()
-				this.$('.settings-save').text('New Settings Saved!')
+				this.feedbackMessage = 'New Settings Saved!'
+				this.render()
 			}
 
 		},
@@ -159,12 +156,12 @@ define([
 			
 			if (size < 16) {
 				fr.readAsDataURL(file)
-				this.$('.settings-save').text('Saving...')
+				this.feedbackMessage = 'Saving...'
 				$('.loading-spinner').show()
 			} else {
-				this.$('.settings-save').text('Image must be smaller than 16MB')
-				
+				this.feedbackMessage = 'Image must be smaller than 16MB'	
 			}
+			this.render()
 		},
 
 		showVideoModal: function(){
@@ -181,8 +178,9 @@ define([
 				view.stream = stream
 			}, function (err) {
 				console.log(err)
-				view.$('.settings-save').text('Please allow access to your camera')
+				view.feedbackMessage = 'Please allow access to your camera'
 				view.pictureCaptureHide()
+				this.render()
 			})
 		},
 
@@ -200,8 +198,9 @@ define([
 
 			var context = canvas.getContext('2d')
 			if (video.paused || video.ended) {
-				this.$('.settings-save').text('Error, camera stream ended')
+				this.feedbackMessage = 'Error, camera stream ended'
 				this.pictureCaptureHide()
+				this.render()
 				return false
 			}
 			context.drawImage(video,0,0,width,height)
