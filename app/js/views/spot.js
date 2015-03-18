@@ -6,37 +6,22 @@ define([
 	'views/user-comment-get',
 	'models/rating',
 	'text!templates/view.jade',
-	'collections/user-comments'
-], function(Backbone, jade, Avatar, ViewRating, CommentView, Rating, template, UserComments){
+	'collections/user-comments',
+	'utils/helpers'
+], function(Backbone, jade, Avatar, ViewRating, CommentView, Rating, template, UserComments, helpers){
 
 	return Backbone.View.extend({
 
 		template: jade.compile(template),
 
-		fields: {
-			overall: {
-				header: 'Overall Wave Quality',
-				unit: '/ 10',
-				fieldName: 'overall'
-			},
-			waveHeight: {
-				header: 'Wave Height',
-				unit: 'ft',
-				fieldName: 'waveHeight'
-			},
-			wind: {
-				header: 'Wind',
-				fieldName: 'wind'
-			},
-			crowd: {
-				header: 'Crowd',
-				unit: 'surfers',
-				fieldName: 'crowd'
-			}
-		},
+		fields: helpers.fields,
 
 		initialize: function(){
 			this.render()
+		},
+
+		events: {
+			'click .button-show-more': 'showMore'
 		},
 
 		render: function(){
@@ -60,12 +45,15 @@ define([
 		 */
 		renderFields: function(){
 
-			_.each(this.fields, function(field){
+			_.each(this.fields, function(field, i){
 				var rating = new Rating()
 				rating.url = '/rating/' + field.fieldName + '/' + this.id
-				var rateField = new ViewRating({model: rating, attributes: field})
-				this.$('.ratings').append(rateField.$el)
-				
+				var rateField = new ViewRating({model: rating, attributes: {field: field, user: this.attributes.user}})
+				if (i < 4) {
+					this.$('.ratings').append(rateField.$el)
+				} else {
+					this.$('.ratings-extra').append(rateField.$el)
+				}
 			}, this)
 		},
 
@@ -95,6 +83,14 @@ define([
 				this.fields[key].time = this.collection.getTime(key)
 				this.fields[key].votes = this.collection.getNumberOfVotes(key)
 			},this)
+		},
+
+		showMore: function(e){
+			this.$('.ratings-extra').toggleClass('ratings-extra-hidden')
+			var button = $(e.target)
+			window.setTimeout(function() {
+				button.text(button.text() === 'show more' ? 'show less' : 'show more')
+			}, 300)
 		}
 
 

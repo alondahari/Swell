@@ -7714,8 +7714,6 @@ body, html {
   font-weight: 300;
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
-  background: url("../img/background2.jpg") no-repeat center center fixed;
-  background-size: cover;
   z-index: -3; }
 
 .wrapper {
@@ -7960,6 +7958,23 @@ body, html {
   right: 5px;
   cursor: pointer; }
 
+.ratings-extra {
+  overflow: hidden;
+  max-height: 1000px;
+  -webkit-transition: max-height .3s;
+          transition: max-height .3s; }
+
+.ratings-extra-hidden {
+  max-height: 0; }
+
+.show-more {
+  border-color: rgba(200, 200, 200, 0.7);
+  background-color: #000;
+  margin-bottom: 30px; }
+
+.show-more-text {
+  margin-top: 4px; }
+
 .bg-video-container {
   min-width: 100%;
   min-height: 100%;
@@ -8028,6 +8043,16 @@ body, html {
   text-align: center;
   font-size: 1.8rem;
   font-weight: 200; }
+
+.skip-login {
+  float: right;
+  font-size: 1.5rem;
+  color: #1B207C;
+  text-decoration: underline; }
+
+.skip-login span {
+  font-size: 1.3rem;
+  vertical-align: -1px; }
 
 .user-details {
   margin-top: 100px; }
@@ -8182,7 +8207,25 @@ body, html {
   z-index: 2;
   margin-top: 74px; }
 
+@media (min-width: 1281px) {
+  body, html {
+    background: url("../img/background-lg.jpg") no-repeat center center fixed;
+    background-size: cover; } }
+
+@media (min-width: 701px) and (max-width: 1280px) {
+  body, html {
+    background: url("../img/background-md.jpg") no-repeat center center fixed;
+    background-size: cover; } }
+
+@media (min-width: 451px) and (max-width: 700px) {
+  body, html {
+    background: url("../img/background-sm.jpg") no-repeat center center fixed;
+    background-size: cover; } }
+
 @media (max-width: 450px) {
+  body, html {
+    background: url("../img/background-xs.jpg") no-repeat center center fixed;
+    background-size: cover; }
   .header h1 {
     font-size: 3rem; }
   .header-login {

@@ -2,9 +2,10 @@ define([
 	'backbone',
 	'jade',
 	'slider',
-	'pubsub',
-	'text!templates/rate-field.jade'
-], function(Backbone, jade, slider, pubsub, template){
+	'utils/pubsub',
+	'text!templates/rate-field.jade',
+	'utils/helpers'
+], function(Backbone, jade, slider, pubsub, template, helpers){
 
 	return Backbone.View.extend({
 
@@ -29,7 +30,7 @@ define([
 
 			this.slider = this.$('.rating-input-range').slider(this.model.toJSON())
 			var value = this.slider.slider('getValue')
-			var text = this.formatText(this.model.get('fieldName'), value)
+			var text = helpers.formatText(this.model.get('fieldName'), value)
 
 			this.$('.rating-value').text(text)
 			
@@ -44,14 +45,13 @@ define([
 				pubsub.trigger('pleaseLoginPulse')
 				return false
 			} 
-
 			// get value from slider
 			var value = this.slider.slider('getValue')
 
 			pubsub.trigger('ratingChanged', {value: value, field: this.model.get('fieldName')})
 
-			// format value if neede
-			var text = this.formatText(this.model.get('fieldName'), value)
+			// format value if needed
+			var text = helpers.formatText(this.model.get('fieldName'), value)
 
 			// set the value in the DOM and add class for visual change feedback
 			this.$('.rating-value').text(text).addClass('value-changed')
@@ -70,7 +70,7 @@ define([
 					userId: view.attributes.user.attributes._id,
 					value: value
 				}, {success: function(model, data){
-
+					pubsub.trigger('updateUserSettings', model)
 					view.$('.rating-save').text('Saved!')
 
 				}, error: function(model, data){
@@ -78,24 +78,6 @@ define([
 				}})
 			}, 1000, this);
 
-		},
-
-		formatText: function(field, val){
-			var formats = {
-				wind: [
-					'None (0-3 knots)',
-					'Calm (4-9 knots)',
-					'Strong (10-20 knots)',
-					'High (20-40 knots)',
-					'Stormy (40+ knots)'
-				],
-				measurement: [
-					'Imperial',
-					'Metric'
-				]
-				
-			}
-			return formats[field] ? formats[field][val] : val
 		}
 
 	})

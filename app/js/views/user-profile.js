@@ -34,7 +34,6 @@ define([
 		{ 
 			fieldName: 'ignoreRating',
 			header: 'Ignore ratings older than',
-			value: 6,
 			unit: 'hours',
 			max: 12,
 			min: 2
@@ -42,7 +41,6 @@ define([
 		{
 			fieldName: 'measurement',
 			header: 'Measurement system',
-			value: 0,
 			max: 1
 		}
 		],
@@ -52,8 +50,15 @@ define([
 			this.hasCamera()
 			
 			this.listenTo(this.model, 'sync invalid error', this.setMessage)
-			this.cacheUser = this.model.toJSON()
 
+			this.cacheUser = this.model.toJSON()
+			this.settings[0].value = this.model.get('ignoreRating')
+			this.settings[1].value = this.model.get('measurement')
+
+		},
+
+		log: function(){
+			console.log(arguments)
 		},
 
 		render: function(model, err){

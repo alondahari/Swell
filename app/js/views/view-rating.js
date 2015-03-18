@@ -1,8 +1,9 @@
 define([
 	'backbone',
 	'jade',
-	'text!templates/view-rating.jade'
-], function(Backbone, jade, template){
+	'text!templates/view-rating.jade',
+	'utils/helpers'
+], function(Backbone, jade, template, helpers){
 
 	return Backbone.View.extend({
 
@@ -14,30 +15,16 @@ define([
 
 			var view = this
 			this.model.fetch({success: function (model, res) {
-				_.extend(view.attributes, res)
+				_.extend(view.attributes.field, res)
+				view.attributes.field.average = helpers.formatText(view.attributes.field.fieldName, view.attributes.field.average)
 				view.render()
-				if (view.attributes.fieldName === 'wind') {
-					view.$('.rating-value').text(view.formatWindValue(view.attributes.average))
-				}
+				
 			}})
-
-
 		},
 
 		render: function(){
 			$('.loading-spinner').hide()
-			this.$el.html(this.template(this.attributes))
-		},
-
-		formatWindValue: function(val){
-			var values = [
-				'None (0-3 knots)',
-				'Calm (4-9 knots)',
-				'Strong (10-20 knots)',
-				'High (20-40 knots)',
-				'Stormy (40+ knots)'
-			]
-			return values[val]
+			this.$el.html(this.template({field: this.attributes.field, user: this.attributes.user}))
 		}
 
 	})

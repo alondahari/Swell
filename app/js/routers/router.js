@@ -1,5 +1,6 @@
 define([
 	'backbone',
+	'utils/pubsub',
 	'views/login',
 	'views/location',
 	'views/rate',
@@ -8,6 +9,7 @@ define([
   'collections/spots',
   ], function(
   	Backbone,
+  	pubsub,
   	Login,
   	LocationView,
   	RateView,
@@ -20,17 +22,20 @@ define([
 
 		initialize: function(){
 			this.listenTo(this, 'route', this.removeViews)
+			pubsub.bind('updateUserSettings', this.updateUserSettings, this)
 		},
 
 		routes:{
-			'': 'location',
-			'login': 'login',
+			'': 'login',
+			'location': 'location',
 			'spot/:title/:id': 'rate',
 			'view-spot/:title/:id': 'spot',
 			'user': 'user'
 		},
 
 		login: function(){
+			if (this.user && this.user.get('_id'))
+				return window.location.hash = 'location'
 			this.loginView = new Login({ model: this.user })
 		},
 
@@ -58,7 +63,7 @@ define([
 		user: function(){
 
 			if (!this.user || !this.user.get('_id'))
-				return window.location.hash = ''
+				return window.location.hash = 'location'
 			this.userView =  new userProfile({model: this.user})
 
 		},
@@ -77,7 +82,12 @@ define([
 		detachEvents: function(view){
 			view.undelegateEvents()
 			view.stopListening()
-		}
+		},
+
+		updateUserSettings: function(user){
+			this.user.set('ignoreRating', user.get('ignoreRating'))
+			this.user.set('measurement', user.get('measurement'))
+		},
 
 	})
 })

@@ -1,14 +1,15 @@
 define([
 	'backbone',
 	'jade',
-	'pubsub',
+	'utils/pubsub',
 	'text!templates/rate.jade',
 	'views/rate-field',
 	'views/avatar',
 	'views/user-comment-set',
 	'models/rating',
-	'models/user-comment'
-], function(Backbone, jade, pubsub, template, RateField, Avatar, CommentView, Rating, UserComment){
+	'models/user-comment',
+	'utils/helpers'
+], function(Backbone, jade, pubsub, template, RateField, Avatar, CommentView, Rating, UserComment, helpers){
 
 	return Backbone.View.extend({
 
@@ -17,33 +18,13 @@ define([
 		// only arrays get persisted?
 		currentLocation: [],
 
-		fields: [
-			{
-				header: 'Overall Wave Quality',
-				max: 10,
-				unit: '/ 10',
-				fieldName: 'overall'
-			},
-			{
-				header: 'Wave Height',
-				max: 12,
-				unit: 'ft',
-				fieldName: 'waveHeight'
-			},
-			{
-				header: 'Wind',
-				max: 4,
-				fieldName: 'wind'
-			},
-			{
-				header: 'Crowd',
-				max: 200,
-				unit: 'surfers',
-				fieldName: 'crowd'
-			}
-		],
+		fields: helpers.fields,
 
 		el: '.wrapper',
+
+		events: {
+			'click .button-show-more': 'showMore'
+		},
 
 		initialize: function(){
 
@@ -77,14 +58,26 @@ define([
 		 * render the rating fields with a different template
 		 */
 		renderFields: function(){
-			_.each(this.fields, function(field){
+			_.each(this.fields, function(field, i){
 				var rateField = new RateField({model: new Rating(field), id: this.id, attributes: {user: this.attributes.user}})
-				this.$('.ratings').append(rateField.$el)
+				if (i < 4) {
+					this.$('.ratings').append(rateField.$el)
+				} else {
+					this.$('.ratings-extra').append(rateField.$el)
+				}
 			}, this)
 		},
 
 		renderUserComment: function(){
 			this.$('.comment').html(new CommentView({ model: new UserComment(), id: this.id, attributes: {user: this.attributes.user}}).$el)
+		},
+
+		showMore: function(e){
+			this.$('.ratings-extra').toggleClass('ratings-extra-hidden')
+			var button = $(e.target)
+			window.setTimeout(function() {
+				button.text(button.text() === 'show more' ? 'show less' : 'show more')
+			}, 300)
 		},
 
 		pleaseLoginPulse: function () {

@@ -8,7 +8,7 @@ var mongoose = require('mongoose')
 
 var indexCtrl = require('./controllers/index')
 var ratingsCtrl = require('./controllers/ratings')
-var authenticationCtrl = require('./controllers/authentication')
+var userCtrl = require('./controllers/user')
 var passportConfig = require('./config/passport')
 
 console.log('enviroment:', process.env.NODE_ENV)
@@ -33,13 +33,13 @@ app.use(passport.session())
 
 app.get('/seed', indexCtrl.seed)
 
-app.get('/user', authenticationCtrl.user)
-app.post('/user', authenticationCtrl.updateUser)
-app.put('/user', authenticationCtrl.updateUser)
+app.get('/user', userCtrl.user)
+app.post('/user', userCtrl.updateUser)
+app.put('/user', userCtrl.updateUser)
 
-app.use('/login', authenticationCtrl.login)
-app.use('/signup', authenticationCtrl.signup)
-app.use('/logout', authenticationCtrl.logout)
+app.use('/login', userCtrl.login)
+app.use('/signup', userCtrl.signup)
+app.use('/logout', userCtrl.logout)
 
 app.get('/googleMaps', indexCtrl.getMaps)
 
@@ -53,6 +53,8 @@ app.get('/comments/:id', ratingsCtrl.getComments)
 app.post('/comments', ratingsCtrl.addComment)
 app.put('/comments', ratingsCtrl.updateComment)
 app.get('/delete-comment/:id', ratingsCtrl.deleteComment)
+
+app.post('/user-setting', userCtrl.userSetting)
 
 
 var server = app.listen(process.env.PORT || 7878, function() {

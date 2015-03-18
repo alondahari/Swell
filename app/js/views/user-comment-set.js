@@ -1,7 +1,7 @@
 define([
 	'backbone',
 	'jade',
-	'pubsub',
+	'utils/pubsub',
 	'text!templates/user-comment-set.jade'
 ], function(Backbone, jade, pubsub, template){
 
