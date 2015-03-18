@@ -227,8 +227,7 @@ define([
 		savePhotoCapture: function(){
 			$('.loading-spinner').show()
 			this.model.attributes.avatar = this.avatarURI
-			this.model.url = '/user'
-			this.model.save()
+			helpers.resizeImage(this.avatarURI, 30, 30, view.saveModel, view)
 		},
 
 		pictureCaptureHide: function(){

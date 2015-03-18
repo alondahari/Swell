@@ -8151,7 +8151,7 @@ body, html {
 .photo-capture-stream {
   max-width: 600px; }
 
-.capture {
+.capture, .image-capture-cancel, .image-capture-save, .image-capture-repeat {
   margin-top: 10px; }
 
 .header {
