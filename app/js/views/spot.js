@@ -6,48 +6,15 @@ define([
 	'views/user-comment-get',
 	'models/rating',
 	'text!templates/view.jade',
-	'collections/user-comments'
-], function(Backbone, jade, Avatar, ViewRating, CommentView, Rating, template, UserComments){
+	'collections/user-comments',
+	'utils/helpers'
+], function(Backbone, jade, Avatar, ViewRating, CommentView, Rating, template, UserComments, helpers){
 
 	return Backbone.View.extend({
 
 		template: jade.compile(template),
 
-		fields: [
-			{
-				header: 'Overall Wave Quality',
-				unit: '/ 10',
-				fieldName: 'overall'
-			},
-			{
-				header: 'Wave Height',
-				unit: 'ft',
-				fieldName: 'waveHeight'
-			},
-			{
-				header: 'Wind',
-				fieldName: 'wind'
-			},
-			{
-				header: 'Crowd',
-				unit: 'surfers',
-				fieldName: 'crowd'
-			},
-			{
-				header: 'Current',
-				fieldName: 'current'
-			},
-			{
-				header: 'Suitable For',
-				unit: 'surfers',
-				fieldName: 'experience'
-			},
-			{
-				header: 'Water Temprature',
-				unit: 'Suit Recommended',
-				fieldName: 'suit'
-			}
-		],
+		fields: helpers.fields,
 
 		initialize: function(){
 			this.render()

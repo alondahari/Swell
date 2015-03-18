@@ -1,6 +1,6 @@
 define([
 	'backbone',
-	'pubsub',
+	'utils/pubsub',
 	'views/login',
 	'views/location',
 	'views/rate',

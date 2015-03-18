@@ -1,14 +1,15 @@
 define([
 	'backbone',
 	'jade',
-	'pubsub',
+	'utils/pubsub',
 	'text!templates/rate.jade',
 	'views/rate-field',
 	'views/avatar',
 	'views/user-comment-set',
 	'models/rating',
-	'models/user-comment'
-], function(Backbone, jade, pubsub, template, RateField, Avatar, CommentView, Rating, UserComment){
+	'models/user-comment',
+	'utils/helpers'
+], function(Backbone, jade, pubsub, template, RateField, Avatar, CommentView, Rating, UserComment, helpers){
 
 	return Backbone.View.extend({
 
@@ -17,48 +18,7 @@ define([
 		// only arrays get persisted?
 		currentLocation: [],
 
-		fields: [
-			{
-				header: 'Overall Wave Quality',
-				max: 10,
-				unit: '/ 10',
-				fieldName: 'overall'
-			},
-			{
-				header: 'Wave Height',
-				max: 12,
-				unit: 'ft',
-				fieldName: 'waveHeight'
-			},
-			{
-				header: 'Wind',
-				max: 4,
-				fieldName: 'wind'
-			},
-			{
-				header: 'Crowd',
-				max: 200,
-				unit: 'surfers',
-				fieldName: 'crowd'
-			},
-			{
-				header: 'Current',
-				max: 2,
-				fieldName: 'current'
-			},
-			{
-				header: 'Suitable For',
-				max: 3,
-				unit: 'surfers',
-				fieldName: 'experience'
-			},
-			{
-				header: 'Water Temprature',
-				max: 2,
-				unit: 'Suit Recommended',
-				fieldName: 'suit'
-			}
-		],
+		fields: helpers.fields,
 
 		el: '.wrapper',
 
