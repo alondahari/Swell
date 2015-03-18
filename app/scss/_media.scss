@@ -1,20 +1,20 @@
 @media (min-width: 1281px){
 	body, html{
-		background: url("https://s3-us-west-2.amazonaws.com/swell-assets/background-lg.jpg") no-repeat center center fixed;
+		background: url("../img/background-lg.jpg") no-repeat center center fixed;
 		background-size: cover;
 	}
 }
 
 @media (min-width: 701px) and (max-width: 1280px){
 	body, html{
-		background: url("https://s3-us-west-2.amazonaws.com/swell-assets/background-md.jpg") no-repeat center center fixed;
+		background: url("../img/background-md.jpg") no-repeat center center fixed;
 		background-size: cover;
 	}
 }
 
 @media (min-width: 451px) and (max-width: 700px){
 	body, html{
-		background: url("https://s3-us-west-2.amazonaws.com/swell-assets/background-sm.jpg") no-repeat center center fixed;
+		background: url("../img/background-sm.jpg") no-repeat center center fixed;
 		background-size: cover;
 	}
 }
@@ -23,7 +23,7 @@
 
 @media (max-width: 450px) {
 	body, html{
-		background: url("https://s3-us-west-2.amazonaws.com/swell-assets/background-xs.jpg") no-repeat center center fixed;
+		background: url("../img/background-xs.jpg") no-repeat center center fixed;
 		background-size: cover;
 	}
 	.header h1{
