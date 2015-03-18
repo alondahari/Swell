@@ -24,6 +24,7 @@ define([
 		render: function(){
 			$('.loading-spinner').hide()
 			this.$el.html(this.template())
+			$('.bg-video-container').css('opacity', 1)
 		},
 
 		events: {

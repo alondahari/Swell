@@ -1,3 +1,26 @@
+.bg-video-container{
+	min-width: 100%;
+	min-height: 100%;
+	height: 100vh;
+	// overflow: hidden;
+	width: auto;
+	position: fixed;
+	background-color: rgba(42, 86, 128,1);
+	transition: opacity 0.4s;
+	opacity: 0;
+}
+
+.bg-video{
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	width: auto;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	opacity: 0.4;
+}
+
 .login-field{
 	margin: 20px 0;
 }

@@ -85,7 +85,7 @@ define([
 
 		render: function(){
 
-			// remove loader here
+			$('.bg-video-container').css('opacity', 0)
 			$('.loading-spinner').hide()
 
 			// In render so there's a collection to work with

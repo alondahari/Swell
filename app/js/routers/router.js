@@ -32,7 +32,6 @@ define([
 
 		login: function(){
 			this.loginView = new Login({ model: this.user })
-
 		},
 
 		location: function(){
