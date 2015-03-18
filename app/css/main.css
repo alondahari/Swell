@@ -7942,6 +7942,23 @@ body, html {
   right: 5px;
   cursor: pointer; }
 
+.ratings-extra {
+  overflow: hidden;
+  max-height: 1000px;
+  -webkit-transition: max-height .3s;
+          transition: max-height .3s; }
+
+.ratings-extra-hidden {
+  max-height: 0; }
+
+.show-more {
+  border-color: rgba(200, 200, 200, 0.7);
+  background-color: #000;
+  margin-bottom: 30px; }
+
+.show-more-text {
+  margin-top: 4px; }
+
 .login-field {
   margin: 20px 0; }
 

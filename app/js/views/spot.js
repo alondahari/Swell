@@ -20,6 +20,10 @@ define([
 			this.render()
 		},
 
+		events: {
+			'click .button-show-more': 'showMore'
+		},
+
 		render: function(){
 
 			$('.loading-spinner').hide()
@@ -41,12 +45,15 @@ define([
 		 */
 		renderFields: function(){
 
-			_.each(this.fields, function(field){
+			_.each(this.fields, function(field, i){
 				var rating = new Rating()
 				rating.url = '/rating/' + field.fieldName + '/' + this.id
 				var rateField = new ViewRating({model: rating, attributes: {field: field, user: this.attributes.user}})
-				this.$('.ratings').append(rateField.$el)
-				
+				if (i < 4) {
+					this.$('.ratings').append(rateField.$el)
+				} else {
+					this.$('.ratings-extra').append(rateField.$el)
+				}
 			}, this)
 		},
 
@@ -76,6 +83,14 @@ define([
 				this.fields[key].time = this.collection.getTime(key)
 				this.fields[key].votes = this.collection.getNumberOfVotes(key)
 			},this)
+		},
+
+		showMore: function(e){
+			this.$('.ratings-extra').toggleClass('ratings-extra-hidden')
+			var button = $(e.target)
+			window.setTimeout(function() {
+				button.text(button.text() === 'show more' ? 'show less' : 'show more')
+			}, 300)
 		}
 
 
