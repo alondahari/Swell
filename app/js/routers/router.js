@@ -1,5 +1,6 @@
 define([
 	'backbone',
+	'pubsub',
 	'views/login',
 	'views/location',
 	'views/rate',
@@ -8,6 +9,7 @@ define([
   'collections/spots',
   ], function(
   	Backbone,
+  	pubsub,
   	Login,
   	LocationView,
   	RateView,
@@ -20,6 +22,7 @@ define([
 
 		initialize: function(){
 			this.listenTo(this, 'route', this.removeViews)
+			pubsub.bind('updateUserSettings', this.updateUserSettings, this)
 		},
 
 		routes:{
@@ -78,7 +81,12 @@ define([
 		detachEvents: function(view){
 			view.undelegateEvents()
 			view.stopListening()
-		}
+		},
+
+		updateUserSettings: function(user){
+			this.user.set('ignoreRating', user.get('ignoreRating'))
+			this.user.set('measurement', user.get('measurement'))
+		},
 
 	})
 })

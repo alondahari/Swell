@@ -69,7 +69,7 @@ define([
 					userId: view.attributes.user.attributes._id,
 					value: value
 				}, {success: function(model, data){
-
+					pubsub.trigger('updateUserSettings', model)
 					view.$('.rating-save').text('Saved!')
 
 				}, error: function(model, data){

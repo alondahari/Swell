@@ -11,7 +11,7 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
-			console.log(this.attributes.user)
+
 			var view = this
 			this.model.fetch({success: function (model, res) {
 				_.extend(view.attributes.field, res)
