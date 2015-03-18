@@ -34,9 +34,9 @@ var filterRatings = function(ratings){
  * @param  {string}
  * @return {integer}
  */
-var getAverage = function(ratings){
+var getAverage = function(ratings, ignoreRating){
 
-	var cutOff = Date.now() - 21600000
+	var cutOff = Date.now() - (3600000 * ignoreRating)
 	ratings = filterRatings(ratings)
 
 	// get the addition of all the timestamps of the ratings
@@ -81,15 +81,26 @@ module.exports = {
 
 		Rating.find({spotId: req.params.id, fieldName: req.params.fieldName}, function(err, ratings){
 			if (!err) {
-				var average = getAverage(ratings)
-				var time = getTime(ratings)
-				var numberOfVotes = getNumberOfVotes(ratings)
+				var calcRatings = function (ignoreRating) {
+					var average = getAverage(ratings, ignoreRating)
+					var time = getTime(ratings)
+					var numberOfVotes = getNumberOfVotes(ratings)
 
-				res.send({
-					average: average,
-					time: time,
-					numberOfVotes: numberOfVotes
-				})
+					res.send({
+						average: average,
+						time: time,
+						numberOfVotes: numberOfVotes
+					})					
+				}
+
+				if (req.user) {
+					User.findOne({_id: req.user.id}, function (err, user) {
+						calcRatings(ignoreRating = user.ignoreRating)
+					})
+				} else {
+					calcRatings(6)
+				}
+
 			} else {
 				console.log(err);
 			}

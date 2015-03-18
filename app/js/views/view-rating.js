@@ -11,13 +11,13 @@ define([
 		template: jade.compile(template),
 
 		initialize: function(){
-
+			console.log(this.attributes.user)
 			var view = this
 			this.model.fetch({success: function (model, res) {
-				_.extend(view.attributes, res)
+				_.extend(view.attributes.field, res)
 				view.render()
-				if (view.attributes.fieldName === 'wind') {
-					view.$('.rating-value').text(view.formatWindValue(view.attributes.average))
+				if (view.attributes.field.fieldName === 'wind') {
+					view.$('.rating-value').text(view.formatWindValue(view.attributes.field.average))
 				}
 			}})
 
@@ -26,7 +26,7 @@ define([
 
 		render: function(){
 			$('.loading-spinner').hide()
-			this.$el.html(this.template(this.attributes))
+			this.$el.html(this.template({field: this.attributes.field, user: this.attributes.user}))
 		},
 
 		formatWindValue: function(val){
