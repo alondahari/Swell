@@ -36,6 +36,7 @@ var userSchema = mongoose.Schema({
     required: true
   },
   avatar: String,
+  thumbnail: String,
   ignoreRating: {
     type: Number,
     default: 6

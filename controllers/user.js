@@ -43,11 +43,15 @@ var authenticationController = {
     var set = {email: req.body.email}
     var username = req.body.username
     var avatar = req.body.avatar
+    var thumbnail = req.body.thumbnail
     if (username) {
       _.extend(set, {username: username})
     }
     if (avatar) {
       _.extend(set, {avatar: avatar})
+    }
+    if (thumbnail) {
+      _.extend(set, {thumbnail: thumbnail})
     }
 
     var query = User.where({_id: req.body._id})

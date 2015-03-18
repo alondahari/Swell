@@ -4,8 +4,9 @@ define([
 	'models/setting',
 	'views/rate-field',
 	'text!templates/user-profile.jade',
-	'underscore'
-], function(Backbone, jade, Setting, RateField, template, _){
+	'underscore',
+	'utils/helpers'
+], function(Backbone, jade, Setting, RateField, template, _, helpers){
 
 
 	return Backbone.View.extend({
@@ -145,6 +146,13 @@ define([
 
 		},
 
+		saveModel: function(thumbURI, view){
+			view.model.attributes.thumbnail = thumbURI
+			console.log(view.model)
+			view.model.url = '/user'
+			view.model.save()
+		},
+
 		fileUpload: function(e){
 			var view = this
 			var file = e.target.files[0]
@@ -152,11 +160,10 @@ define([
 
 			fr = new FileReader()
 			fr.onload = function (e) {
-				
 				var URI = e.currentTarget.result
 				view.model.attributes.avatar = URI
-				view.model.url = '/user'
-				view.model.save()
+				helpers.resizeImage(URI, 30, 30, view.saveModel, view)
+				
 			}
 			
 			if (size < 16) {

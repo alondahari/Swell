@@ -45,6 +45,7 @@ define([
 			var feedback = this.$('.comment-save')
 			if (!comment) return
 			feedback.text('Saving...')
+			this.model.url = '/comments'
 			this.model.save({
 				time: Date.now(),
 				spotId: this.id,

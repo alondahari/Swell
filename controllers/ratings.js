@@ -141,7 +141,7 @@ module.exports = {
 								comment: comment.comment,
 								time: moment(comment.time).fromNow(),
 								user: user.username,
-								avatar: user.avatar,
+								thumbnail: user.thumbnail,
 								userId: user.id
 							})
 
