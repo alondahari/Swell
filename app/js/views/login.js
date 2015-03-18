@@ -15,7 +15,7 @@ define([
 		initialize: function(){
 			
 			this.listenTo(this.model, 'invalid', this.highlightError)
-			this.listenTo(this.model, 'valid', this.setValid)
+			this.listenTo(this.model, 'change', this.setValid)
 			this.listenTo(this.model, 'sync', this.loginSuccess)
 			this.listenTo(this.model, 'error', this.loginError)
 			this.render()
@@ -76,6 +76,7 @@ define([
 		},
 
 		setValid: function(){
+			console.log(this.invalidMessage)
 			this.invalidMessage = null
 		},
 
