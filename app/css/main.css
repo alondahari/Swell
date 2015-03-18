@@ -7936,7 +7936,7 @@ body, html {
   min-width: 60px; }
 
 .avatar-comment {
-  width: 30px;
+  max-width: 30px;
   max-height: 30px;
   border-radius: 10px; }
 
@@ -8185,7 +8185,7 @@ body, html {
   text-decoration: underline; }
 
 .avatar {
-  width: 50px;
+  max-width: 50px;
   max-height: 50px;
   border-radius: 10px;
   margin-top: -12px; }

@@ -148,7 +148,7 @@ define([
 
 		saveModel: function(thumbURI, view){
 			view.model.attributes.thumbnail = thumbURI
-			console.log(view.model)
+
 			view.model.url = '/user'
 			view.model.save()
 		},

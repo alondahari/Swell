@@ -12,11 +12,11 @@ define([], function(){
 		    sourceImage.onload = function() {
 		        // Create a canvas with the desired dimensions
 		        var canvas = document.createElement("canvas");
+		        var ratioHeight = sourceImage.height / sourceImage.width * height
 		        canvas.width = width;
-		        canvas.height = height;
-
+		        canvas.height = ratioHeight;
 		        // Scale and draw the source image to the canvas
-		        canvas.getContext("2d").drawImage(sourceImage, 0, 0, width, height);
+		        canvas.getContext("2d").drawImage(sourceImage, 0, 0, width, ratioHeight);
 
 		        // Convert the canvas to a data URL in PNG format
 		        callback(canvas.toDataURL(), context);
