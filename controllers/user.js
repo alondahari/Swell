@@ -101,7 +101,7 @@ var authenticationController = {
   // If none are found, the user is successfully added to the DB, it is safe to
   // assume that they are ready to log in, so we do that as well.
   signup: function(req, res, next){
-    console.log(req.body)
+
     // Create a new instance of the User model with the data passed to this
     // handler. By using "param," we can safely assume that this route will
     // work regardless of how the data is sent (post, get).
@@ -151,8 +151,11 @@ var authenticationController = {
   },
 
   userSetting: function (req, res) {
+    var set = {}
+    set[req.body.fieldName] = req.body.value
+
     var query = User.where({_id: req.body.userId})
-    query.findOneAndUpdate({$set: {ignoreRating: req.body.value}}, function (err, model) {
+    query.findOneAndUpdate({$set: set}, function (err, model) {
       if (err) {
         var errorMessage = 'An error occured, try again';
         console.log(err)
