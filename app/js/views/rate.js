@@ -40,6 +40,23 @@ define([
 				max: 200,
 				unit: 'surfers',
 				fieldName: 'crowd'
+			},
+			{
+				header: 'Current',
+				max: 2,
+				fieldName: 'current'
+			},
+			{
+				header: 'Suitable For',
+				max: 3,
+				unit: 'surfers',
+				fieldName: 'experience'
+			},
+			{
+				header: 'Water Temprature',
+				max: 2,
+				unit: 'Suit Recommended',
+				fieldName: 'suit'
 			}
 		],
 

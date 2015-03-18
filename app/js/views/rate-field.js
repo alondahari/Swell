@@ -91,6 +91,22 @@ define([
 				measurement: [
 					'Imperial',
 					'Metric'
+				],
+				current: [
+					'No current',
+					'Mellow current',
+					'Dangerous current'
+				],
+				experience: [
+					'Beginner',
+					'Novice',
+					'Experienced',
+					'World-Class'
+				],
+				suit: [
+					'No',
+					'Half',
+					'Full'
 				]
 				
 			}

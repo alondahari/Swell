@@ -15,10 +15,9 @@ define([
 			var view = this
 			this.model.fetch({success: function (model, res) {
 				_.extend(view.attributes.field, res)
+				view.attributes.field.average = view.formatText(view.attributes.field.fieldName, view.attributes.field.average)
 				view.render()
-				if (view.attributes.field.fieldName === 'wind') {
-					view.$('.rating-value').text(view.formatWindValue(view.attributes.field.average))
-				}
+				
 			}})
 
 
@@ -29,15 +28,38 @@ define([
 			this.$el.html(this.template({field: this.attributes.field, user: this.attributes.user}))
 		},
 
-		formatWindValue: function(val){
-			var values = [
-				'None (0-3 knots)',
-				'Calm (4-9 knots)',
-				'Strong (10-20 knots)',
-				'High (20-40 knots)',
-				'Stormy (40+ knots)'
-			]
-			return values[val]
+		formatText: function(field, val){
+			var formats = {
+				wind: [
+					'None (0-3 knots)',
+					'Calm (4-9 knots)',
+					'Strong (10-20 knots)',
+					'High (20-40 knots)',
+					'Stormy (40+ knots)'
+				],
+				measurement: [
+					'Imperial',
+					'Metric'
+				],
+				current: [
+					'No current',
+					'Mellow current',
+					'Dangerous current'
+				],
+				experience: [
+					'Beginner',
+					'Novice',
+					'Experienced',
+					'World-Class'
+				],
+				suit: [
+					'No',
+					'Half',
+					'Full'
+				]
+				
+			}
+			return formats[field] ? formats[field][val] : val
 		}
 
 	})

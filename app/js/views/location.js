@@ -260,7 +260,7 @@ define([
 					title: model.get('spot'),
 					id: model.get('_id'),
 					icon: '../../img/surf-marker.svg'
-				});
+				})
 
 				google.maps.event.addListener(marker, 'click', function(){
 

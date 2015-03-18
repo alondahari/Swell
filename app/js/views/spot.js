@@ -13,27 +13,41 @@ define([
 
 		template: jade.compile(template),
 
-		fields: {
-			overall: {
+		fields: [
+			{
 				header: 'Overall Wave Quality',
 				unit: '/ 10',
 				fieldName: 'overall'
 			},
-			waveHeight: {
+			{
 				header: 'Wave Height',
 				unit: 'ft',
 				fieldName: 'waveHeight'
 			},
-			wind: {
+			{
 				header: 'Wind',
 				fieldName: 'wind'
 			},
-			crowd: {
+			{
 				header: 'Crowd',
 				unit: 'surfers',
 				fieldName: 'crowd'
+			},
+			{
+				header: 'Current',
+				fieldName: 'current'
+			},
+			{
+				header: 'Suitable For',
+				unit: 'surfers',
+				fieldName: 'experience'
+			},
+			{
+				header: 'Water Temprature',
+				unit: 'Suit Recommended',
+				fieldName: 'suit'
 			}
-		},
+		],
 
 		initialize: function(){
 			this.render()
