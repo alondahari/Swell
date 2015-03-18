@@ -35,7 +35,15 @@ var userSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  avatar: String
+  avatar: String,
+  ignoreRating: {
+    type: Number,
+    default: 6
+  },
+  measurement: {
+    type: Number,
+    default: 0
+  }
 });
 
 /**

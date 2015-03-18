@@ -44,7 +44,6 @@ define([
 				pubsub.trigger('pleaseLoginPulse')
 				return false
 			} 
-
 			// get value from slider
 			var value = this.slider.slider('getValue')
 

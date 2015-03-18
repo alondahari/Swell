@@ -148,6 +148,19 @@ var authenticationController = {
 
     // Redirect back to the login page
     res.redirect('/');
+  },
+
+  userSetting: function (req, res) {
+    var query = User.where({_id: req.body.userId})
+    query.findOneAndUpdate({$set: {ignoreRating: req.body.value}}, function (err, model) {
+      if (err) {
+        var errorMessage = 'An error occured, try again';
+        console.log(err)
+        return res.send(errorMessage);
+      } else {
+        return res.send(model)
+      }
+    })
   }
 };
 
