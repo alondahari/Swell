@@ -2,12 +2,8 @@ Phase 1:
   ☐ make current marker stand out
 
 Phase 2:
-  ✔ persist rating view for user @done (15-03-17 17:36)
-  ✔ add user comments @done (15-03-17 15:15)
-  ☐ responsive image loading
   ☐ make settings functional + password change
   ☐ build into cordova
-  ✔ Add picture uploads @done (15-03-17 15:16)
 
 Phase 3:
   ☐ Add password reset mechanism
@@ -39,6 +35,10 @@ Build:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ persist rating view for user @done (15-03-17 17:36) @project(Phase 2)
+ ✔ add user comments @done (15-03-17 15:15) @project(Phase 2)
+ ✔ responsive image loading @done (15-03-17 20:31) @project(Phase 2)
+ ✔ Add picture uploads @done (15-03-17 15:16) @project(Phase 2)
  ✔ set wrapper to $el @done (15-03-13 20:30) @project(Phase 2)
  ✔ move average calculation to back-end @done (15-03-13 20:22) @project(Phase 2)
  ✔ Split website and app @done (15-03-13 19:28) @project(Phase 4)
