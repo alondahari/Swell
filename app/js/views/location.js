@@ -257,12 +257,13 @@ define([
 				var marker = new google.maps.Marker({
 					position: spotCoords,
 					map: this.map,
-					title: 'test',
+					title: model.get('spot'),
 					id: model.get('_id'),
-					icon: '../../img/red-surf-marker.svg'
+					icon: '../../img/surf-marker.svg'
 				});
 
 				google.maps.event.addListener(marker, 'click', function(){
+
 					var spot = view.collection.findWhere({_id: this.id})
 					view.setSelects(spot.get('continent'), spot.get('region'), spot.get('spot'))
 
