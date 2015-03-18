@@ -50,7 +50,7 @@ define([
 				this.model.set(res)
 				this.model.unset('password')
 
-				window.location.hash = ''
+				window.location.hash = 'location'
 			}
 
 		},

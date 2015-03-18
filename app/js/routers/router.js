@@ -26,14 +26,16 @@ define([
 		},
 
 		routes:{
-			'': 'location',
-			'login': 'login',
+			'': 'login',
+			'location': 'location',
 			'spot/:title/:id': 'rate',
 			'view-spot/:title/:id': 'spot',
 			'user': 'user'
 		},
 
 		login: function(){
+			if (this.user && this.user.get('_id'))
+				return window.location.hash = 'location'
 			this.loginView = new Login({ model: this.user })
 
 		},
@@ -62,7 +64,7 @@ define([
 		user: function(){
 
 			if (!this.user || !this.user.get('_id'))
-				return window.location.hash = ''
+				return window.location.hash = 'location'
 			this.userView =  new userProfile({model: this.user})
 
 		},
