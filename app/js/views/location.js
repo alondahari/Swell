@@ -4,50 +4,10 @@ define([
 	'typeahead',
 	'views/location-select',
 	'views/avatar',
-	'text!templates/location.jade'
-], function(Backbone, jade, typehead, Select, Avatar, template){
+	'text!templates/location.jade',
+	'utils/helpers'
+], function(Backbone, jade, typehead, Select, Avatar, template, helpers){
 
-	var substringMatcher = function(strs) {
-		return function findMatches(q, cb) {
-			var matches = [], substrRegex
-	 
-			// regex used to determine if a string contains the substring `q`
-			substrRegex = new RegExp(q, 'i')
-	 
-			// iterate through the pool of strings and for any string that
-			// contains the substring `q`, add it to the `matches` array
-			$.each(strs, function(i, str) {
-				if (substrRegex.test(str)) {
-					// the typeahead jQuery plugin expects suggestions to a
-					// JavaScript object, refer to typeahead docs for more info
-					matches.push({ value: str })
-					// limit results for better performance
-					if (matches.length > 10) return false
-				}
-			})
-	 
-			cb(matches)
-		}
-
-	}
-
-	function getMarkerDistance(lat1,lon1,lat2,lon2) {
-	  var R = 6371; // Radius of the earth in km
-	  var dLat = deg2rad(lat2-lat1);  // deg2rad below
-	  var dLon = deg2rad(lon2-lon1); 
-	  var a = 
-	    Math.sin(dLat/2) * Math.sin(dLat/2) +
-	    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
-	    Math.sin(dLon/2) * Math.sin(dLon/2)
-	    ; 
-	  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-	  var d = R * c; // Distance in km
-	  return d;
-	}
-
-	function deg2rad(deg) {
-	  return deg * (Math.PI/180)
-	}
 
 	return Backbone.View.extend({
 
@@ -208,7 +168,7 @@ define([
 				highlight: true
 			},
 			{
-				source: substringMatcher(this.typeaheadArr)
+				source: helpers.substringMatcher(this.typeaheadArr)
 			})
 		},
 
@@ -281,7 +241,7 @@ define([
 
 			this.collection.each( function (spot) {
 
-				var dist = getMarkerDistance(lat, lng, spot.get('lat'), spot.get('lng'))
+				var dist = helpers.getMarkerDistance(lat, lng, spot.get('lat'), spot.get('lng'))
 				if (dist < closestDistance){
 					closestDistance = dist
 					closestSpot = spot
