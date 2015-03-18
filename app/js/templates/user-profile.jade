@@ -10,7 +10,7 @@
 			else
 				input.hidden(id="file-upload", type="file", accept="image/*", capture="camera")
 				label.user-avatar(for="file-upload")
-					img.user-avatar(src=user.avatar || '../img/default-avatar.jpg')
+					img.user-avatar(src=user.avatar || 'https://s3-us-west-2.amazonaws.com/swell-assets/default-avatar.jpg')
 
 
 		.col-xs-6
