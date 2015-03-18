@@ -76,7 +76,7 @@ define([
 		},
 
 		setValid: function(){
-			console.log(this.invalidMessage)
+
 			this.invalidMessage = null
 		},
 
