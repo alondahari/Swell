@@ -3,6 +3,9 @@
 		background: url("../img/background-lg.jpg") no-repeat center center fixed;
 		background-size: cover;
 	}
+	#map-canvas{
+		height: 450px;
+	}
 }
 
 @media (min-width: 701px) and (max-width: 1280px){
@@ -10,12 +13,18 @@
 		background: url("../img/background-md.jpg") no-repeat center center fixed;
 		background-size: cover;
 	}
+	#map-canvas{
+		height: 400px;
+	}
 }
 
 @media (min-width: 451px) and (max-width: 700px){
 	body, html{
 		background: url("../img/background-sm.jpg") no-repeat center center fixed;
 		background-size: cover;
+	}
+	#map-canvas{
+		height: 350px;
 	}
 }
 
