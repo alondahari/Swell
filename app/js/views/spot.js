@@ -26,7 +26,7 @@ define([
 
 		render: function(){
 
-			$('.loading-spinner').hide()
+			$('.loading-logo').hide()
 			this.$el.html(this.template({header: this.attributes.title}))
 			// not setting .wrapper as $el to keep all events within scope
 			$('.wrapper').html(this.el)

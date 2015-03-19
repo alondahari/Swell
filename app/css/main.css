@@ -7711,8 +7711,8 @@ body, html {
 .wrapper::before {
   /*set background image with overlay*/
   content: '';
-  background: -webkit-linear-gradient(rgba(79, 158, 245, 0.2), rgba(79, 158, 245, 0.6)), url("../img/footer_lodyas.png");
-  background: linear-gradient(rgba(79, 158, 245, 0.2), rgba(79, 158, 245, 0.6)), url("../img/footer_lodyas.png");
+  background: -webkit-linear-gradient(rgba(79, 158, 245, 0.2), rgba(79, 158, 245, 0.7)), url("../img/footer_lodyas.png");
+  background: linear-gradient(rgba(79, 158, 245, 0.2), rgba(79, 158, 245, 0.7)), url("../img/footer_lodyas.png");
   /*fixes background image*/
   opacity: 0.9;
   top: 0;
@@ -7753,21 +7753,21 @@ body, html {
 
 @-webkit-keyframes spinner {
   0% {
-    -webkit-transform: translate(-50%, -50%) rotate(0);
-            transform: translate(-50%, -50%) rotate(0); }
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
 
   100% {
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 @keyframes spinner {
   0% {
-    -webkit-transform: translate(-50%, -50%) rotate(0);
-            transform: translate(-50%, -50%) rotate(0); }
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
 
   100% {
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 .loading-spinner:before, .loading-spinner:after {
   content: '';
@@ -7775,21 +7775,38 @@ body, html {
   display: block;
   border-radius: 50%;
   border: 3.125px solid transparent;
-  border-top-color: tomato; }
+  border-top-color: #ff9e38; }
 .loading-spinner:after {
   border-top-color: transparent;
-  border-bottom-color: tomato; }
+  border-bottom-color: #ff9e38; }
 
 .loading-spinner {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 4; }
+  top: 0px;
+  left: 0px; }
   .loading-spinner:before, .loading-spinner:after {
     top: -9.375px;
     left: -9.375px;
     width: 62.5px;
     height: 62.5px; }
+
+.loading-logo {
+  background-color: rgba(79, 158, 245, 0.8);
+  width: 50px;
+  height: 50px;
+  padding-top: 9px;
+  padding-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 2.8rem;
+  z-index: 5; }
 
 .location-select {
   margin: 30px 0;
@@ -7849,10 +7866,10 @@ body, html {
   color: rgba(184, 181, 240, 0.6); }
 
 .value-changed {
-  color: #cc7e2d; }
+  color: #ff9e38; }
 
 .rate-nav {
-  color: #cc7e2d;
+  color: #ff9e38;
   width: 50%;
   height: 50px;
   background-color: rgba(10, 10, 10, 0.4);
@@ -7999,7 +8016,7 @@ body, html {
 .error-message {
   font-size: 2rem;
   text-align: center;
-  color: #cc7e2d;
+  color: #ff9e38;
   margin-top: 20px;
   opacity: 0;
   position: relative;
@@ -8040,10 +8057,10 @@ body, html {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 0;
-  color: #cc7e2d; }
+  color: #ff9e38; }
 
 .swell-desc-break {
-  border-color: #cc7e2d;
+  border-color: #ff9e38;
   opacity: 0.4; }
 
 .user-details {
@@ -8054,7 +8071,7 @@ body, html {
 
 .field p:first-child {
   margin-bottom: 0px;
-  color: #cc7e2d; }
+  color: #ff9e38; }
 
 .field-input {
   font-size: 2rem;
@@ -8067,7 +8084,7 @@ body, html {
 .help-text {
   text-align: center;
   font-size: 1.8rem;
-  color: #cc7e2d; }
+  color: #ff9e38; }
 
 .push-down {
   margin: 25px 0 0; }

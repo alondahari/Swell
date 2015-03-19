@@ -9,7 +9,7 @@
 
 		if field.time
 			p.rating-info Last Updated #{field.time}
-			p.rating-info #{field.numberOfVotes} vote#{(field.numberOfVotes > 1 ? 's' : '')} in the last #{user.attributes.ignoreRating} hours
+			p.rating-info #{field.numberOfVotes} vote#{(field.numberOfVotes > 1 ? 's' : '')} in the last #{user.attributes.ignoreRating || 6} hours
 		else
 			p.rating-info No Recent Updates
 .row

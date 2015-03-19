@@ -23,8 +23,9 @@ var validateEmail = function(val){
  */
 var userSchema = mongoose.Schema({
   username: {
-    type: String,
-    unique: true
+    type: String
+    // uncomment after demo
+    // unique: true
   },
   email: {
     type: String,

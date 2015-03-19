@@ -1,6 +1,5 @@
 // vars
-$color-secondary-text: rgba(204, 126, 45, 1);
-$color-logo: rgb(255, 158, 56);
+$color-secondary-text: rgb(255, 158, 56);
 $color-save: rgba(69, 224, 224, 0.55);
 $color-info-dimmed: rgba(184, 181, 240, 0.6);
 $font-logo: 'Great Vibes', cursive;
@@ -33,7 +32,7 @@ body, html{
 .wrapper::before{
 	/*set background image with overlay*/
 	content: '';
-	background: linear-gradient(rgba(79, 158, 245, .2),rgba(79, 158, 245, .6)),
+	background: linear-gradient(rgba(79, 158, 245, .2),rgba(79, 158, 245, .7)),
 		url("../img/footer_lodyas.png");
 
 	/*fixes background image*/
@@ -72,7 +71,7 @@ body, html{
 }
 
 $inactive: #aaa;
-$active: tomato;
+$active: rgb(255, 158, 56);
 $speed: 1.2s;
 $size: 50px;
 $unit: $size / 16;
@@ -86,8 +85,8 @@ $unit: $size / 16;
   animation: spinner $speed linear infinite;
 }
 @keyframes spinner {
-  0% { transform: translate(-50%, -50%) rotate(0); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
 }
 
 %spinner-double-section {
@@ -111,9 +110,9 @@ $unit: $size / 16;
 .loading-spinner{
   @extend %spinner-double-section;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 4;
+  top: 0px;
+  left: 0px;
+	
   &:before,
   &:after {
     top: ($unit*-3);
@@ -121,4 +120,21 @@ $unit: $size / 16;
     width: ($size + $unit*4);
     height: ($size + $unit*4);
   }
+}
+
+.loading-logo{
+	background-color: rgba(79, 158, 245, .8);
+	width: $size;
+  height: $size;
+  padding-top: 9px;
+  padding-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+	font-family: $font-logo;
+	position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+	font-size: 2.8rem;
+  z-index: 5;
 }

@@ -22,7 +22,7 @@ define([
 		},
 
 		render: function(){
-			$('.loading-spinner').hide()
+			$('.loading-logo').hide()
 			this.$el.html(this.template())
 			$('.bg-video-container').css('opacity', 1)
 		},

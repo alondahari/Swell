@@ -63,7 +63,7 @@ define([
 		},
 
 		render: function(model, err){
-			$('.loading-spinner').hide()
+			$('.loading-logo').hide()
 
 			this.$el.html(this.template({user: this.cacheUser, feedbackMessage: this.feedbackMessage}))
 			this.renderSliders()
@@ -102,6 +102,7 @@ define([
 		preventNewLine: function(e){
 			if(e.which === 13){
 				e.preventDefault()
+				$('.loading-logo').show()
 				this.$('.settings-save').text('Saving...')
 				$(e.target).blur()
 			}
@@ -127,7 +128,7 @@ define([
 
 		setMessage: function(model, err){
 			this.pictureCaptureHide()
-			$('.loading-spinner').hide()
+			$('.loading-logo').hide()
 			if (err.msg || err.responseText) {
 				this.model.set(this.cacheUser)
 				this.feedbackMessage = err.msg || err.responseText
@@ -161,15 +162,18 @@ define([
 			fr = new FileReader()
 			fr.onload = function (e) {
 				var URI = e.currentTarget.result
+				
+				if (view.model.attributes.avatar === URI) return false
+				view.$('.settings-save').text('Saving...')
+				$('.loading-logo').show()
+
 				view.model.attributes.avatar = URI
 				helpers.resizeImage(URI, 30, 30, view.saveModel, view)
 				
 			}
-			
+
 			if (size < 16) {
 				fr.readAsDataURL(file)
-				this.feedbackMessage = 'Saving...'
-				$('.loading-spinner').show()
 			} else {
 				this.feedbackMessage = 'Image must be smaller than 16MB'	
 			}
@@ -225,7 +229,7 @@ define([
 		},
 
 		savePhotoCapture: function(){
-			$('.loading-spinner').show()
+			$('.loading-logo').show()
 			this.model.attributes.avatar = this.avatarURI
 			helpers.resizeImage(this.avatarURI, 30, 30, this.saveModel, this)
 		},

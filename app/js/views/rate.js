@@ -41,7 +41,7 @@ define([
 
 		render: function(){
 			
-			$('.loading-spinner').hide()
+			$('.loading-logo').hide()
 			this.$el.html(this.template({header: this.attributes.title}))
 
 			this.renderFields()

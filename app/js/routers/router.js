@@ -70,7 +70,7 @@ define([
 
 		removeViews: function (route) {
 			if (!$('.wrapper').html()) {
-				$('.loading-spinner').show()
+				$('.loading-logo').show()
 			}
 			if (this.loginView && route != 'login') this.detachEvents(this.loginView)
 			if (this.locationView && route != 'location') this.detachEvents(this.locationView)

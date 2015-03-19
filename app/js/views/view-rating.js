@@ -23,7 +23,7 @@ define([
 		},
 
 		render: function(){
-			$('.loading-spinner').hide()
+			$('.loading-logo').hide()
 			this.$el.html(this.template({field: this.attributes.field, user: this.attributes.user}))
 		}
 

@@ -46,7 +46,7 @@ define([
 		render: function(){
 
 			$('.bg-video-container').css('opacity', 0)
-			$('.loading-spinner').hide()
+			$('.loading-logo').hide()
 
 			// In render so there's a collection to work with
 			this.listenTo(this.collection, 'geo', this.getClosestSpot)

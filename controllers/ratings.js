@@ -132,7 +132,7 @@ module.exports = {
 		var comments = []
 		Rating.find({fieldName: 'comment', spotId: req.params.id}, {}, {sort: {time: -1}},function (err, data) {
 			if (!err) {
-				console.log('data:', data)
+
 				data.forEach( function (comment, i) {
 					User.findOne({ _id: comment.userId }, function (err, user) {
 						if (!err) {
@@ -147,8 +147,6 @@ module.exports = {
 
 							// if we pushed all the comments into the array - send
 							if (i === data.length - 1) {
-								console.log('index:', i)
-								console.log('comments:', comments)
 								res.send(comments)
 							}
 						} else {
