@@ -63,6 +63,7 @@ define([
 			var comments = new UserComments()
 			comments.url = '/comments/' + this.id
 			comments.fetch({success: function (model, res) {
+				res = _.sortBy(res, 'index')
 				_.each(res, function (comment) {
 					if (view.attributes.user.attributes._id === comment.userId) {
 						comment.delButton = true

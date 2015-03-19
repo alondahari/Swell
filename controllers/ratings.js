@@ -133,10 +133,11 @@ module.exports = {
 		Rating.find({fieldName: 'comment', spotId: req.params.id}, {}, {sort: {time: -1}},function (err, data) {
 			if (!err) {
 
-				data.forEach( function (comment) {
+				data.forEach( function (comment, i) {
 					User.findOne({ _id: comment.userId }, function (err, user) {
 						if (!err) {
 							comments.push({
+								index: i,
 								commentId: comment.id,
 								comment: comment.comment,
 								time: moment(comment.time).fromNow(),
