@@ -227,7 +227,7 @@ define([
 		savePhotoCapture: function(){
 			$('.loading-spinner').show()
 			this.model.attributes.avatar = this.avatarURI
-			helpers.resizeImage(this.avatarURI, 30, 30, view.saveModel, this)
+			helpers.resizeImage(this.avatarURI, 30, 30, this.saveModel, this)
 		},
 
 		pictureCaptureHide: function(){
